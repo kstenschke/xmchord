@@ -138,9 +138,9 @@ For these actions to be triggered, a window of the respective application must b
 
 | **Shortcut**        | **Description**                                |
 |---------------------|------------------------------------------------|
+| ◤ + D               | Show downloads                                 |
 | &nbsp; &nbsp; ◢ + ← | Go URL backwards                               |
 | &nbsp; &nbsp; ◢ + → | Go URL forward                                 |
-| &nbsp; &nbsp; ◢ + D | Show downloads                                 |
 | ◣ + ←               | Focus previous tab (browser and DevTools)      |
 | ◣ + →               | Focus next tab (browser and DevTools)          |
 | ◣ + F4              | Close active tab                               |
