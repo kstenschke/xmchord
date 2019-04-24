@@ -139,13 +139,13 @@ For these actions to be triggered, a window of the respective application must b
 | **Shortcut**        | **Description**                                |
 |---------------------|------------------------------------------------|
 | ◤ + D               | Show downloads                                 |
+| ◤ + R               | Reload                                         |
+| ◤ + U               | Focus URL field                                |
 | &nbsp; &nbsp; ◢ + ← | Go URL backwards                               |
 | &nbsp; &nbsp; ◢ + → | Go URL forward                                 |
 | ◣ + ←               | Focus previous tab (browser and DevTools)      |
 | ◣ + →               | Focus next tab (browser and DevTools)          |
 | ◣ + F4              | Close active tab                               |
-| ◣ + R               | Reload                                         |
-| ◣ + U               | Focus URL field                                |
 
 
 ### Evolution Email-Client
