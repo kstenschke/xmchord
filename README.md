@@ -107,13 +107,13 @@ distributions and desktop environments.
 | &nbsp; &nbsp; ◢ + M   | Launch or bring Evolution mail client to front         |
 | &nbsp; &nbsp; ◢ + N   | Launch or bring Nemo file explorer to front            |
 | &nbsp; &nbsp; ◢ + P   | Launch or bring Pidgin to front                        |
+| &nbsp; &nbsp; ◢ + R   | Toggle active window roll-up state                     |
+| &nbsp; &nbsp; ◢ + T   | Toggle active window always-on-top state               |
+| &nbsp; &nbsp; ◢ + V   | Toggle active window always-on-visible-workspace state |
 | &nbsp; &nbsp; ◢ + ←   | Focus previous tab                                     |
 | &nbsp; &nbsp; ◢ + →   | Focus next tab                                         |
 | &nbsp; &nbsp; ◢ + ↑   | Scroll to top (same as home key)                       |
 | &nbsp; &nbsp; ◢ + ↓   | Scroll to bottom (same as end key)                     |
-| ◣ + R                 | Toggle active window roll-up state                     |
-| ◣ + T                 | Toggle active window always-on-top state               |
-| ◣ + V                 | Toggle active window always-on-visible-workspace state |
 | ◣ + Numpad 7          | Tile active window to top-left 50% of screen           |
 | ◣ + Numpad 8          | Tile active window to top 50% of screen                |
 | ◣ + Numpad 9          | Tile active window to top-right 50% of screen          |
