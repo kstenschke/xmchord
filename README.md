@@ -2,7 +2,7 @@ xmchord
 =======
 
 xmchord is a productivity tool for Linux desktops, that allows binding custom functions to `chording*` events of mouse buttons
-and key presses: this way mouse buttons can be used like additional modifier keys. 
+and key presses: this way, mouse buttons become additional modifier keys. 
 
 **`*Chording:`** Chording generally means pushing several keys or buttons simultaneously to achieve a result.
 
@@ -13,18 +13,16 @@ xmchord comes with a comprehensive set of example shortcut actions.
 
 * [What does it do?](#what-does-it-do)
 * [Usage and arguments](#usage-and-arguments)
-  * [Event codes](#event-codes)
   * [Argument: `debug`](#argument-debug)
   * [Argument: `actions`](#argument-actions)
   * [Argument: `version`](#argument-version)
 * [Included shortcut actions](#included-shortcut-actions)
   * [Global actions](#global-actions-not-application-specific)
-  * [Application specifc actions](#application-speicifc-actions)
+  * [Application specific actions](#application-specific-actions)
     * [Chromium and Firefox Web-Browser](#chromium-and-firefox-web-browser)
-    * [Chromium DevTools](#chromium-devtools)
     * [Evolution Email-Client](#evolution-email-client)
     * [Gnome Terminal](#gnome-terminal)
-* [Action shell scripting tricks](#ActionRunner-shell-scripting-tricks)
+* [Action shell scripting tricks](#action-shell-scripting-tricks)
   * [1. User-specific actions](#1-user-specific-actions)
   * [2. Launching applications and switching windows](#2-launching-applications-and-switching-windows)
   * [3. Triggering window actions](#3-triggering-window-actions)
