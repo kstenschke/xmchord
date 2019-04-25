@@ -34,8 +34,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../bin/)
 
 set (XMCHORD_EXECUTABLE_NAME "xmchord")
 set (XMCHORD_VERSION_MAJOR 0)
-set (XMCHORD_VERSION_MINOR 0)
-set (XMCHORD_VERSION_PATCH 1)
+set (XMCHORD_VERSION_MINOR 1)
+set (XMCHORD_VERSION_PATCH 0)
 
 # configure config.h to be generated from config.h.in, with injected version number
 configure_file (

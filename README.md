@@ -83,8 +83,9 @@ distributions and desktop environments.
 
 **Please note:** The following third party dependencies must be installed for all the included actions to work:
 
-* [xdotool](https://www.semicomplete.com/projects/xdotool/) - fake keyboard/mouse input, window management, and more 
-* [wmctrl](http://tripie.sweb.cz/utils/wmctrl/) - command line tool to interact with an EWMH/NetWM compatible X Window Manager
+* [xdotool](https://www.semicomplete.com/projects/xdotool/) - Fake keyboard/mouse input, window management, and more 
+* [wmctrl](http://tripie.sweb.cz/utils/wmctrl/) - Command line tool to interact with an EWMH/NetWM compatible X Window Manager
+* [osd-cat](https://linux.die.net/man/1/osd_cat) - Display FILE, or standard input, on X screen
 
 
 ## Global actions (not application specific)
