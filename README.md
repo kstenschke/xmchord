@@ -95,39 +95,39 @@ distributions and desktop environments.
 ◤ ◥ = Top buttons left / right  
 ◣ ◢ = Bottom buttons left / right
 
-| **Shortcut**          | **Description**                                                 |
-|-----------------------|--------------------------------------------------------|
-| ◤ + ◢                 | Jump to next workspace                                 |
-| Right Shift + ◤ + ◢   | Jump to previous workspace                             |
-| ◣ + ◢                 | Touch bottom-right hot-corner (E.g. expose windows)    |
-| &nbsp; &nbsp; ◢ + Esc | Launch or bring System Monitor to front                |
-| &nbsp; &nbsp; ◢ + C   | Launch or bring Chromium to front                      |
-| &nbsp; &nbsp; ◢ + D   | Launch or bring DataGrip to front                      |
-| &nbsp; &nbsp; ◢ + F   | Launch or bring Firefox to front                       |
-| &nbsp; &nbsp; ◢ + K   | Launch or bring Kitematic to front                     |
-| &nbsp; &nbsp; ◢ + M   | Launch or bring Evolution mail client to front         |
-| &nbsp; &nbsp; ◢ + N   | Launch or bring Nemo file explorer to front            |
-| &nbsp; &nbsp; ◢ + P   | Launch or bring Pidgin to front                        |
-| &nbsp; &nbsp; ◢ + ←   | Focus previous tab                                     |
-| &nbsp; &nbsp; ◢ + →   | Focus next tab                                         |
-| &nbsp; &nbsp; ◢ + ↑   | Scroll to top (same as home key)                       |
-| &nbsp; &nbsp; ◢ + ↓   | Scroll to bottom (same as end key)                     |
-| ◣ + R                 | Toggle active window roll-up state                     |
-| ◣ + T                 | Toggle active window always-on-top state               |
-| ◣ + V                 | Toggle active window always-on-visible-workspace state |
-| ◣ + Numpad 7          | Tile active window to top-left 50% of screen           |
-| ◣ + Numpad 8          | Tile active window to top 50% of screen                |
-| ◣ + Numpad 9          | Tile active window to top-right 50% of screen          |
-| ◣ + Numpad 6          | Tile active window to right 50% of screen              |
-| ◣ + Numpad 3          | Tile active window to bottom-right 50% of screen       |
-| ◣ + Numpad 2          | Tile active window to bottom 50% of screen             |
-| ◣ + Numpad 1          | Tile active window to bottom-left 50% of screen        |
-| ◣ + Numpad 4          | Tile active window to left 50% of screen               |
-| ◣ + Numpad 5          | Maximize active window                                 |
-| ◣ + ←                 | Move active window to screen left of current           |
-| ◣ + →                 | Move active window to screen right of current          |
-| ◣ + ↑                 | Increase audio volume                                  |
-| ◣ + ↓                 | Decrease audio volume                                  |
+| **Shortcut**               | **Description**                                        |
+|----------------------------|--------------------------------------------------------|
+| ◤ + ◢                      | Jump to next workspace                                 |
+| Right Shift + ◤ + ◢        | Jump to previous workspace                             |
+| ◣ + ◢                      | Touch bottom-right hot-corner (E.g. expose windows)    |
+| &nbsp; &nbsp; ◢ + Esc      | Launch or bring System Monitor to front                |
+| &nbsp; &nbsp; ◢ + C        | Launch or bring Chromium to front                      |
+| &nbsp; &nbsp; ◢ + D        | Launch or bring DataGrip to front                      |
+| &nbsp; &nbsp; ◢ + F        | Launch or bring Firefox to front                       |
+| &nbsp; &nbsp; ◢ + K        | Launch or bring Kitematic to front                     |
+| &nbsp; &nbsp; ◢ + M        | Launch or bring Evolution mail client to front         |
+| &nbsp; &nbsp; ◢ + N        | Launch or bring Nemo file explorer to front            |
+| &nbsp; &nbsp; ◢ + P        | Launch or bring Pidgin to front                        |
+| &nbsp; &nbsp; ◢ + R        | Toggle active window roll-up state                     |
+| &nbsp; &nbsp; ◢ + T        | Toggle active window always-on-top state               |
+| &nbsp; &nbsp; ◢ + V        | Toggle active window always-on-visible-workspace state |
+| &nbsp; &nbsp; ◢ + ←        | Focus previous tab                                     |
+| &nbsp; &nbsp; ◢ + →        | Focus next tab                                         |
+| &nbsp; &nbsp; ◢ + ↑        | Scroll to top (same as home key)                       |
+| &nbsp; &nbsp; ◢ + ↓        | Scroll to bottom (same as end key)                     |
+| &nbsp; &nbsp; ◢ + Numpad 7 | Tile active window to top-left 50% of screen           |
+| &nbsp; &nbsp; ◢ + Numpad 8 | Tile active window to top 50% of screen                |
+| &nbsp; &nbsp; ◢ + Numpad 9 | Tile active window to top-right 50% of screen          |
+| &nbsp; &nbsp; ◢ + Numpad 6 | Tile active window to right 50% of screen              |
+| &nbsp; &nbsp; ◢ + Numpad 3 | Tile active window to bottom-right 50% of screen       |
+| &nbsp; &nbsp; ◢ + Numpad 2 | Tile active window to bottom 50% of screen             |
+| &nbsp; &nbsp; ◢ + Numpad 1 | Tile active window to bottom-left 50% of screen        |
+| &nbsp; &nbsp; ◢ + Numpad 4 | Tile active window to left 50% of screen               |
+| &nbsp; &nbsp; ◢ + Numpad 5 | Maximize active window                                 |
+| ◣ + ←                      | Move active window to screen left of current           |
+| ◣ + →                      | Move active window to screen right of current          |
+| ◣ + ↑                      | Increase audio volume                                  |
+| ◣ + ↓                      | Decrease audio volume                                  |
 
 
 ## Application specific actions
@@ -139,14 +139,14 @@ For these actions to be triggered, a window of the respective application must b
 
 | **Shortcut**        | **Description**                                |
 |---------------------|------------------------------------------------|
+| ◤ + D               | Show downloads                                 |
+| ◤ + R               | Reload                                         |
+| ◤ + U               | Focus URL field                                |
 | &nbsp; &nbsp; ◢ + ← | Go URL backwards                               |
 | &nbsp; &nbsp; ◢ + → | Go URL forward                                 |
-| &nbsp; &nbsp; ◢ + D | Show downloads                                 |
 | ◣ + ←               | Focus previous tab (browser and DevTools)      |
 | ◣ + →               | Focus next tab (browser and DevTools)          |
 | ◣ + F4              | Close active tab                               |
-| ◣ + R               | Reload                                         |
-| ◣ + U               | Focus URL field                                |
 
 
 ### Evolution Email-Client

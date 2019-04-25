@@ -107,15 +107,6 @@ void *KbdWatcher(void *x_void_ptr) {
   return nullptr;
 }
 
-// Called on termination via CTRL+C: ensure pointer destruction
-//void Terminate(int sig)
-//{
-//  std::cout << "!!!!!!";
-//
-//  exit(0);
-//}
-
-
 /**
  * Main application:
  * init: cache available action shell script files
@@ -173,9 +164,6 @@ int main(int argc, char **argv) {
 	fprintf(stderr, "Error: Failed creating key watcher thread\n");
 	return 1;
   }
-
-  // Redirect termination via CTRL+c
-//  signal(SIGINT, Terminate);
 
   // Infinite loop: mouse watcher
   // @todo move into MouseObserver model
