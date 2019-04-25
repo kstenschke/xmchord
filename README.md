@@ -1,12 +1,12 @@
 xmchord
 =======
 
-xmchord is a mouse driver extension for Linux desktops, that enables the usage of mouse buttons like additional modifier 
-keys. xmchord combines `chording*` of mouse and keyboard events: mouse buttons can be chorded with other mouse button- and/or keyboard- events. Chording events can be bound to trigger user defined shortcut actions.
+xmchord is a productivity tool for Linux desktops, that allows binding custom functions to `chording*` events of mouse buttons
+and key presses: this way mouse buttons can be used like additional modifier keys. 
 
-**`*Chording:`** Chording generally means pushing several keys or buttons simultaneously to achieve a result.  
-Mouse chording allows for example users of a two-button mouse (or trackball) to trigger the click event of a virtual
-third button. 
+**`*Chording:`** Chording generally means pushing several keys or buttons simultaneously to achieve a result.
+
+xmchord comes with a comprehensive set of example shortcut actions.
 
 
 ## Table of contents
@@ -38,7 +38,7 @@ third button.
 What does it do?
 ----------------
 
-xmchord listens for chording events of mouse buttons and keyboard keys. When observing a chording event, 
+xmchord listens for events of mouse buttons pressed together with keyboard keys. When observing a chording event, 
 xmchord generates an identifier code for the given combination of button/key presses. If there is a shell script file 
 named by the current event code, within xmchord's `actions` directory, it is executed by xmchord than.
 
@@ -55,7 +55,7 @@ Action shell scripts that perform user specific tasks, therefor must take care o
 
 ### Argument: `debug` 
 
-Running `xmchord debug` or  `xmchord d` activates tracing of event codes. While in debug mode, ActionRunner shell script 
+Running `xmchord debug` or  `xmchord d` activates tracing of event codes. While in debug mode, action shell script 
 files can be added without having to stop and restart xmchord.
 
 In regular mode, xmchord reduces processing time by indexing which actions are available once during startup.
@@ -63,7 +63,7 @@ In regular mode, xmchord reduces processing time by indexing which actions are a
 
 ### Argument: `actions` 
 
-Running `xmchord actions` or `xmchord a` lists all recognized ActionRunner shell scripts, including their inlined 
+Running `xmchord actions` or `xmchord a` lists all recognized action shell scripts, including their inlined 
 description comment (which must be prefixed with `#:`).
 
 
@@ -137,16 +137,16 @@ For these actions to be triggered, a window of the respective application must b
 
 ### Chromium and Firefox Web-Browser
 
-| **Shortcut**        | **Description**                                |
-|---------------------|------------------------------------------------|
-| ◤ + D               | Show downloads                                 |
-| ◤ + R               | Reload                                         |
-| ◤ + U               | Focus URL field                                |
-| &nbsp; &nbsp; ◢ + ← | Go URL backwards                               |
-| &nbsp; &nbsp; ◢ + → | Go URL forward                                 |
-| ◣ + ←               | Focus previous tab (browser and DevTools)      |
-| ◣ + →               | Focus next tab (browser and DevTools)          |
-| ◣ + F4              | Close active tab                               |
+| **Shortcut**        | **Description**                           |
+|---------------------|-------------------------------------------|
+| ◤ + D               | Show downloads                            |
+| ◤ + R               | Reload                                    |
+| ◤ + U               | Focus URL field                           |
+| &nbsp; &nbsp; ◢ + ← | Go URL backwards                          |
+| &nbsp; &nbsp; ◢ + → | Go URL forward                            |
+| ◣ + ←               | Focus previous tab (browser and DevTools) |
+| ◣ + →               | Focus next tab (browser and DevTools)     |
+| ◣ + F4              | Close active tab                          |
 
 
 ### Evolution Email-Client
