@@ -29,7 +29,9 @@ xmchord comes with a comprehensive set of example shortcut actions.
   * [4. Application specific shortcut actions](4-application-specific-shortcut-actions)
 * [Building from source](#building-from-source)
 * [Code Convention](#code-convention)
+* [Contributing](#contributing)
 * [Bug Reporting and Feature Requests](#bug-reporting-and-feature-requests)
+* [Changelog](#changelog)
 * [Author and License](#author-and-license)
 
 
@@ -247,9 +249,19 @@ The source code of xmchord follows the Google C++ Style Guide,
 see: https://google.github.io/styleguide/cppguide.html
 
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+
 ## Bug Reporting and Feature Requests
 
 If you find a bug or have an enhancement request, please file an issue on the github repository.
+
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md)
 
 
 ## Author and License
