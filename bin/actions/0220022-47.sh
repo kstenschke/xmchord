@@ -4,6 +4,14 @@
 
 wmctrl -r :ACTIVE: -b toggle,sticky
 
+activeWindowId=`xdotool getactivewindow`
+activeWindowProps=`xprop -id ${activeWindowId} | grep _NET_WM_STATE`
+
 me=$SUDO_USER
-#sudo -u $me notify-send "Toggled always on visible workspace (sticky)"
-sudo -u $me echo "Always on visible workspace" | osd_cat -A right -p top -f -*-*-bold-*-*-*-36-120-*-*-*-*-*-* -cgray -d 1
+
+if [[ ${activeWindowProps} == *"_NET_WM_STATE_STICKY"* ]]; then
+    sudo -u $me echo "Always on visible workspace: On" | osd_cat -A right -p top -f -*-*-bold-*-*-*-36-120-*-*-*-*-*-* -cgray -d 1
+else
+    sudo -u $me echo "Always on visible workspace: Off" | osd_cat -A right -p top -f -*-*-bold-*-*-*-36-120-*-*-*-*-*-* -cgray -d 1
+fi;
+

@@ -5,5 +5,5 @@
 amixer -D pulse sset Master 5%-
 
 me=$SUDO_USER
-#sudo -u $me notify-send "🔉--"
-sudo -u $me echo "🔉--" | osd_cat -A right -p top -f -*-*-bold-*-*-*-36-120-*-*-*-*-*-* -cgray -d 1
+currentVolume=`amixer -D pulse sget Master | grep 'Front Left: Playback' | grep -oE "[0-9]{1,3}%"`
+sudo -u $me echo "Volume lower ($currentVolume)" | osd_cat -A right -p top -f -*-*-bold-*-*-*-36-120-*-*-*-*-*-* -cgray -d 1
