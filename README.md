@@ -95,6 +95,8 @@ distributions and desktop environments.
 
 | **Shortcut**               | **Description**                                        |
 |----------------------------|--------------------------------------------------------|
+| ◤ + ←                      | Move active window to screen left of current           |
+| ◤ + →                      | Move active window to screen right of current          |
 | ◤ + ◢                      | Jump to next workspace                                 |
 | Right Shift + ◤ + ◢        | Jump to previous workspace                             |
 | ◣ + ◢                      | Touch bottom-right hot-corner (E.g. expose windows)    |
@@ -122,8 +124,6 @@ distributions and desktop environments.
 | &nbsp; &nbsp; ◢ + Numpad 1 | Tile active window to bottom-left 50% of screen        |
 | &nbsp; &nbsp; ◢ + Numpad 4 | Tile active window to left 50% of screen               |
 | &nbsp; &nbsp; ◢ + Numpad 5 | Maximize active window                                 |
-| ◣ + ←                      | Move active window to screen left of current           |
-| ◣ + →                      | Move active window to screen right of current          |
 | ◣ + ↑                      | Increase audio volume                                  |
 | ◣ + ↓                      | Decrease audio volume                                  |
 
