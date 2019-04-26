@@ -101,6 +101,7 @@ distributions and desktop environments.
 | Right Shift + ◤ + ◢        | Jump to previous workspace                             |
 | ◣ + ◢                      | Touch bottom-right hot-corner (E.g. expose windows)    |
 | &nbsp; &nbsp; ◢ + Esc      | Launch or bring System Monitor to front                |
+| &nbsp; &nbsp; ◢ + B        | Launch new terminal (bash)                             |
 | &nbsp; &nbsp; ◢ + C        | Launch or bring Chromium to front                      |
 | &nbsp; &nbsp; ◢ + D        | Launch or bring DataGrip to front                      |
 | &nbsp; &nbsp; ◢ + F        | Launch or bring Firefox to front                       |
