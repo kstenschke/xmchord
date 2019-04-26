@@ -56,25 +56,5 @@ void System::RunShellCommand(const char *command) {
 #pragma clang diagnostic pop
 }
 
-/**
- * @return title of active window, e.g. "Schreibtisch" or "gui- question - Chromium" etc.
- */
-void System::get_active_window_title() {
-  FILE *fp;
-
-  // Open the command for reading
-  fp = popen("xdotool getactivewindow getwindowname", "r");
-  if (fp == nullptr) {
-	printf("Failed to run xdotool command.\n" );
-	exit(0);
-  }
-
-  // Read 1st (should be only) line of output
-  char path[1035];
-  fgets(path, sizeof(path)-1, fp);
-  pclose(fp);
-  std::cout << path;
-}
-
 } // namespace helper
 

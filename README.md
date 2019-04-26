@@ -220,7 +220,7 @@ wmctrl -r :ACTIVE: -b toggle,above
 ### 4. Application specific shortcut actions
 
 Using e.g. [xdotool](https://www.semicomplete.com/projects/xdotool/), shell scripts can detect the currently focused 
-window's application, and vary the triggered ActionRunner accordingly.
+window's application, and vary the triggered function accordingly.
 Xdotool also allows to trigger key-combinations for various shortcuts:
 
 ```bash

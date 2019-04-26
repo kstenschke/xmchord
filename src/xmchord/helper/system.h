@@ -27,8 +27,8 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef CLASS_KEMCTL_HELPER_SYSTEM
-#define CLASS_KEMCTL_HELPER_SYSTEM
+#ifndef CLASS_XMCHORD_HELPER_SYSTEM
+#define CLASS_XMCHORD_HELPER_SYSTEM
 
 namespace helper {
 namespace System {
@@ -36,11 +36,7 @@ namespace System {
 // Get absolute path to application executable
 extern std::string GetBinaryPath(char **argv, size_t strLenExecutableName);
 
-int open_keyboard_handle();
-
 void RunShellCommand(const char *command);
-
-void get_active_window_title();
 
 } // namespace System
 } // namespace helper
