@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: BL + A - Evolution: switch to "all messages" filter
+#: BL + A - Global: Fire CTRL+A / Evolution: switch to "all messages" filter
 
 focusApplication=`cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm`
 
@@ -16,4 +16,10 @@ if [[ "$focusApplication" =~ "evolution" ]]; then
     xdotool sleep 0.1
     xdotool key Home
     xdotool key space
+
+    exit 0;
 fi
+
+echo 'select all'
+xdotool sleep 0.1
+xdotool key ctrl+a
