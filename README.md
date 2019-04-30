@@ -149,10 +149,10 @@ For these actions to be triggered, a window of the respective application must b
 | ◤ + D               | Show downloads                            |
 | ◤ + R               | Reload                                    |
 | ◤ + U               | Focus URL field                           |
-| &nbsp; &nbsp; ◢ + ← | Go URL backwards                          |
-| &nbsp; &nbsp; ◢ + → | Go URL forward                            |
-| ◣ + ←               | Focus previous tab (browser and DevTools) |
-| ◣ + →               | Focus next tab (browser and DevTools)     |
+| &nbsp; &nbsp; ◢ + ← | Focus previous tab (browser and DevTools) |
+| &nbsp; &nbsp; ◢ + → | Focus next tab (browser and DevTools)     |
+| ◣ + ←               | Go URL backwards                          |
+| ◣ + →               | Go URL forward                            |
 | ◣ + F4              | Close active tab                          |
 
 
