@@ -160,8 +160,8 @@ For these actions to be triggered, a window of the respective application must b
 
 | **Shortcut**               | **Description**                   |
 |----------------------------|-----------------------------------|
-| ◣ + A                      | Activate "all messages" filter    |
-| ◣ + U                      | Activate "unread messages" filter |
+| ◤ + A                      | Activate "all messages" filter    |
+| ◤ + U                      | Activate "unread messages" filter |
 
 
 ### Gnome Terminal
