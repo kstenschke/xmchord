@@ -127,6 +127,12 @@ distributions and desktop environments.
 | &nbsp; &nbsp; ◢ + Numpad 1 | Tile active window to bottom-left 50% of screen        |
 | &nbsp; &nbsp; ◢ + Numpad 4 | Tile active window to left 50% of screen               |
 | &nbsp; &nbsp; ◢ + Numpad 5 | Maximize active window                                 |
+| ◣ + A                      | Select all (same as CTRL+A)                            |
+| ◣ + C                      | Copy (same as CTRL+C)                                  |
+| ◣ + V                      | Paste (same as CTRL+V)                                 |
+| ◣ + X                      | Cut (same as CTRL+X)                                   |
+| ◣ + Y                      | Redo (same as CTRL+Y)                                  |
+| ◣ + Z                      | Undo (same as CTRL+Z)                                  |
 | ◣ + ↑                      | Increase audio volume                                  |
 | ◣ + ↓                      | Decrease audio volume                                  |
 
