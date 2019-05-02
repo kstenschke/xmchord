@@ -121,7 +121,7 @@ int main(int argc, char **argv) {
   if (argc > 1) {
     if (strcmp(argv[1], "actions") == 0 || strcmp(argv[1], "a") == 0
         ) {
-      // List ActionRunner files and their 1st inline comment line starting with "#:"
+      // List action files and their 1st inline comment line starting with "#:"
       helper::File::TraceActions();
       return 0;
     } else if (strcmp(argv[1], "debug") == 0 || strcmp(argv[1], "d") == 0
@@ -142,7 +142,7 @@ int main(int argc, char **argv) {
   path_actions = path_binary + "/actions/";
   action_files = helper::File::GetActionFiles(path_actions);
   if (action_files.length() == 0) {
-	std::cout << "No ActionRunner files found in: " << path_actions << "\n";
+	std::cout << "No action files found in: " << path_actions << "\n";
 	return 1;
   }
 
@@ -175,7 +175,7 @@ int main(int argc, char **argv) {
 	  buttons_code = helper::Mouse::GetEventCode(mouse_data);
 #pragma clang diagnostic pop
 
-	  // Find and invoke associated ActionRunner shell script
+	  // Find and invoke associated action shell script
 	  if (std::strcmp(buttons_code.c_str(), helper::Mouse::CODE_NOOP) != 0) {
         action_runner->EvokeAction(false, buttons_code, kbd_code);
 	  }
