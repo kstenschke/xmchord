@@ -150,16 +150,18 @@ For these actions to be triggered, a window of the respective application must b
 
 ### Chromium and Firefox Web-Browser
 
-| **Shortcut**        | **Description**                           |
-|---------------------|-------------------------------------------|
-| ◤ + D               | Show downloads                            |
-| ◤ + R               | Reload                                    |
-| ◤ + U               | Focus URL field                           |
-| &nbsp; &nbsp; ◢ + ← | Focus previous tab (browser and DevTools) |
-| &nbsp; &nbsp; ◢ + → | Focus next tab (browser and DevTools)     |
-| ◣ + ←               | Go URL backwards                          |
-| ◣ + →               | Go URL forward                            |
-| ◣ + F4              | Close active tab                          |
+| **Shortcut**        | **Description**                              |
+|---------------------|----------------------------------------------|
+| ◤ + D               | Show downloads                               |
+| ◤ + R               | Reload                                       |
+| ◤ + U               | Focus URL field                              |
+| &nbsp; &nbsp; ◢ + ← | Focus previous tab (browser and DevTools)    |
+| &nbsp; &nbsp; ◢ + → | Focus next tab (browser and DevTools)        |
+| &nbsp; &nbsp; ◢ + , | Decrement numeric ending of current URL by 1 |
+| &nbsp; &nbsp; ◢ + . | Increment numeric ending of current URL by 1 |
+| ◣ + ←               | Go URL backwards                             |
+| ◣ + →               | Go URL forward                               |
+| ◣ + F4              | Close active tab                             |
 
 
 ### Evolution Email-Client
