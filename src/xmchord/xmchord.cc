@@ -52,7 +52,7 @@
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
 
 std::string path_actions;
-std::string action_files;	// Newline separated list of existing ActionRunner filenames
+std::string action_files;	// Newline separated list of existing action filenames
 std::string path_action_file;
 
 bool debug;
