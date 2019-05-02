@@ -134,6 +134,11 @@ distributions and desktop environments.
 | ◣ + X                      | Cut (same as CTRL+X)                                   |
 | ◣ + Y                      | Redo (same as CTRL+Y)                                  |
 | ◣ + Z                      | Undo (same as CTRL+Z)                                  |
+| ◣ + Ä                      | Type large A-umlaut (helpful e.g. on swiss keyboards)  |
+| ◣ + Ö                      | Type large O-umlaut (helpful e.g. on swiss keyboards)  |
+| ◣ + Ü                      | Type large U-umlaut (helpful e.g. on swiss keyboards)  |
+| ◣ + Numpad Plus            | Zoom in (same as CTRL+Plus)                            |
+| ◣ + Numpad Minus           | Zoom out (same as CTRL+Minus)                          |
 | ◣ + ↑                      | Increase audio volume                                  |
 | ◣ + ↓                      | Decrease audio volume                                  |
 
