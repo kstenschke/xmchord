@@ -129,6 +129,7 @@ distributions and desktop environments.
 | &nbsp; &nbsp; ◢ + Numpad 5 | Maximize active window                                 |
 | ◣ + A                      | Select all (same as CTRL+A)                            |
 | ◣ + C                      | Copy (same as CTRL+C)                                  |
+| ◣ + F                      | Find (same as CTRL+F)                                  |
 | ◣ + V                      | Paste (same as CTRL+V)                                 |
 | ◣ + X                      | Cut (same as CTRL+X)                                   |
 | ◣ + Y                      | Redo (same as CTRL+Y)                                  |
