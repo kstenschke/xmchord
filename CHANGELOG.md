@@ -3,7 +3,11 @@ xmchord Changelog
 
 V0.1.0 - Not released yet
 -------------------------
-* Added OSD info to example actions: toggle active window above / sticky, audio volume up / down 
+* Added actions to increment/decrement audio volume
+* Added actions to type uppercase umlauts (helpful on swiss keyboards)  
+* Added browser actions to increment/decrement numeric ending of current url  
+* Added emulations of most system-wide ctrl-key combinations  
+* Added OSD info to example actions: toggle active window above / sticky, audio volume up / down  
 
 
 V0.0.1 - 2019/04/24
