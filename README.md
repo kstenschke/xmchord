@@ -260,7 +260,7 @@ cmake CMakeLists.txt; make
 
 ## Code Convention
 
-The source code of xmchord follows the Google C++ Style Guide, see: https://google.github.io/styleguide/cppguide.html
+The source code of xmchord follows the Google C++ Style Guide, see: https://google.github.io/styleguide/cppguide.html  
 The source code of action shell script files follows the Google Shell Style Guide, see https://google.github.io/styleguide/shell.xml
 
 
