@@ -119,13 +119,12 @@ void *KbdWatcher(void *x_void_ptr) {
  */
 int main(int argc, char **argv) {
   if (argc > 1) {
-    if (strcmp(argv[1], "actions") == 0 || strcmp(argv[1], "a") == 0
-        ) {
+    if (strcmp(argv[1], "actions") == 0 || strcmp(argv[1], "a") == 0) {
       // List action files and their 1st inline comment line starting with "#:"
       helper::File::TraceActions();
       return 0;
-    } else if (strcmp(argv[1], "debug") == 0 || strcmp(argv[1], "d") == 0
-        ) {
+    } 
+    if (strcmp(argv[1], "debug") == 0 || strcmp(argv[1], "d") == 0) {
       debug = true;
     } else if (strcmp(argv[1], "version") == 0 || strcmp(argv[1], "v") == 0) {
       std::cout << "xmchord version " <<
@@ -142,27 +141,24 @@ int main(int argc, char **argv) {
   path_actions = path_binary + "/actions/";
   action_files = helper::File::GetActionFiles(path_actions);
   if (action_files.length() == 0) {
-	std::cout << "No action files found in: " << path_actions << "\n";
-	return 1;
+	  std::cout << "No action files found in: " << path_actions << "\n";
+	  return 1;
   }
 
   ssize_t amount_mouse_bytes;
   unsigned char mouse_data[3];
 
   int device_handle_mouse = helper::Mouse::GetDeviceHandle();
-  if (device_handle_mouse == -1) {
-	return -1;
-  }
+  if (device_handle_mouse == -1) return -1;
 
   action_runner = new models::ActionRunner(debug, path_actions, action_files);
-
 
   // Launch key watcher thread
   pthread_t kbd_watcher_thread;
   int k = 0;
   if (pthread_create(&kbd_watcher_thread, nullptr, KbdWatcher, &k)) {
-	fprintf(stderr, "Error: Failed creating key watcher thread\n");
-	return 1;
+    fprintf(stderr, "Error: Failed creating key watcher thread\n");
+    return 1;
   }
 
   // Infinite loop: mouse watcher
