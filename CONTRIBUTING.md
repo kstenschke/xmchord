@@ -8,14 +8,18 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 ## Pull Request Process
 
+Pull requests concerning improvements and additions to xmchord itself and configurations (action files) are welcome.
+
 1. The source code of xmchord follows the Google C++ Style Guide,
    see: https://google.github.io/styleguide/cppguide.html
-2. Ensure all third party dependencies that are required for making from source, are fetched at build-time 
+   The source code of action shellscript files follows the Google Shell Style Guide,
+   see https://google.github.io/styleguide/shell.xml
+2. When adding third party C++ dependencies, that are required for making from source, ensure them being fetched at build-time 
    from their origin using CMakeLists.txt, and are not added/committed into this repository.
-3. Update the README.md with details of changes to the interface, this includes new execution arguments, 
-   file locations, etc.
-4. Increase the version number in CMakeLists.txt to the new version that this
-   Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
+3. Update the README.md with details of any changes to the interface, this includes new dependencies of added shell scripts,
+   new execution arguments, file locations, etc.
+4. Increase the version number in CMakeLists.txt to the new version that this Pull Request would represent. 
+   The versioning scheme we use is [SemVer](http://semver.org/).
 5. Add a description of improvements, additions, changes, bugfixes, etc. included within the pull request to the CHANGELOG.md
 
 
