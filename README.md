@@ -109,7 +109,7 @@ distributions and desktop environments.
 | &nbsp; &nbsp; ◢ + D        | Launch or bring DataGrip to front                      |
 | &nbsp; &nbsp; ◢ + F        | Launch or bring Firefox to front                       |
 | &nbsp; &nbsp; ◢ + K        | Launch or bring Kitematic to front                     |
-| &nbsp; &nbsp; ◢ + M        | Launch or bring Evolution mail client to front         |
+| &nbsp; &nbsp; ◢ + M        | Launch or bring Thunderbird mail client to front       |
 | &nbsp; &nbsp; ◢ + N        | Launch or bring Nemo file explorer to front            |
 | &nbsp; &nbsp; ◢ + P        | Launch or bring Pidgin to front                        |
 | &nbsp; &nbsp; ◢ + R        | Toggle active window roll-up state                     |
