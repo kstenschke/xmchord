@@ -32,6 +32,7 @@ xmchord comes with a comprehensive set of example shortcut actions.
 * [Contributing](#contributing)
 * [Bug Reporting and Feature Requests](#bug-reporting-and-feature-requests)
 * [Changelog](#changelog)
+* [Third Party References](#third-party-references)
 * [Author and License](#author-and-license)
 
 
