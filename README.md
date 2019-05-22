@@ -279,6 +279,12 @@ If you find a bug or have an enhancement request, please file an issue on the gi
 See [CHANGELOG.md](CHANGELOG.md)
 
 
+## Third Party References
+
+The example action for window arrangement uses splitDesk.sh, 
+based on the [original script](https://gist.github.com/culyun/a7347a58168a75ba8c06f1ddd67cf06d) by Steve Simpson.
+
+
 ## Author and License
 
 Written by Kay Stenschke.

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# @author steve_simpson     Copied from gist: https://gist.github.com/culyun/a7347a58168a75ba8c06f1ddd67cf06d
-# @author kay_stenschke     Added multi-screen offset detection for xmchord
+# @author Steve Simpson     See gist: https://gist.github.com/culyun/a7347a58168a75ba8c06f1ddd67cf06d
+# @author Kay Stenschke     Extended original script for multi-screen offset detection
 
 # define $x, $y, $w, $y from active window position and dimension
 unset x y w h
