@@ -8,6 +8,7 @@ V0.1.0 - Not released yet
 * Added browser actions to increment/decrement numeric ending of current url  
 * Added emulations of most system-wide ctrl-key combinations  
 * Added OSD info to example actions: toggle active window above / sticky, audio volume up / down  
+* Improved window arrangement action to work w/ up to three monitors
 
 
 V0.0.1 - 2019/04/24
