@@ -1,7 +1,7 @@
 xmchord
 =======
 
-xmchord is a productivity tool for Linux desktops, that allows binding custom functions to `chording*` events of mouse buttons
+xmchord is a productivity tool for Linux desktops, that allows binding custom actions to `chording*` events of mouse buttons
 and key presses: this way, mouse buttons become additional modifier keys. 
 
 **`*Chording:`** Chording generally means pushing several keys or buttons simultaneously to achieve a result.
