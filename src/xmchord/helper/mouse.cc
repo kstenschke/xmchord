@@ -40,6 +40,7 @@ namespace helper {
 int Mouse::GetDeviceHandle() {
   const char *pDeviceMice = "/dev/input/mice";
   int file_handle = open(pDeviceMice, O_RDONLY);
+
   if(file_handle == -1) {
     printf("ERROR Opening %s, try running with sudo \n", pDeviceMice);
     return -1;

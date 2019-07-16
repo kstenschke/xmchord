@@ -37,7 +37,7 @@ class ActionRunner {
   // Constructor
   ActionRunner(bool debug, std::string path_actions, std::string action_files);
 
-  void EvokeAction(bool clickWasFirst, std::string buttons_code, int kbd_code);
+  void EvokeAction(bool clickWasFirst, const std::string& buttons_code, int kbd_code);
 
  private:
   bool debug;

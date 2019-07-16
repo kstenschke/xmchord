@@ -99,8 +99,8 @@ distributions and desktop environments.
 
 | **Shortcut**               | **Description**                                        |
 |----------------------------|--------------------------------------------------------|
-| ◤ + ←                      | Move active window to screen left of current           |
-| ◤ + →                      | Move active window to screen right of current          |
+| ◤ + ←                      | Move active window to screen left of current           | TODO find better use
+| ◤ + →                      | Move active window to screen right of current          | TODO find better use
 | ◤ + ◢                      | Jump to next workspace                                 |
 | Right Shift + ◤ + ◢        | Jump to previous workspace                             |
 | ◣ + ◢                      | Touch bottom-right hot-corner (E.g. expose windows)    |
@@ -139,6 +139,8 @@ distributions and desktop environments.
 | ◣ + X                      | Cut (same as CTRL+X)                                   |
 | ◣ + Y                      | Redo (same as CTRL+Y)                                  |
 | ◣ + Z                      | Undo (same as CTRL+Z)                                  |
+| ◣ + Numpad 4               | Move active window to screen left of current           |
+| ◣ + Numpad 6               | Move active window to screen right of current          |
 | ◣ + Numpad Plus            | Zoom in (same as CTRL+Plus)                            |
 | ◣ + Numpad Minus           | Zoom out (same as CTRL+Minus)                          |
 | ◣ + ↑                      | Increase audio volume                                  |

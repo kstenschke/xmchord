@@ -44,7 +44,7 @@ bool File::FileExists(const std::string &name) {
   return access(name.c_str(), F_OK) != -1;
 }
 
-std::string File::GetActionFiles(std::string path_actions) {
+std::string File::GetActionFiles(const std::string& path_actions) {
   DIR *dir;
   struct dirent *ent;
   if ((dir = opendir(path_actions.c_str())) == nullptr) {
@@ -54,10 +54,9 @@ std::string File::GetActionFiles(std::string path_actions) {
   std::string files;
   while ((ent = readdir(dir)) != nullptr) {
 	std::string file = ent->d_name;
-	if (strcmp(ent->d_name, ".") != 0 && strcmp(ent->d_name, "..") != 0) {
-	  // @todo filter for files ending w/ ".sh"
-	  files = files.append( file ).append("\n");
-	}
+	if (strcmp(ent->d_name, ".") != 0 &&
+	    strcmp(ent->d_name, "..") != 0
+	) files = files.append( file ).append("\n");  // @todo filter for files ending w/ ".sh"
   }
   closedir(dir);
   return files;
@@ -71,15 +70,18 @@ void File::TraceActions() {
 	perror("Error: Failed opening directory");
 	return;
   }
+
   std::string files;
   while ((ent = readdir(dir)) != nullptr) {
 	char *file = ent->d_name;
-	if (strcmp(ent->d_name, ".") != 0 && strcmp(ent->d_name, "..") != 0) {
+	if (strcmp(ent->d_name, ".") != 0 &&
+	    strcmp(ent->d_name, "..") != 0
+	) {
 	  files = files.append(file).append("\n");
 
 	  char * buffer = nullptr;
 	  long length;
-	  if (strlen(file) - 3 ==helper::Textual::StrPos(file, const_cast<char *>(".sh"), 0)) {
+	  if (strlen(file) - 3 == helper::Textual::StrPos(file, const_cast<char *>(".sh"), 0)) {
 		std::string filename = "actions/";
 		filename = filename.append(file);
 		FILE *f = fopen(filename.c_str(), "rb");
@@ -91,30 +93,25 @@ void File::TraceActions() {
 
 		  std::cout << file;
 
-		  if (buffer) {
-			fread(buffer, 1, static_cast<size_t>(length), f);
-		  }
+		  if (buffer) fread(buffer, 1, static_cast<size_t>(length), f);
+
 		  fclose(f);
-		} else {
-		  std::cout << "Failed opening " << filename << "\n";
-		}
+		} else std::cout << "Failed opening " << filename << "\n";
 
 		if (buffer) {
-		  int offsetStartCommentLine = helper::Textual::StrPos(buffer, const_cast<char *>("\n#:"), 0);
-		  if (offsetStartCommentLine != -1) {
-			offsetStartCommentLine += 3;
-			int offsetEndCommentLine = helper::Textual::StrPos(buffer, const_cast<char *>("\n"), offsetStartCommentLine);
-			int commentLineLength = offsetEndCommentLine - offsetStartCommentLine;
+		  int offset_start_comment_line = helper::Textual::StrPos(buffer, const_cast<char *>("\n#:"), 0);
+		  if (offset_start_comment_line != -1) {
+			offset_start_comment_line += 3;
+			int offset_endC_comment_line = helper::Textual::StrPos(buffer, const_cast<char *>("\n"), offset_start_comment_line);
+			int comment_line_length = offset_endC_comment_line - offset_start_comment_line;
 
-			auto *commentLine = static_cast<char *>(malloc(commentLineLength + 1));
-			strncpy(commentLine, buffer + offsetStartCommentLine, commentLineLength);
-			commentLine[commentLineLength] = '\0';
+			auto *comment_line = static_cast<char *>(malloc(comment_line_length + 1));
+			strncpy(comment_line, buffer + offset_start_comment_line, comment_line_length);
+			comment_line[comment_line_length] = '\0';
 
-			std::cout << "\t- " << commentLine << "\n";
-			free(commentLine);
-		  } else {
-			std::cout << "\t- No #:-comment line found\n";
-		  }
+			std::cout << "\t- " << comment_line << "\n";
+			free(comment_line);
+		  } else std::cout << "\t- No #:-comment line found\n";
 		}
 	  }
 	}

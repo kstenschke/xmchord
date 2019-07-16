@@ -37,7 +37,7 @@ namespace File {
 
 extern bool FileExists(const std::string &name);
 
-std::string GetActionFiles(std::string path_actions);
+std::string GetActionFiles(const std::string& path_actions);
 
 void TraceActions();
 

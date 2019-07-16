@@ -1,7 +1,7 @@
 xmchord Changelog
 =================
 
-V0.1.0 - Not released yet
+V0.1.0 - 2019/07/16
 -------------------------
 * Added actions to increment/decrement audio volume
 * Added actions to type uppercase umlauts (helpful on swiss keyboards)  

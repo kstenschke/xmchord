@@ -86,9 +86,8 @@ void *KbdWatcher(void *x_void_ptr) {
 		// Key newly pressed
 		if (kbd_event.code != 0) {
 		  kbd_code = kbd_event.code;
-		  if (std::strcmp(buttons_code.c_str(), helper::Mouse::CODE_NOOP) != 0) {
+		  if (std::strcmp(buttons_code.c_str(), helper::Mouse::CODE_NOOP) != 0)
             action_runner->EvokeAction(true, buttons_code, kbd_code);
-		  }
 		}
 		break;
 	  case 2:
@@ -96,9 +95,7 @@ void *KbdWatcher(void *x_void_ptr) {
 		break;
 	  case 0:
 		// Key released
-		if (kbd_event.code != 0) {
-		  kbd_code = 0;
-		}
+		if (kbd_event.code != 0) kbd_code = 0;
 		break;
 	  default: break;
 	}
@@ -124,13 +121,12 @@ int main(int argc, char **argv) {
       helper::File::TraceActions();
       return 0;
     } 
-    if (strcmp(argv[1], "debug") == 0 || strcmp(argv[1], "d") == 0) {
-      debug = true;
-    } else if (strcmp(argv[1], "version") == 0 || strcmp(argv[1], "v") == 0) {
+    if (strcmp(argv[1], "debug") == 0 || strcmp(argv[1], "d") == 0) debug = true;
+    else if (strcmp(argv[1], "version") == 0 || strcmp(argv[1], "v") == 0)
       std::cout << "xmchord version " <<
                 XMCHORD_VERSION_MAJOR << "." << XMCHORD_VERSION_MINOR << "." << XMCHORD_VERSION_PATCH << "\n"
-                                                                                                      "Copyright (c) 2019 Kay Stenschke\n\n";
-    } else {
+                "Copyright (c) 2019 Kay Stenschke\n\n";
+    else {
       std::cout << "Argument unknown: " << argv[1] << "\n";
       return 0;
     }
@@ -172,9 +168,8 @@ int main(int argc, char **argv) {
 #pragma clang diagnostic pop
 
 	  // Find and invoke associated action shell script
-	  if (std::strcmp(buttons_code.c_str(), helper::Mouse::CODE_NOOP) != 0) {
-        action_runner->EvokeAction(false, buttons_code, kbd_code);
-	  }
+	  if (std::strcmp(buttons_code.c_str(), helper::Mouse::CODE_NOOP) != 0)
+	    action_runner->EvokeAction(false, buttons_code, kbd_code);
 	}
   }
 }
