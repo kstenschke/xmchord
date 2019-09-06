@@ -78,7 +78,7 @@ Running `xmchord version` or  `xmchord v` tests if xmchord is available and disp
 See files under `bin/actions`
 
 The included shortcut actions are scripted for use with a 
-[**Kensiongton Expert Mouse**](https://www.kensington.com/p/products/control/trackballs/expert-mouse-wired-trackball) 
+[**Kensington Expert Mouse**](https://www.kensington.com/p/products/control/trackballs/expert-mouse-wired-trackball) 
 trackball, tested on Linux Mint Cinnamon, but should be compatible or easily adjustable for other devices and Linux 
 distributions and desktop environments.
 
