@@ -84,10 +84,10 @@ distributions and desktop environments.
 
 **Please note:** The following third party dependencies must be installed for all the included actions to work:
 
-* [osd-cat](https://linux.die.net/man/1/osd_cat) - Display FILE, or standard input, on X screen 
 * [wmctrl](http://tripie.sweb.cz/utils/wmctrl/) - Command line tool to interact with an EWMH/NetWM compatible X Window Manager
 * [xdotool](https://www.semicomplete.com/projects/xdotool/) - Fake keyboard/mouse input, window management, and more
 * [xsel](https://linux.die.net/man/1/xsel) - Manipulate the X selection (Clipboard)
+* Optional (default is notify-send): [osd-cat](https://linux.die.net/man/1/osd_cat) - Display FILE, or standard input, on X screen
 
 
 ## Global actions (not application specific)

@@ -10,7 +10,9 @@ activeWindowProps=`xprop -id ${activeWindowId} | grep _NET_WM_STATE`
 me=$SUDO_USER
 
 if [[ ${activeWindowProps} == *"_NET_WM_STATE_ABOVE"* ]]; then
-    sudo -u $me echo "Always on top: On" | osd_cat -A right -p top -f -*-*-bold-*-*-*-36-120-*-*-*-*-*-* -cgray -d 1
+    #sudo -u $me echo "Always on top: On" | osd_cat -A right -p top -f -*-*-bold-*-*-*-36-120-*-*-*-*-*-* -cgray -d 1
+    notify-send "Always on top: On" -t 1
 else
-    sudo -u $me echo "Always on top: Off" | osd_cat -A right -p top -f -*-*-bold-*-*-*-36-120-*-*-*-*-*-* -cgray -d 1
+    #sudo -u $me echo "Always on top: Off" | osd_cat -A right -p top -f -*-*-bold-*-*-*-36-120-*-*-*-*-*-* -cgray -d 1
+    notify-send "Always on top: Off" -t 1
 fi;
