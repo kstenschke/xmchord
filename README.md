@@ -1,7 +1,7 @@
 xmchord
 =======
 
-[![Build Status](htt ps://travis-ci.org/kstenschke/xmchord.svg?branch=master)](https://travis-ci.org/kstenschke/xmchord)
+[![Build Status](https://travis-ci.org/kstenschke/xmchord.svg?branch=master)](https://travis-ci.org/kstenschke/xmchord)
 
 xmchord is a productivity tool for Linux desktops, that allows binding custom actions to `chording*` events of mouse buttons
 and key presses: this way, mouse buttons become additional modifier keys. 
