@@ -4,6 +4,7 @@ xmchord Changelog
 V0.1.1 - Not released yet
 -------------------------
 * Changed dependency: Default actions now use "notify-send" instead of osd-cat for notifications
+* Added Travis CI config 
 
 
 V0.1.0 - 2019/07/16

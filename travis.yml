@@ -1,0 +1,19 @@
+language: cpp
+
+os:
+  - linux
+
+compiler:
+  - gcc
+  - clang
+
+addons:
+  apt:
+    packages:
+      - cppcheck
+      - cmake
+      - gcc-4.8
+
+script:
+  - cmake CMakeLists.txt && make
+  - cppcheck --enable=all ./src
