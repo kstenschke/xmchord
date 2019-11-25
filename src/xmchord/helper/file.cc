@@ -85,11 +85,10 @@ void File::TraceActions() {
 		FILE *f = fopen(filename.c_str(), "rb");
 
         char *buffer = nullptr;
-        long length_file_content;
 
 		if (f) {
 		  fseek(f, 0, SEEK_END);
-		  length_file_content = ftell(f);
+		  long length_file_content = ftell(f);
 		  fseek(f, 0, SEEK_SET);
 		  buffer = static_cast<char *>(malloc(static_cast<size_t>(length_file_content)));
 

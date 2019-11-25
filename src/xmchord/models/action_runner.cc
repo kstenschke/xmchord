@@ -43,7 +43,6 @@ ActionRunner::ActionRunner(bool debug, std::string path_actions, std::string act
     , debug(debug)
     , action_files(std::move(action_files))
 {
-  this->action_files = std::move(action_files);
 }
 
 // Triggered after button- or key-code changed: look for and evoke related shell-script

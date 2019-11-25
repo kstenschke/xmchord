@@ -156,12 +156,10 @@ int main(int argc, char **argv) {
     return 1;
   }
 
-  ssize_t amount_mouse_bytes;
   // Infinite loop: mouse watcher
   // @todo move into MouseObserver model
   while (1) {
-    amount_mouse_bytes = read(device_handle_mouse, mouse_data, sizeof(mouse_data));
-	if (amount_mouse_bytes > 0) {
+	if (read(device_handle_mouse, mouse_data, sizeof(mouse_data)) > 0) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wuninitialized"
 	  buttons_code = helper::Mouse::GetEventCode(mouse_data);
