@@ -141,7 +141,6 @@ int main(int argc, char **argv) {
 	  return 1;
   }
 
-  ssize_t amount_mouse_bytes;
   unsigned char mouse_data[3];
 
   int device_handle_mouse = helper::Mouse::GetDeviceHandle();
@@ -157,6 +156,7 @@ int main(int argc, char **argv) {
     return 1;
   }
 
+  ssize_t amount_mouse_bytes;
   // Infinite loop: mouse watcher
   // @todo move into MouseObserver model
   while (1) {

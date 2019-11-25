@@ -38,14 +38,16 @@
 namespace models {
 
 // Constructor
-ActionRunner::ActionRunner(bool debug, std::string path_actions, std::string action_files) {
-  this->debug = debug;
-  this->path_actions = std::move(path_actions);
+ActionRunner::ActionRunner(bool debug, std::string path_actions, std::string action_files)
+    : path_actions(std::move(path_actions))
+    , debug(debug)
+    , action_files(std::move(action_files))
+{
   this->action_files = std::move(action_files);
 }
 
 // Triggered after button- or key-code changed: look for and evoke related shell-script
-void ActionRunner::EvokeAction(bool clickWasFirst, const std::string& buttons_code, int kbd_code) {
+void ActionRunner::EvokeAction(bool clickWasFirst, const std::string &buttons_code, int kbd_code) {
   std::string filename_action;
   filename_action = clickWasFirst
                     // Filename built like: <mouse_code>-<kbd_code>.sh
@@ -67,7 +69,7 @@ void ActionRunner::EvokeAction(bool clickWasFirst, const std::string& buttons_co
     // Debug mode: ActionRunner files can be added while xmchord already runs
     if (helper::File::FileExists(path_action_file)) helper::System::RunShellCommand(path_action_file.c_str());
     else std::cout << "Action file not found: " << path_action_file << "\n";
-  } else if (action_files.find(filename_action) != std::string::npos)
+  } else if (action_files.find(filename_action)!=std::string::npos)
     // Regular mode: ActionRunner files are cached on start of xmchord, when adding actions xmchord must be restarted
     helper::System::RunShellCommand(path_action_file.c_str());
 }

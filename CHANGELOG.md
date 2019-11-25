@@ -4,7 +4,8 @@ xmchord Changelog
 V0.1.1 - Not released yet
 -------------------------
 * Changed dependency: Default actions now use "notify-send" instead of osd-cat for notifications
-* Added Travis CI config 
+* Added Travis CI build config: Compile using clang and gcc, run cppcheck
+* Improved: Performance (use initialization lists, narrow-down variable scopes) 
 
 
 V0.1.0 - 2019/07/16

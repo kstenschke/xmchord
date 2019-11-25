@@ -79,21 +79,23 @@ void File::TraceActions() {
 	) {
 	  files = files.append(file).append("\n");
 
-	  char * buffer = nullptr;
-	  long length;
 	  if (strlen(file) - 3 == helper::Textual::StrPos(file, const_cast<char *>(".sh"), 0)) {
 		std::string filename = "actions/";
 		filename = filename.append(file);
 		FILE *f = fopen(filename.c_str(), "rb");
+
+        char *buffer = nullptr;
+        long length_file_content;
+
 		if (f) {
 		  fseek(f, 0, SEEK_END);
-		  length = ftell(f);
+		  length_file_content = ftell(f);
 		  fseek(f, 0, SEEK_SET);
-		  buffer = static_cast<char *>(malloc(static_cast<size_t>(length)));
+		  buffer = static_cast<char *>(malloc(static_cast<size_t>(length_file_content)));
 
 		  std::cout << file;
 
-		  if (buffer) fread(buffer, 1, static_cast<size_t>(length), f);
+		  if (buffer) fread(buffer, 1, static_cast<size_t>(length_file_content), f);
 
 		  fclose(f);
 		} else std::cout << "Failed opening " << filename << "\n";
