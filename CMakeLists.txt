@@ -30,7 +30,7 @@ cmake_minimum_required(VERSION 3.9.6)
 project(xmchord C CXX)
 
 set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../bin/)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin/)
 
 set (XMCHORD_EXECUTABLE_NAME "xmchord")
 set (XMCHORD_VERSION_MAJOR 0)
@@ -40,8 +40,7 @@ set (XMCHORD_VERSION_PATCH 1)
 # configure config.h to be generated from config.h.in, with injected version number
 configure_file (
         "src/xmchord/config.h.in"
-        "src/xmchord/config.h"
-)
+        "src/xmchord/config.h")
 
 find_package(Threads)
 

@@ -31,7 +31,9 @@
 #include <iostream>
 #include <cstdlib>
 #include <fcntl.h>
-#include <zconf.h>
+
+//#include <zconf.h>
+#include "vendor/zlib/zconf.h"
 
 #include "keyboard.h"
 

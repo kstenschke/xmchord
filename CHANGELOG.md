@@ -1,11 +1,12 @@
 xmchord Changelog
 =================
 
-V0.1.1 - Not released yet
--------------------------
+V0.1.1 - 2019/12/06
+-------------------
 * Changed dependency: Default actions now use "notify-send" instead of osd-cat for notifications
 * Added Travis CI build config: Compile using clang and gcc, run cppcheck
-* Improved: Performance (use initialization lists, narrow-down variable scopes) 
+* Improved: Performance (use initialization lists, narrow-down variable scopes)
+* Added zlib/zconf.h header to source
 
 
 V0.1.0 - 2019/07/16

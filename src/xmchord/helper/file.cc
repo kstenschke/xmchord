@@ -30,7 +30,10 @@
 #include <string>
 #include <fstream>
 #include <vector>
-#include <zconf.h>
+
+//#include <zconf.h>
+#include "vendor/zlib/zconf.h"
+
 #include <dirent.h>
 #include <cstring>
 #include <iostream>
