@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2019, Kay Stenschke
+  Copyright (c) Kay Stenschke
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
@@ -34,6 +34,6 @@
 
 #define XMCHORD_VERSION_MAJOR 0
 #define XMCHORD_VERSION_MINOR 1
-#define XMCHORD_VERSION_PATCH 1
+#define XMCHORD_VERSION_PATCH 2
 
 #endif //XMCHORD_CONFIG_H

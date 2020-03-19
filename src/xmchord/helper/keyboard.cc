@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2019, Kay Stenschke
+  Copyright (c) Kay Stenschke
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
@@ -40,10 +40,21 @@
 namespace helper {
 
 int Keyboard::GetDeviceHandle() {
+  // @todo detect arbitrary external keyboard
   const char *pDeviceKeyboad = "/dev/input/by-id/usb-Logitech_USB_Keyboard-event-kbd";
+
   int file_handle = open(pDeviceKeyboad, O_RDONLY);
 
-  if (file_handle == -1) printf("ERROR Opening %s, try running with sudo \n", pDeviceKeyboad);
+  if (file_handle != -1) return file_handle;
+
+  // Fallback: internal keyboard, e.g when using a laptop
+  // @todo detect arbitrary internal keyboard
+  pDeviceKeyboad = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
+
+  file_handle = open(pDeviceKeyboad, O_RDONLY);
+
+  if (file_handle == -1)
+    printf("ERROR Opening %s, try running with sudo \n", pDeviceKeyboad);
 
   return file_handle;
 }

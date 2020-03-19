@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2019, Kay Stenschke
+  Copyright (c) Kay Stenschke
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
@@ -37,6 +37,7 @@ int Textual::StrPos(char *hay, char *needle, int offset)
 {
   char haystack[strlen(hay)];
   strncpy(haystack, hay+offset, strlen(hay)-offset);
+
   char *p = strstr(haystack, needle);
 
   return (p)

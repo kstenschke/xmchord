@@ -3,8 +3,8 @@ xmchord
 
 [![Build Status](https://travis-ci.org/kstenschke/xmchord.svg?branch=master)](https://travis-ci.org/kstenschke/xmchord)
 
-xmchord is a productivity tool for Linux desktops, that allows binding custom actions to `chording*` events of mouse buttons
-and key presses: this way, mouse buttons become additional modifier keys. 
+xmchord is a productivity tool for Linux desktops, that allows binding custom actions to `chording*` events of mouse 
+buttons and key presses: this way, mouse buttons become additional modifier keys. 
 
 **`*Chording:`** Chording generally means pushing several keys or buttons simultaneously to achieve a result.
 
@@ -101,8 +101,8 @@ distributions and desktop environments.
 
 | **Shortcut**               | **Description**                                        |
 |----------------------------|--------------------------------------------------------|
-| ◤ + ←                      | Move active window to screen left of current           | TODO find better use
-| ◤ + →                      | Move active window to screen right of current          | TODO find better use
+| ◤ + ←                      | Move active window to screen left of current           |
+| ◤ + →                      | Move active window to screen right of current          |
 | ◤ + ◢                      | Jump to next workspace                                 |
 | Right Shift + ◤ + ◢        | Jump to previous workspace                             |
 | ◣ + ◢                      | Touch bottom-right hot-corner (E.g. expose windows)    |
@@ -266,7 +266,8 @@ cmake CMakeLists.txt; make
 ## Code Convention
 
 The source code of xmchord follows the Google C++ Style Guide, see: https://google.github.io/styleguide/cppguide.html  
-The source code of action shell script files follows the Google Shell Style Guide, see https://google.github.io/styleguide/shell.xml
+The source code of action shell script files follows the Google Shell Style Guide,
+see https://google.github.io/styleguide/shell.xml
 
 
 ## Contributing
@@ -294,6 +295,7 @@ based on the [original script](https://gist.github.com/culyun/a7347a58168a75ba8c
 
 Written by Kay Stenschke.
 xmchord is licensed under the [New BSD License](http://opensource.org/licenses/BSD-3-Clause)
+
 
 > Copyright (c), Kay Stenschke
 > All rights reserved.

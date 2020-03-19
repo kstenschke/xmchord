@@ -1,6 +1,11 @@
 xmchord Changelog
 =================
 
+V0.1.2 - 2020/03/19
+-------------------
+* Improved device compatibility: Add fallback to internal keyboard when no external keyboard present
+
+
 V0.1.1 - 2019/12/06
 -------------------
 * Changed dependency: Default actions now use "notify-send" instead of osd-cat for notifications

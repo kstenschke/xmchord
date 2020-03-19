@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2019, Kay Stenschke
+  Copyright (c) Kay Stenschke
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
@@ -50,18 +50,26 @@ bool File::FileExists(const std::string &name) {
 std::string File::GetActionFiles(const std::string& path_actions) {
   DIR *dir;
   struct dirent *ent;
+
   if ((dir = opendir(path_actions.c_str())) == nullptr) {
 	perror("Error: Failed opening actions directory.");
+
 	return "";
   }
+
   std::string files;
+
   while ((ent = readdir(dir)) != nullptr) {
 	std::string file = ent->d_name;
+
 	if (strcmp(ent->d_name, ".") != 0 &&
 	    strcmp(ent->d_name, "..") != 0
-	) files = files.append( file ).append("\n");  // @todo filter for files ending w/ ".sh"
+	)
+	  files = files.append( file ).append("\n");  // @todo filter for files ending w/ ".sh"
   }
+
   closedir(dir);
+
   return files;
 }
 
@@ -69,14 +77,18 @@ std::string File::GetActionFiles(const std::string& path_actions) {
 void File::TraceActions() {
   DIR *dir;
   struct dirent *ent;
+
   if ((dir = opendir("actions")) == nullptr) {
 	perror("Error: Failed opening directory");
+
 	return;
   }
 
   std::string files;
+
   while ((ent = readdir(dir)) != nullptr) {
 	char *file = ent->d_name;
+
 	if (strcmp(ent->d_name, ".") != 0 &&
 	    strcmp(ent->d_name, "..") != 0
 	) {
@@ -93,17 +105,20 @@ void File::TraceActions() {
 		  fseek(f, 0, SEEK_END);
 		  long length_file_content = ftell(f);
 		  fseek(f, 0, SEEK_SET);
+
 		  buffer = static_cast<char *>(malloc(static_cast<size_t>(length_file_content)));
 
 		  std::cout << file;
 
-		  if (buffer) fread(buffer, 1, static_cast<size_t>(length_file_content), f);
+		  if (buffer)
+		    fread(buffer, 1, static_cast<size_t>(length_file_content), f);
 
 		  fclose(f);
 		} else std::cout << "Failed opening " << filename << "\n";
 
 		if (buffer) {
 		  int offset_start_comment_line = helper::Textual::StrPos(buffer, const_cast<char *>("\n#:"), 0);
+
 		  if (offset_start_comment_line != -1) {
 			offset_start_comment_line += 3;
 			int offset_endC_comment_line = helper::Textual::StrPos(buffer, const_cast<char *>("\n"), offset_start_comment_line);
@@ -115,11 +130,13 @@ void File::TraceActions() {
 
 			std::cout << "\t- " << comment_line << "\n";
 			free(comment_line);
-		  } else std::cout << "\t- No #:-comment line found\n";
+		  } else
+		    std::cout << "\t- No #:-comment line found\n";
 		}
 	  }
 	}
   }
+
   closedir(dir);
 }
 

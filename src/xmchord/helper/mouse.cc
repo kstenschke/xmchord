@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2019, Kay Stenschke
+  Copyright (c) Kay Stenschke
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
@@ -45,6 +45,7 @@ int Mouse::GetDeviceHandle() {
 
   if(file_handle == -1) {
     printf("ERROR Opening %s, try running with sudo \n", pDeviceMice);
+
     return -1;
   }
 
@@ -74,15 +75,19 @@ std::string Mouse::GetEventCode(const unsigned char *mouse_data) {
 }
 
 std::string Mouse::JoinButtonBytes(int mb_1, int mb_2, int mb_3, int mb_4, int mb_5, int mb_6, int mb_7) {
-  return std::to_string(mb_1)
-	  .append(std::to_string(mb_2))
-	  .append(std::to_string(mb_3)
-				  .append(std::to_string(mb_4)
-							  .append(std::to_string(mb_5)
-										  .append(std::to_string(mb_6)
-													  .append(std::to_string(mb_7)
-													  )))));
-
+  return
+      std::to_string(mb_1)
+          .append(std::to_string(mb_2))
+          .append(std::to_string(mb_3)
+                      .append(std::to_string(mb_4)
+                                  .append(std::to_string(mb_5)
+                                              .append(std::to_string(mb_6)
+                                                          .append(std::to_string(mb_7)
+                                                          )
+                                              )
+                                  )
+                      )
+          );
 }
 
 } // namespace helper

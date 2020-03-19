@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2019, Kay Stenschke
+  Copyright (c) Kay Stenschke
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
@@ -48,15 +48,18 @@ ActionRunner::ActionRunner(bool debug, std::string path_actions, std::string act
 // Triggered after button- or key-code changed: look for and evoke related shell-script
 void ActionRunner::EvokeAction(bool clickWasFirst, const std::string &buttons_code, int kbd_code) {
   std::string filename_action;
+
   filename_action = clickWasFirst
                     // Filename built like: <mouse_code>-<kbd_code>.sh
                     ? filename_action.append(buttons_code).append("-").append(std::to_string(kbd_code)).append(".sh")
                     // Filename built like: <kbd_code>-<mouse_code>.sh
                     : filename_action.append(std::to_string(kbd_code)).append("-").append(buttons_code).append(".sh");
 
-  if (debug) std::cout << "Event code: " << filename_action.substr(0, filename_action.length() - 3) << "\n";
+  if (debug)
+    std::cout << "Event code: " << filename_action.substr(0, filename_action.length() - 3) << "\n";
 
   std::string path_action_file = path_actions;
+
   if (clickWasFirst)
     // Filename built like: <mouse_code>-<kbd_code>.sh
     path_action_file.append(buttons_code).append("-").append(std::to_string(kbd_code)).append(".sh");
@@ -66,10 +69,13 @@ void ActionRunner::EvokeAction(bool clickWasFirst, const std::string &buttons_co
 
   if (debug) {
     // Debug mode: ActionRunner files can be added while xmchord already runs
-    if (helper::File::FileExists(path_action_file)) helper::System::RunShellCommand(path_action_file.c_str());
-    else std::cout << "Action file not found: " << path_action_file << "\n";
+    if (helper::File::FileExists(path_action_file))
+      helper::System::RunShellCommand(path_action_file.c_str());
+    else
+      std::cout << "Action file not found: " << path_action_file << "\n";
   } else if (action_files.find(filename_action)!=std::string::npos)
-    // Regular mode: ActionRunner files are cached on start of xmchord, when adding actions xmchord must be restarted
+    // Regular mode: ActionRunner files are cached on start of xmchord,
+    // when adding actions xmchord must be restarted
     helper::System::RunShellCommand(path_action_file.c_str());
 }
 

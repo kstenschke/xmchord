@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2019, Kay Stenschke
+  Copyright (c) Kay Stenschke
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
@@ -44,6 +44,7 @@ std::string System::GetBinaryPath(char **argv, size_t strLenExecutableName) {
   char *path_relative = argv[0];
   char absolute_path[255];
   char *ptr;
+
   ptr = realpath(path_relative, absolute_path);
 
   unsigned long len_without_binary = std::strlen(absolute_path) - strLenExecutableName;
