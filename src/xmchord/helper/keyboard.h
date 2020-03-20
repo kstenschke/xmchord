@@ -30,6 +30,9 @@
 #ifndef CLASS_XMCHORD_HELPER_KEYBOARD
 #define CLASS_XMCHORD_HELPER_KEYBOARD
 
+#include "system.h"
+#include "textual.h"
+
 namespace helper {
 namespace Keyboard {
 

@@ -1,4 +1,4 @@
-# Copyright (c) 2019, Kay Stenschke
+# Copyright (c) Kay Stenschke
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -35,7 +35,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin/)
 set (XMCHORD_EXECUTABLE_NAME "xmchord")
 set (XMCHORD_VERSION_MAJOR 0)
 set (XMCHORD_VERSION_MINOR 1)
-set (XMCHORD_VERSION_PATCH 2)
+set (XMCHORD_VERSION_PATCH 3)
 
 # configure config.h to be generated from config.h.in, with injected version number
 configure_file (

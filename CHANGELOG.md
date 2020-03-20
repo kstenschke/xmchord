@@ -1,6 +1,11 @@
 xmchord Changelog
 =================
 
+V0.1.3 - 2020/03/19
+-------------------
+* Added auto-detection of available keyboard device
+
+
 V0.1.2 - 2020/03/19
 -------------------
 * Improved device compatibility: Add fallback to internal keyboard when no external keyboard present

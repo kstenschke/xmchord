@@ -38,6 +38,8 @@ extern std::string GetBinaryPath(char **argv, size_t strLenExecutableName);
 
 void RunShellCommand(const char *command);
 
+std::string GetShellResponse(const char *command);
+
 } // namespace System
 } // namespace helper
 

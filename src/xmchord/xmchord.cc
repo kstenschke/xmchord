@@ -105,8 +105,6 @@ void *KbdWatcher(void *x_void_ptr) {
 	  default: break;
 	}
   }
-
-  return nullptr;
 }
 
 /**

@@ -31,8 +31,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <fcntl.h>
-
-//#include <zconf.h>
 #include "vendor/zlib/zconf.h"
 
 #include "keyboard.h"
@@ -40,21 +38,27 @@
 namespace helper {
 
 int Keyboard::GetDeviceHandle() {
-  // @todo detect arbitrary external keyboard
-  const char *pDeviceKeyboad = "/dev/input/by-id/usb-Logitech_USB_Keyboard-event-kbd";
+  // Detect keyboard
+  std::string command = "ls /dev/input/by-path/*-event-kbd | head -1";
+  std::string keyboardPath = helper::System::GetShellResponse(command.c_str());
 
-  int file_handle = open(pDeviceKeyboad, O_RDONLY);
+  if (keyboardPath.empty()
+        || helper::Textual::Contains(keyboardPath, "No such file or directory")
+  ) {
+      printf("Failed to detect keyboard.\n");
 
-  if (file_handle != -1) return file_handle;
+      return -1;
+  }
 
-  // Fallback: internal keyboard, e.g when using a laptop
-  // @todo detect arbitrary internal keyboard
-  pDeviceKeyboad = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
+  // Reduce to everything before 1st newline
+  keyboardPath = helper::Textual::GetSubStrBefore(keyboardPath, "\n");
 
-  file_handle = open(pDeviceKeyboad, O_RDONLY);
+  const char *pDeviceKeyboard = keyboardPath.c_str();
+
+  int file_handle = open(pDeviceKeyboard, O_RDONLY);
 
   if (file_handle == -1)
-    printf("ERROR Opening %s, try running with sudo \n", pDeviceKeyboad);
+    printf("ERROR opening keyboard %s, try running with sudo \n", pDeviceKeyboard);
 
   return file_handle;
 }

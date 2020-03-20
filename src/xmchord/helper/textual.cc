@@ -27,8 +27,6 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include <cstring>
-
 #include "textual.h"
 
 namespace helper {
@@ -43,6 +41,18 @@ int Textual::StrPos(char *hay, char *needle, int offset)
   return (p)
 		 ? p - haystack + offset
 		 : -1;
+}
+
+bool Textual::Contains(std::string &haystack, const char *needle) {
+  return std::string::npos!=haystack.find(needle);
+}
+
+std::string Textual::GetSubStrBefore(std::string &haystack, const char *needle, unsigned long pos) {
+  size_t offsetStart = haystack.find(needle, pos);
+
+  return std::string::npos!=offsetStart
+         ? haystack.substr(0, offsetStart)
+         : haystack;
 }
 
 } // namespace helper

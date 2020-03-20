@@ -30,10 +30,17 @@
 #ifndef CLASS_XMCHORD_HELPER_TEXTUAL
 #define CLASS_XMCHORD_HELPER_TEXTUAL
 
+#include <cstring>
+#include <string>
+
 namespace helper {
 namespace Textual {
 
 int StrPos(char *hay, char *needle, int offset);
+
+bool Contains(std::string &haystack, const char *needle);
+
+std::string GetSubStrBefore(std::string &haystack, const char *needle, unsigned long pos = 0);
 
 } // namespace Textual
 } // namespace helper
