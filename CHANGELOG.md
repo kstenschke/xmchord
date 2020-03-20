@@ -1,7 +1,7 @@
 xmchord Changelog
 =================
 
-V0.1.3 - 2020/03/19
+V0.1.3 - 2020/03/20
 -------------------
 * Added auto-detection of available keyboard device
 
