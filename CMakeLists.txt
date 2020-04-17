@@ -29,31 +29,33 @@ cmake_minimum_required(VERSION 3.9.6)
 
 project(xmchord C CXX)
 
+include_directories(${CMAKE_SOURCE_DIR})
+
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin/)
 
 set (XMCHORD_EXECUTABLE_NAME "xmchord")
 set (XMCHORD_VERSION_MAJOR 0)
 set (XMCHORD_VERSION_MINOR 1)
-set (XMCHORD_VERSION_PATCH 3)
+set (XMCHORD_VERSION_PATCH 4)
 
 # configure config.h to be generated from config.h.in, with injected version number
 configure_file (
-        "src/xmchord/config.h.in"
-        "src/xmchord/config.h")
+        "xmchord/config.h.in"
+        "xmchord/config.h")
 
 find_package(Threads)
 
 include_directories("${CMAKE_SOURCE_DIR}/src")
 
 add_executable(xmchord
-        src/xmchord/helper/textual.cc
-        src/xmchord/helper/file.cc
-        src/xmchord/helper/system.cc
-        src/xmchord/helper/mouse.cc
-        src/xmchord/helper/keyboard.cc
-        src/xmchord/models/action_runner.cc
-        src/xmchord/models/action_runner.h
-        src/xmchord/xmchord.cc)
+        xmchord/helper/textual.cc
+        xmchord/helper/file.cc
+        xmchord/helper/system.cc
+        xmchord/helper/mouse.cc
+        xmchord/helper/keyboard.cc
+        xmchord/models/action_runner.cc
+        xmchord/models/action_runner.h
+        xmchord/xmchord.cc)
 
 target_link_libraries(xmchord ${CMAKE_THREAD_LIBS_INIT})

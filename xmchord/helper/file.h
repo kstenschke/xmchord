@@ -27,13 +27,31 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef XMCHORD_CONFIG_H
-#define XMCHORD_CONFIG_H
+#ifndef XMCHORD_HELPER_FILE_H_
+#define XMCHORD_HELPER_FILE_H_
 
-#define XMCHORD_EXECUTABLE_NAME "@XMCHORD_EXECUTABLE_NAME@"
+#include <xmchord/helper/textual.h>
 
-#define XMCHORD_VERSION_MAJOR @XMCHORD_VERSION_MAJOR@
-#define XMCHORD_VERSION_MINOR @XMCHORD_VERSION_MINOR@
-#define XMCHORD_VERSION_PATCH @XMCHORD_VERSION_PATCH@
+#include <dirent.h>
 
-#endif //XMCHORD_CONFIG_H
+#include <cstring>
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <vector>
+
+#include "vendor/zlib/zconf.h"
+
+namespace helper {
+namespace File {
+
+extern bool FileExists(const std::string &name);
+
+std::string GetActionFiles(const std::string& path_actions);
+
+void TraceActions();
+
+}  // namespace File
+}  // namespace helper
+
+#endif  // XMCHORD_HELPER_FILE_H_

@@ -27,21 +27,13 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef CLASS_XMCHORD_HELPER_MOUSE
-#define CLASS_XMCHORD_HELPER_MOUSE
+#ifndef XMCHORD_CONFIG_H_
+#define XMCHORD_CONFIG_H_
 
-namespace helper {
-namespace Mouse {
+#define XMCHORD_EXECUTABLE_NAME "@XMCHORD_EXECUTABLE_NAME@"
 
-static const char *const CODE_NOOP = "0000000";
+#define XMCHORD_VERSION_MAJOR @XMCHORD_VERSION_MAJOR@
+#define XMCHORD_VERSION_MINOR @XMCHORD_VERSION_MINOR@
+#define XMCHORD_VERSION_PATCH @XMCHORD_VERSION_PATCH@
 
-int GetDeviceHandle();
-
-std::string GetEventCode(const unsigned char *mouse_data);
-
-std::string JoinButtonBytes(int mb_1, int mb_2, int mb_3, int mb_4, int mb_5, int mb_6, int mb_7);
-
-} // namespace Mouse
-} // namespace helper
-
-#endif
+#endif  // XMCHORD_CONFIG_H_

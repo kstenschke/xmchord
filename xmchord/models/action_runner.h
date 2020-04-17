@@ -27,20 +27,32 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef CLASS_XMCHORD_HELPER_SYSTEM
-#define CLASS_XMCHORD_HELPER_SYSTEM
+#ifndef XMCHORD_MODELS_ACTION_RUNNER_H_
+#define XMCHORD_MODELS_ACTION_RUNNER_H_
 
-namespace helper {
-namespace System {
+#include <string>
 
-// Get absolute path to application executable
-extern std::string GetBinaryPath(char **argv, size_t strLenExecutableName);
+namespace models {
 
-void RunShellCommand(const char *command);
+class ActionRunner {
+ public:
+  // Constructor
+  ActionRunner(
+      bool debug,
+      std::string path_actions,
+      std::string action_files);
 
-std::string GetShellResponse(const char *command);
+  void EvokeAction(
+      bool clickWasFirst,
+      const std::string& buttons_code,
+      int kbd_code);
 
-} // namespace System
-} // namespace helper
+ private:
+  bool debug;
+  std::string path_actions;
+  std::string action_files;   // Newline separated list of existing action files
+};
 
-#endif
+}  // namespace models
+
+#endif  // XMCHORD_MODELS_ACTION_RUNNER_H_

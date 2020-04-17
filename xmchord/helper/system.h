@@ -27,32 +27,26 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include "textual.h"
+#ifndef XMCHORD_HELPER_SYSTEM_H_
+#define XMCHORD_HELPER_SYSTEM_H_
+
+#include <vendor/zlib/zconf.h>
+
+#include <cstring>
+#include <cstdlib>
+#include <string>
 
 namespace helper {
+namespace System {
 
-int Textual::StrPos(char *hay, char *needle, int offset)
-{
-  char haystack[strlen(hay)];
-  strncpy(haystack, hay+offset, strlen(hay)-offset);
+// Get absolute path to application executable
+extern std::string GetBinaryPath(char **argv, size_t strLenExecutableName);
 
-  char *p = strstr(haystack, needle);
+void RunShellCommand(const char *command);
 
-  return (p)
-		 ? p - haystack + offset
-		 : -1;
-}
+std::string GetShellResponse(const char *command);
 
-bool Textual::Contains(std::string &haystack, const char *needle) {
-  return std::string::npos!=haystack.find(needle);
-}
+}  // namespace System
+}  // namespace helper
 
-std::string Textual::GetSubStrBefore(std::string &haystack, const char *needle, unsigned long pos) {
-  size_t offsetStart = haystack.find(needle, pos);
-
-  return std::string::npos!=offsetStart
-         ? haystack.substr(0, offsetStart)
-         : haystack;
-}
-
-} // namespace helper
+#endif  // XMCHORD_HELPER_SYSTEM_H_

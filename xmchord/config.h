@@ -27,18 +27,13 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef CLASS_XMCHORD_HELPER_KEYBOARD
-#define CLASS_XMCHORD_HELPER_KEYBOARD
+#ifndef XMCHORD_CONFIG_H_
+#define XMCHORD_CONFIG_H_
 
-#include "system.h"
-#include "textual.h"
+#define XMCHORD_EXECUTABLE_NAME "xmchord"
 
-namespace helper {
-namespace Keyboard {
+#define XMCHORD_VERSION_MAJOR 0
+#define XMCHORD_VERSION_MINOR 1
+#define XMCHORD_VERSION_PATCH 4
 
-int GetDeviceHandle();
-
-} // namespace System
-} // namespace helper
-
-#endif
+#endif  // XMCHORD_CONFIG_H_

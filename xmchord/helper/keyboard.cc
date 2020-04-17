@@ -27,13 +27,36 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef XMCHORD_CONFIG_H
-#define XMCHORD_CONFIG_H
+#include <xmchord/helper/keyboard.h>
 
-#define XMCHORD_EXECUTABLE_NAME "xmchord"
+namespace helper {
 
-#define XMCHORD_VERSION_MAJOR 0
-#define XMCHORD_VERSION_MINOR 1
-#define XMCHORD_VERSION_PATCH 3
+int Keyboard::GetDeviceHandle() {
+  // Detect keyboard
+  std::string command = "ls /dev/input/by-path/*-event-kbd | head -1";
+  std::string keyboardPath = helper::System::GetShellResponse(command.c_str());
 
-#endif //XMCHORD_CONFIG_H
+  if (keyboardPath.empty()
+        || helper::Textual::Contains(keyboardPath, "No such file or directory")
+  ) {
+      printf("Failed to detect keyboard.\n");
+
+      return -1;
+  }
+
+  // Reduce to everything before 1st newline
+  keyboardPath = helper::Textual::GetSubStrBefore(keyboardPath, "\n");
+
+  const char *pDeviceKeyboard = keyboardPath.c_str();
+
+  int file_handle = open(pDeviceKeyboard, O_RDONLY);
+
+  if (file_handle == -1)
+    printf(
+        "ERROR opening keyboard %s, try running with sudo \n",
+        pDeviceKeyboard);
+
+  return file_handle;
+}
+
+}  // namespace helper

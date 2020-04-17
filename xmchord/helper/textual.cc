@@ -27,22 +27,34 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef CLASS_XMCHORD_HELPER_TEXTUAL
-#define CLASS_XMCHORD_HELPER_TEXTUAL
-
-#include <cstring>
-#include <string>
+#include <xmchord/helper/textual.h>
 
 namespace helper {
-namespace Textual {
 
-int StrPos(char *hay, char *needle, int offset);
+int Textual::StrPos(char *hay, char *needle, int offset) {
+  char haystack[strlen(hay)];
+  strncpy(haystack, hay+offset, strlen(hay)-offset);
 
-bool Contains(std::string &haystack, const char *needle);
+  char *p = strstr(haystack, needle);
 
-std::string GetSubStrBefore(std::string &haystack, const char *needle, unsigned long pos = 0);
+  return (p)
+     ? p - haystack + offset
+     : -1;
+}
 
-} // namespace Textual
-} // namespace helper
+bool Textual::Contains(std::string &haystack, const char *needle) {
+  return std::string::npos != haystack.find(needle);
+}
 
-#endif
+std::string Textual::GetSubStrBefore(
+    std::string &haystack,
+    const char *needle,
+    uint32_t pos) {
+  size_t offsetStart = haystack.find(needle, pos);
+
+  return std::string::npos != offsetStart
+         ? haystack.substr(0, offsetStart)
+         : haystack;
+}
+
+}  // namespace helper

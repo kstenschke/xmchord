@@ -27,21 +27,22 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef CLASS_XMCHORD_HELPER_FILE
-#define CLASS_XMCHORD_HELPER_FILE
+#ifndef XMCHORD_HELPER_KEYBOARD_H_
+#define XMCHORD_HELPER_KEYBOARD_H_
+
+#include <xmchord/helper/system.h>
+#include <xmchord/helper/textual.h>
+
+#include <fcntl.h>
 
 #include <string>
 
 namespace helper {
-namespace File {
+namespace Keyboard {
 
-extern bool FileExists(const std::string &name);
+int GetDeviceHandle();
 
-std::string GetActionFiles(const std::string& path_actions);
+}  // namespace Keyboard
+}  // namespace helper
 
-void TraceActions();
-
-} // namespace File
-} // namespace helper
-
-#endif
+#endif  // XMCHORD_HELPER_KEYBOARD_H_

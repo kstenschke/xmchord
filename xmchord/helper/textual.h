@@ -27,20 +27,25 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef XMCHORD_ACTION_H
-#define XMCHORD_ACTION_H
+#ifndef XMCHORD_HELPER_TEXTUAL_H_
+#define XMCHORD_HELPER_TEXTUAL_H_
 
-namespace models {
+#include <cstring>
+#include <string>
 
-class ChordingWatcher {
- public:
-  // Constructor
-  ChordingWatcher(bool debug, std::string path_actions, std::string action_files);
+namespace helper {
+namespace Textual {
 
- private:
-  bool debug;
-};
+int StrPos(char *hay, char *needle, int offset);
 
-} // namespace models
+bool Contains(std::string &haystack, const char *needle);
 
-#endif //XMCHORD_ACTION_H
+std::string GetSubStrBefore(
+    std::string &haystack,
+    const char *needle,
+    uint32_t pos = 0);
+
+}  // namespace Textual
+}  // namespace helper
+
+#endif  // XMCHORD_HELPER_TEXTUAL_H_

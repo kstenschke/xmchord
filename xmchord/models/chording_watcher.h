@@ -27,41 +27,25 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include <cstring>
-#include <iostream>
-#include <cstdlib>
-#include <fcntl.h>
-#include "vendor/zlib/zconf.h"
+#ifndef XMCHORD_MODELS_CHORDING_WATCHER_H_
+#define XMCHORD_MODELS_CHORDING_WATCHER_H_
 
-#include "keyboard.h"
+#include <string>
 
-namespace helper {
+namespace models {
 
-int Keyboard::GetDeviceHandle() {
-  // Detect keyboard
-  std::string command = "ls /dev/input/by-path/*-event-kbd | head -1";
-  std::string keyboardPath = helper::System::GetShellResponse(command.c_str());
+class ChordingWatcher {
+ public:
+  // Constructor
+  ChordingWatcher(
+      bool debug,
+      std::string path_actions,
+      std::string action_files);
 
-  if (keyboardPath.empty()
-        || helper::Textual::Contains(keyboardPath, "No such file or directory")
-  ) {
-      printf("Failed to detect keyboard.\n");
+ private:
+  bool debug;
+};
 
-      return -1;
-  }
+}  // namespace models
 
-  // Reduce to everything before 1st newline
-  keyboardPath = helper::Textual::GetSubStrBefore(keyboardPath, "\n");
-
-  const char *pDeviceKeyboard = keyboardPath.c_str();
-
-  int file_handle = open(pDeviceKeyboard, O_RDONLY);
-
-  if (file_handle == -1)
-    printf("ERROR opening keyboard %s, try running with sudo \n", pDeviceKeyboard);
-
-  return file_handle;
-}
-
-} // namespace helper
-
+#endif  // XMCHORD_MODELS_CHORDING_WATCHER_H_

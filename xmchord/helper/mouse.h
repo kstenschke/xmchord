@@ -27,24 +27,26 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef XMCHORD_ACTION_H
-#define XMCHORD_ACTION_H
+#ifndef XMCHORD_HELPER_MOUSE_H_
+#define XMCHORD_HELPER_MOUSE_H_
 
-namespace models {
+#include <fcntl.h>
 
-class ActionRunner {
- public:
-  // Constructor
-  ActionRunner(bool debug, std::string path_actions, std::string action_files);
+#include <string>
 
-  void EvokeAction(bool clickWasFirst, const std::string& buttons_code, int kbd_code);
+namespace helper {
+namespace Mouse {
 
- private:
-  bool debug;
-  std::string path_actions;
-  std::string action_files;	// Newline separated list of existing ActionRunner filenames
-};
+static const char *const CODE_NOOP = "0000000";
 
-} // namespace models
+int GetDeviceHandle();
 
-#endif //XMCHORD_ACTION_H
+std::string GetEventCode(const unsigned char *mouse_data);
+
+std::string JoinButtonBytes(
+    int mb_1, int mb_2, int mb_3, int mb_4, int mb_5, int mb_6, int mb_7);
+
+}  // namespace Mouse
+}  // namespace helper
+
+#endif  // XMCHORD_HELPER_MOUSE_H_
