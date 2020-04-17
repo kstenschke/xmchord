@@ -27,25 +27,32 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef XMCHORD_MODELS_CHORDING_WATCHER_H_
-#define XMCHORD_MODELS_CHORDING_WATCHER_H_
+#ifndef XMCHORD_MODEL_ACTION_RUNNER_H_
+#define XMCHORD_MODEL_ACTION_RUNNER_H_
 
 #include <string>
 
-namespace models {
+namespace model {
 
-class ChordingWatcher {
+class ActionRunner {
  public:
   // Constructor
-  ChordingWatcher(
+  ActionRunner(
       bool debug,
       std::string path_actions,
       std::string action_files);
 
+  void EvokeAction(
+      bool clickWasFirst,
+      const std::string& buttons_code,
+      int kbd_code);
+
  private:
   bool debug;
+  std::string path_actions;
+  std::string action_files;   // Newline separated list of existing action files
 };
 
-}  // namespace models
+}  // namespace model
 
-#endif  // XMCHORD_MODELS_CHORDING_WATCHER_H_
+#endif  // XMCHORD_MODEL_ACTION_RUNNER_H_

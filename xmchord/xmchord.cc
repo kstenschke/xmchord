@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include <xmchord/models/action_runner.h>
+#include <xmchord/model/action_runner.h>
 #include <xmchord/helper/system.h>
 #include <xmchord/helper/mouse.h>
 #include <xmchord/helper/keyboard.h>
@@ -37,9 +37,9 @@
 #include <linux/input.h>
 #include <sys/types.h>
 #include <pthread.h>
-#include <stdio.h>
 #include <unistd.h>
 
+#include <cstdio>
 #include <cstring>
 #include <iostream>
 #include <string>
@@ -48,15 +48,19 @@
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
 
 // TODO(kay): move static/global string variables into model
-std::string path_actions;
-std::string action_files;  // Newline separated list of existing action files
+
+// Newline separated list of existing action files
+std::string action_files;  // NOLINT [build/c++11]
+
+std::string path_actions;  // NOLINT [build/c++11]
+
+std::string buttons_code; // NOLINT [build/c++11]
 
 bool debug;
 
-std::string buttons_code;
 int kbd_code = 0;
 
-models::ActionRunner *action_runner = nullptr;
+model::ActionRunner *action_runner = nullptr;
 
 /**
  * Keyboard watcher (to run within thread)
@@ -156,7 +160,7 @@ int main(int argc, char **argv) {
 
   if (device_handle_mouse == -1) return -1;
 
-  action_runner = new models::ActionRunner(debug, path_actions, action_files);
+  action_runner = new model::ActionRunner(debug, path_actions, action_files);
 
   // Launch key watcher thread
   pthread_t kbd_watcher_thread;

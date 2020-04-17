@@ -38,10 +38,10 @@ namespace Textual {
 
 int StrPos(char *hay, char *needle, int offset);
 
-bool Contains(std::string &haystack, const char *needle);
+bool Contains(const std::string &haystack, const char *needle);
 
 std::string GetSubStrBefore(
-    std::string &haystack,
+    const std::string &haystack,
     const char *needle,
     uint32_t pos = 0);
 

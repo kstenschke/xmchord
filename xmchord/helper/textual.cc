@@ -32,8 +32,10 @@
 namespace helper {
 
 int Textual::StrPos(char *hay, char *needle, int offset) {
-  char haystack[strlen(hay)];
-  strncpy(haystack, hay+offset, strlen(hay)-offset);
+  // TODO(kay): do not use variable length array
+  char haystack[strlen(hay)];  // NOLINT [build/c++11]
+
+  strncpy(haystack, hay + offset, strlen(hay) - offset);
 
   char *p = strstr(haystack, needle);
 
@@ -42,12 +44,12 @@ int Textual::StrPos(char *hay, char *needle, int offset) {
      : -1;
 }
 
-bool Textual::Contains(std::string &haystack, const char *needle) {
+bool Textual::Contains(const std::string &haystack, const char *needle) {
   return std::string::npos != haystack.find(needle);
 }
 
 std::string Textual::GetSubStrBefore(
-    std::string &haystack,
+    const std::string &haystack,
     const char *needle,
     uint32_t pos) {
   size_t offsetStart = haystack.find(needle, pos);

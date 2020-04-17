@@ -14,6 +14,12 @@ addons:
       - cmake
       - gcc-4.8
 
+before_install:
+  - sudo pip install cpplint
+
 script:
   - cmake CMakeLists.txt && make
-  - cppcheck --enable=all ./src
+  - cppcheck --enable=all ./xmchord
+  - cpplint xmchord/* --extensions=cc,h
+  - cpplint xmchord/helper/* --extensions=cc,h
+  - cpplint xmchord/model/* --extensions=cc,h

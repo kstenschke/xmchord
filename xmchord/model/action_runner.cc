@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include <xmchord/models/action_runner.h>
+#include <xmchord/model/action_runner.h>
 
 #include <xmchord/helper/file.h>
 #include <xmchord/helper/system.h>
@@ -36,7 +36,7 @@
 #include <iostream>
 #include <utility>
 
-namespace models {
+namespace model {
 
 // Constructor
 ActionRunner::ActionRunner(
@@ -95,4 +95,4 @@ void ActionRunner::EvokeAction(
   }
 }
 
-}  // namespace models
+}  // namespace model

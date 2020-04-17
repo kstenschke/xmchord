@@ -54,8 +54,8 @@ add_executable(xmchord
         xmchord/helper/system.cc
         xmchord/helper/mouse.cc
         xmchord/helper/keyboard.cc
-        xmchord/models/action_runner.cc
-        xmchord/models/action_runner.h
+        xmchord/model/action_runner.cc
+        xmchord/model/action_runner.h
         xmchord/xmchord.cc)
 
 target_link_libraries(xmchord ${CMAKE_THREAD_LIBS_INIT})
