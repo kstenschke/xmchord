@@ -1,8 +1,8 @@
 xmchord Changelog
 =================
 
-V0.1.4 - 2020/03/20
--------------------
+V0.1.4 - Not released yet
+-------------------------
 * Cleanup to more conform w/ code conventions
 
 
