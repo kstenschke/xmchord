@@ -32,6 +32,7 @@
 namespace helper {
 
 // Get absolute path to application executable
+// TODO(kay): can use getenv("PWD") instead?
 std::string System::GetBinaryPath(char **argv, size_t strLenExecutableName) {
   char *path_relative = argv[0];
   char absolute_path[255];
