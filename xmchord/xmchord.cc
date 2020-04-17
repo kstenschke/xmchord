@@ -27,13 +27,6 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-#include <linux/input.h>
-#include <sys/types.h>
-#include <pthread.h>
-
 #include <xmchord/models/action_runner.h>
 #include <xmchord/helper/system.h>
 #include <xmchord/helper/mouse.h>
@@ -41,15 +34,22 @@
 #include <xmchord/helper/file.h>
 #include <xmchord/config.h>
 
+#include <linux/input.h>
+#include <sys/types.h>
+#include <pthread.h>
+#include <stdio.h>
+#include <unistd.h>
+
+#include <cstring>
 #include <iostream>
 #include <string>
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
 
+// TODO(kay): move static/global string variables into model
 std::string path_actions;
 std::string action_files;  // Newline separated list of existing action files
-std::string path_action_file;
 
 bool debug;
 
@@ -170,7 +170,7 @@ int main(int argc, char **argv) {
   }
 
   // Infinite loop: mouse watcher
-  // @todo move into MouseObserver model
+  // TODO(kay): move into MouseObserver model
   while (1) {
     if (read(device_handle_mouse, mouse_data, sizeof(mouse_data)) > 0) {
 #pragma clang diagnostic push
