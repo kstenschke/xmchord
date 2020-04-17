@@ -47,14 +47,8 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
 
-// TODO(kay): move static/global string variables into model
-
-// Newline separated list of existing action files
-std::string action_files;  // NOLINT [build/c++11]
-
-std::string path_actions;  // NOLINT [build/c++11]
-
-std::string buttons_code; // NOLINT [build/c++11]
+// TODO(kay): store within model instead of using a global string variable
+std::string buttons_code;  // NOLINT [build/c++11]
 
 bool debug;
 
@@ -62,13 +56,8 @@ int kbd_code = 0;
 
 model::ActionRunner *action_runner = nullptr;
 
-/**
- * Keyboard watcher (to run within thread)
- *
- * @param x_void_ptr
- * @return
- * @todo movie into KeyObserver model
- */
+// Keyboard watcher (to run within thread)
+// TODO(kay): move into KeyObserver model
 void *KbdWatcher(void *x_void_ptr) {
   int device_handle_keyboard = helper::Keyboard::GetDeviceHandle();
 
@@ -145,8 +134,10 @@ int main(int argc, char **argv) {
       argv,
       std::strlen(XMCHORD_EXECUTABLE_NAME));
 
-  path_actions = path_binary + "/actions/";
-  action_files = helper::File::GetActionFiles(path_actions);
+  std::string path_actions = path_binary + "/actions/";
+
+  // Newline separated list of existing action files
+  std::string action_files = helper::File::GetActionFiles(path_actions);
 
   if (action_files.length() == 0) {
     std::cout << "No action files found in: " << path_actions << "\n";
