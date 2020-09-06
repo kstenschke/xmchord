@@ -176,7 +176,7 @@ be focussed when the shortcut is fired.
 |---------------------|----------------------------------------------|
 | ◤ + D               | Show downloads                               |
 | ◤ + R               | Reload                                       |
-| ◤ + U               | Focus URL field                              |
+| ◤ + L or ◤ + U      | Focus URL field                              |
 | &nbsp; &nbsp; ◢ + ← | Focus previous tab (browser and DevTools)    |
 | &nbsp; &nbsp; ◢ + → | Focus next tab (browser and DevTools)        |
 | &nbsp; &nbsp; ◢ + , | Decrement numeric ending of current URL by 1 |
