@@ -80,7 +80,7 @@ with `#:`).
 
 ### Argument: `version`
 
-Running `xmchord version` or  `xmchord v` tests if xmchord is available and
+Running `xmchord version` or  `xmchord v`, tests whether xmchord is available and
 displays it's version number.
 
 
