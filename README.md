@@ -61,26 +61,26 @@ Action shell scripts that perform user specific tasks, therefor must take care
 of [running on that user's behalf](#1-user-specific-actions).
 
 
-### Argument: `debug` 
+### Argument: `debug`
 
-Running `xmchord debug` or  `xmchord d` activates tracing of event codes. While
-in debug mode, action shell script files can be added without having to stop and
-restart xmchord.
+Running `xmchord debug` or  `xmchord d`, activates tracing of event codes.
+While in debug mode, action shell script files can be added without having to
+stop and restart xmchord.
 
 In regular mode, xmchord reduces processing time by indexing which actions are
 available once during startup.
 
 
-### Argument: `actions` 
+### Argument: `actions`
 
-Running `xmchord actions` or `xmchord a` lists all recognized action shell
+Running `xmchord actions` or `xmchord a`, lists all recognized action shell
 scripts, including their inlined description comment (which must be prefixed 
 with `#:`).
 
 
-### Argument: `version` 
+### Argument: `version`
 
-Running `xmchord version` or  `xmchord v` tests if xmchord is available and
+Running `xmchord version` or  `xmchord v`, tests whether xmchord is available and
 displays it's version number.
 
 
@@ -94,7 +94,7 @@ trackball, tested on Linux Mint Cinnamon, but should be compatible or easily
 adjustable for other devices and Linux distributions and desktop environments.
 
 **Please note:** The following third party dependencies must be installed for
-all the included actions to work:
+all included actions to work:
 
 * [wmctrl](http://tripie.sweb.cz/utils/wmctrl/) - Command line tool to interact
   with an EWMH/NetWM compatible X Window Manager
