@@ -1,5 +1,6 @@
 #!/bin/bash
 
-#: BR + L: Turn on keyboard backlight
+#: BR + B: Open new bash (terminal)
 
-echo '2' | sudo tee /sys/class/leds/tpacpi::kbd_backlight/brightness
+me=$SUDO_USER
+sudo -u $me nohup gnome-terminal &> /dev/null
