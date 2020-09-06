@@ -3,10 +3,12 @@ xmchord
 
 [![Build Status](https://travis-ci.org/kstenschke/xmchord.svg?branch=master)](https://travis-ci.org/kstenschke/xmchord)
 
-xmchord is a productivity tool for Linux desktops, that allows binding custom actions to `chording*` events of mouse 
-buttons and key presses: this way, mouse buttons become additional modifier keys. 
+xmchord is a productivity tool for Linux desktops, that allows binding custom
+actions to `chording*` events of mouse buttons and key presses: this way, 
+mouse buttons become additional modifier keys. 
 
-**`*Chording:`** Chording generally means pushing several keys or buttons simultaneously to achieve a result.
+**`*Chording:`** Chording generally means pushing several keys or buttons
+simultaneously to achieve a result.
 
 xmchord comes with a comprehensive set of example shortcut actions.
 
@@ -41,9 +43,11 @@ xmchord comes with a comprehensive set of example shortcut actions.
 What does it do?
 ----------------
 
-xmchord listens for events of mouse buttons pressed together with keyboard keys. When observing a chording event, 
-xmchord generates an identifier code for the given combination of button/key presses. If there is a shell script file 
-named by the current event code, within xmchord's `actions` directory, it is executed by xmchord than.
+xmchord listens for events of mouse buttons pressed together with keyboard keys.
+When observing a chording event, xmchord generates an identifier code for the
+given combination of button/key presses. If there is a shell script file 
+named by the current event code, within xmchord's `actions` directory, it is
+executed by xmchord than.
 
 
 Usage and arguments
@@ -51,28 +55,33 @@ Usage and arguments
 
 Usage is: `sudo xmchord` 
 
-To ensure read-access to Linux device events, xmchord must be run with root privileges (e.g. via`sudo`).
-Action shell scripts that perform user specific tasks, therefor must take care of 
-[running on that user's behalf](#1-user-specific-actions).
+To ensure read-access to Linux device events, xmchord must be run with root
+privileges (e.g. via`sudo`).
+Action shell scripts that perform user specific tasks, therefor must take care 
+of [running on that user's behalf](#1-user-specific-actions).
 
 
 ### Argument: `debug` 
 
-Running `xmchord debug` or  `xmchord d` activates tracing of event codes. While in debug mode, action shell script 
-files can be added without having to stop and restart xmchord.
+Running `xmchord debug` or  `xmchord d` activates tracing of event codes. While
+in debug mode, action shell script files can be added without having to stop and
+restart xmchord.
 
-In regular mode, xmchord reduces processing time by indexing which actions are available once during startup.
+In regular mode, xmchord reduces processing time by indexing which actions are
+available once during startup.
 
 
 ### Argument: `actions` 
 
-Running `xmchord actions` or `xmchord a` lists all recognized action shell scripts, including their inlined 
-description comment (which must be prefixed with `#:`).
+Running `xmchord actions` or `xmchord a` lists all recognized action shell
+scripts, including their inlined description comment (which must be prefixed 
+with `#:`).
 
 
 ### Argument: `version` 
 
-Running `xmchord version` or  `xmchord v` tests if xmchord is available and displays it's version number.
+Running `xmchord version` or  `xmchord v` tests if xmchord is available and
+displays it's version number.
 
 
 ## Included shortcut actions
@@ -81,15 +90,20 @@ See files under `bin/actions`
 
 The included shortcut actions are scripted for use with a 
 [**Kensington Expert Mouse**](https://www.kensington.com/p/products/control/trackballs/expert-mouse-wired-trackball) 
-trackball, tested on Linux Mint Cinnamon, but should be compatible or easily adjustable for other devices and Linux 
-distributions and desktop environments.
+trackball, tested on Linux Mint Cinnamon, but should be compatible or easily
+adjustable for other devices and Linux distributions and desktop environments.
 
-**Please note:** The following third party dependencies must be installed for all the included actions to work:
+**Please note:** The following third party dependencies must be installed for
+all the included actions to work:
 
-* [wmctrl](http://tripie.sweb.cz/utils/wmctrl/) - Command line tool to interact with an EWMH/NetWM compatible X Window Manager
-* [xdotool](https://www.semicomplete.com/projects/xdotool/) - Fake keyboard/mouse input, window management, and more
-* [xsel](https://linux.die.net/man/1/xsel) - Manipulate the X selection (Clipboard)
-* Optional (default is notify-send): [osd-cat](https://linux.die.net/man/1/osd_cat) - Display FILE, or standard input, on X screen
+* [wmctrl](http://tripie.sweb.cz/utils/wmctrl/) - Command line tool to interact
+  with an EWMH/NetWM compatible X Window Manager
+* [xdotool](https://www.semicomplete.com/projects/xdotool/) - Fake
+  keyboard/mouse input, window management, and more
+* [xsel](https://linux.die.net/man/1/xsel) - Manipulate the X selection
+  (Clipboard)
+* Optional (default is notify-send): [osd-cat](https://linux.die.net/man/1/osd_cat) 
+  - Display FILE, or standard input, on X screen
 
 
 ## Global actions (not application specific)
@@ -152,7 +166,8 @@ distributions and desktop environments.
 
 ## Application specific actions
 
-For these actions to be triggered, a window of the respective application must be focussed when the shortcut is fired.
+For these actions to be triggered, a window of the respective application must
+be focussed when the shortcut is fired.
 
 
 ### Chromium and Firefox Web-Browser
@@ -194,10 +209,12 @@ For these actions to be triggered, a window of the respective application must b
 
 ### 1. User-specific actions 
 
-**Problem:** xmchord runs as root, but most actions need to be run for a specific logged-in user.
+**Problem:** xmchord runs as root, but most actions need to be run for a
+specific logged-in user.
 
 E.g. Cinnamon's D-Bus methods require being launched by a specific user. 
-The following script switches from root to original user, before triggering the desired method:
+The following script switches from root to original user, before triggering the
+desired method:
 
 ```bash
 #!/bin/bash
@@ -208,9 +225,9 @@ sudo -u $me dbus-send --dest=org.Cinnamon --print-reply /org/Cinnamon org.Cinnam
 
 ### 2. Launching applications and switching windows
 
-Shell scripts can detect whether an application is running already and using e.g. 
-[wmctrl](http://tripie.sweb.cz/utils/wmctrl/), bring a respective window onto the active workspace, or launch the 
-application.
+Shell scripts can detect whether an application is running already and using
+e.g. [wmctrl](http://tripie.sweb.cz/utils/wmctrl/), bring a respective window
+onto the active workspace, or launch the application.
 
 ```bash
 #!/bin/bash
@@ -225,8 +242,8 @@ fi
 
 ### 3. Triggering window actions
 
-Using e.g. [wmctrl](http://tripie.sweb.cz/utils/wmctrl/), shell scripts can switch the active window's roll-up and 
-always-on-top state:
+Using e.g. [wmctrl](http://tripie.sweb.cz/utils/wmctrl/), shell scripts can
+switch the active window's roll-up and always-on-top state:
 
 ```bash
 #!/bin/bash
@@ -242,9 +259,10 @@ wmctrl -r :ACTIVE: -b toggle,above
 
 ### 4. Application specific shortcut actions
 
-Using e.g. [xdotool](https://www.semicomplete.com/projects/xdotool/), shell scripts can detect the currently focused 
-window's application, and vary the triggered function accordingly.
-Xdotool also allows to trigger key-combinations for various shortcuts:
+Using e.g. [xdotool](https://www.semicomplete.com/projects/xdotool/), shell
+scripts can detect the currently focused window's application, and vary 
+the triggered function accordingly. Xdotool also allows to trigger
+key-combinations for various shortcuts:
 
 ```bash
 #!/bin/bash
@@ -266,9 +284,10 @@ cmake CMakeLists.txt; make
 
 ## Code Convention
 
-The source code of xmchord follows the Google C++ Style Guide, see: https://google.github.io/styleguide/cppguide.html  
-The source code of action shell script files follows the Google Shell Style Guide,
-see https://google.github.io/styleguide/shell.xml
+The source code of xmchord follows the Google C++ Style Guide, see: 
+https://google.github.io/styleguide/cppguide.html  
+The source code of action shell script files follows the Google Shell Style
+Guide, see https://google.github.io/styleguide/shell.xml
 
 
 ## Contributing
@@ -278,7 +297,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Bug Reporting and Feature Requests
 
-If you find a bug or have an enhancement request, please file an issue on the github repository.
+If you find a bug or have an enhancement request, please file an issue on the
+github repository.
 
 
 ## Changelog
