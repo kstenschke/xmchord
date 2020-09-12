@@ -227,7 +227,8 @@ sudo -u $me dbus-send --dest=org.Cinnamon --print-reply /org/Cinnamon org.Cinnam
 
 Shell scripts can detect whether an application is running already and using
 e.g. [wmctrl](http://tripie.sweb.cz/utils/wmctrl/), bring a respective window
-onto the active workspace, or launch the application.
+onto the active workspace, or launch the application (similar to the behavior
+on Mac OS).
 
 ```bash
 #!/bin/bash
