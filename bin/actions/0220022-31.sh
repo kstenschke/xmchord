@@ -6,6 +6,7 @@ activeWindowId=`xdotool getactivewindow`
 
 # Get active window's width and height (excludes window decoration)
 unset w
+unset h
 eval $(xwininfo -id $(xdotool getactivewindow) |
   sed -n -e "s/^ \+Width: \+\([0-9]\+\).*/w=\1/p" \
          -e "s/^ \+Height: \+\([0-9]\+\).*/h=\1/p" )
@@ -40,3 +41,6 @@ else
 
   rm ./tmp/window-width_$activeWindowId.txt
 fi
+
+unset w
+unset h
