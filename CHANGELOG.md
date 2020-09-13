@@ -1,6 +1,10 @@
 xmchord Changelog
 =================
 
+V0.1.6 - 2020/09/13
+-------------------
+* Add action to roll-up window sideways
+
 V0.1.5 - 2020/09/06
 -------------------
 * Add action to toggle keyboard backlight
