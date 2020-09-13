@@ -80,8 +80,8 @@ with `#:`).
 
 ### Argument: `version`
 
-Running `xmchord version` or  `xmchord v`, tests whether xmchord is available and
-displays it's version number.
+Running `xmchord version` or  `xmchord v`, tests whether xmchord is available
+and displays it's version number.
 
 
 ## Included shortcut actions
@@ -96,6 +96,8 @@ adjustable for other devices and Linux distributions and desktop environments.
 **Please note:** The following third party dependencies must be installed for
 all included actions to work:
 
+* [sed](https://manpages.debian.org/buster/sed/sed.1.en.html) - Stream editor 
+  for filtering and transforming text
 * [wmctrl](http://tripie.sweb.cz/utils/wmctrl/) - Command line tool to interact
   with an EWMH/NetWM compatible X Window Manager
 * [xdotool](https://www.semicomplete.com/projects/xdotool/) - Fake
