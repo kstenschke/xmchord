@@ -133,7 +133,7 @@ all included actions to work:
 | &nbsp; &nbsp; ◢ + N        | Launch or bring Nemo file explorer to front                                    |
 | &nbsp; &nbsp; ◢ + P        | Launch or bring Pidgin to front                                                |
 | &nbsp; &nbsp; ◢ + R        | Toggle active window roll-up state                                             |
-| &nbsp; &nbsp; ◢ + S        | Toggle active window "roll-sidways" state (helpful e.g. for browser inspector) |
+| &nbsp; &nbsp; ◢ + S        | Toggle active window "roll-sidways" state                                      |
 | &nbsp; &nbsp; ◢ + T        | Toggle active window always-on-top state                                       |
 | &nbsp; &nbsp; ◢ + V        | Toggle active window always-on-visible-workspace state                         |
 | &nbsp; &nbsp; ◢ + Ä        | Type large A-umlaut (helpful e.g. on swiss keyboards)                          |
