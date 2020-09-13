@@ -115,55 +115,56 @@ all included actions to work:
 ◤ ◥ = Top buttons left / right  
 ◣ ◢ = Bottom buttons left / right
 
-| **Shortcut**               | **Description**                                        |
-|----------------------------|--------------------------------------------------------|
-| ◤ + ←                      | Move active window to screen left of current           |
-| ◤ + →                      | Move active window to screen right of current          |
-| ◤ + ◢                      | Jump to next workspace                                 |
-| Right Shift + ◤ + ◢        | Jump to previous workspace                             |
-| ◣ + ◢                      | Touch bottom-right hot-corner (E.g. expose windows)    |
-| &nbsp; &nbsp; ◢ + Esc      | Launch or bring System Monitor to front                |
-| &nbsp; &nbsp; ◢ + B        | Launch new terminal (bash)                             |
-| &nbsp; &nbsp; ◢ + C        | Launch or bring Chromium to front                      |
-| &nbsp; &nbsp; ◢ + D        | Launch or bring DataGrip to front                      |
-| &nbsp; &nbsp; ◢ + F        | Launch or bring Firefox to front                       |
-| &nbsp; &nbsp; ◢ + K        | Launch or bring Kitematic to front                     |
-| &nbsp; &nbsp; ◢ + L        | Toggle keyboard backlight                              |
-| &nbsp; &nbsp; ◢ + M        | Launch or bring Thunderbird mail client to front       |
-| &nbsp; &nbsp; ◢ + N        | Launch or bring Nemo file explorer to front            |
-| &nbsp; &nbsp; ◢ + P        | Launch or bring Pidgin to front                        |
-| &nbsp; &nbsp; ◢ + R        | Toggle active window roll-up state                     |
-| &nbsp; &nbsp; ◢ + T        | Toggle active window always-on-top state               |
-| &nbsp; &nbsp; ◢ + V        | Toggle active window always-on-visible-workspace state |
-| &nbsp; &nbsp; ◢ + Ä        | Type large A-umlaut (helpful e.g. on swiss keyboards)  |
-| &nbsp; &nbsp; ◢ + Ö        | Type large O-umlaut (helpful e.g. on swiss keyboards)  |
-| &nbsp; &nbsp; ◢ + Ü        | Type large U-umlaut (helpful e.g. on swiss keyboards)  |
-| &nbsp; &nbsp; ◢ + ←        | Focus previous tab                                     |
-| &nbsp; &nbsp; ◢ + →        | Focus next tab                                         |
-| &nbsp; &nbsp; ◢ + ↑        | Scroll to top (same as home key)                       |
-| &nbsp; &nbsp; ◢ + ↓        | Scroll to bottom (same as end key)                     |
-| &nbsp; &nbsp; ◢ + Numpad 7 | Tile active window to top-left 50% of screen           |
-| &nbsp; &nbsp; ◢ + Numpad 8 | Tile active window to top 50% of screen                |
-| &nbsp; &nbsp; ◢ + Numpad 9 | Tile active window to top-right 50% of screen          |
-| &nbsp; &nbsp; ◢ + Numpad 6 | Tile active window to right 50% of screen              |
-| &nbsp; &nbsp; ◢ + Numpad 3 | Tile active window to bottom-right 50% of screen       |
-| &nbsp; &nbsp; ◢ + Numpad 2 | Tile active window to bottom 50% of screen             |
-| &nbsp; &nbsp; ◢ + Numpad 1 | Tile active window to bottom-left 50% of screen        |
-| &nbsp; &nbsp; ◢ + Numpad 4 | Tile active window to left 50% of screen               |
-| &nbsp; &nbsp; ◢ + Numpad 5 | Maximize active window                                 |
-| ◣ + A                      | Select all (same as CTRL+A)                            |
-| ◣ + C                      | Copy (same as CTRL+C)                                  |
-| ◣ + F                      | Find (same as CTRL+F)                                  |
-| ◣ + V                      | Paste (same as CTRL+V)                                 |
-| ◣ + X                      | Cut (same as CTRL+X)                                   |
-| ◣ + Y                      | Redo (same as CTRL+Y)                                  |
-| ◣ + Z                      | Undo (same as CTRL+Z)                                  |
-| ◣ + Numpad 4               | Move active window to screen left of current           |
-| ◣ + Numpad 6               | Move active window to screen right of current          |
-| ◣ + Numpad Plus            | Zoom in (same as CTRL+Plus)                            |
-| ◣ + Numpad Minus           | Zoom out (same as CTRL+Minus)                          |
-| ◣ + ↑                      | Increase audio volume                                  |
-| ◣ + ↓                      | Decrease audio volume                                  |
+| **Shortcut**               | **Description**                                                                |
+|----------------------------|--------------------------------------------------------------------------------|
+| ◤ + ←                      | Move active window to screen left of current                                   |
+| ◤ + →                      | Move active window to screen right of current                                  |
+| ◤ + ◢                      | Jump to next workspace                                                         |
+| Right Shift + ◤ + ◢        | Jump to previous workspace                                                     |
+| ◣ + ◢                      | Touch bottom-right hot-corner (E.g. expose windows)                            |
+| &nbsp; &nbsp; ◢ + Esc      | Launch or bring System Monitor to front                                        |
+| &nbsp; &nbsp; ◢ + B        | Launch new terminal (bash)                                                     |
+| &nbsp; &nbsp; ◢ + C        | Launch or bring Chromium to front                                              |
+| &nbsp; &nbsp; ◢ + D        | Launch or bring DataGrip to front                                              |
+| &nbsp; &nbsp; ◢ + F        | Launch or bring Firefox to front                                               |
+| &nbsp; &nbsp; ◢ + K        | Launch or bring Kitematic to front                                             |
+| &nbsp; &nbsp; ◢ + L        | Toggle keyboard backlight                                                      |
+| &nbsp; &nbsp; ◢ + M        | Launch or bring Thunderbird mail client to front                               |
+| &nbsp; &nbsp; ◢ + N        | Launch or bring Nemo file explorer to front                                    |
+| &nbsp; &nbsp; ◢ + P        | Launch or bring Pidgin to front                                                |
+| &nbsp; &nbsp; ◢ + R        | Toggle active window roll-up state                                             |
+| &nbsp; &nbsp; ◢ + S        | Toggle active window "roll-sidways" state (helpful e.g. for browser inspector) |
+| &nbsp; &nbsp; ◢ + T        | Toggle active window always-on-top state                                       |
+| &nbsp; &nbsp; ◢ + V        | Toggle active window always-on-visible-workspace state                         |
+| &nbsp; &nbsp; ◢ + Ä        | Type large A-umlaut (helpful e.g. on swiss keyboards)                          |
+| &nbsp; &nbsp; ◢ + Ö        | Type large O-umlaut (helpful e.g. on swiss keyboards)                          |
+| &nbsp; &nbsp; ◢ + Ü        | Type large U-umlaut (helpful e.g. on swiss keyboards)                          |
+| &nbsp; &nbsp; ◢ + ←        | Focus previous tab                                                             |
+| &nbsp; &nbsp; ◢ + →        | Focus next tab                                                                 |
+| &nbsp; &nbsp; ◢ + ↑        | Scroll to top (same as home key)                                               |
+| &nbsp; &nbsp; ◢ + ↓        | Scroll to bottom (same as end key)                                             |
+| &nbsp; &nbsp; ◢ + Numpad 7 | Tile active window to top-left 50% of screen                                   |
+| &nbsp; &nbsp; ◢ + Numpad 8 | Tile active window to top 50% of screen                                        |
+| &nbsp; &nbsp; ◢ + Numpad 9 | Tile active window to top-right 50% of screen                                  |
+| &nbsp; &nbsp; ◢ + Numpad 6 | Tile active window to right 50% of screen                                      |
+| &nbsp; &nbsp; ◢ + Numpad 3 | Tile active window to bottom-right 50% of screen                               |
+| &nbsp; &nbsp; ◢ + Numpad 2 | Tile active window to bottom 50% of screen                                     |
+| &nbsp; &nbsp; ◢ + Numpad 1 | Tile active window to bottom-left 50% of screen                                |
+| &nbsp; &nbsp; ◢ + Numpad 4 | Tile active window to left 50% of screen                                       |
+| &nbsp; &nbsp; ◢ + Numpad 5 | Maximize active window                                                         |
+| ◣ + A                      | Select all (same as CTRL+A)                                                    |
+| ◣ + C                      | Copy (same as CTRL+C)                                                          |
+| ◣ + F                      | Find (same as CTRL+F)                                                          |
+| ◣ + V                      | Paste (same as CTRL+V)                                                         |
+| ◣ + X                      | Cut (same as CTRL+X)                                                           |
+| ◣ + Y                      | Redo (same as CTRL+Y)                                                          |
+| ◣ + Z                      | Undo (same as CTRL+Z)                                                          |
+| ◣ + Numpad 4               | Move active window to screen left of current                                   |
+| ◣ + Numpad 6               | Move active window to screen right of current                                  |
+| ◣ + Numpad Plus            | Zoom in (same as CTRL+Plus)                                                    |
+| ◣ + Numpad Minus           | Zoom out (same as CTRL+Minus)                                                  |
+| ◣ + ↑                      | Increase audio volume                                                          |
+| ◣ + ↓                      | Decrease audio volume                                                          |
 
 
 ## Application specific actions
