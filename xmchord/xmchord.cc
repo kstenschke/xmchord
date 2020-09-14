@@ -159,6 +159,8 @@ int main(int argc, char **argv) {
   int k = 0;
 
   if (pthread_create(&kbd_watcher_thread, nullptr, KbdWatcher, &k)) {
+    delete action_runner;
+
     fprintf(stderr, "Error: Failed creating key watcher thread\n");
 
     return 1;
