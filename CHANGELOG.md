@@ -1,6 +1,10 @@
 xmchord Changelog
 =================
 
+V0.1.7 - 2020/12/04
+-------------------
+* Add action to type current UNIX timestamp
+
 V0.1.6 - 2020/09/13
 -------------------
 * Add action to roll-up window sideways
