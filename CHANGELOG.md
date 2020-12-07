@@ -1,6 +1,10 @@
 xmchord Changelog
 =================
 
+V0.1.8 - 2020/12/07
+-------------------
+* Add Gnome Screenshot action: ◣ + AltGr = Click than hit Esc key
+
 V0.1.7 - 2020/12/04
 -------------------
 * Add action to type current UNIX timestamp

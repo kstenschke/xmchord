@@ -209,6 +209,13 @@ be focussed when the shortcut is fired.
 | ◣ + →                      | Focus next tab     |
 
 
+### Gnome Screenshot
+
+| **Shortcut** | **Description**                                                                                               |
+|--------------|---------------------------------------------------------------------------------------------------------------|
+| ◣ + AltGr    | Click than hit Esc key - helpful for clicking [copy to clipboard] button and closing screenhot popup at once |
+
+
 ## Action shell scripting tricks
 
 
