@@ -1,6 +1,10 @@
 xmchord Changelog
 =================
 
+V0.1.9 - Not released yet
+-------------------------
+* Add Chromium/Firefox action: ◣ + D = Duplicate tab
+
 V0.1.8 - 2020/12/07
 -------------------
 * Add Gnome Screenshot action: ◣ + AltGr = Click than hit Esc key

@@ -1,11 +1,22 @@
 #!/bin/bash
 
-#: BR + D: Bring DataGrip window to front
+#: BR + D: If Chromium or firefox active: Duplicate tab. Else: Bring DataGrip window to front
 
-# Bring DataGrip window to front
-if pidof -s datagrip.sh > /dev/null; then
-    wmctrl -a datagrip
+focusApplication=`cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm`
+
+if [[ "$focusApplication" =~ "chromium-browse" ]] || [[ "$focusApplication" =~ "firefox" ]]; then
+    xdotool sleep 0.1
+    xdotool key Ctrl+l
+    xdotool key Ctrl+c
+    xdotool key Ctrl+t
+    xdotool key Ctrl+v
+    xdotool key Return
 else
-    me=$SUDO_USER
-    sudo -u $me nohup datagrip > /dev/null &
+  # Bring DataGrip window to front
+  if pidof -s datagrip.sh > /dev/null; then
+      wmctrl -a datagrip
+  else
+      me=$SUDO_USER
+      sudo -u $me nohup datagrip > /dev/null &
+  fi
 fi
