@@ -212,13 +212,19 @@ be focussed when the shortcut is fired.
 
 ### Gnome Screenshot
 
-| **Shortcut** | **Description**                                                                                               |
-|--------------|---------------------------------------------------------------------------------------------------------------|
-| ◣ + AltGr    | Click than hit Esc key - helpful for clicking [copy to clipboard] button and closing screenhot popup at once |
+These actions automate the steps for transferring screenshots made with 
+Gnome Screenshot into other applications.  
+For them to work, the mouse must be hovering Gnome Screenshot's 
+[copy to clipboard] button when fired. 
+
+| **Shortcut** | **Description**                                                                                       |
+|--------------|-------------------------------------------------------------------------------------------------------|
+| ◢ + AltGr    | Click and hit [Esc] = Copy to clipboard and close Gnome Screenhot popup at once                       |
+| ◢ + G        | Click, hit [Esc], focus Gimp (if running) and paste image from clipboard as new image                 |
+| ◣ + V        | Click, hit [Esc], store clipboard to temporary image file and open image file in Image Viewer (xview) |
 
 
 ## Action shell scripting tricks
-
 
 ### 1. User-specific actions 
 

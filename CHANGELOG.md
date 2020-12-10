@@ -3,7 +3,9 @@ xmchord Changelog
 
 V0.1.9 - Not released yet
 -------------------------
-* Add Chromium/Firefox action: ◣ + D = Duplicate tab
+* Add Chromium/Firefox action: ◢ + D = Duplicate tab
+* Add Gnome Screenshot action: ◢ + G = Paste clipboard image into Gimp
+* Add Gnome Screenshot action: ◣ + V = Export clipboard image to temporary file and view in Image Viewer
 
 V0.1.8 - 2020/12/07
 -------------------
