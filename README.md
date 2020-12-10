@@ -27,6 +27,7 @@ xmchord comes with a comprehensive set of example shortcut actions.
     * [Chromium and Firefox Web-Browser](#chromium-and-firefox-web-browser)
     * [Evolution Email-Client](#evolution-email-client)
     * [Gnome Terminal](#gnome-terminal)
+    * [Gnome Screenshot](#gnome-screenshot)
 * [Action shell scripting tricks](#action-shell-scripting-tricks)
   * [1. User-specific actions](#1-user-specific-actions)
   * [2. Launching applications and switching windows](#2-launching-applications-and-switching-windows)
