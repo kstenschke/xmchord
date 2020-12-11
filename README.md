@@ -187,7 +187,7 @@ be focussed when the shortcut is fired.
 | &nbsp; &nbsp; ◢ + →          | Focus next tab (browser and DevTools)        |
 | &nbsp; &nbsp; ◢ + ,          | Decrement numeric ending of current URL by 1 |
 | &nbsp; &nbsp; ◢ + .          | Increment numeric ending of current URL by 1 |
-| ◣ + D                        | Duplicate active tab                         |
+| ◢ + D                        | Duplicate active tab                         |
 | ◣ + ←                        | Go URL backwards                             |
 | ◣ + →                        | Go URL forward                               |
 | ◣ + F4                       | Close active tab                             |
