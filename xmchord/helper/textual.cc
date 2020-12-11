@@ -59,4 +59,25 @@ std::string Textual::GetSubStrBefore(
          : haystack;
 }
 
+// Split given string by given character delimiter into vector of strings
+std::vector<std::string> Textual::Explode(std::string const &str,
+                                          char delimiter) {
+  std::vector<std::string> result;
+  std::istringstream iss(str);
+
+  for (std::string token; std::getline(iss, token, delimiter);)
+    result.push_back(std::move(token));
+
+  return result;
+}
+
+// Check whether given string starts w/ given prefix
+bool Textual::StartsWith(const char *str, const char *prefix) {
+  return 0 == strncmp(str, prefix, strlen(prefix));
+}
+
+bool Textual::StartsWith(const std::string *str, const char *prefix) {
+  return str->substr(0, strlen(prefix)) == prefix;
+}
+
 }  // namespace helper

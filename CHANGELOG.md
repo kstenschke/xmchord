@@ -1,8 +1,9 @@
 xmchord Changelog
 =================
 
-V0.1.9 - Not released yet
+V0.2.0 - Not released yet
 -------------------------
+* Added initial choosing of keyboard device
 * Add Chromium/Firefox action: ◢ + D = Duplicate tab
 * Add Gnome Screenshot action: ◢ + G = Paste clipboard image into Gimp
 * Add Gnome Screenshot action: ◣ + V = Export clipboard image to temporary file and view in Image Viewer

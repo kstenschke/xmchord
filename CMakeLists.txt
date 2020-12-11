@@ -53,7 +53,7 @@ add_executable(xmchord
         xmchord/helper/file.cc
         xmchord/helper/system.cc
         xmchord/helper/mouse.cc
-        xmchord/helper/keyboard.cc
+        xmchord/model/kbd_device.cc
         xmchord/model/action_runner.cc
         xmchord/model/action_runner.h
         xmchord/xmchord.cc)

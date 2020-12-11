@@ -30,7 +30,7 @@
 #include <xmchord/model/action_runner.h>
 #include <xmchord/helper/system.h>
 #include <xmchord/helper/mouse.h>
-#include <xmchord/helper/keyboard.h>
+#include <xmchord/model/kbd_device.h>
 #include <xmchord/helper/file.h>
 #include <xmchord/config.h>
 
@@ -59,7 +59,7 @@ model::ActionRunner *action_runner = nullptr;
 // Keyboard watcher (to run within thread)
 // TODO(kay): move into KeyObserver model
 void *KbdWatcher(void *x_void_ptr) {
-  int device_handle_keyboard = helper::Keyboard::GetDeviceHandle();
+  int device_handle_keyboard = model::KbdDevice::GetDeviceHandle();
 
   if (device_handle_keyboard == -1) {
     std::cout << "Error: Failed opening keyboard device handle\n";
@@ -104,7 +104,7 @@ void *KbdWatcher(void *x_void_ptr) {
  * endlessly run mouse watcher
  *
  * @param argc Amount of arguments received
- * @param argv Array of arguments received, argv[0] is name and path of executable
+ * @param argv Array: arguments received, argv[0] is name and path of executable
  */
 int main(int argc, char **argv) {
   if (argc > 1) {

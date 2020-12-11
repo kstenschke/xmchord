@@ -32,6 +32,8 @@
 
 #include <cstring>
 #include <string>
+#include <vector>
+#include <sstream>
 
 namespace helper {
 namespace Textual {
@@ -44,6 +46,11 @@ std::string GetSubStrBefore(
     const std::string &haystack,
     const char *needle,
     uint32_t pos = 0);
+
+std::vector<std::string> Explode(std::string const &str, char delimiter);
+
+bool StartsWith(const char *str, const char *prefix);
+bool StartsWith(const std::string *str, const char *prefix);
 
 }  // namespace Textual
 }  // namespace helper

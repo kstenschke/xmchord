@@ -37,11 +37,19 @@
 
 #include <string>
 
-namespace helper {
-namespace Keyboard {
+namespace model {
+namespace KbdDevice {
 
 int GetDeviceHandle();
 
+void getDevicesByPath(
+    std::vector<std::string> *devices,
+    const std::string &device_path);
+
+void PrintDevicesList(const std::vector<std::string> &devices,
+                      int amount_devices_by_path);
+
+int ChoseDevice();
 }  // namespace Keyboard
 }  // namespace helper
 
