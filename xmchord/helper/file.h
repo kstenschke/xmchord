@@ -51,10 +51,10 @@ bool Remove(const char *file_path);
 
 std::string GetLastPathSegment(std::string path);
 
-bool WriteToNewFile(const std::string &filename, std::string &content);
+bool WriteToNewFile(const std::string &filename, const std::string &content);
 
 std::string GetFileContents(std::ifstream &file);
-std::string GetFileContents(std::string &filename);
+std::string GetFileContents(const std::string &filename);
 
 std::string GetActionFiles(const std::string& path_actions);
 

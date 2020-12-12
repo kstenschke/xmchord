@@ -162,7 +162,7 @@ void File::TraceActions() {
   closedir(dir);
 }
 
-std::string File::GetFileContents(std::string &filename) {
+std::string File::GetFileContents(const std::string &filename) {
   std::ifstream file(filename);
 
   return GetFileContents(file);
@@ -183,7 +183,8 @@ std::string File::GetFileContents(std::ifstream &file) {
   return str;
 }
 
-bool File::WriteToNewFile(const std::string &filename, std::string &content) {
+bool File::WriteToNewFile(const std::string &filename,
+                          const std::string &content) {
   std::ofstream out_file(filename);
   out_file << content;
   out_file.close();

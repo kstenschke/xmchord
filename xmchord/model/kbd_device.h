@@ -27,8 +27,8 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef XMCHORD_HELPER_KEYBOARD_H_
-#define XMCHORD_HELPER_KEYBOARD_H_
+#ifndef XMCHORD_MODEL_KBD_DEVICE_H_
+#define XMCHORD_MODEL_KBD_DEVICE_H_
 
 #include <xmchord/helper/system.h>
 #include <xmchord/helper/textual.h>
@@ -37,7 +37,6 @@
 #include <fcntl.h>
 #include <iostream>
 #include <string>
-#include <xmchord/helper/file.h>
 
 namespace model {
 class KbdDevice {
@@ -70,4 +69,4 @@ class KbdDevice {
 };  // class Keyboard
 }  // namespace helper
 
-#endif  // XMCHORD_HELPER_KEYBOARD_H_
+#endif  // XMCHORD_MODEL_KBD_DEVICE_H_
