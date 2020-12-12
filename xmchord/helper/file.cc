@@ -175,7 +175,7 @@ std::string File::GetFileContents(std::ifstream &file) {
   file.seekg(0, std::ios::beg);
 
   // Read the whole file into the buffer
-  std::vector<char> buffer(static_cast<unsigned long>(length));
+  std::vector<char> buffer(static_cast<uint64_t>(length));
   file.read(&buffer[0], length);
 
   std::string str(buffer.begin(), buffer.end());

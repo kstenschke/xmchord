@@ -6,7 +6,7 @@ V0.2.0 - 2020/12/12
 * Add keyboard device selection to startup
 * Add Chromium/Firefox action: ◢ + D = Duplicate tab
 * Add Gnome Screenshot action: ◢ + G = Paste clipboard image into Gimp
-* Add Gnome Screenshot action: ◣ + V = Export clipboard image to temporary file and view in Image Viewer
+* Add Gnome Screenshot action: ◣ + V = Export clipboard image to temporary file and view in feh Image Viewer
 * Improve event-code cache: Click w/o chording wasn't mapped correctly / invoked possibly unnecessary file read attempt
 
 V0.1.8 - 2020/12/07

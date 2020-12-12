@@ -98,16 +98,13 @@ adjustable for other devices and Linux distributions and desktop environments.
 **Please note:** The following third party dependencies must be installed for
 all included actions to work:
 
-* [sed](https://manpages.debian.org/buster/sed/sed.1.en.html) - Stream editor 
-  for filtering and transforming text
-* [wmctrl](http://tripie.sweb.cz/utils/wmctrl/) - Command line tool to interact
-  with an EWMH/NetWM compatible X Window Manager
-* [xdotool](https://www.semicomplete.com/projects/xdotool/) - Fake
-  keyboard/mouse input, window management, and more
-* [xsel](https://linux.die.net/man/1/xsel) - Manipulate the X selection
-  (Clipboard)
-* Optional (default is notify-send): [osd-cat](https://linux.die.net/man/1/osd_cat) 
-  - Display FILE, or standard input, on X screen
+| Application                                                 | Description                                                                       |
+|-------------------------------------------------------------|-----------------------------------------------------------------------------------|
+| [sed](https://manpages.debian.org/buster/sed/sed.1.en.html) | Stream editor for filtering and transforming text                                 |
+| [wmctrl](http://tripie.sweb.cz/utils/wmctrl/)               | Command line tool to interact with an EWMH/NetWM compatible X Window Manager      |
+| [xdotool](https://www.semicomplete.com/projects/xdotool/)   | Fake keyboard/mouse input, window management, and more                            |
+| [xsel](https://linux.die.net/man/1/xsel)                    | Manipulate the X selection (Clipboard)                                            |
+| [feh](https://feh.finalrewind.org/)                         | Image viewer aimed mostly at console users to simply display images w/o fancy GUI |
 
 
 ## Global actions (not application specific)
@@ -218,11 +215,11 @@ Gnome Screenshot into other applications.
 For them to work, the mouse must be hovering Gnome Screenshot's 
 [copy to clipboard] button when fired. 
 
-| **Shortcut** | **Description**                                                                                       |
-|--------------|-------------------------------------------------------------------------------------------------------|
-| ◢ + AltGr    | Click and hit [Esc] = Copy to clipboard and close Gnome Screenhot popup at once                       |
-| ◢ + G        | Click, hit [Esc], focus Gimp (if running) and paste image from clipboard as new image                 |
-| ◣ + V        | Click, hit [Esc], store clipboard to temporary image file and open image file in Image Viewer (xview) |
+| **Shortcut** | **Description**                                                                                   |
+|--------------|---------------------------------------------------------------------------------------------------|
+| ◢ + AltGr    | Click and hit [Esc] = Copy to clipboard and close Gnome Screenhot popup at once                   |
+| ◢ + G        | Click, hit [Esc], focus Gimp (if running) and paste image from clipboard as new image             |
+| ◣ + V        | Click, hit [Esc], store clipboard to temporary image file and open image file in feh Image Viewer |
 
 
 ## Action shell scripting tricks
