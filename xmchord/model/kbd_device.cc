@@ -31,81 +31,167 @@
 
 namespace model {
 
+const std::string
+    KbdDevice::kPathPref = "/var/tmp/xmchord.pref";  // NOLINT(cert-err58-cpp)
+
+KbdDevice::KbdDevice() {
+  GetDevicePreference();
+}
+
+bool KbdDevice::GetDevicePreference() {
+  std::string path = kPathPref;
+
+  if (!helper::File::FileExists(path)) return false;
+
+  device_name_preselect = helper::File::GetFileContents(path);
+
+  return true;
+}
+
 int KbdDevice::GetDeviceHandle() {
-  std::cout << "Select keyboard device\n";
-  std::cout << "----------------------\n\n";
+  auto *kbd_device = new KbdDevice();
 
-  std::vector<std::string> devices;
-  getDevicesByPath(&devices, "/dev/input/by-path");
-  int amount_devices_by_path = devices.size();
-  getDevicesByPath(&devices, "/dev/input/by-id");
+  kbd_device->GetDevicesByPath("/dev/input/by-path", true);
+  kbd_device->GetDevicesByPath("/dev/input/by-id");
+  kbd_device->PrintDevicesList();
 
-  PrintDevicesList(devices, amount_devices_by_path);
-  int device_num = ChoseDevice();
+  int index_selected_device = kbd_device->ChoseDevice();
+  kbd_device->SaveDevicePreference(index_selected_device);
 
-  std::string command = "ls " + devices[device_num] + " | head -1";
-  std::string kbd_path = helper::System::GetShellResponse(command.c_str());
+  auto path_kbd_device =
+      kbd_device->GetDevicePathByIndex(index_selected_device);
 
-  if (kbd_path.empty()
-        || helper::Textual::Contains(kbd_path, "No such file or directory")
-  ) {
-      printf("Failed to detect keyboard.\n");
+  if (path_kbd_device.empty()) {
+    delete kbd_device;
 
-      return -1;
+    return -1;
   }
 
-  kbd_path = helper::Textual::GetSubStrBefore(kbd_path, "\n");
-  const char *pDeviceKeyboard = kbd_path.c_str();
+  int file_handle = open(path_kbd_device.c_str(), O_RDONLY);
 
-  int file_handle = open(pDeviceKeyboard, O_RDONLY);
+  delete kbd_device;
 
   if (file_handle == -1)
-    printf(
-        "ERROR opening keyboard %s, try running with sudo \n",
-        pDeviceKeyboard);
+    std::cerr << "Failed opening keyboard: " << path_kbd_device;
+  else
+    std::cout
+      << helper::Textual::ANSI_BOLD
+      << "\nChording observer started: "
+      << helper::Textual::ANSI_RESET
+      << "Mouse + " << path_kbd_device << "\n\n";
 
   return file_handle;
 }
 
+std::string KbdDevice::GetDevicePathByIndex(int index_device) {
+  std::string command = "ls " + devices[index_device] + " | head -1";
+  std::string kbd_path = helper::System::GetShellResponse(command.c_str());
+
+  if (kbd_path.empty()
+      || helper::Textual::Contains(kbd_path, "No such file or directory")
+  ) {
+    std::cerr
+        << "Invalid Device path: "
+        << devices[index_device] << "\n";
+
+      return "";
+  }
+
+  return helper::Textual::GetSubStrBefore(kbd_path, "\n");
+}
+
 int KbdDevice::ChoseDevice() {
-  std::cout << "\nNumber: ";
+  std::cout << "\nNumber";
+
+  if (-1 < device_index_preselect) {
+    std::cout << " [" << device_index_preselect << "]";
+  }
+
+  std::cout << ": ";
+
   std::string choice;
-  std::cin >> choice;
+  int n = 0;
+
+  while (true) {
+    getline(std::cin, choice);
+    std::stringstream s(choice);
+
+    if (s >> n) break;
+
+    if (choice.empty()) {
+      std::cout << device_index_preselect << "\n";
+
+      return device_index_preselect - 1;
+    }
+  }
 
   return std::stoi(choice) - 1;
 }
 
-void KbdDevice::getDevicesByPath(
-    std::vector<std::string> *devices,
-    const std::string &device_path) {
+void KbdDevice::GetDevicesByPath(const std::string &device_path,
+                                 bool set_amount_devices_in_path) {
   std::string device_paths = helper::System::GetShellResponse(
       ("find " + device_path + R"( -printf "%f\n")").c_str());
 
-  auto found_devices = helper::Textual::Explode(device_paths, '\n');
+  auto devices_in_path = helper::Textual::Explode(device_paths, '\n');
 
   int index = 0;
-  for (auto &device : found_devices) {
+  for (auto &device : devices_in_path) {
     ++index;
 
     if (index == 1) continue;  // skip 1st entry (is path itself)
 
     device.insert(0, device_path + "/");  // prefix device name w/ path
-    devices->push_back(device);
+    devices.push_back(device);
+  }
+
+  if (set_amount_devices_in_path) SetAmountDevicesByPath(devices.size());
+}
+
+void KbdDevice::SetAmountDevicesByPath(int amount) {
+  amount_devices_by_path = amount;
+}
+
+void KbdDevice::PrintDevicesList() {
+  std::cout
+    << helper::Textual::ANSI_BOLD
+    << "\nSelect keyboard:\n\n"
+    << helper::Textual::ANSI_RESET;
+
+  bool do_preselect = !device_name_preselect.empty();
+
+  int index = 1;
+  for (auto &device_name : devices) {
+    if (helper::Textual::StartsWith(device_name.c_str(), "by-")) continue;
+
+    auto is_selected = do_preselect
+        && device_name.find(device_name_preselect) != std::string::npos;
+
+    if (is_selected) {
+      device_index_preselect = index;
+      std::cout << helper::Textual::ANSI_REVERSE;
+    }
+
+    std::cout << " " << index << " - " << device_name << " \n";
+
+    if (is_selected) std::cout << helper::Textual::ANSI_RESET;
+
+    if (index == amount_devices_by_path) std::cout << '\n';
+
+    ++index;
   }
 }
 
-void KbdDevice::PrintDevicesList(const std::vector<std::string> &devices,
-                                int amount_devices_by_path) {
-  int num = 1;
-  for (auto &device : devices) {
-    if (helper::Textual::StartsWith(device.c_str(), "by-")) continue;
+bool KbdDevice::SaveDevicePreference(int device_num) {
+  std::string path_pref = kPathPref;
 
-    std::cout << num << " - " << device << '\n';
+  if (helper::File::FileExists(path_pref))
+    helper::File::Remove(path_pref.c_str());
 
-    if (num == amount_devices_by_path) std::cout << '\n';
+  std::string device_identifier =
+      helper::File::GetLastPathSegment(devices[device_num]);
 
-    ++num;
-  }
+  return helper::File::WriteToNewFile(path_pref, device_identifier);
 }
 
 }  // namespace model

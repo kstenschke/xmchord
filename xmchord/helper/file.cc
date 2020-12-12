@@ -35,6 +35,18 @@ bool File::FileExists(const std::string &name) {
   return access(name.c_str(), F_OK) != -1;
 }
 
+bool File::Remove(const char *file_path) {
+  return remove(file_path) == 0;
+}
+
+std::string File::GetLastPathSegment(std::string path) {
+  if (path.find('/') == std::string::npos) return path;
+
+  std::vector<std::string> parts = helper::Textual::Explode(path, '/');
+
+  return parts[parts.size() - 1];
+}
+
 std::string File::GetActionFiles(const std::string &path_actions) {
   DIR *dir;
   struct dirent *ent;
@@ -148,6 +160,35 @@ void File::TraceActions() {
   }
 
   closedir(dir);
+}
+
+std::string File::GetFileContents(std::string &filename) {
+  std::ifstream file(filename);
+
+  return GetFileContents(file);
+}
+
+std::string File::GetFileContents(std::ifstream &file) {
+  // Get file size
+  file.seekg(0, std::ios::end);
+  std::streampos length = file.tellg();
+  file.seekg(0, std::ios::beg);
+
+  // Read the whole file into the buffer
+  std::vector<char> buffer(static_cast<unsigned long>(length));
+  file.read(&buffer[0], length);
+
+  std::string str(buffer.begin(), buffer.end());
+
+  return str;
+}
+
+bool File::WriteToNewFile(const std::string &filename, std::string &content) {
+  std::ofstream out_file(filename);
+  out_file << content;
+  out_file.close();
+
+  return File::FileExists(filename);
 }
 
 }  // namespace helper

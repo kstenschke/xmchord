@@ -1,9 +1,9 @@
 xmchord Changelog
 =================
 
-V0.2.0 - Not released yet
--------------------------
-* Add initial choosing of keyboard device
+V0.2.0 - 2020/12/12
+-------------------
+* Add keyboard device selection to startup
 * Add Chromium/Firefox action: ◢ + D = Duplicate tab
 * Add Gnome Screenshot action: ◢ + G = Paste clipboard image into Gimp
 * Add Gnome Screenshot action: ◣ + V = Export clipboard image to temporary file and view in Image Viewer

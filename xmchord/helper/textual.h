@@ -38,6 +38,10 @@
 namespace helper {
 namespace Textual {
 
+const char ANSI_BOLD[] = "\033[1m";
+const char ANSI_REVERSE[] = "\033[7m";
+const char ANSI_RESET[] = "\033[0m";
+
 int StrPos(char *hay, char *needle, int offset);
 
 bool Contains(const std::string &haystack, const char *needle);

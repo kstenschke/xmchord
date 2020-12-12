@@ -32,25 +32,42 @@
 
 #include <xmchord/helper/system.h>
 #include <xmchord/helper/textual.h>
+#include <xmchord/helper/file.h>
 
 #include <fcntl.h>
 #include <iostream>
 #include <string>
+#include <xmchord/helper/file.h>
 
 namespace model {
-namespace KbdDevice {
+class KbdDevice {
 
-int GetDeviceHandle();
+ public:
+  KbdDevice();
 
-void getDevicesByPath(
-    std::vector<std::string> *devices,
-    const std::string &device_path);
+  static int GetDeviceHandle();
+  void SetAmountDevicesByPath(int amount);
 
-void PrintDevicesList(const std::vector<std::string> &devices,
-                      int amount_devices_by_path);
+ private:
+  static const std::string kPathPref;
+  std::string device_name_preselect;
+  int device_index_preselect = -1;
+  std::vector<std::string> devices;
+  int amount_devices_by_path{};
 
-int ChoseDevice();
-}  // namespace Keyboard
+  bool GetDevicePreference();
+
+  void GetDevicesByPath(const std::string &device_path,
+                        bool set_amount_devices_in_path = false);
+
+  void PrintDevicesList();
+
+  int ChoseDevice();
+
+  bool SaveDevicePreference(int device_num);
+
+  std::string GetDevicePathByIndex(int index_device);
+};  // class Keyboard
 }  // namespace helper
 
 #endif  // XMCHORD_HELPER_KEYBOARD_H_
