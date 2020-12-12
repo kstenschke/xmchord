@@ -76,8 +76,11 @@ bool Textual::StartsWith(const char *str, const char *prefix) {
   return 0 == strncmp(str, prefix, strlen(prefix));
 }
 
-bool Textual::StartsWith(const std::string *str, const char *prefix) {
-  return str->substr(0, strlen(prefix)) == prefix;
+// Check whether given string ends w/ given string
+bool Textual::EndsWith(std::string const &str, std::string const &ending) {
+  return ending.empty()
+      || (ending.size() <= str.size()
+          && std::equal(ending.rbegin(), ending.rend(), str.rbegin()));
 }
 
 }  // namespace helper

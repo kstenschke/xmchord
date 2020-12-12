@@ -34,7 +34,7 @@
 #include <xmchord/helper/textual.h>
 
 #include <fcntl.h>
-
+#include <iostream>
 #include <string>
 
 namespace model {

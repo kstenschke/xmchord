@@ -45,17 +45,14 @@ std::string File::GetActionFiles(const std::string &path_actions) {
     return "";
   }
 
-  std::string files;
+  std::string files = "\n";
 
   while ((ent = readdir(dir)) != nullptr) {
     std::string file = ent->d_name;
 
-    if (strcmp(ent->d_name, ".") != 0 &&
-        strcmp(ent->d_name, "..") != 0
-        )
+    if (ent->d_name[0] != '.'  // exclude hidden files
+        && helper::Textual::EndsWith(ent->d_name, ".sh"))
       files = files.append(file).append("\n");
-
-    // TODO(kay): filter for files ending w/ ".sh"
   }
 
   closedir(dir);

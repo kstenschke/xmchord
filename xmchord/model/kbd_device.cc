@@ -28,7 +28,6 @@
 */
 
 #include <xmchord/model/kbd_device.h>
-#include <iostream>
 
 namespace model {
 

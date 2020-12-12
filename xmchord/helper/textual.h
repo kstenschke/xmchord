@@ -50,7 +50,7 @@ std::string GetSubStrBefore(
 std::vector<std::string> Explode(std::string const &str, char delimiter);
 
 bool StartsWith(const char *str, const char *prefix);
-bool StartsWith(const std::string *str, const char *prefix);
+bool EndsWith(std::string const &str, std::string const &ending);
 
 }  // namespace Textual
 }  // namespace helper

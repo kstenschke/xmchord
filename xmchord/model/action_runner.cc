@@ -88,7 +88,7 @@ void ActionRunner::EvokeAction(
       helper::System::RunShellCommand(path_action_file.c_str());
     else
       std::cout << "Action file not found: " << path_action_file << "\n";
-  } else if (action_files.find(filename_action) != std::string::npos) {
+  } else if (action_files.find("\n" + filename_action) != std::string::npos) {
     // Regular mode: ActionRunner files are cached on start of xmchord,
     // when adding actions xmchord must be restarted
     helper::System::RunShellCommand(path_action_file.c_str());
