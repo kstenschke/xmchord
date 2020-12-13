@@ -132,7 +132,7 @@ all included actions to work:
 | &nbsp; &nbsp; ◢ + N        | Launch or bring Nemo file explorer to front                                    |
 | &nbsp; &nbsp; ◢ + P        | Launch or bring Pidgin to front                                                |
 | &nbsp; &nbsp; ◢ + R        | Toggle active window roll-up state                                             |
-| &nbsp; &nbsp; ◢ + S        | Toggle active window "roll-sidways" state                                      |
+| &nbsp; &nbsp; ◢ + S        | Toggle active window "roll-sideways" state                                      |
 | &nbsp; &nbsp; ◢ + T        | Toggle active window always-on-top state                                       |
 | &nbsp; &nbsp; ◢ + U        | Type current UNIX timestamp                                                    |
 | &nbsp; &nbsp; ◢ + V        | Toggle active window always-on-visible-workspace state                         |
