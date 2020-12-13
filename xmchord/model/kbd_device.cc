@@ -31,19 +31,14 @@
 
 namespace model {
 
-const std::string
-    KbdDevice::kPathPref = "/var/tmp/xmchord.pref";  // NOLINT(cert-err58-cpp)
-
 KbdDevice::KbdDevice() {
   GetDevicePreference();
 }
 
 bool KbdDevice::GetDevicePreference() {
-  std::string path = kPathPref;
+  if (!helper::File::FileExists(pathPreferences)) return false;
 
-  if (!helper::File::FileExists(path)) return false;
-
-  device_name_preselect = helper::File::GetFileContents(path);
+  device_name_preselect = helper::File::GetFileContents(pathPreferences);
 
   return true;
 }
@@ -183,15 +178,13 @@ void KbdDevice::PrintDevicesList() {
 }
 
 bool KbdDevice::SaveDevicePreference(int device_num) {
-  std::string path_pref = kPathPref;
-
-  if (helper::File::FileExists(path_pref))
-    helper::File::Remove(path_pref.c_str());
+  if (helper::File::FileExists(pathPreferences))
+    helper::File::Remove(pathPreferences);
 
   std::string device_identifier =
       helper::File::GetLastPathSegment(devices[device_num]);
 
-  return helper::File::WriteToNewFile(path_pref, device_identifier);
+  return helper::File::WriteToNewFile(pathPreferences, device_identifier);
 }
 
 }  // namespace model

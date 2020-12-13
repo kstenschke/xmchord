@@ -48,7 +48,8 @@ class KbdDevice {
   void SetAmountDevicesByPath(int amount);
 
  private:
-  static const std::string kPathPref;
+  const char * pathPreferences = "/var/tmp/xmchord.pref";
+
   std::string device_name_preselect;
   int device_index_preselect = -1;
   std::vector<std::string> devices;
