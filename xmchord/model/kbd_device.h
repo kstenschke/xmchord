@@ -37,10 +37,10 @@
 #include <fcntl.h>
 #include <iostream>
 #include <string>
+#include <vector>
 
 namespace model {
 class KbdDevice {
-
  public:
   KbdDevice();
 
@@ -67,6 +67,6 @@ class KbdDevice {
 
   std::string GetDevicePathByIndex(int index_device);
 };  // class Keyboard
-}  // namespace helper
+}  // namespace model
 
 #endif  // XMCHORD_MODEL_KBD_DEVICE_H_
