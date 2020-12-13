@@ -36,9 +36,9 @@ KbdDevice::KbdDevice() {
 }
 
 bool KbdDevice::GetDevicePreference() {
-  if (!helper::File::FileExists(pathPreferences)) return false;
+  if (!helper::File::FileExists(kPathPreferences)) return false;
 
-  device_name_preselect = helper::File::GetFileContents(pathPreferences);
+  device_name_preselect_ = helper::File::GetFileContents(kPathPreferences);
 
   return true;
 }
@@ -79,7 +79,7 @@ int KbdDevice::GetDeviceHandle() {
 }
 
 std::string KbdDevice::GetDevicePathByIndex(int index_device) {
-  std::string command = "ls " + devices[index_device] + " | head -1";
+  std::string command = "ls " + devices_[index_device] + " | head -1";
   std::string kbd_path = helper::System::GetShellResponse(command.c_str());
 
   if (kbd_path.empty()
@@ -87,7 +87,7 @@ std::string KbdDevice::GetDevicePathByIndex(int index_device) {
   ) {
     std::cerr
         << "Invalid Device path: "
-        << devices[index_device] << "\n";
+        << devices_[index_device] << "\n";
 
       return "";
   }
@@ -98,8 +98,8 @@ std::string KbdDevice::GetDevicePathByIndex(int index_device) {
 int KbdDevice::ChoseDevice() {
   std::cout << "\nNumber";
 
-  if (-1 < device_index_preselect) {
-    std::cout << " [" << device_index_preselect << "]";
+  if (-1 < device_index_preselect_) {
+    std::cout << " [" << device_index_preselect_ << "]";
   }
 
   std::cout << ": ";
@@ -114,9 +114,9 @@ int KbdDevice::ChoseDevice() {
     if (s >> n) break;
 
     if (choice.empty()) {
-      std::cout << device_index_preselect << "\n";
+      std::cout << device_index_preselect_ << "\n";
 
-      return device_index_preselect - 1;
+      return device_index_preselect_ - 1;
     }
   }
 
@@ -137,14 +137,14 @@ void KbdDevice::GetDevicesByPath(const std::string &device_path,
     if (index == 1) continue;  // skip 1st entry (is path itself)
 
     device.insert(0, device_path + "/");  // prefix device name w/ path
-    devices.push_back(device);
+    devices_.push_back(device);
   }
 
-  if (set_amount_devices_in_path) SetAmountDevicesByPath(devices.size());
+  if (set_amount_devices_in_path) SetAmountDevicesByPath(devices_.size());
 }
 
 void KbdDevice::SetAmountDevicesByPath(int amount) {
-  amount_devices_by_path = amount;
+  amount_devices_by_path_ = amount;
 }
 
 void KbdDevice::PrintDevicesList() {
@@ -153,38 +153,48 @@ void KbdDevice::PrintDevicesList() {
     << "\nSelect keyboard:\n\n"
     << helper::Textual::ANSI_RESET;
 
-  bool do_preselect = !device_name_preselect.empty();
+  bool has_preselection = !device_name_preselect_.empty();
+
+  // prevent multiple devices being suggested/rendered preselected
+  bool has_rendered_selected = false;
 
   int index = 1;
-  for (auto &device_name : devices) {
+  for (auto &device_name : devices_) {
     if (helper::Textual::StartsWith(device_name.c_str(), "by-")) continue;
 
-    auto is_selected = do_preselect
-        && device_name.find(device_name_preselect) != std::string::npos;
+    bool is_selected = false;
+
+    if (!has_rendered_selected) {
+      is_selected =
+          has_preselection
+          ? device_name.find(device_name_preselect_) != std::string::npos
+          : device_name.find("-kbd") != std::string::npos;
+    }
 
     if (is_selected) {
-      device_index_preselect = index;
+      device_index_preselect_ = index;
       std::cout << helper::Textual::ANSI_REVERSE;
+      has_rendered_selected = true;
     }
 
     std::cout << " " << index << " - " << device_name << " \n";
 
     if (is_selected) std::cout << helper::Textual::ANSI_RESET;
 
-    if (index == amount_devices_by_path) std::cout << '\n';
+    if (index == amount_devices_by_path_) std::cout << '\n';
 
     ++index;
   }
 }
 
 bool KbdDevice::SaveDevicePreference(int device_num) {
-  if (helper::File::FileExists(pathPreferences))
-    helper::File::Remove(pathPreferences);
+  if (helper::File::FileExists(kPathPreferences))
+    helper::File::Remove(kPathPreferences);
 
   std::string device_identifier =
-      helper::File::GetLastPathSegment(devices[device_num]);
+      helper::File::GetLastPathSegment(devices_[device_num]);
 
-  return helper::File::WriteToNewFile(pathPreferences, device_identifier);
+  return helper::File::WriteToNewFile(kPathPreferences, device_identifier);
 }
 
 }  // namespace model

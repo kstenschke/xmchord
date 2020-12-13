@@ -1,6 +1,10 @@
 xmchord Changelog
 =================
 
+V0.2.1 - Not released yet
+-------------------------
+* Attempt to detect and suggest default keyboard device for observation at 1st run of xmchord
+
 V0.2.0 - 2020/12/12
 -------------------
 * Add keyboard device selection to startup
