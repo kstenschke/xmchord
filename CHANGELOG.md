@@ -3,7 +3,7 @@ xmchord Changelog
 
 V0.2.1 - 2020/12/13
 -------------------
-* Attempt to detect and suggest default keyboard device for observation at 1st run of xmchord
+* Autodetect and suggest keyboard device for observation at 1st run of xmchord
 
 V0.2.0 - 2020/12/12
 -------------------
