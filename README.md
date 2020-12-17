@@ -187,6 +187,7 @@ be focussed when the shortcut is fired.
 | ◢ + D                        | Duplicate active tab                         |
 | ◣ + ←                        | Go URL backwards                             |
 | ◣ + →                        | Go URL forward                               |
+| ◣ + Backspace                | Remove trailing segment from current URL     |
 | ◣ + F4                       | Close active tab                             |
 
 

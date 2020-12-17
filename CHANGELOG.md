@@ -1,6 +1,10 @@
 xmchord Changelog
 =================
 
+V0.2.2 - Not released yet
+-------------------------
+* Add browser action: ◣ + Backspace = Remove trailing segment from current URL
+
 V0.2.1 - 2020/12/13
 -------------------
 * Autodetect and suggest keyboard device for observation at 1st run of xmchord
