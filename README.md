@@ -184,10 +184,11 @@ be focussed when the shortcut is fired.
 | &nbsp; &nbsp; ◢ + →          | Focus next tab (browser and DevTools)        |
 | &nbsp; &nbsp; ◢ + ,          | Decrement numeric ending of current URL by 1 |
 | &nbsp; &nbsp; ◢ + .          | Increment numeric ending of current URL by 1 |
-| ◢ + D                        | Duplicate active tab                         |
+| &nbsp; &nbsp; ◢ + Backspace  | Remove trailing segment from current URL     |
+| &nbsp; &nbsp; ◢ + C          | Copy trailing segment of current URL         |
+| &nbsp; &nbsp; ◢ + D          | Duplicate active tab                         |
 | ◣ + ←                        | Go URL backwards                             |
 | ◣ + →                        | Go URL forward                               |
-| ◢ + Backspace                | Remove trailing segment from current URL     |
 | ◣ + F4                       | Close active tab                             |
 
 

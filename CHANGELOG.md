@@ -4,6 +4,8 @@ xmchord Changelog
 V0.2.2 - Not released yet
 -------------------------
 * Add browser action: ◢ + Backspace = Remove trailing segment from current URL
+* Add browser action: ◢ + C = Copy trailing segment of URL
+* Add browser action: ◢ + U = Copy URL
 
 V0.2.1 - 2020/12/13
 -------------------
