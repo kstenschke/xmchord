@@ -100,7 +100,7 @@ all included actions to work:
 
 | Application                                                     | Description                                                                       |
 |-----------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| [aosd-cat of libaods](https://github.com/atheme-legacy/libaosd) | Display TEXT, or standard input, on top of display                                |
+| [aosd-cat of libaosd](https://github.com/atheme-legacy/libaosd) | Display TEXT, or standard input, on top of display                                |
 | [feh](https://feh.finalrewind.org/)                             | Image viewer aimed mostly at console users to simply display images w/o fancy GUI |
 | [sed](https://manpages.debian.org/buster/sed/sed.1.en.html)     | Stream editor for filtering and transforming text                                 |
 | [wmctrl](http://tripie.sweb.cz/utils/wmctrl/)                   | Command line tool to interact with an EWMH/NetWM compatible X Window Manager      |
