@@ -4,14 +4,15 @@ xmchord
 [![Build Status](https://travis-ci.org/kstenschke/xmchord.svg?branch=master)](https://travis-ci.org/kstenschke/xmchord)
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/kstenschke/xmchord.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/kstenschke/xmchord/context:cpp)
 
-xmchord is a productivity tool for Linux desktops, that allows binding custom
+xmchord is a productivity tool for Linux desktops, that binds custom
 actions to `chording*` events of mouse buttons and key presses: this way, 
 mouse buttons become additional modifier keys. 
 
 **`*Chording:`** Chording generally means pushing several keys or buttons
 simultaneously to achieve a result.
 
-xmchord comes with a comprehensive set of example shortcut actions.
+xmchord comes with a comprehensive set of shortcut actions to speed-up 
+common user activities on the Linux desktop.
 
 
 ## Table of contents
@@ -49,7 +50,7 @@ xmchord listens for events of mouse buttons pressed together with keyboard keys.
 When observing a chording event, xmchord generates an identifier code for the
 given combination of button/key presses. If there is a shell script file 
 named by the current event code, within xmchord's `actions` directory, it is
-executed by xmchord than.
+executed.
 
 
 Usage and arguments
