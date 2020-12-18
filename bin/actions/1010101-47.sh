@@ -11,8 +11,11 @@ if [[ "$focusApplication" =~ "gnome-screensho" ]]; then  # gnome screenshot
   xdotool key Escape  # close gnome screnshot window
   xdotool sleep 0.1
   xclip -selection clipboard -t image/png -o > /tmp/clipboard.png  # store image file
+  me=$SUDO_USER
+  xdotool sleep 0.1
+  sudo -u $me nohup feh /tmp/clipboard.png > /dev/null & # open image file in viewer
   xdotool sleep 0.2
-  feh /tmp/clipboard.png  # open image file in viewer
+  wmctrl -r "clipboard.png" -b add,above  # Set feh always on top
 else  # fire regular paste
   xdotool sleep 0.1
   xdotool key ctrl+v

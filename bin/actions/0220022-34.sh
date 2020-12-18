@@ -18,8 +18,9 @@ if [[ "$focusApplication" =~ "gnome-screensho" ]]; then
     wmctrl -a $windowTitle
     xdotool sleep 0.2
     xdotool keyup Shift+Super+Left key Ctrl+Shift+v  # paste as new image
-#    else
-#      me=$SUDO_USER
-#      sudo -u $me nohup gimp > /dev/null &
+    else
+      echo "Launching Gimp..." | aosd_cat -R white -u 500 --y-offset=40 -B black -b 240 --padding=24 -x 5 -n "Ubuntu 20" -p 1
+      me=$SUDO_USER
+      sudo -u $me nohup gimp > /dev/null &
   fi
 fi
