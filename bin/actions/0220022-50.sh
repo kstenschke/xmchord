@@ -1,19 +1,12 @@
 #!/bin/bash
 
-#: BR + M: Bring Thunderbird mail client window to front
+#: BR + M: Launch or bring Claws Mail to front
 
-if pidof -s thunderbird > /dev/null; then
-	wmctrl -a Thunderbird
+if pidof -s claws-mail > /dev/null; then
+	wmctrl -a "Claws Mail"
 else
     me=$SUDO_USER
-    sudo -u $me nohup thunderbird > /dev/null &
+    sudo -u $me nohup claws-mail > /dev/null &
 fi
 
 xdotool key Escape
-
-#if pidof -s evolution > /dev/null; then
-#	wmctrl -a Evolution
-#else
-#    me=$SUDO_USER
-#    sudo -u $me nohup evolution > /dev/null &
-#fi

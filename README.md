@@ -25,7 +25,7 @@ xmchord comes with a comprehensive set of example shortcut actions.
   * [Global actions](#global-actions-not-application-specific)
   * [Application specific actions](#application-specific-actions)
     * [Chromium and Firefox Web-Browser](#chromium-and-firefox-web-browser)
-    * [Evolution Email-Client](#evolution-email-client)
+    * [Claws Mail](#claws-mail)
     * [Gnome Terminal](#gnome-terminal)
     * [Gnome Screenshot](#gnome-screenshot)
 * [Action shell scripting tricks](#action-shell-scripting-tricks)
@@ -129,11 +129,11 @@ all included actions to work:
 | &nbsp; &nbsp; ◢ + F        | Launch or bring Firefox to front                                               |
 | &nbsp; &nbsp; ◢ + K        | Launch or bring Kitematic to front                                             |
 | &nbsp; &nbsp; ◢ + L        | Toggle keyboard backlight                                                      |
-| &nbsp; &nbsp; ◢ + M        | Launch or bring Thunderbird mail client to front                               |
+| &nbsp; &nbsp; ◢ + M        | Launch or bring Claws Mail to front                                            |
 | &nbsp; &nbsp; ◢ + N        | Launch or bring Nemo file explorer to front                                    |
 | &nbsp; &nbsp; ◢ + P        | Launch or bring Pidgin to front                                                |
 | &nbsp; &nbsp; ◢ + R        | Toggle active window roll-up state                                             |
-| &nbsp; &nbsp; ◢ + S        | Toggle active window "roll-sideways" state                                      |
+| &nbsp; &nbsp; ◢ + S        | Toggle active window "roll-sideways" state                                     |
 | &nbsp; &nbsp; ◢ + T        | Toggle active window always-on-top state                                       |
 | &nbsp; &nbsp; ◢ + U        | Type current UNIX timestamp                                                    |
 | &nbsp; &nbsp; ◢ + V        | Toggle active window always-on-visible-workspace state                         |
@@ -193,12 +193,11 @@ be focussed when the shortcut is fired.
 | ◣ + F4                       | Close active tab                             |
 
 
-### Evolution Email-Client
+### Claws Mail
 
-| **Shortcut**               | **Description**                   |
-|----------------------------|-----------------------------------|
-| ◤ + A                      | Activate "all messages" filter    |
-| ◤ + U                      | Activate "unread messages" filter |
+| **Shortcut**        | **Description**            |
+|---------------------|----------------------------|
+| &nbsp; &nbsp; ◢ + H | Toggle "Hide read threads" |
 
 
 ### Gnome Terminal
