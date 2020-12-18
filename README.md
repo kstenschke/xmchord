@@ -50,7 +50,7 @@ xmchord listens for events of mouse buttons pressed together with keyboard keys.
 When observing a chording event, xmchord generates an identifier code for the
 given combination of button/key presses. If there is a shell script file 
 named by the current event code, within xmchord's `actions` directory, it is
-executed by xmchord than.
+executed.
 
 
 Usage and arguments
