@@ -19,9 +19,12 @@ common user activities on the Linux desktop.
 
 * [What does it do?](#what-does-it-do)
 * [Usage and arguments](#usage-and-arguments)
-  * [Argument: `debug`](#argument-debug)
-  * [Argument: `actions`](#argument-actions)
-  * [Argument: `version`](#argument-version)
+  * [Command: `debug`](#command-debug)
+  * [Command: `actions`](#command-actions)
+  * [Argument: `keyboard`](#argument---keyboard)
+  * [Command: `listDevices`](#command-listdevices)
+  * [Command: `reset`](#command-reset)
+  * [Command: `version`](#command-version)
 * [Included shortcut actions](#included-shortcut-actions)
   * [Global actions](#global-actions-not-application-specific)
   * [Application specific actions](#application-specific-actions)
@@ -64,7 +67,7 @@ Action shell scripts that perform user specific tasks, therefor must take care
 of [running on that user's behalf](#1-user-specific-actions).
 
 
-### Argument: `debug`
+### Command: `debug`
 
 Running `xmchord debug` or  `xmchord d`, activates tracing of event codes.
 While in debug mode, action shell script files can be added without having to
@@ -74,14 +77,38 @@ In regular mode, xmchord reduces processing time by indexing which actions are
 available once during startup.
 
 
-### Argument: `actions`
+### Command: `actions`
 
 Running `xmchord actions` or `xmchord a`, lists all recognized action shell
 scripts, including their inlined description comment (which must be prefixed 
 with `#:`).
 
 
-### Argument: `version`
+### Argument: `--keyboard`
+
+xmchord installs its keyboard watcher upon the 1st keyboard device found
+(e.g. on laptops the built-in one). This argument allows setting a specific 
+keyboard device to be used. xmchord stores this device preference, so once it is
+set, xmchord will continue using that device.  
+ 
+Running `xmchord --keyboard=/path/to/my/keyboard` 
+or `xmchord -k=/path/to/my/keyboard` selects the device at the given path as
+the keyboard watcher's target.
+
+
+### Command: `listDevices`
+
+Running `xmchord listDevices` or `xmchord l` lists paths of available devices.
+This is helpful when wanting to use a different than the default keyboard.
+
+
+### Command: `reset`
+
+Running `xmchord reset` or `xmchord r` removes the xmchord keyboard device 
+preference, if it exists.
+
+
+### Command: `version`
 
 Running `xmchord version` or  `xmchord v`, tests whether xmchord is available
 and displays it's version number.

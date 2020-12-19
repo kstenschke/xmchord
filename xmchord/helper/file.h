@@ -47,18 +47,12 @@ namespace File {
 
 extern bool FileExists(const std::string &name);
 
-bool Remove(const char *file_path);
-
 std::string GetLastPathSegment(std::string path);
 
-bool WriteToNewFile(const std::string &filename, const std::string &content);
+bool OverwriteFile(const std::string &filename, const std::string &content);
 
 std::string GetFileContents(std::ifstream &file);
 std::string GetFileContents(const std::string &filename);
-
-std::string GetActionFiles(const std::string& path_actions);
-
-void TraceActions();
 
 }  // namespace File
 }  // namespace helper

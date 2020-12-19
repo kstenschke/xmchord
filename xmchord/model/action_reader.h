@@ -27,37 +27,24 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef XMCHORD_MODEL_ACTION_RUNNER_H_
-#define XMCHORD_MODEL_ACTION_RUNNER_H_
+#ifndef XMCHORD_MODEL_ACTION_FILES_H_
+#define XMCHORD_MODEL_ACTION_FILES_H_
 
-#include <xmchord/helper/file.h>
-#include <xmchord/helper/system.h>
-
-#include <string>
+#include <xmchord/helper/textual.h>
+#include <cstdio>
+#include <dirent.h>
 #include <iostream>
-#include <utility>
+#include <string>
 
 namespace model {
 
-class ActionRunner {
+class ActionReader {
  public:
-  // Constructor
-  ActionRunner(
-      bool debug,
-      std::string path_actions,
-      std::string action_files);
+  static std::string GetActionFiles(const std::string& path_actions);
 
-  void EvokeAction(
-      bool clickWasFirst,
-      const std::string& buttons_code,
-      int kbd_code);
-
- private:
-  bool debug;
-  std::string path_actions;
-  std::string action_files;   // Newline separated list of existing action files
+  static void PrintListOfActionsWithComments();
 };
 
 }  // namespace model
 
-#endif  // XMCHORD_MODEL_ACTION_RUNNER_H_
+#endif  // XMCHORD_MODEL_ACTION_FILES_H_

@@ -36,8 +36,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin/)
 
 set (XMCHORD_EXECUTABLE_NAME "xmchord")
 set (XMCHORD_VERSION_MAJOR 0)
-set (XMCHORD_VERSION_MINOR 2)
-set (XMCHORD_VERSION_PATCH 2)
+set (XMCHORD_VERSION_MINOR 3)
+set (XMCHORD_VERSION_PATCH 0)
 
 # configure config.h to be generated from config.h.in, with injected version number
 configure_file (
@@ -53,7 +53,10 @@ add_executable(xmchord
         xmchord/helper/file.cc
         xmchord/helper/system.cc
         xmchord/helper/mouse.cc
-        xmchord/model/kbd_device.cc
+        xmchord/model/action_reader.cc
+        xmchord/model/action_reader.h
+        xmchord/model/keyboard_device_finder.cc
+        xmchord/model/keyboard_device_finder.h
         xmchord/model/action_runner.cc
         xmchord/model/action_runner.h
         xmchord/xmchord.cc)

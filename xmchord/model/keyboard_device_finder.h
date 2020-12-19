@@ -40,33 +40,35 @@
 #include <vector>
 
 namespace model {
-class KbdDevice {
+class KeyboardDeviceFinder {
  public:
-  KbdDevice();
+  int device_index_selected_ = -1;
 
-  static int GetDeviceHandle();
+  KeyboardDeviceFinder(const std::string& device_path);
+
+  static int GetDeviceHandle(const std::string& device_path,
+                             bool list_devices = false);
+
   void SetAmountDevicesByPath(int amount);
+  void ResetDevicePreference(bool notify = false);
 
  private:
   const char* kPathPreferences = "/var/tmp/xmchord.pref";
 
-  std::string device_name_preselect_;
-  int device_index_preselect_ = -1;
+  std::string device_name_selected_;
   std::vector<std::string> devices_;
   int amount_devices_by_path_;
 
-  bool GetDevicePreference();
+  bool SetDeviceNameSelectedFromPreference();
 
   void GetDevicesByPath(const std::string &device_path,
                         bool set_amount_devices_in_path = false);
 
-  void PrintDevicesList();
+  bool SelectKeyboardFromAvailableDevices(bool list_devices = false);
 
-  int ChoseDevice();
+  bool SaveDevicePreference();
 
-  bool SaveDevicePreference(int device_num);
-
-  std::string GetDevicePathByIndex(int index_device);
+  std::string GetDevicePathBySelectedIndex();
 };  // class Keyboard
 }  // namespace model
 

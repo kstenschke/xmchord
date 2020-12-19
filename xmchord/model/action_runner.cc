@@ -29,13 +29,6 @@
 
 #include <xmchord/model/action_runner.h>
 
-#include <xmchord/helper/file.h>
-#include <xmchord/helper/system.h>
-
-#include <string>
-#include <iostream>
-#include <utility>
-
 namespace model {
 
 // Constructor

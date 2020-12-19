@@ -27,37 +27,36 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef XMCHORD_MODEL_ACTION_RUNNER_H_
-#define XMCHORD_MODEL_ACTION_RUNNER_H_
-
-#include <xmchord/helper/file.h>
+#include <xmchord/model/action_reader.h>
+#include <xmchord/model/action_runner.h>
 #include <xmchord/helper/system.h>
+#include <xmchord/helper/mouse.h>
+#include <xmchord/model/keyboard_device_finder.h>
+#include <xmchord/helper/file.h>
+#include <xmchord/config.h>
 
-#include <string>
+#include <linux/input.h>
+#include <sys/types.h>
+#include <pthread.h>
+#include <unistd.h>
+
+#include <cstdio>
+#include <cstring>
 #include <iostream>
-#include <utility>
+#include <string>
 
-namespace model {
+// TODO(kay): store within model instead of using a global string variable
+std::string buttons_code;  // NOLINT [build/c++11]
 
-class ActionRunner {
- public:
-  // Constructor
-  ActionRunner(
-      bool debug,
-      std::string path_actions,
-      std::string action_files);
+int kbd_code = 0;
 
-  void EvokeAction(
-      bool clickWasFirst,
-      const std::string& buttons_code,
-      int kbd_code);
+model::ActionRunner *action_runner = nullptr;
 
- private:
-  bool debug;
-  std::string path_actions;
-  std::string action_files;   // Newline separated list of existing action files
-};
+int InitArgs(int argc,
+             char *const *argv, std::string &kbd_device_path,
+             bool &debug,
+             bool &run);
 
-}  // namespace model
+void PrintVersionInfo();
 
-#endif  // XMCHORD_MODEL_ACTION_RUNNER_H_
+void *KbdWatcher(void *x_void_ptr);
