@@ -86,9 +86,9 @@ with `#:`).
 
 ### Argument: `--keyboard`
 
-xmchord installs its keyboard watcher upon the 1st keyboard device found
-(e.g. on laptops the built-in one).  
-This argument allows setting a specific keyboard device to be used.
+xmchord by default installs its keyboard watcher upon the 1st keyboard device
+found (e.g. on laptops the built-in one). This optional argument allows setting
+a specific keyboard device to be used.
 xmchord stores this device preference, so once it is set, xmchord continues
 using that device when restarted later.  
  
