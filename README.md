@@ -74,7 +74,7 @@ While in debug mode, action shell script files can be added without having to
 stop and restart xmchord.
 
 In regular mode, xmchord reduces processing time by indexing which actions are
-available once during startup.
+available during startup.
 
 
 ### Command: `actions`
