@@ -21,7 +21,7 @@ common user activities on the Linux desktop.
 * [Usage and arguments](#usage-and-arguments)
   * [Command: `debug`](#command-debug)
   * [Command: `actions`](#command-actions)
-  * [Argument: `keyboard`](#argument---keyboard)
+  * [Argument: `--keyboard`](#argument---keyboard)
   * [Command: `listDevices`](#command-listdevices)
   * [Command: `reset`](#command-reset)
   * [Command: `version`](#command-version)
