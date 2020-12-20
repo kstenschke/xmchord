@@ -1,8 +1,8 @@
 xmchord Changelog
 =================
 
-V0.3.0 - Not released yet
--------------------------
+V0.3.0 - 2020/12/20
+-------------------
 * Add options for using specific non-default keyboard device
 * Add browser action: ◢ + Backspace = Remove trailing segment from current URL
 * Add browser action: ◢ + C = Copy trailing segment of URL
