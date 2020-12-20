@@ -9,7 +9,7 @@ V0.3.0 - 2020/12/20
 * Change: Use aosd-cat instead of notify-send for notifications
 * Improve Gnome Screenshot action ◣ + V: Set feh window always on top
 * Remove Evolution Mail actions
-* Add Claws Maiil action: ◢ + H = Toggle "Hide read threads"
+* Add Claws Mail action: ◢ + H = Toggle "Hide read threads"
 * Change action: ◢ + M = Launch/bring to front Claws Mail
 
 V0.2.1 - 2020/12/13
