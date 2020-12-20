@@ -21,7 +21,7 @@ common user activities on the Linux desktop.
 * [Usage and arguments](#usage-and-arguments)
   * [Command: `debug`](#command-debug)
   * [Command: `actions`](#command-actions)
-  * [Argument: `keyboard`](#argument---keyboard)
+  * [Argument: `--keyboard`](#argument---keyboard)
   * [Command: `listDevices`](#command-listdevices)
   * [Command: `reset`](#command-reset)
   * [Command: `version`](#command-version)
@@ -74,7 +74,7 @@ While in debug mode, action shell script files can be added without having to
 stop and restart xmchord.
 
 In regular mode, xmchord reduces processing time by indexing which actions are
-available once during startup.
+available during startup.
 
 
 ### Command: `actions`
@@ -86,9 +86,9 @@ with `#:`).
 
 ### Argument: `--keyboard`
 
-xmchord installs its keyboard watcher upon the 1st keyboard device found
-(e.g. on laptops the built-in one).  
-This argument allows setting a specific keyboard device to be used.
+xmchord by default installs its keyboard watcher upon the 1st keyboard device
+found (e.g. on laptops the built-in one). This optional argument allows setting
+a specific keyboard device to be used.
 xmchord stores this device preference, so once it is set, xmchord continues
 using that device when restarted later.  
  
