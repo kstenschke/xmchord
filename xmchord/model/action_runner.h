@@ -32,7 +32,6 @@
 
 #include <xmchord/helper/file.h>
 #include <xmchord/helper/system.h>
-
 #include <string>
 #include <iostream>
 #include <utility>

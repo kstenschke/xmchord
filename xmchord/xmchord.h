@@ -27,6 +27,9 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
+#ifndef XMCHORD_XMCHORD_H_
+#define XMCHORD_XMCHORD_H_
+
 #include <xmchord/model/action_reader.h>
 #include <xmchord/model/action_runner.h>
 #include <xmchord/helper/system.h>
@@ -34,16 +37,14 @@
 #include <xmchord/model/keyboard_device_finder.h>
 #include <xmchord/helper/file.h>
 #include <xmchord/config.h>
-
-#include <linux/input.h>
-#include <sys/types.h>
-#include <pthread.h>
-#include <unistd.h>
-
 #include <cstdio>
 #include <cstring>
 #include <iostream>
+#include <linux/input.h>
+#include <pthread.h>
 #include <string>
+#include <sys/types.h>
+#include <unistd.h>
 
 // TODO(kay): store within model instead of using a global string variable
 std::string buttons_code;  // NOLINT [build/c++11]
@@ -53,10 +54,13 @@ int kbd_code = 0;
 model::ActionRunner *action_runner = nullptr;
 
 int InitArgs(int argc,
-             char *const *argv, std::string &kbd_device_path,
-             bool &debug,
-             bool &run);
+             char *const *argv,
+             std::string *kbd_device_path,
+             bool *debug,
+             bool *run);
 
 void PrintVersionInfo();
 
 void *KbdWatcher(void *x_void_ptr);
+
+#endif  // XMCHORD_XMCHORD_H_

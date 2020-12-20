@@ -31,8 +31,8 @@
 #define XMCHORD_HELPER_TEXTUAL_H_
 
 #include <cstring>
-#include <string>
 #include <sstream>
+#include <string>
 #include <utility>
 #include <vector>
 

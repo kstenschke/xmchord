@@ -31,7 +31,6 @@
 #define XMCHORD_HELPER_MOUSE_H_
 
 #include <fcntl.h>
-
 #include <string>
 
 namespace helper {

@@ -28,7 +28,6 @@
 */
 
 #include <xmchord/model/keyboard_device_finder.h>
-#include <thread>
 
 namespace model {
 

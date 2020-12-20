@@ -51,7 +51,7 @@ int main(int argc, char **argv) {
   bool debug = false;
 
   std::string kbd_device_path;
-  int exit_code = InitArgs(argc, argv, kbd_device_path, debug, run);
+  int exit_code = InitArgs(argc, argv, &kbd_device_path, &debug, &run);
 
   if (!run) return exit_code;
 
@@ -91,8 +91,7 @@ int main(int argc, char **argv) {
   }
 
   // Infinite loop: mouse watcher
-  // TODO(kay): move into MouseObserver model
-  while (1) {
+  while (true) {  // TODO(kay): move into MouseObserver model
     if (read(device_handle_mouse, mouse_data, sizeof(mouse_data)) > 0) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wuninitialized"
@@ -107,41 +106,42 @@ int main(int argc, char **argv) {
 }
 
 int InitArgs(int argc,
-             char *const *argv, std::string &kbd_device_path,
-             bool &debug,
-             bool &run) {
+             char *const *argv,
+             std::string *kbd_device_path,
+             bool *debug,
+             bool *run) {
   if (argc <= 1) return 0;  // No arguments given
 
   if (strcmp(argv[1], "a") == 0 || strcmp(argv[1], "actions") == 0) {
     model::ActionReader::PrintListOfActionsWithComments();
-    run = false;
+    *run = false;
     return 0;
   }
 
   if (strcmp(argv[1], "d") == 0 || strcmp(argv[1], "debug") == 0) {
-    debug = true;
+    *debug = true;
     return 0;
   }
 
   if (helper::Textual::StartsWith(argv[1], "-k=")) {
-    kbd_device_path = std::string(argv[1]).substr(3);
+    *kbd_device_path = std::string(argv[1]).substr(3);
     return 0;
   }
 
   if (helper::Textual::StartsWith(argv[1], "--keyboard=")) {
-    kbd_device_path = std::string(argv[1]).substr(11);
+    *kbd_device_path = std::string(argv[1]).substr(11);
     return 0;
   }
 
   if (strcmp(argv[1], "l") == 0 || strcmp(argv[1], "listDevices") == 0) {
-    run = false;
+    *run = false;
     model::KeyboardDeviceFinder::GetDeviceHandle("", true);
 
     return 0;
   }
 
   if (strcmp(argv[1], "r") == 0 || strcmp(argv[1], "reset") == 0) {
-    run = false;
+    *run = false;
     auto *kbd_device_finder = new model::KeyboardDeviceFinder("");
     kbd_device_finder->ResetDevicePreference(true);
 
@@ -151,7 +151,7 @@ int InitArgs(int argc,
 
   if (strcmp(argv[1], "version") == 0 || strcmp(argv[1], "v") == 0) {
     PrintVersionInfo();
-    run =  false;
+    *run =  false;
     return 0;
   }
 
@@ -169,7 +169,8 @@ void PrintVersionInfo() {
 
 // Keyboard watcher (running within thread)
 void *KbdWatcher(void *thread_args) {
-  std::string device_path = ((thargs_t*)thread_args)->device_path;
+  std::string device_path =
+      reinterpret_cast<thargs_t*>(thread_args)->device_path;
 
   int device_handle_keyboard =
       model::KeyboardDeviceFinder::GetDeviceHandle(device_path);
@@ -178,7 +179,7 @@ void *KbdWatcher(void *thread_args) {
 
   struct input_event kbd_event{};
 
-  while (1) {
+  while (true) {
     read(device_handle_keyboard, &kbd_event, sizeof(struct input_event));
 
     switch (kbd_event.value) {

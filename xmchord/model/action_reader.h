@@ -27,12 +27,12 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef XMCHORD_MODEL_ACTION_FILES_H_
-#define XMCHORD_MODEL_ACTION_FILES_H_
+#ifndef XMCHORD_MODEL_ACTION_READER_H_
+#define XMCHORD_MODEL_ACTION_READER_H_
 
 #include <xmchord/helper/textual.h>
-#include <cstdio>
 #include <dirent.h>
+#include <cstdio>
 #include <iostream>
 #include <string>
 
@@ -47,4 +47,4 @@ class ActionReader {
 
 }  // namespace model
 
-#endif  // XMCHORD_MODEL_ACTION_FILES_H_
+#endif  // XMCHORD_MODEL_ACTION_READER_H_

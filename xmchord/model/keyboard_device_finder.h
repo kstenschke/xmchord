@@ -27,16 +27,16 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef XMCHORD_MODEL_KBD_DEVICE_H_
-#define XMCHORD_MODEL_KBD_DEVICE_H_
+#ifndef XMCHORD_MODEL_KEYBOARD_DEVICE_FINDER_H_
+#define XMCHORD_MODEL_KEYBOARD_DEVICE_FINDER_H_
 
 #include <xmchord/helper/system.h>
 #include <xmchord/helper/textual.h>
 #include <xmchord/helper/file.h>
-
 #include <fcntl.h>
 #include <iostream>
 #include <string>
+#include <thread>  // NOLINT
 #include <vector>
 
 namespace model {
@@ -44,7 +44,7 @@ class KeyboardDeviceFinder {
  public:
   int device_index_selected_ = -1;
 
-  KeyboardDeviceFinder(const std::string& device_path);
+  explicit KeyboardDeviceFinder(const std::string& device_path);
 
   static int GetDeviceHandle(const std::string& device_path,
                              bool list_devices = false);
@@ -57,7 +57,7 @@ class KeyboardDeviceFinder {
 
   std::string device_name_selected_;
   std::vector<std::string> devices_;
-  int amount_devices_by_path_;
+  int amount_devices_by_path_ = 0;
 
   bool SetDeviceNameSelectedFromPreference();
 
@@ -72,4 +72,4 @@ class KeyboardDeviceFinder {
 };  // class Keyboard
 }  // namespace model
 
-#endif  // XMCHORD_MODEL_KBD_DEVICE_H_
+#endif  // XMCHORD_MODEL_KEYBOARD_DEVICE_FINDER_H_

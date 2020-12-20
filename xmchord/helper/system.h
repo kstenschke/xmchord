@@ -31,7 +31,6 @@
 #define XMCHORD_HELPER_SYSTEM_H_
 
 #include <vendor/zlib/zconf.h>
-
 #include <cstring>
 #include <cstdlib>
 #include <string>

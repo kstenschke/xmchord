@@ -31,9 +31,7 @@
 #define XMCHORD_HELPER_FILE_H_
 
 #include <xmchord/helper/textual.h>
-
 #include <dirent.h>
-
 #include <cstring>
 #include <fstream>
 #include <iostream>
