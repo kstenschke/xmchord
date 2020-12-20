@@ -1,7 +1,7 @@
 xmchord
 =======
 
-[![Build Status](https://travis-ci.com/kstenschke/xmchord.svg?branch=master)](https://travis-ci.org/kstenschke/xmchord)
+[![Build Status](https://travis-ci.com/kstenschke/xmchord.svg?branch=master)](https://travis-ci.com/kstenschke/xmchord)
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/kstenschke/xmchord.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/kstenschke/xmchord/context:cpp)
 
 xmchord is a productivity tool for Linux desktops, that binds custom
