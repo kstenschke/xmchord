@@ -37,14 +37,14 @@
 #include <xmchord/model/keyboard_device_finder.h>
 #include <xmchord/helper/file.h>
 #include <xmchord/config.h>
+#include <linux/input.h>
+#include <pthread.h>
+#include <sys/types.h>
+#include <unistd.h>
 #include <cstdio>
 #include <cstring>
 #include <iostream>
-#include <linux/input.h>
-#include <pthread.h>
 #include <string>
-#include <sys/types.h>
-#include <unistd.h>
 
 // TODO(kay): store within model instead of using a global string variable
 std::string buttons_code;  // NOLINT [build/c++11]
