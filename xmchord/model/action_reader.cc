@@ -63,7 +63,7 @@ void ActionReader::PrintListOfActionsWithComments() {
   struct dirent *ent;
 
   if ((dir = opendir("actions")) == nullptr) {
-    perror("Error: Failed opening directory");
+    std::cerr << "Error: Failed opening actions directory";
 
     return;
   }
@@ -73,72 +73,49 @@ void ActionReader::PrintListOfActionsWithComments() {
   while ((ent = readdir(dir)) != nullptr) {
     char *file = ent->d_name;
 
-    if (strcmp(ent->d_name, ".") != 0 &&
-        strcmp(ent->d_name, "..") != 0
-        ) {
-      files = files.append(file).append("\n");
+    if (strcmp(ent->d_name, ".") == 0 || strcmp(ent->d_name, "..") == 0)
+      continue;
 
-      if (strlen(file) - 3 == helper::Textual::StrPos(
-          file,
-          const_cast<char *>(".sh"),
-          0)) {
-        std::string filename = "actions/";
-        filename = filename.append(file);
-        FILE *f = fopen(filename.c_str(), "rb");
+    files = files.append(file).append("\n");
 
-        char *buffer = nullptr;
+    std::string filename = "actions/";
+    filename = filename.append(file);
+    FILE *f = fopen(filename.c_str(), "rb");
 
-        if (f) {
-          fseek(f, 0, SEEK_END);
-          auto length_file_content = ftell(f);
-          fseek(f, 0, SEEK_SET);
+    char *buffer = nullptr;
 
-          buffer = static_cast<char *>(malloc(
-              static_cast<size_t>(length_file_content)));
+    if (!f) {
+      std::cout << "Failed opening " << filename << "\n";
+      continue;
+    }
 
-          std::cout << file;
+    fseek(f, 0, SEEK_END);
+    auto length_file_content = ftell(f);
+    fseek(f, 0, SEEK_SET);
 
-          if (buffer)
-            fread(buffer, 1, static_cast<size_t>(length_file_content), f);
+    buffer = static_cast<char *>(malloc(
+        static_cast<size_t>(length_file_content)));
 
-          fclose(f);
-        } else {
-          std::cout << "Failed opening " << filename << "\n";
-        }
+    std::cout << file;
 
-        if (buffer) {
-          int offset_start_comment_line =
-              helper::Textual::StrPos(buffer, const_cast<char *>("\n#:"), 0);
+    if (buffer)
+      fread(buffer, 1, static_cast<size_t>(length_file_content), f);
 
-          if (offset_start_comment_line != -1) {
-            offset_start_comment_line += 3;
+    fclose(f);
 
-            int offset_endC_comment_line =
-                helper::Textual::StrPos(
-                    buffer,
-                    const_cast<char *>("\n"),
-                    offset_start_comment_line);
+    if (buffer) {
+      int offset_start_comment_line =
+          helper::Textual::StrPos(buffer, const_cast<char *>("\n#:"), 0);
 
-            int comment_line_length =
-                offset_endC_comment_line - offset_start_comment_line;
+      if (offset_start_comment_line != -1) {
+        char *comment_line =
+            ExtractComment(buffer, offset_start_comment_line + 3);
 
-            auto *comment_line =
-                static_cast<char *>(malloc(comment_line_length + 1));
+        std::cout << "\t- " << comment_line << "\n";
 
-            strncpy(
-                comment_line,
-                buffer + offset_start_comment_line,
-                comment_line_length);
-
-            comment_line[comment_line_length] = '\0';
-
-            std::cout << "\t- " << comment_line << "\n";
-
-            free(comment_line);
-          } else {
-            std::cout << "\t- No #:-comment line found\n";
-          }
-        }
+        free(comment_line);
+      } else {
+        std::cout << "\t- No #:-comment line found\n";
       }
     }
   }
@@ -146,4 +123,27 @@ void ActionReader::PrintListOfActionsWithComments() {
   closedir(dir);
 }
 
+char *ActionReader::ExtractComment(const char *buffer,
+                                   int offset_start_comment) {
+  int offset_endC_comment_line =
+      helper::Textual::StrPos(
+          const_cast<char *>(buffer),
+          const_cast<char *>("\n"),
+          offset_start_comment);
+
+  int comment_line_length =
+      offset_endC_comment_line - offset_start_comment;
+
+  auto *comment_line =
+      static_cast<char *>(malloc(comment_line_length + 1));
+
+  strncpy(
+      comment_line,
+      buffer + offset_start_comment,
+      comment_line_length);
+
+  comment_line[comment_line_length] = '\0';
+
+  return comment_line;
+}
 }  // namespace model

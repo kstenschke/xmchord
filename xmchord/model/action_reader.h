@@ -43,6 +43,9 @@ class ActionReader {
   static std::string GetActionFiles(const std::string& path_actions);
 
   static void PrintListOfActionsWithComments();
+ private:
+  static char *ExtractComment(const char *buffer,
+                              int offset_start_comment);
 };
 
 }  // namespace model
