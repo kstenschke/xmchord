@@ -226,6 +226,7 @@ be focussed when the shortcut is fired.
 
 | **Shortcut**        | **Description**            |
 |---------------------|----------------------------|
+| &nbsp; &nbsp; ◢ + F | Open "Search Folder" popup |
 | &nbsp; &nbsp; ◢ + H | Toggle "Hide read threads" |
 
 

@@ -1,10 +1,16 @@
 #!/bin/bash
 
-#: BR + F: Bring Firefox window to front
+#: BR + F: Bring Firefox window to front; Within Claws Mail: Open "Search Folder" popup
 
-if pidof -s firefox > /dev/null; then
-	wmctrl -a Firefox
+focusApplication=$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
+
+if [[ "$focusApplication" =~ "claws-mail" ]]; then
+  xdotool key Ctrl+Shift+f
 else
+  if pidof -s firefox >/dev/null; then
+    wmctrl -a Firefox
+  else
     me=$SUDO_USER
-    sudo -u $me nohup firefox > /dev/null &
+    sudo -u $me nohup firefox >/dev/null &
+  fi
 fi
