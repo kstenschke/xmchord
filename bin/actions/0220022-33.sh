@@ -5,6 +5,7 @@
 focusApplication=$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
 
 if [[ "$focusApplication" =~ "claws-mail" ]]; then
+  xdotool sleep 0.1
   xdotool key Ctrl+Shift+f
 else
   if pidof -s firefox >/dev/null; then
