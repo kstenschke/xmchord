@@ -5,7 +5,7 @@ V0.3.1 - Not released yet
 -------------------------
 * Add Claws Mail action: ◢ + F = Open "Search Folder" popup
 * Add action: ◢ + ' = Output name of application of focused window
-* Add Gnome Terminal action: ◢ + Numpad = Insert 40 empty lines (helpful to separate sections of output) 
+* Add Gnome Terminal action: ◢ + Numpad / = Insert 40 empty lines (helpful to separate sections of output) 
 
 V0.3.0 - 2020/12/20
 -------------------
