@@ -233,12 +233,13 @@ be focussed when the shortcut is fired.
 
 ### Gnome Terminal
 
-| **Shortcut**               | **Description**    |
-|----------------------------|--------------------|
-| ◤                          | Close active tab   |
-| ◣ + F                      | Search             |
-| ◣ + ←                      | Focus previous tab |
-| ◣ + →                      | Focus next tab     |
+| **Shortcut**                  | **Description**                                                |
+|-------------------------------|----------------------------------------------------------------|
+| ◤                             | Close active tab                                               |
+| &nbsp; &nbsp; ◢ +  + Numpad / | Insert 40 empty lines (helpful to separate sections of output) |
+| ◣ + F                         | Search                                                         |
+| ◣ + ←                         | Focus previous tab                                             |
+| ◣ + →                         | Focus next tab                                                 |
 
 
 ### Gnome Screenshot

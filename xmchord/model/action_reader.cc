@@ -71,37 +71,34 @@ void ActionReader::PrintListOfActionsWithComments() {
   std::string files;
 
   while ((ent = readdir(dir)) != nullptr) {
+    if (ent->d_type != DT_REG) continue;
+
     char *file = ent->d_name;
-
-    if (strcmp(ent->d_name, ".") == 0 || strcmp(ent->d_name, "..") == 0)
-      continue;
-
     files = files.append(file).append("\n");
 
     std::string filename = "actions/";
     filename = filename.append(file);
-    FILE *f = fopen(filename.c_str(), "rb");
 
-    char *buffer = nullptr;
+    FILE *file_stream = fopen(filename.c_str(), "rb");
 
-    if (!f) {
+    if (!file_stream) {
       std::cout << "Failed opening " << filename << "\n";
       continue;
     }
 
-    fseek(f, 0, SEEK_END);
-    auto length_file_content = ftell(f);
-    fseek(f, 0, SEEK_SET);
+    fseek(file_stream, 0, SEEK_END);
+    auto length_file_content = ftell(file_stream);
+    fseek(file_stream, 0, SEEK_SET);
 
-    buffer = static_cast<char *>(malloc(
-        static_cast<size_t>(length_file_content)));
+    char *buffer =
+        static_cast<char *>(malloc(static_cast<size_t>(length_file_content)));
 
     std::cout << file;
 
     if (buffer)
-      fread(buffer, 1, static_cast<size_t>(length_file_content), f);
+      fread(buffer, 1, static_cast<size_t>(length_file_content), file_stream);
 
-    fclose(f);
+    fclose(file_stream);
 
     if (buffer) {
       int offset_start_comment_line =
