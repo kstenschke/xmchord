@@ -236,10 +236,10 @@ be focussed when the shortcut is fired.
 | **Shortcut**                  | **Description**                                                |
 |-------------------------------|----------------------------------------------------------------|
 | ◤                             | Close active tab                                               |
-| &nbsp; &nbsp; ◢ +  + Numpad / | Insert 40 empty lines (helpful to separate sections of output) |
-| ◣ + F                         | Search                                                         |
-| ◣ + ←                         | Focus previous tab                                             |
-| ◣ + →                         | Focus next tab                                                 |
+| &nbsp; &nbsp; ◢ + F           | Open "Find" popup                                              |
+| &nbsp; &nbsp; ◢ + Numpad /    | Insert 40 empty lines (helpful to separate sections of output) |
+| &nbsp; &nbsp; ◢ + ←           | Focus previous tab                                             |
+| &nbsp; &nbsp; ◢ + →           | Focus next tab                                                 |
 
 
 ### Gnome Screenshot
