@@ -1,6 +1,8 @@
 #!/bin/bash
 
-#: BR + P: Launch Pidgin if not yet running, or bring Pidgin window to front. Open new message popup
+#: BR + P -
+#: Launch Pidgin if not yet running, or bring Pidgin window to front.
+#: Open new message popup
 
 if pidof -s nemo > /dev/null; then
     pidginsPid=`pidof pidgin | cut -d " " -f 2`

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: BR + L: Toggle keyboard backlight
+#: BR + L - Toggle keyboard backlight
 
 if grep -Fxq "0" /sys/class/leds/tpacpi::kbd_backlight/brightness
 then

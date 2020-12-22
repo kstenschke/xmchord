@@ -1,8 +1,11 @@
 #!/bin/bash
 
-#: BR + G: If Gnome Screenshot popup has focus: Fire left click, close popup, focus gimp, paste as new image
+#: BR + G -
+#: If Gnome Screenshot popup has focus: Fire left click, close popup, \
+#: focus gimp, paste as new image
 
-focusApplication=`cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm`
+focusApplication=\
+`cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm`
 
 if [[ "$focusApplication" =~ "gnome-screensho" ]]; then
   xdotool sleep 0.2
@@ -19,7 +22,9 @@ if [[ "$focusApplication" =~ "gnome-screensho" ]]; then
     xdotool sleep 0.2
     xdotool keyup Shift+Super+Left key Ctrl+Shift+v  # paste as new image
     else
-      echo "Launching Gimp..." | aosd_cat -R white -u 500 --y-offset=40 -B black -b 240 --padding=24 -x 5 -n "Ubuntu 20" -p 1
+      echo "Launching Gimp..." | aosd_cat -R white -u 500 --y-offset=40 \
+      -B black -b 240 --padding=24 -x 5 -n "Ubuntu 20" -p 1
+
       me=$SUDO_USER
       sudo -u $me nohup gimp > /dev/null &
   fi

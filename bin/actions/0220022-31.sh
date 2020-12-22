@@ -1,6 +1,7 @@
 #!/bin/bash
 
-#: BR + S: Toggle clicked window's (custom) "roll-sideways" state
+#: BR + S -
+#: Toggle clicked window's (custom) "roll-sideways" state
 
 activeWindowId=`xdotool getactivewindow`
 

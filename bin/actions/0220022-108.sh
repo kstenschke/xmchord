@@ -1,14 +1,16 @@
 #!/bin/bash
 
-#: BR + Down: Jump-scroll to bottom- the required key combo differs among programs, some need "End" others "Ctrl+End"
+#: BR + Down -
+#: Jump-scroll to bottom- the required key combo differs among programs,
+#: some need "End" others "Ctrl+End" (e.g. LibreOffice)
 
-focusApplication=$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
+focusApplication=\
+$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
 
-if [[ "$focusApplication" =~ "soffice.bin" ]]; then
-  #: LibreOffice
+if [[ "$focusApplication" =~ "soffice.bin" ]]; then  # LibreOffice
   xdotool sleep 0.1
   xdotool key Ctrl+End
-else
+else  # Default
   xdotool sleep 0.1
   xdotool key End
 fi

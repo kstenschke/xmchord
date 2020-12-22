@@ -1,10 +1,14 @@
 #!/bin/bash
 
-#: BR + D: If Chromium or firefox active: Duplicate tab. Else: Bring DataGrip window to front
+#: BR + D -
+#: If Chromium or Firefox active: Duplicate tab.
+#: Else: Bring DataGrip window to front
 
-focusApplication=$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
+focusApplication=\
+$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
 
-if [[ "$focusApplication" =~ "chromium-browse" ]] || [[ "$focusApplication" =~ "firefox" ]]; then
+if [[ "$focusApplication" =~ "chromium-browse" ]] \
+|| [[ "$focusApplication" =~ "firefox" ]]; then
   xdotool sleep 0.1
   xdotool key Ctrl+l
   xdotool key Ctrl+c

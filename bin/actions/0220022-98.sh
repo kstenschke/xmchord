@@ -1,6 +1,8 @@
 #!/bin/bash
 
-#: BR + Numpad [/] - In Gnome Terminal: Insert 40 empty lines (helpful to separate sections of output)
+#: BR + Numpad [/] -
+#: In Gnome Terminal: Insert 40 empty lines (helpful to separate sections of
+#: output)
 
 focusApplication=$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
 

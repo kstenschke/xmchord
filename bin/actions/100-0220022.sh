@@ -1,8 +1,11 @@
 #!/bin/bash
 
-#: AltGr + BR: If Gnome Screenshot popup has focus: Fire left click, than close current window
+#: AltGr + BR -
+#: Hovering [copy to clipboard] of Gnome Screenshot:
+#: Fire left click, than close current window
 
-focusApplication=`cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm`
+focusApplication=\
+`cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm`
 
 if [[ "$focusApplication" =~ "gnome-screensho" ]]; then
   xdotool sleep 0.2

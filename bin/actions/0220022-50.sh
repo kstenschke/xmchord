@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: BR + M: Launch or bring Claws Mail to front
+#: BR + M - Launch or bring Claws Mail to front
 
 if pidof -s claws-mail > /dev/null; then
 	wmctrl -a "Claws Mail"

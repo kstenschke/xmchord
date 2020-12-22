@@ -1,8 +1,9 @@
 #!/bin/bash
 
-#: BR + Left: Switch to previous tab (global, Chromium DevTools)
+#: BR + Left - Switch to previous tab (global, Chromium DevTools)
 
-focusApplication=$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
+focusApplication=\
+$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
 
 if [[ "$focusApplication" =~ "gnome-terminal-" ]]; then
   # gnome terminal has focus

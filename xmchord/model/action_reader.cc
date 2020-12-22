@@ -100,28 +100,43 @@ void ActionReader::PrintListOfActionsWithComments() {
 
     fclose(file_stream);
 
-    if (buffer) {
-      int offset_start_comment_line =
-          helper::Textual::StrPos(buffer, const_cast<char *>("\n#:"), 0);
-
-      if (offset_start_comment_line != -1) {
-        char *comment_line =
-            ExtractComment(buffer, offset_start_comment_line + 3);
-
-        std::cout << "\t- " << comment_line << "\n";
-
-        free(comment_line);
-      } else {
-        std::cout << "\t- No #:-comment line found\n";
-      }
-    }
+    if (buffer) FindAndPrintCommentLines(buffer);
   }
 
   closedir(dir);
 }
 
-char *ActionReader::ExtractComment(const char *buffer,
-                                   int offset_start_comment) {
+void ActionReader::FindAndPrintCommentLines(const char *buffer) {
+  uint16_t offset_start = 0;
+  bool found_another_comment = true;
+
+  do {
+    int offset_start_comment_line =
+        helper::Textual::StrPos(
+            const_cast<char *>(buffer), const_cast<char *>("\n#:"), offset_start);
+
+    if (offset_start_comment_line != -1) {
+      char *comment_line =
+          ExtractSingleComment(buffer, offset_start_comment_line + 3);
+
+      if (offset_start == 0) printf("%s", "\t- ");
+      printf("%s", comment_line);
+
+      offset_start += offset_start_comment_line + 4;
+
+      free(comment_line);
+    } else {
+      found_another_comment = false;
+
+      if (offset_start == 0) std::cout << "\t- No #:-comment line found\n";
+    }
+  } while (found_another_comment);
+
+  printf("%s", "\n");
+}
+
+char *ActionReader::ExtractSingleComment(const char *buffer,
+                                         int offset_start_comment) {
   int offset_endC_comment_line =
       helper::Textual::StrPos(
           const_cast<char *>(buffer),

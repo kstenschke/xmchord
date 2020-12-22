@@ -1,6 +1,7 @@
 #!/bin/bash
 
-#: BR + . - Chromium or Firefox: Increment numeric ending of current URL by one
+#: BR + . -
+#: Chromium or Firefox: Increment numeric ending of current URL by one
 
 focusApplication=$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
 

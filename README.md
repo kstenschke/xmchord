@@ -80,7 +80,7 @@ available during startup.
 ### Command: `actions`
 
 Running `xmchord actions` or `xmchord a`, lists all recognized action shell
-scripts, including their inlined description comment (which must be prefixed 
+scripts, including their inlined description comments (which must be prefixed 
 with `#:`).
 
 

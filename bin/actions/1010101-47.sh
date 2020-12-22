@@ -1,6 +1,9 @@
 #!/bin/bash
 
-#: BL + V - Paste (Fire CTRL+V), when gnome screenshot active: export copied image to file, than open in feh image viewer
+#: BL + V -
+#: Paste (Fire CTRL+V).
+#: When Gnome Screenshot active: export copied image to file, than open in
+#: feh image viewer, set feh always-on-top and always-on-visible workspace
 
 focusApplication=`cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm`
 

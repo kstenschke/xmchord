@@ -1,6 +1,8 @@
 #!/bin/bash
 
-#: BR + Up: Jump-scroll to top- the required key combo differs among programs, some need "Home" others "Ctrl+Home"
+#: BR + Up -
+#: Jump-scroll to top- the required key combo differs among programs, some need
+#: "Home" others "Ctrl+Home" (e.g. LibreOffice)
 
 focusApplication=$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
 

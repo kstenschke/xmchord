@@ -1,8 +1,12 @@
 #!/bin/bash
 
-#: BR + F: Bring Firefox window to front; Within Claws Mail: Open "Search Folder" popup; Within Gnome Terminal: Open "find" popup
+#: BR + F:
+#  Bring Firefox window to front
+#: Within Claws Mail: Open "Search Folder" popup
+#: Within Gnome Terminal: Open "find" popup
 
-focusApplication=$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
+focusApplication=\
+$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
 
 if [[ "$focusApplication" =~ "claws-mail" ]]; then
   xdotool sleep 0.1

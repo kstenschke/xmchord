@@ -44,8 +44,9 @@ class ActionReader {
 
   static void PrintListOfActionsWithComments();
  private:
-  static char *ExtractComment(const char *buffer,
-                              int offset_start_comment);
+  static char *ExtractSingleComment(const char *buffer,
+                                    int offset_start_comment);
+  static void FindAndPrintCommentLines(const char *buffer);
 };
 
 }  // namespace model

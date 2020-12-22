@@ -1,11 +1,14 @@
 #!/bin/bash
 
-#: BR + G: If Claws Mail has focus: Toggle "Hide read threads"
+#: BR + G -
+#: If Claws Mail has focus: Toggle "Hide read threads"
 
-focusApplication=`cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm`
+focusApplication=\
+`cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm`
 
 if [[ "$focusApplication" =~ "claws-mail" ]]; then
-  echo "Toggle hide read threads" | aosd_cat -R white -u 300 --y-offset=40 -B black -b 240 --padding=24 -x 5 -n "Ubuntu 20" -p 1
+  echo "Toggle hide read threads" | aosd_cat -R white -u 300 --y-offset=40 \
+  -B black -b 240 --padding=24 -x 5 -n "Ubuntu 20" -p 1
 
   xdotool key Alt+v  # Expand "View" menu
 
