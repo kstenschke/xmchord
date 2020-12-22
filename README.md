@@ -166,6 +166,7 @@ all included actions to work:
 | &nbsp; &nbsp; ◢ + T        | Toggle active window always-on-top state                                       |
 | &nbsp; &nbsp; ◢ + U        | Type current UNIX timestamp                                                    |
 | &nbsp; &nbsp; ◢ + V        | Toggle active window always-on-visible-workspace state                         |
+| &nbsp; &nbsp; ◢ + W        | Hit CTRL+W (close window)                                                      |
 | &nbsp; &nbsp; ◢ + Ä        | Type large A-umlaut (helpful e.g. on swiss keyboards)                          |
 | &nbsp; &nbsp; ◢ + Ö        | Type large O-umlaut (helpful e.g. on swiss keyboards)                          |
 | &nbsp; &nbsp; ◢ + Ü        | Type large U-umlaut (helpful e.g. on swiss keyboards)                          |

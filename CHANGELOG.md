@@ -4,6 +4,7 @@ xmchord Changelog
 V0.3.1 - Not released yet
 -------------------------
 * Add Claws Mail action: ◢ + F = Open "Search Folder" popup
+* Add action: ◢ + W = Hit CTRL + W (close window)
 * Add action: ◢ + ' = Output name of application of focused window
 * Add Gnome Terminal action: ◢ + Numpad = Insert 40 empty lines (helpful to separate sections of output)
 * Improve `action` command: Print consecutive comment-lines concatenated
