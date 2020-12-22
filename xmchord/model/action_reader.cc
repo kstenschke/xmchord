@@ -113,7 +113,9 @@ void ActionReader::FindAndPrintCommentLines(const char *buffer) {
   do {
     int offset_start_comment_line =
         helper::Textual::StrPos(
-            const_cast<char *>(buffer), const_cast<char *>("\n#:"), offset_start);
+            const_cast<char *>(buffer),
+            const_cast<char *>("\n#:"),
+            offset_start);
 
     if (offset_start_comment_line != -1) {
       char *comment_line =
