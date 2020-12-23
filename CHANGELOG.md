@@ -8,6 +8,7 @@ V0.3.1 - Not released yet
 * Add action: ◢ + ' = Output name of application of focused window
 * Add Gnome Terminal action: ◢ + Numpad = Insert 40 empty lines (helpful to separate sections of output)
 * Improve `action` command: Print consecutive comment-lines concatenated
+* Add `help` and `h` command: List and explain available commands
 * Improve copy action (◣ + C): Auto-close popup, notify copied string 
 
 V0.3.0 - 2020/12/20

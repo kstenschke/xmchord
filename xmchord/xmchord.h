@@ -60,6 +60,7 @@ int InitArgs(int argc,
              bool *run);
 
 void PrintVersionInfo();
+void PrintHelp();
 
 void *KbdWatcher(void *x_void_ptr);
 

@@ -123,6 +123,16 @@ int InitArgs(int argc,
     return 0;
   }
 
+  if (strcmp(argv[1], "h") == 0 || strcmp(argv[1], "help") == 0
+      || strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "--help") == 0) {
+    *run = false;
+
+    PrintVersionInfo();
+    PrintHelp();
+
+    return 0;
+  }
+
   if (helper::Textual::StartsWith(argv[1], "-k=")) {
     *kbd_device_path = std::string(argv[1]).substr(3);
     return 0;
@@ -164,7 +174,33 @@ void PrintVersionInfo() {
       << "xmchord version " << XMCHORD_VERSION_MAJOR << "."
       << XMCHORD_VERSION_MINOR << "."
       << XMCHORD_VERSION_PATCH << "\n"
-      "Copyright (c) 2019-2020 Kay Stenschke\n\n";
+      "Copyright (c) Kay Stenschke\n\n";
+}
+
+void PrintHelp() {
+  std::cout
+      << "Usage: xmchord [OPTION]\n"
+      << "Available commands:\n"
+      << "actions\t\t\tList available action script files including their inlined #: comment(s)\n"
+      << "a\t\t\tShorthand for \"actions\" command\n\n"
+
+      << "debug\t\t\tRun in debug mode: event codes are printed as they occur, script files can be added at run-time\"a\"\n"
+      << "d\t\t\tShorthand for \"debug\" command\n\n"
+
+      << "help\t\t\tOutput version number and this help text\n"
+      << "h\t\t\tShorthand for \"help\" command\n\n"
+
+      << "--keyboard=[path]\tSet path of non-default keyboard device to be used. Setting is persisted until reset or changed.\n"
+      << "-k=\t\t\tShorthand for \"--keyboard\" option\n\n"
+
+      << "listDevices\t\tOutput paths of available devices (helpful when setting up -k option)\n"
+      << "l\t\t\tShorthand for \"listDevices\" command\n\n"
+
+      << "reset\t\t\tReset preferences\n"
+      << "r=\t\t\tShorthand for \"reset\" command\n\n"
+
+      << "version\t\t\tOutput version number\n"
+      << "h\t\t\tShorthand for \"version\" command\n\n";
 }
 
 // Keyboard watcher (running within thread)

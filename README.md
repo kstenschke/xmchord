@@ -19,6 +19,7 @@ common user activities on the Linux desktop.
 
 * [What does it do?](#what-does-it-do)
 * [Usage and arguments](#usage-and-arguments)
+  * [Command: `help`](#command-help)
   * [Command: `debug`](#command-debug)
   * [Command: `actions`](#command-actions)
   * [Argument: `--keyboard`](#argument---keyboard)
@@ -65,6 +66,12 @@ To ensure read-access to Linux device events, xmchord must be run with root
 privileges (e.g. via`sudo`).
 Action shell scripts that perform user specific tasks, therefor must take care 
 of [running on that user's behalf](#1-user-specific-actions).
+
+
+### Command: `help`
+
+Running `xmchord help` or  `xmchord h`, displays a list and explanation of
+available commands.
 
 
 ### Command: `debug`
