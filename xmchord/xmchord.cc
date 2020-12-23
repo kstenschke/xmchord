@@ -181,26 +181,26 @@ void PrintHelp() {
   std::cout
       << "Usage: xmchord [OPTION]\n"
       << "Available commands:\n"
-      << "actions\t\t\tList available action script files including their inlined #: comment(s)\n"
-      << "a\t\t\tShorthand for \"actions\" command\n\n"
+      << "  actions\t\tList available action script files including their inlined #: comment(s)\n"
+      << "  a\t\t\tShorthand for \"actions\" command\n\n"
 
-      << "debug\t\t\tRun in debug mode: event codes are printed as they occur, script files can be added at run-time\"a\"\n"
-      << "d\t\t\tShorthand for \"debug\" command\n\n"
+      << "  debug\t\t\tRun in debug mode: event codes are printed as they occur, script files can be added at run-time\"a\"\n"
+      << "  d\t\t\tShorthand for \"debug\" command\n\n"
 
-      << "help\t\t\tOutput version number and this help text\n"
-      << "h\t\t\tShorthand for \"help\" command\n\n"
+      << "  help\t\t\tOutput version number and this help text\n"
+      << "  h\t\t\tShorthand for \"help\" command\n\n"
 
-      << "--keyboard=[path]\tSet path of non-default keyboard device to be used. Setting is persisted until reset or changed.\n"
-      << "-k=\t\t\tShorthand for \"--keyboard\" option\n\n"
+      << "  --keyboard=[path]\tSet path of non-default keyboard device to be used. Setting is persisted until reset or changed.\n"
+      << "  -k=\t\t\tShorthand for \"--keyboard\" option\n\n"
 
-      << "listDevices\t\tOutput paths of available devices (helpful when setting up -k option)\n"
-      << "l\t\t\tShorthand for \"listDevices\" command\n\n"
+      << "  listDevices\t\tOutput paths of available devices (helpful when setting up -k option)\n"
+      << "  l\t\t\tShorthand for \"listDevices\" command\n\n"
 
-      << "reset\t\t\tReset preferences\n"
-      << "r=\t\t\tShorthand for \"reset\" command\n\n"
+      << "  reset\t\t\tReset preferences\n"
+      << "  r=\t\t\tShorthand for \"reset\" command\n\n"
 
-      << "version\t\t\tOutput version number\n"
-      << "h\t\t\tShorthand for \"version\" command\n\n";
+      << "  version\t\tOutput version number\n"
+      << "  h\t\t\tShorthand for \"version\" command\n\n";
 }
 
 // Keyboard watcher (running within thread)

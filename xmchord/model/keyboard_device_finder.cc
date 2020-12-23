@@ -161,7 +161,7 @@ bool KeyboardDeviceFinder::SelectKeyboardFromAvailableDevices(
       devices_list += helper::Textual::ANSI_REVERSE;
     }
 
-    devices_list += " " + device_name + " \n";
+    devices_list += "  " + device_name + " \n";
 
     if (is_selected) devices_list += helper::Textual::ANSI_RESET;
 
