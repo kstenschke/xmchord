@@ -9,8 +9,9 @@ V0.3.1 - Not released yet
 * Add Gnome Terminal action: ◢ + Numpad = Insert 40 empty lines (helpful to separate sections of output)
 * Improve `action` command: Print consecutive comment-lines concatenated
 * Add `help` and `h` command: List and explain available commands
-* Improve copy action (◣ + C): Auto-close popup, notify copied string 
-
+* Improve copy action (◣ + C): Auto-close popup, notify copied string
+* Improve BR + Up action: add jump to top in gnome-terminal
+~~~~
 V0.3.0 - 2020/12/20
 -------------------
 * Add options for using specific non-default keyboard device
