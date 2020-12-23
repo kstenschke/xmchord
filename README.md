@@ -319,7 +319,9 @@ key-combinations for various shortcuts:
 
 ```bash
 #!/bin/bash
-focusApplication=`cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm`
+focusApplication=\
+`cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm`
+
 if [[ "$focusApplication" =~ "gnome-terminal-" ]]; then
     xdotool key Control_L+Page_Up
 else
