@@ -292,10 +292,10 @@ on Mac OS).
 ```bash
 #!/bin/bash
 if pidof -s evolution > /dev/null; then
-    wmctrl -a Evolution
+  wmctrl -a Evolution
 else
-    me=$SUDO_USER
-    sudo -u $me nohup evolution > /dev/null &
+  me=$SUDO_USER
+  sudo -u $me nohup evolution > /dev/null &
 fi
 ```
 
@@ -330,9 +330,9 @@ focusApplication=\
 `cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm`
 
 if [[ "$focusApplication" =~ "gnome-terminal-" ]]; then
-    xdotool key Control_L+Page_Up
+  xdotool key Control_L+Page_Up
 else
-    xdotool key shift+ctrl+Tab
+  xdotool key shift+ctrl+Tab
 fi
 ```
 
