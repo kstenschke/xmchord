@@ -174,6 +174,7 @@ void PrintVersionInfo() {
       << "xmchord version " << XMCHORD_VERSION_MAJOR << "."
       << XMCHORD_VERSION_MINOR << "."
       << XMCHORD_VERSION_PATCH << "\n"
+      "Released under the BSD-3-Clause License.\n"
       "Copyright (c) Kay Stenschke\n\n";
 }
 
