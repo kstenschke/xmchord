@@ -248,8 +248,8 @@ be focussed when the shortcut is fired.
 | &nbsp; &nbsp; ◢ + Numpad / | Insert 40 empty lines (helpful to separate sections of output) |
 | &nbsp; &nbsp; ◢ + ←        | Focus previous tab                                             |
 | &nbsp; &nbsp; ◢ + →        | Focus next tab                                                 |
-| &nbsp; &nbsp; ◣ + ↑        | Scroll to top                                                  |
-| &nbsp; &nbsp; ◣ + ↓        | Scroll to bottom                                               |
+| &nbsp; &nbsp; ◢ + ↑        | Scroll to top                                                  |
+| &nbsp; &nbsp; ◢ + ↓        | Scroll to bottom                                               |
 
 
 ### Gnome Screenshot
