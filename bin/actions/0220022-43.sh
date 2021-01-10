@@ -15,7 +15,7 @@ upper=${clipboard^^}
 if [[ "$clipboard" == "$upper" ]]; then
   echo "${clipboard,,}" | xclip -in -selection clipboard # Copy all lower
 else
-  echo "$upper" | xclip -in -selection clipboard # Copy all lower
+  echo "$upper" | xclip -in -selection clipboard # Copy all upper
 fi
 
 xdotool key Ctrl+v
