@@ -7,6 +7,7 @@ V0.3.1 - Not released yet
 * Add action: ◢ + W = Hit CTRL + W (close window)
 * Add action: ◢ + ' = Output name of application of focused window
 * Add Gnome Terminal action: ◢ + Numpad = Insert 40 empty lines (helpful to separate sections of output)
+* Add browser action: ◢ + H = Toggle HTML "view-source" of current URL
 * Improve `action` command: Print consecutive comment-lines concatenated
 * Add `help` and `h` command: List and explain available commands
 * Improve copy action (◣ + C): Auto-close popup, notify copied string

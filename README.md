@@ -230,6 +230,7 @@ be focussed when the shortcut is fired.
 | &nbsp; &nbsp; ◢ + Backspace  | Remove trailing segment from current URL     |
 | &nbsp; &nbsp; ◢ + C          | Copy trailing segment of current URL         |
 | &nbsp; &nbsp; ◢ + D          | Duplicate active tab                         |
+| &nbsp; &nbsp; ◢ + H          | Toggle HTML "view-source" of current URL     |
 | ◣ + ←                        | Go URL backwards                             |
 | ◣ + →                        | Go URL forward                               |
 | ◣ + F4                       | Close active tab                             |
