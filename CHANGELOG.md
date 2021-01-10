@@ -12,6 +12,7 @@ V0.3.1 - Not released yet
 * Add `help` and `h` command: List and explain available commands
 * Improve copy action (◣ + C): Auto-close popup, notify copied string
 * Improve BR + Up action: add jump to top in gnome-terminal
+* Add action: ◢ + $ = Convert selected text to all upper/lower case
 
 V0.3.0 - 2020/12/20
 -------------------

@@ -194,7 +194,8 @@ all included actions to work:
 | &nbsp; &nbsp; ◢ + Numpad 1 | Tile active window to bottom-left 50% of screen                                |
 | &nbsp; &nbsp; ◢ + Numpad 4 | Tile active window to left 50% of screen                                       |
 | &nbsp; &nbsp; ◢ + Numpad 5 | Maximize active window                                                         |
-| &nbsp; &nbsp; ◢ + '        | Output name of application of focused window                                   |
+| &nbsp; &nbsp; ◢ + '        | Output name of application of focused window (to terminal)                     |
+| &nbsp; &nbsp; ◢ + $        | Convert selected text to all upper/lower case                                  |
 | ◣ + A                      | Select all (same as CTRL+A)                                                    |
 | ◣ + C                      | Copy (same as CTRL+C)                                                          |
 | ◣ + F                      | Find (same as CTRL+F)                                                          |
