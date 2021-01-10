@@ -27,6 +27,7 @@ common user activities on the Linux desktop.
   * [Command: `reset`](#command-reset)
   * [Command: `version`](#command-version)
 * [Included shortcut actions](#included-shortcut-actions)
+  * [Third party dependencies](#third-party-dependencies)
   * [Global actions](#global-actions-not-application-specific)
   * [Application specific actions](#application-specific-actions)
     * [Chromium and Firefox Web-Browser](#chromium-and-firefox-web-browser)
@@ -131,6 +132,9 @@ The included shortcut actions are scripted for use with a
 trackball, tested on Linux Mint Cinnamon, but should be compatible or easily
 adjustable for other devices and Linux distributions and desktop environments.
 
+
+### Third party dependencies
+
 **Please note:** The following third party dependencies must be installed for
 all included actions to work:
 
@@ -144,7 +148,7 @@ all included actions to work:
 | [xsel](https://linux.die.net/man/1/xsel)                        | Manipulate the X selection (Clipboard)                                            |
 
 
-## Global actions (not application specific)
+### Global actions (not application specific)
 
 **Symbols are:**
 
@@ -206,13 +210,13 @@ all included actions to work:
 | ◣ + ↓                      | Decrease audio volume                                                          |
 
 
-## Application specific actions
+### Application specific actions
 
 For these actions to be triggered, a window of the respective application must
 be focussed when the shortcut is fired.
 
 
-### Chromium and Firefox Web-Browser
+#### Chromium and Firefox Web-Browser
 
 | **Shortcut**                 | **Description**                              |
 |------------------------------|----------------------------------------------|
@@ -231,7 +235,7 @@ be focussed when the shortcut is fired.
 | ◣ + F4                       | Close active tab                             |
 
 
-### Claws Mail
+#### Claws Mail
 
 | **Shortcut**        | **Description**            |
 |---------------------|----------------------------|
@@ -239,7 +243,7 @@ be focussed when the shortcut is fired.
 | &nbsp; &nbsp; ◢ + H | Toggle "Hide read threads" |
 
 
-### Gnome Terminal
+#### Gnome Terminal
 
 | **Shortcut**               | **Description**                                                |
 |----------------------------|----------------------------------------------------------------|
@@ -252,7 +256,7 @@ be focussed when the shortcut is fired.
 | &nbsp; &nbsp; ◢ + ↓        | Scroll to bottom                                               |
 
 
-### Gnome Screenshot
+#### Gnome Screenshot
 
 These actions automate the steps for transferring screenshots made with 
 Gnome Screenshot into other applications.  
