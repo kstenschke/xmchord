@@ -13,6 +13,7 @@ V0.3.1 - Not released yet
 * Improve copy action (◣ + C): Auto-close popup, notify copied string
 * Improve BR + Up action: add jump to top in gnome-terminal
 * Add action: ◢ + $ = Convert selected text to all upper/lower case
+* Improve BR + Up/Down actions: Fire Ctrl+Home/End in Java-based Applications
 
 V0.3.0 - 2020/12/20
 -------------------

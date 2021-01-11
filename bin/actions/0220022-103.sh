@@ -10,7 +10,8 @@ if [[ "$focusApplication" =~ "gnome-terminal" ]]; then
   xdotool sleep 0.1
   xdotool key Ctrl+Shift+Home
 else
-  if [[ "$focusApplication" =~ "soffice.bin" ]]; then  # LibreOffice
+  if [[ "$focusApplication" =~ soffice.bin ]] \
+  || [[ "$focusApplication" =~ "java" ]]; then
     xdotool sleep 0.1
     xdotool key Ctrl+Home
   else

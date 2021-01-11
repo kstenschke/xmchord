@@ -7,7 +7,8 @@
 focusApplication=\
 $(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
 
-if [[ "$focusApplication" =~ "soffice.bin" ]]; then  # LibreOffice
+if [[ "$focusApplication" =~ "soffice.bin" ]] \
+|| [[ "$focusApplication" =~ "java" ]]; then
   xdotool sleep 0.1
   xdotool key Ctrl+End
 else  # Default
