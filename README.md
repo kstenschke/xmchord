@@ -133,7 +133,7 @@ adjustable for other devices and Linux distributions and desktop environments.
 
 ### Third party dependencies
 
-**Please note:** The following third party dependencies must be installed for
+The following third party dependencies must be installed for
 all included actions to work:
 
 | Application                                                     | Description                                                                       |
