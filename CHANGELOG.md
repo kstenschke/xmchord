@@ -1,8 +1,8 @@
 xmchord Changelog
 =================
 
-V0.4.0 - Not released yet
--------------------------
+V0.4.0 - 2021/01/12
+-------------------
 * Add Claws Mail action: ◢ + F = Open "Search Folder" popup
 * Add action: ◢ + W = Hit CTRL + W (close window)
 * Add action: ◢ + ' = Output name of application of focused window
