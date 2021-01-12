@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: Right Shift + BR + Any of the top buttons -
+#: Right Shift + ◢ + Any of the top buttons -
 #: Switch to previous workspace
 
 me=$SUDO_USER

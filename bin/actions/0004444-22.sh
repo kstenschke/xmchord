@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: TL + U -
+#: ◤ + U -
 #: Within Chromium and Firefox: focus URL
 
 focusApplication=\

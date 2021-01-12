@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: BL + R - In Chromium and Firefox: Reload.
+#: ◣ + R - In Chromium and Firefox: Reload.
 
 focusApplication=\
 $(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)

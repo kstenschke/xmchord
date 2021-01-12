@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: BR + , -
+#: ◢ + , -
 #: Within Chromium or Firefox: Decrement numeric ending of current URL by one
 
 focusApplication=\

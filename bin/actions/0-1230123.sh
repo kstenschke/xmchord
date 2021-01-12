@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: BL + BR -
+#: ◣ + ◢ -
 #: Touch active corner (bottom-right) w/ mouse pointer,
 #: than return to original mouse location
 

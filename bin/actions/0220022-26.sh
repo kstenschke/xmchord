@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: BR + Ü -
+#: ◢ + Ü -
 #: Type large Ü (helpful e.g. on swiss keyboards not having dedicated umlaut
 #: keys)
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#: Top-any: If terminal window has focus - close current tab.
-#: BR+H in browser: Toggle "view-source:" prefix of current URL
+#: Top-any - If terminal window has focus - close current tab.
+#: ◢ + H in browser - Toggle "view-source:" prefix of current URL
 
 focusApplication=$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
 

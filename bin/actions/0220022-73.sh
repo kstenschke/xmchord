@@ -1,5 +1,5 @@
 #!/bin/bash
 
-#: BR + Numpad 9 - Tile active window to top-right 50% of screen
+#: ◢ + Numpad 9 - Tile active window to top-right 50% of screen
 
 actions/utils/splitDesk.sh top-right

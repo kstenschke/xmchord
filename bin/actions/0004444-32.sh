@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: TL + D - If Chromium or Firefox has focus: Show Downloads
+#: ◤ + D - If Chromium or Firefox has focus: Show Downloads
 
 focusApplication=\
 `cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm`

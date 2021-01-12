@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: BL + right -
+#: ◣ + right -
 #: Within Gnome Terminal: Go Tab to right.
 #: Within Chromium or Firefox: Go URL forward.
 

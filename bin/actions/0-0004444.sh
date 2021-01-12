@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: Top-any: If terminal window has focus - close current tab
+#: Top-any - If terminal window has focus - close current tab
 
 focusApplication=\
 $(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)

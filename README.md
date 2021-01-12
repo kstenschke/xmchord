@@ -48,18 +48,16 @@ common user activities on the Linux desktop.
 * [Author and License](#author-and-license)
 
 
-What does it do?
-----------------
+## What does it do?
 
 xmchord listens for events of mouse buttons pressed together with keyboard keys.
 When observing a chording event, xmchord generates an identifier code for the
-given combination of button/key presses. If there is a shell script file 
-named by the current event code, within xmchord's `actions` directory, it is
-executed.
+given combination (and order) of button/key presses. 
+If there is a shell script file named by the current event code, within 
+xmchord's `actions` directories, it is executed.
 
 
-Usage and arguments
--------------------
+## Usage and arguments
 
 Usage is: `sudo xmchord` 
 

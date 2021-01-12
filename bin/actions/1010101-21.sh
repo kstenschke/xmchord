@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: BL + Z - Undo (Fire CTRL+Z)
+#: ◣ + Z - Undo (Fire CTRL+Z)
 
 xdotool sleep 0.1
 xdotool key ctrl+z

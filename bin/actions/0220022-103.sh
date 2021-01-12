@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: BR + Up -
+#: ◢ + Up -
 #: Jump-scroll to top- the required key combo differs among programs, some need
 #: "Home" others "Ctrl+Shift+Home" (gnome-terminal) or "Ctrl+Home" (LibreOffice)
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#: BR + G -
-#: If Gnome Screenshot popup has focus: Fire left click, close popup, \
+#: ◢ + G -
+#: If Gnome Screenshot popup has focus: Fire left click, close popup,
 #: focus gimp, paste as new image
 
 focusApplication=\

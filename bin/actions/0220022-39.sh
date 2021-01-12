@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: BR + Ö -
+#: ◢ + Ö -
 #: Type large Ö (helpful e.g. on swiss keyboards not having dedicated
 #: umlaut keys)
 

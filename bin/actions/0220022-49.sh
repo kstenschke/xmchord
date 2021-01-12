@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: BR + N - Bring Nemo to front, launch if not yet running
+#: ◢ + N - Bring Nemo to front, launch if not yet running
 
 if pidof -s nemo > /dev/null; then
     nemosPid=`pidof nemo`

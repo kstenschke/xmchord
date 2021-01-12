@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#: BL + F4 - If Chromium or Firefox window has focus: Close active tab
+#: ◣ + F4 - If Chromium or Firefox window has focus: Close active tab
 
 focusApplication=\
 `cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm`

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: BR + Down -
+#: ◢ + Down -
 #: Jump-scroll to bottom- the required key combo differs among programs,
 #: some need "End" others "Ctrl+End" (e.g. LibreOffice)
 

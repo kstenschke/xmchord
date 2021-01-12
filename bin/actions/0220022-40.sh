@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: BR + Ä -
+#: ◢ + Ä -
 #: Type large Ä (helpful e.g. on swiss keyboards not having dedicated
 #: umlaut keys)
 

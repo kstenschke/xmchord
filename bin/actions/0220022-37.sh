@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: BR + K - Bring Kitematic window to front
+#: ◢ + K - Bring Kitematic window to front
 
 if pidof -s firefox > /dev/null; then
 	wmctrl -a Kitematic

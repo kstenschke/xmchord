@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: BR+$: Convert selected text to all upper-/lower-case
+#: ◢ + $ - Convert selected text to all upper-/lower-case
 # Mouse+Key must be "hit": released immediately
 
 sleep 0.6

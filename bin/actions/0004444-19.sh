@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: TL + R - Open Run dialog
+#: ◤ + R - Open Run dialog
 
 me=$SUDO_USER
 

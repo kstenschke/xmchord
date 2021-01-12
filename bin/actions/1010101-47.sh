@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: BL + V -
+#: ◣ + V -
 #: Paste (Fire CTRL+V).
 #: When Gnome Screenshot active: export copied image to file, than open in
 #: feh image viewer, set feh always-on-top and always-on-visible workspace
