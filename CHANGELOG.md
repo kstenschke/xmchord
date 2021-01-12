@@ -5,6 +5,7 @@ V0.4.1 - Not released yet
 -------------------------
 * Fix action shell scripts style issues (fulfill google convention 100% now)
 * Add shellcheck continuous inspection of action shell scripts to travis config   
+* Add "Build tools and Continuous Integration" section into README.md
 
 V0.4.0 - 2021/01/12
 -------------------

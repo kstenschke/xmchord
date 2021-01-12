@@ -45,6 +45,7 @@ common user activities on the Linux desktop.
 * [Bug Reporting and Feature Requests](#bug-reporting-and-feature-requests)
 * [Changelog](#changelog)
 * [Third Party References](#third-party-references)
+  * [Build tools and Continuous Integration](#build-tools-and-continuous-integration)
 * [Author and License](#author-and-license)
 
 
@@ -377,7 +378,28 @@ See [CHANGELOG.md](CHANGELOG.md)
 ## Third Party References
 
 The example action for window arrangement uses splitDesk.sh, 
-based on the [original script](https://gist.github.com/culyun/a7347a58168a75ba8c06f1ddd67cf06d) by Steve Simpson.
+based on the 
+[original script](https://gist.github.com/culyun/a7347a58168a75ba8c06f1ddd67cf06d) 
+by Steve Simpson.
+
+
+### Build tools and Continuous Integration
+
+The following third party tools are used for building xmchord with automatic
+control over code quality and standards: 
+
+| Tool or Service                                                 | Description                                                                          | License                                                                                                   |
+| --------------------------------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
+| [Clang](https://clang.llvm.org)                                 | A C language family frontend for LLVM                                                | [Apache License](https://www.apache.org/licenses/)                                                        |      
+| [Cmake](https://cmake.org)                                      | Family of tools designed to build, test and package software                         | [New BSD License](https://en.wikipedia.org/wiki/New_BSD_License)                                          |      
+| [Cppcheck](http://cppcheck.sourceforge.net/)                    | Static analysis tool for C/C++ code                                                  | [GNU General Public License version 3](https://www.gnu.org/licenses/gpl-3.0.html)                         |      
+| [cpplint](https://github.com/cpplint/cpplint)                   | Static code checker for C++                                                          | [BSD-3 Clause](https://opensource.org/licenses/BSD-3-Clause)                                              |      
+| [GCC](https://gcc.gnu.org)                                      | GCC, the GNU Compiler Collection                                                     | [GNU General Public License version 3](https://gcc.gnu.org/onlinedocs/libstdc++/manual/appendix_gpl.html) |      
+| [lgtm automated code review](https://lgtm.com/)                 | Code analysis platform for finding zero-days and preventing critical vulnerabilities | [lgtm Terms of Service](https://lgtm.com/tos)                                                             |      
+| [ShellCheck](https://github.com/koalaman/shellcheck)            | ShellCheck, a static analysis tool for shell scripts                                 | [GNU General Public License version 3](https://gcc.gnu.org/onlinedocs/libstdc++/manual/appendix_gpl.html) |      
+| [Tavis CI](https://travis-ci.org/)                              | Test and Deploy Your Code with Confidence                                            | [Travis CI Contact & Legal Inquiries](https://www.ideracorp.com/legal/TravisCI)                           |      
+
+Thanks a lot!
 
 
 ## Author and License
