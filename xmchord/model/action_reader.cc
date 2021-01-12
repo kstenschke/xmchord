@@ -65,7 +65,7 @@ void ActionReader::PrintActionsWithComments() {
 
   std::string files, output;
 
-  PrintActionsInPathWithComments(output, files, dir_actions, path_actions);
+  PrintActionsInPathWithComments(&output, &files, dir_actions, path_actions);
   closedir(dir_actions);
 
   std::cout << "\n" << helper::Textual::SubstrCount(output, "\n")
@@ -73,45 +73,45 @@ void ActionReader::PrintActionsWithComments() {
             << output << "\n";
 }
 
-void ActionReader::PrintActionsInPathWithComments(std::string &output,
-                                                  std::string &files,
+void ActionReader::PrintActionsInPathWithComments(std::string *output,
+                                                  std::string *files,
                                                   DIR *path_actions,
-                                                  std::string &path,
+                                                  const std::string &path,
                                                   bool check_unique) {
   struct dirent *ent;
 
   while ((ent = readdir(path_actions)) != nullptr) {
     if (ent->d_type != DT_REG  // Skip everything but regular files
         // Skip already listed files (local actions precede)
-        || (check_unique && helper::Textual::Contains(files, ent->d_name)))
+        || (check_unique && helper::Textual::Contains(*files, ent->d_name)))
       continue;
 
     char *file = ent->d_name;
-    files = files.append(file).append("\n");
+    *files = (*files).append(file).append("\n");
 
-    output += path + "/" + file;
+    *output += path + "/" + file;
 
     auto *action_content = GetActionContent(path, file);
 
     if (nullptr == action_content) return;
 
     auto len_file_path = path.length() + strlen(file) + 1;
-    output += "\t = ";
+    *output += "\t = ";
 
     auto comment = ExtractCommentLines(action_content);;
-    output += comment;
+    *output += comment;
 
-    auto offset_last_line = output.find_last_of('\n');
+    auto offset_last_line = (*output).find_last_of('\n');
 
     if (std::string::npos != offset_last_line) {
-      auto last_line = output.substr(offset_last_line);
+      auto last_line = (*output).substr(offset_last_line);
 
       if (last_line.length() >  130)
-        output = output.substr(0, offset_last_line)
-            .append(WrapOutputLine(len_file_path, last_line));
+        *output = (*output).substr(0, offset_last_line).append(
+            WrapOutputLine(len_file_path, last_line));
     }
 
-    output += '\n';
+    *output += '\n';
   }
 }
 

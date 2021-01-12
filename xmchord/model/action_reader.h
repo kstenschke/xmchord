@@ -44,10 +44,10 @@ class ActionReader {
 
   static void PrintActionsWithComments();
  private:
-  static void PrintActionsInPathWithComments(std::string &output,
-                                             std::string &files,
+  static void PrintActionsInPathWithComments(std::string *output,
+                                             std::string *files,
                                              DIR *path_actions,
-                                             std::string &path,
+                                             const std::string &path,
                                              bool check_unique = false);
 
   static void GetActionsInPath(std::string *files, DIR *dir_stream);
