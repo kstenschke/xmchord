@@ -44,21 +44,22 @@ class ActionReader {
 
   static void PrintActionsWithComments();
  private:
-  static char* ExtractSingleComment(const char *buffer,
-                                    int offset_start_comment);
-  static std::string ExtractCommentLines(const char *script);
+  static void PrintActionsInPathWithComments(std::string &output,
+                                             std::string &files,
+                                             DIR *path_actions,
+                                             std::string &path,
+                                             bool check_unique = false);
 
-  static std::string &GetActionsInPath(std::string &files, DIR *p_dirstream);
-
-  static void PrintActionsInDirectoryWithComments(std::string &output,
-                                                  std::string &files,
-                                                  DIR *path_actions,
-                                                  std::string &path,
-                                                  bool check_unique = false);
+  static void GetActionsInPath(std::string *files, DIR *dir_stream);
 
   static char *GetActionContent(const std::string &path, const char *file);
 
-  static std::string WrapOutputLine(unsigned long len_file_path,
+  static std::string ExtractCommentLines(const char *script);
+
+  static char* ExtractSingleComment(const char *buffer,
+                                    int offset_start_comment);
+
+  static std::string WrapOutputLine(uint8_t len_file_path,
                                     const std::string &last_line);
 };
 

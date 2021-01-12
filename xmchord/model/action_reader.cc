@@ -45,20 +45,7 @@ std::string ActionReader::GetActionFiles(
 
   std::string files = "\n";
 
-  return GetActionsInPath(files, dir_actions);
-}
-
-std::string &ActionReader::GetActionsInPath(std::string &files,
-                                            DIR *p_dirstream) {
-  struct dirent *ent;
-
-  while ((ent = readdir(p_dirstream)) != nullptr) {
-    if (ent->d_name[0] != '.'  // exclude hidden files
-        && helper::Textual::EndsWith(ent->d_name, ".sh"))
-      files = files.append(ent->d_name).append("\n");
-  }
-
-  closedir(p_dirstream);
+  GetActionsInPath(&files, dir_actions);
 
   return files;
 }
@@ -78,7 +65,7 @@ void ActionReader::PrintActionsWithComments() {
 
   std::string files, output;
 
-  PrintActionsInDirectoryWithComments(output, files, dir_actions, path_actions);
+  PrintActionsInPathWithComments(output, files, dir_actions, path_actions);
   closedir(dir_actions);
 
   std::cout << "\n" << helper::Textual::SubstrCount(output, "\n")
@@ -86,18 +73,18 @@ void ActionReader::PrintActionsWithComments() {
             << output << "\n";
 }
 
-void ActionReader::PrintActionsInDirectoryWithComments(std::string &output,
-                                                       std::string &files,
-                                                       DIR *path_actions,
-                                                       std::string &path,
-                                                       bool check_unique) {
+void ActionReader::PrintActionsInPathWithComments(std::string &output,
+                                                  std::string &files,
+                                                  DIR *path_actions,
+                                                  std::string &path,
+                                                  bool check_unique) {
   struct dirent *ent;
 
   while ((ent = readdir(path_actions)) != nullptr) {
     if (ent->d_type != DT_REG  // Skip everything but regular files
         // Skip already listed files (local actions precede)
-        || (check_unique && helper::Textual::Contains(files, ent->d_name))
-    ) continue;
+        || (check_unique && helper::Textual::Contains(files, ent->d_name)))
+      continue;
 
     char *file = ent->d_name;
     files = files.append(file).append("\n");
@@ -128,28 +115,16 @@ void ActionReader::PrintActionsInDirectoryWithComments(std::string &output,
   }
 }
 
-std::string ActionReader::WrapOutputLine(
-    unsigned long len_file_path,
-    const std::string &last_line) {
-  auto segments = helper::Textual::Explode(last_line, ' ');
+void ActionReader::GetActionsInPath(std::string *files, DIR *dir_stream) {
+  struct dirent *ent;
 
-  std::string last_line_wrapped;
-  uint16_t current_line_length = 0;
-
-  for (const auto& segment : segments) {
-    auto segment_len = segment.length();
-
-    if (current_line_length + segment_len > 80) {
-      last_line_wrapped += "\n" + helper::Textual::Repeat(" ", len_file_path)
-          + "\t\t" + segment;
-
-      current_line_length = segment_len;
-    } else {
-      last_line_wrapped += " " + segment;
-      current_line_length += segment_len + 1;
-    }
+  while ((ent = readdir(dir_stream)) != nullptr) {
+    if (ent->d_name[0] != '.'  // exclude hidden files
+        && helper::Textual::EndsWith(ent->d_name, ".sh"))
+      *files = (*files).append(ent->d_name).append("\n");
   }
-  return last_line_wrapped;
+
+  closedir(dir_stream);
 }
 
 char *ActionReader::GetActionContent(const std::string &path,
@@ -230,5 +205,29 @@ char* ActionReader::ExtractSingleComment(const char *buffer,
   comment_line[comment_line_length] = '\0';
 
   return comment_line;
+}
+
+std::string ActionReader::WrapOutputLine(
+    uint8_t len_file_path,
+    const std::string &last_line) {
+  auto segments = helper::Textual::Explode(last_line, ' ');
+
+  std::string last_line_wrapped;
+  uint16_t current_line_length = 0;
+
+  for (const auto& segment : segments) {
+    auto segment_len = segment.length();
+
+    if (current_line_length + segment_len > 80) {
+      last_line_wrapped += "\n" + helper::Textual::Repeat(" ", len_file_path)
+          + "\t\t" + segment;
+
+      current_line_length = segment_len;
+    } else {
+      last_line_wrapped += " " + segment;
+      current_line_length += segment_len + 1;
+    }
+  }
+  return last_line_wrapped;
 }
 }  // namespace model
