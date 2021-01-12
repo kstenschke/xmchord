@@ -6,7 +6,7 @@ V0.4.0 - Not released yet
 * Add Claws Mail action: ◢ + F = Open "Search Folder" popup
 * Add action: ◢ + W = Hit CTRL + W (close window)
 * Add action: ◢ + ' = Output name of application of focused window
-* Add Gnome Terminal action: ◢ + Numpad = Insert 40 empty lines (helpful to separate sections of output)
+* Add Gnome Terminal action: ◢ + Numpad / = Insert 40 empty lines (helpful to separate sections of output)
 * Add browser action: ◢ + H = Toggle HTML "view-source" of current URL
 * Improve `action` command: Output also amount of actions found  
 * Improve `action` command: Extract multiple consecutive comment-lines
