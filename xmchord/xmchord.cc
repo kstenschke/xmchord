@@ -113,7 +113,7 @@ int InitArgs(int argc,
   if (argc <= 1) return 0;  // No arguments given
 
   if (strcmp(argv[1], "a") == 0 || strcmp(argv[1], "actions") == 0) {
-    model::ActionReader::PrintListOfActionsWithComments();
+    model::ActionReader::PrintActionsWithComments();
     *run = false;
     return 0;
   }
@@ -171,7 +171,7 @@ int InitArgs(int argc,
 
 void PrintVersionInfo() {
   std::cout
-      << "xmchord version " << XMCHORD_VERSION_MAJOR << "."
+      << "\nxmchord version " << XMCHORD_VERSION_MAJOR << "."
       << XMCHORD_VERSION_MINOR << "."
       << XMCHORD_VERSION_PATCH << "\n"
       "Released under the BSD-3-Clause License.\n"

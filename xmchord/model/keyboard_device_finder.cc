@@ -171,7 +171,7 @@ bool KeyboardDeviceFinder::SelectKeyboardFromAvailableDevices(
   }
 
   if (list_devices) {
-    std::cout << "Available devices:\n" << devices_list << "\n";
+    std::cout << "\nAvailable devices:\n" << devices_list << "\n";
     exit(0);
   }
 

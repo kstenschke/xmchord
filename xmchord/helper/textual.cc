@@ -83,4 +83,27 @@ bool Textual::EndsWith(std::string const &str, std::string const &ending) {
           && std::equal(ending.rbegin(), ending.rend(), str.rbegin()));
 }
 
+int Textual::SubstrCount(const std::string &haystack,
+                         const std::string &needle) {
+  if (needle.length() == 0) return 0;
+
+  int count = 0;
+
+  for (size_t offset = haystack.find(needle);
+       offset != std::string::npos;
+       offset = haystack.find(needle, offset + needle.length())) {
+    ++count;
+  }
+
+  return count;
+}
+
+std::string Textual::Repeat(const std::string& str, u_int16_t amount) {
+  std::string out;
+
+  for (u_int16_t i = 0; i < amount; i++) out+= str;
+
+  return out;
+}
+
 }  // namespace helper

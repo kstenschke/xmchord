@@ -1,19 +1,22 @@
 xmchord Changelog
 =================
 
-V0.3.1 - Not released yet
+V0.4.0 - Not released yet
 -------------------------
 * Add Claws Mail action: ◢ + F = Open "Search Folder" popup
 * Add action: ◢ + W = Hit CTRL + W (close window)
 * Add action: ◢ + ' = Output name of application of focused window
 * Add Gnome Terminal action: ◢ + Numpad = Insert 40 empty lines (helpful to separate sections of output)
 * Add browser action: ◢ + H = Toggle HTML "view-source" of current URL
-* Improve `action` command: Print consecutive comment-lines concatenated
+* Improve `action` command: Output also amount of actions found  
+* Improve `action` command: Extract multiple consecutive comment-lines
+* Improve `action` command: Format output more readable  
 * Add `help` and `h` command: List and explain available commands
 * Improve copy action (◣ + C): Auto-close popup, notify copied string
-* Improve BR + Up action: add jump to top in gnome-terminal
+* Improve ◢ + Up action: add jump to top in gnome-terminal
 * Add action: ◢ + $ = Convert selected text to all upper/lower case
-* Improve BR + Up/Down actions: Fire Ctrl+Home/End in Java-based Applications
+* Improve ◢ + Up/Down actions: Fire Ctrl+Home/End in Java-based Applications
+* Use special (triangle) characters to symbolize specific buttons within actions' inline comments
 
 V0.3.0 - 2020/12/20
 -------------------
