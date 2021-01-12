@@ -377,7 +377,7 @@ See [CHANGELOG.md](CHANGELOG.md)
 
 ## Third Party References
 
-["Expert Mouse(R) Wireless Trackball"](https://www.kensington.com/p/products/electronic-control-solutions/trackball-products/expert-mouse-wireless-trackball/) 
+[Expert Mouse(R) Trackball](https://www.kensington.com/p/products/electronic-control-solutions/trackball-products/expert-mouse-wireless-trackball/) 
 is a registered trademark of Kensington Computer Products Group, a division of 
 ACCO Brands
 
