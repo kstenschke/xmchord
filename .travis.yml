@@ -23,3 +23,4 @@ script:
   - cpplint xmchord/* --extensions=cc,h
   - cpplint xmchord/helper/* --extensions=cc,h
   - cpplint xmchord/model/* --extensions=cc,h
+  - shellcheck bin/actions/*.sh
