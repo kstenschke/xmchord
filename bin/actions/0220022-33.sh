@@ -6,7 +6,7 @@
 #: Within Gnome Terminal: Open "find" popup
 
 focusApplication=\
-$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
+$(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
 
 if [[ "$focusApplication" =~ "claws-mail" ]]; then
   xdotool sleep 0.1
@@ -21,7 +21,7 @@ else
       wmctrl -a Firefox
     else
       me=$SUDO_USER
-      sudo -u $me nohup firefox >/dev/null &
+      sudo -u "$me" nohup firefox >/dev/null &
     fi
   fi
 fi

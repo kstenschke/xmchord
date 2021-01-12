@@ -3,7 +3,7 @@
 #: ◢ + Left - Switch to previous tab (global, Chromium DevTools)
 
 focusApplication=\
-$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
+$(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
 
 if [[ "$focusApplication" =~ "gnome-terminal-" ]]; then
   # gnome terminal has focus

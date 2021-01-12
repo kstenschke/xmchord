@@ -1,6 +1,10 @@
 xmchord Changelog
 =================
 
+V0.4.1 - Not released yet
+-------------------------
+* Fix action shell scripts style issues (fulfill google convention 100% now)
+
 V0.4.0 - 2021/01/12
 -------------------
 * Add Claws Mail action: ◢ + F = Open "Search Folder" popup

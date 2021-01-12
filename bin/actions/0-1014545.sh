@@ -4,7 +4,7 @@
 #: If Chromium has focus: close current tab
 
 focusApplication=\
-$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
+$(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
 
 if [[ "$focusApplication" =~ "chromium-browse" ]] \
 || [[ "$focusApplication" =~ "firefox" ]]; then

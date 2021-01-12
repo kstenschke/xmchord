@@ -3,7 +3,7 @@
 #: ◣ + ' - Output name of foccussed application
 
 focusApplication=\
-$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
+$(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
 
 echo
-echo $focusApplication
+echo "$focusApplication"

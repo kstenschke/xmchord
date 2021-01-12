@@ -6,4 +6,4 @@ sleep 0.1
 xdotool key 0xff08
 
 now=$(date +'%s')
-xdotool type $now
+xdotool type "$now"

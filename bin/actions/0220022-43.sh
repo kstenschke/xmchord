@@ -9,7 +9,7 @@ sleep 0.1
 xdotool key Ctrl+c
 sleep 0.1
 
-clipboard=`xsel -ob`
+clipboard=$(xsel -ob)
 upper=${clipboard^^}
 
 if [[ "$clipboard" == "$upper" ]]; then

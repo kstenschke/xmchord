@@ -5,7 +5,7 @@
 #: Fire left click, than close current window
 
 focusApplication=\
-`cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm`
+$(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
 
 if [[ "$focusApplication" =~ "gnome-screensho" ]]; then
   xdotool sleep 0.2

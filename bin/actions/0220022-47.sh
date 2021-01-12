@@ -5,9 +5,7 @@
 wmctrl -r :ACTIVE: -b toggle,sticky
 
 activeWindowId=$(xdotool getactivewindow)
-activeWindowProps=$(xprop -id ${activeWindowId} | grep _NET_WM_STATE)
-
-me=$SUDO_USER
+activeWindowProps=$(xprop -id "${activeWindowId}" | grep _NET_WM_STATE)
 
 if [[ ${activeWindowProps} == *"_NET_WM_STATE_STICKY"* ]]; then
   #  notify-send "Always on visible workspace: On" -t 1

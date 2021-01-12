@@ -5,7 +5,7 @@
 #: If Chromium or Firefox is focussed: Copy last segment of URL
 
 focusApplication=\
-$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
+$(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
 
 if [[ "$focusApplication" =~ "chromium-browse" ]] \
 || [[ "$focusApplication" =~ "firefox" ]]; then
@@ -25,6 +25,6 @@ else
     wmctrl -a Chromium  # Activate Chromium window
   else
     me=$SUDO_USER
-    sudo -u $me nohup chromium-browser >/dev/null &  # Launch Chromium
+    sudo -u "$me" nohup chromium-browser >/dev/null &  # Launch Chromium
   fi
 fi

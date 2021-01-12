@@ -5,7 +5,7 @@
 #: focus gimp, paste as new image
 
 focusApplication=\
-`cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm`
+$(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
 
 if [[ "$focusApplication" =~ "gnome-screensho" ]]; then
   xdotool sleep 0.2
@@ -16,9 +16,9 @@ if [[ "$focusApplication" =~ "gnome-screensho" ]]; then
   xdotool sleep 0.1
 
   if pidof -s gimp-2.8 > /dev/null; then  # bring gimp to front
-    gimpPid=`pidof gimp-2.8`
-    windowTitle=` wmctrl -l -p | grep $gimpPid | cut -d " " -f 8-`
-    wmctrl -a $windowTitle
+    gimpPid=$(pidof gimp-2.8)
+    windowTitle=$(wmctrl -l -p | grep "$gimpPid" | cut -d " " -f 8-)
+    wmctrl -a "$windowTitle"
     xdotool sleep 0.2
     xdotool keyup Shift+Super+Left key Ctrl+Shift+v  # paste as new image
     else
@@ -26,6 +26,6 @@ if [[ "$focusApplication" =~ "gnome-screensho" ]]; then
       -B black -b 240 --padding=24 -x 5 -n "Ubuntu 20" -p 1
 
       me=$SUDO_USER
-      sudo -u $me nohup gimp > /dev/null &
+      sudo -u "$me" nohup gimp > /dev/null &
   fi
 fi

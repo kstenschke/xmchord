@@ -3,7 +3,8 @@
 #: Top-any - If terminal window has focus - close current tab.
 #: ◢ + H in browser - Toggle "view-source:" prefix of current URL
 
-focusApplication=$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
+focusApplication=\
+$(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
 
 if [[ "$focusApplication" =~ "claws-mail" ]]; then
   echo "Toggle hide read threads" | aosd_cat -R white -u 300 --y-offset=40 \
@@ -11,10 +12,7 @@ if [[ "$focusApplication" =~ "claws-mail" ]]; then
 
   xdotool key Alt+v  # Expand "View" menu
 
-  for i in {1..8}  # Select "hide read threads" option
-  do
-    xdotool key Down
-  done
+  seq 8 | xargs -I -- xdotool key Down # Select "hide read threads" option
 
   xdotool key space  # Toggle selected option
   xdotool sleep 0.1
@@ -37,12 +35,10 @@ else
       xdotool key Ctrl+c
       xdotool key Home
 
-      clipboard=`xsel -ob`
+      clipboard=$(xsel -ob)
 
       if [[ $clipboard == view-source* ]]; then
-        for i in {1..12}; do
-          xdotool key Delete
-        done
+        seq 12 | xargs -I -- xdotool key Delete
       else
         xdotool type "view-source:"
         xdotool key End

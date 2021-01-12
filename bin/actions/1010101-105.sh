@@ -5,7 +5,7 @@
 #: Within Chromium or Firefox: Go URL back.
 
 focusApplication=\
-$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
+$(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
 
 if [[ "$focusApplication" =~ "gnome-terminal-" ]]; then
   xdotool sleep 0.1

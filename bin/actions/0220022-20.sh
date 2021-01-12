@@ -4,8 +4,8 @@
 
 wmctrl -r :ACTIVE: -b toggle,above
 
-activeWindowId=`xdotool getactivewindow`
-activeWindowProps=`xprop -id ${activeWindowId} | grep _NET_WM_STATE`
+activeWindowId=$(xdotool getactivewindow)
+activeWindowProps=$(xprop -id "${activeWindowId}" | grep _NET_WM_STATE)
 
 if [[ ${activeWindowProps} == *"_NET_WM_STATE_ABOVE"* ]]; then
 #    notify-send "Always on top: On" -t 1

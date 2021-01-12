@@ -5,7 +5,7 @@
 #: Else: Bring DataGrip window to front
 
 focusApplication=\
-$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
+$(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
 
 if [[ "$focusApplication" =~ "chromium-browse" ]] \
 || [[ "$focusApplication" =~ "firefox" ]]; then
@@ -21,6 +21,6 @@ else
     wmctrl -a datagrip
   else
     me=$SUDO_USER
-    sudo -u $me nohup datagrip >/dev/null &
+    sudo -u "$me" nohup datagrip >/dev/null &
   fi
 fi

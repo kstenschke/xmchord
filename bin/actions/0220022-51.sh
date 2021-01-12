@@ -4,7 +4,7 @@
 #: Within Chromium or Firefox: Decrement numeric ending of current URL by one
 
 focusApplication=\
-$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm)
+$(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
 
 if [[ "$focusApplication" =~ "chromium-browse" ]] \
 || [[ "$focusApplication" =~ "firefox" ]]; then
@@ -19,7 +19,7 @@ if [[ "$focusApplication" =~ "chromium-browse" ]] \
   xdotool key Ctrl+c
   xdotool sleep 0.1
   number=$(xsel -ob)
-  number=$(($number - 1))
+  ((number=number-1))
   echo $number | xsel -ib
   xdotool key Ctrl+v
   xdotool key Return
