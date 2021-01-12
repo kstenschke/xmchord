@@ -53,8 +53,8 @@ common user activities on the Linux desktop.
 xmchord listens for events of mouse buttons pressed together with keyboard keys.
 When observing a chording event, xmchord generates an identifier code for the
 given combination (and order) of button/key presses. 
-If there is a shell script file named by the current event code, within 
-xmchord's `actions` directories, it is executed.
+If there is a shell script file named by the current event code within 
+xmchord's `actions` directory, it is executed.
 
 
 ## Usage and arguments
