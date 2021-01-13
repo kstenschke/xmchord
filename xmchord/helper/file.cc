@@ -43,6 +43,25 @@ std::string File::GetLastPathSegment(std::string path) {
   return parts[parts.size() - 1];
 }
 
+uint8_t File::GeLongestFilenameLength(DIR *dir_stream) {
+  uint8_t len_longest = 0;
+  uint8_t len_filename;
+  struct dirent *ent;
+
+  while ((ent = readdir(dir_stream)) != nullptr) {
+    if (ent->d_name[0] == '.'
+        || !helper::Textual::EndsWith(ent->d_name, ".sh")) continue;
+
+    len_filename = strlen(ent->d_name);
+
+    if (len_filename > len_longest) len_longest = len_filename;
+  }
+
+  rewinddir(dir_stream);
+
+  return len_longest;
+}
+
 std::string File::GetFileContents(const std::string &filename) {
   std::ifstream file(filename);
 

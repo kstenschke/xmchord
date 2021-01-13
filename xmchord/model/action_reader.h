@@ -30,6 +30,7 @@
 #ifndef XMCHORD_MODEL_ACTION_READER_H_
 #define XMCHORD_MODEL_ACTION_READER_H_
 
+#include <xmchord/helper/file.h>
 #include <xmchord/helper/textual.h>
 #include <dirent.h>
 #include <cstdio>
@@ -40,27 +41,30 @@ namespace model {
 
 class ActionReader {
  public:
-  static std::string GetActionFiles(const std::string& path_actions);
+  explicit ActionReader(const std::string &path = "actions");
 
-  static void PrintActionsWithComments();
+  static std::string CollectActionFilenames(const std::string &path_actions);
+
+  void PrintActionsWithComments();
  private:
-  static void PrintActionsInPathWithComments(std::string *output,
-                                             std::string *files,
-                                             DIR *path_actions,
-                                             const std::string &path,
-                                             bool check_unique = false);
+  std::string path_actions_;
+  DIR *dir_actions_;
+  uint8_t len_longest_filename_;
+  uint8_t amount_actions_ = 0;
+  std::string output_;
 
-  static void GetActionsInPath(std::string *files, DIR *dir_stream);
+  static void CollectActionsFilenames(std::string *filenames, DIR *dir_actions);
 
-  static char *GetActionContent(const std::string &path, const char *file);
+  void RenderActionsInfo();
 
-  static std::string ExtractCommentLines(const char *script);
+  char *GetActionContent(const char *path_file);
 
-  static char* ExtractSingleComment(const char *buffer,
+  static std::string ExtractComments(const char *script);
+
+  static char* ExtractSingleComment(const char *script,
                                     int offset_start_comment);
 
-  static std::string WrapOutputLine(uint8_t len_file_path,
-                                    const std::string &last_line);
+  std::string WrapOutputLine(const std::string &line);
 };
 
 }  // namespace model

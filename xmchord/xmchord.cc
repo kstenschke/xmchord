@@ -59,7 +59,8 @@ int main(int argc, char **argv) {
       argv, std::strlen(XMCHORD_EXECUTABLE_NAME));
 
   std::string path_actions = path_binary + "/actions/";
-  std::string action_files = model::ActionReader::GetActionFiles(path_actions);
+  std::string action_files =
+      model::ActionReader::CollectActionFilenames(path_actions);
 
   if (action_files.length() == 0) {
     std::cerr << "No action files found in: " << path_actions << "\n";
@@ -113,8 +114,11 @@ int InitArgs(int argc,
   if (argc <= 1) return 0;  // No arguments given
 
   if (strcmp(argv[1], "a") == 0 || strcmp(argv[1], "actions") == 0) {
-    model::ActionReader::PrintActionsWithComments();
+    auto *reader = new model::ActionReader();
+    reader->PrintActionsWithComments();
     *run = false;
+
+    delete reader;
     return 0;
   }
 

@@ -31,21 +31,26 @@
 
 namespace model {
 
-// Build reference of given global and local action shell script files
-std::string ActionReader::GetActionFiles(
-    const std::string &path_actions) {
-  DIR *dir_actions =  opendir(path_actions.c_str());
-  bool has_actions = dir_actions != nullptr;
+ActionReader::ActionReader(const std::string &path) {
+  path_actions_ = path;
+  dir_actions_ =  opendir(path_actions_.c_str());
 
-  if (!has_actions) {
+  if (nullptr != dir_actions_)
+    len_longest_filename_ = helper::File::GeLongestFilenameLength(dir_actions_);
+}
+
+std::string ActionReader::CollectActionFilenames(
+    const std::string &path_actions) {
+  auto dir_actions =  opendir(path_actions.c_str());
+
+  if (dir_actions == nullptr) {
     perror("Error: Failed opening actions directory.");
 
     return "";
   }
 
   std::string files = "\n";
-
-  GetActionsInPath(&files, dir_actions);
+  CollectActionsFilenames(&files, dir_actions);
 
   return files;
 }
@@ -53,83 +58,72 @@ std::string ActionReader::GetActionFiles(
 // Iterate over "actions" directory at same path as xmchord binary,
 // output file path + name and their contained comments (having "#:" prefix)
 void ActionReader::PrintActionsWithComments() {
-  std::string path_actions = "actions";
-  DIR *dir_actions = opendir(path_actions.c_str());
-  auto has_actions = dir_actions != nullptr;
-
-  if (!has_actions) {
+  if (dir_actions_ == nullptr) {
     std::cerr << "Error: Failed opening actions directory";
 
     return;
   }
 
-  std::string files, output;
+  RenderActionsInfo();
+  closedir(dir_actions_);
 
-  PrintActionsInPathWithComments(&output, &files, dir_actions, path_actions);
-  closedir(dir_actions);
-
-  std::cout << "\n" << helper::Textual::SubstrCount(output, "\n")
-            << " xmchord actions found:\n\n"
-            << output << "\n";
+  std::cout << "\n" << (unsigned int)amount_actions_
+            << " xmchord actions found:\n\n" << output_ << "\n";
 }
 
-void ActionReader::PrintActionsInPathWithComments(std::string *output,
-                                                  std::string *files,
-                                                  DIR *path_actions,
-                                                  const std::string &path,
-                                                  bool check_unique) {
+void ActionReader::RenderActionsInfo() {
   struct dirent *ent;
 
-  while ((ent = readdir(path_actions)) != nullptr) {
-    if (ent->d_type != DT_REG  // Skip everything but regular files
-        // Skip already listed files (local actions precede)
-        || (check_unique && helper::Textual::Contains(*files, ent->d_name)))
-      continue;
+  while ((ent = readdir(dir_actions_)) != nullptr) {
+    if (ent->d_type != DT_REG) continue;  // Skip everything but regular files
 
-    char *file = ent->d_name;
-    *files = (*files).append(file).append("\n");
+    char *filename = ent->d_name;
+    output_ += filename;
+    ++amount_actions_;
 
-    *output += path + "/" + file;
-
-    auto *action_content = GetActionContent(path, file);
+    auto *action_content = GetActionContent(filename);
 
     if (nullptr == action_content) return;
 
-    auto len_file_path = path.length() + strlen(file) + 1;
-    *output += "\t = ";
+    auto len_filename = strlen(filename);
+    if (len_filename < len_longest_filename_)
+      output_ +=
+          helper::Textual::Repeat(" ", len_longest_filename_ - len_filename);
 
-    auto comment = ExtractCommentLines(action_content);;
-    *output += comment;
+    output_ += " = ";
 
-    auto offset_last_line = (*output).find_last_of('\n');
+    auto comment = ExtractComments(action_content);;
+    output_ += comment;
+
+    auto offset_last_line = output_.find_last_of('\n');
 
     if (std::string::npos != offset_last_line) {
-      auto last_line = (*output).substr(offset_last_line);
+      auto last_line = output_.substr(offset_last_line);
 
       if (last_line.length() >  130)
-        *output = (*output).substr(0, offset_last_line).append(
-            WrapOutputLine(len_file_path, last_line));
+        output_ = output_.substr(0, offset_last_line).append(
+            WrapOutputLine(last_line));
     }
 
-    *output += '\n';
+    output_ += '\n';
   }
 }
 
-void ActionReader::GetActionsInPath(std::string *files, DIR *dir_stream) {
+void ActionReader::CollectActionsFilenames(std::string *filenames,
+                                           DIR *dir_actions) {
   struct dirent *ent;
 
-  while ((ent = readdir(dir_stream)) != nullptr) {
+  while ((ent = readdir(dir_actions)) != nullptr) {
     if (ent->d_name[0] != '.'  // exclude hidden files
         && helper::Textual::EndsWith(ent->d_name, ".sh"))
-      *files = (*files).append(ent->d_name).append("\n");
+      *filenames = (*filenames).append(ent->d_name).append("\n");
   }
 
-  closedir(dir_stream);
+  closedir(dir_actions);
 }
 
-char *ActionReader::GetActionContent(const std::string &path,
-                                     const char *file) {
-  std::string filename = std::string(path) + "/" + file;
+char *ActionReader::GetActionContent(const char *path_file) {
+  std::string filename = std::string(path_actions_) + "/" + path_file;
   FILE *file_stream = fopen(filename.c_str(), "rb");
 
   if (!file_stream) {
@@ -158,7 +152,7 @@ char *ActionReader::GetActionContent(const std::string &path,
   return content;
 }
 
-std::string ActionReader::ExtractCommentLines(const char *script) {
+std::string ActionReader::ExtractComments(const char *script) {
   uint16_t script_len = strlen(script);
   uint16_t offset_start = 0;
   std::string comment;
@@ -189,10 +183,10 @@ std::string ActionReader::ExtractCommentLines(const char *script) {
   return comment;
 }
 
-char* ActionReader::ExtractSingleComment(const char *buffer,
+char* ActionReader::ExtractSingleComment(const char *script,
                                          int offset_start_comment) {
   int offset_end_comment_line = helper::Textual::StrPos(
-      const_cast<char *>(buffer),
+      const_cast<char *>(script),
       const_cast<char *>("\n"),
       offset_start_comment);
 
@@ -201,16 +195,14 @@ char* ActionReader::ExtractSingleComment(const char *buffer,
 
   auto *comment_line = static_cast<char *>(malloc(comment_line_length + 1));
 
-  strncpy(comment_line, buffer + offset_start_comment, comment_line_length);
+  strncpy(comment_line, script + offset_start_comment, comment_line_length);
   comment_line[comment_line_length] = '\0';
 
   return comment_line;
 }
 
-std::string ActionReader::WrapOutputLine(
-    uint8_t len_file_path,
-    const std::string &last_line) {
-  auto segments = helper::Textual::Explode(last_line, ' ');
+std::string ActionReader::WrapOutputLine(const std::string &line) {
+  auto segments = helper::Textual::Explode(line, ' ');
 
   std::string last_line_wrapped;
   uint16_t current_line_length = 0;
@@ -219,8 +211,10 @@ std::string ActionReader::WrapOutputLine(
     auto segment_len = segment.length();
 
     if (current_line_length + segment_len > 80) {
-      last_line_wrapped += "\n" + helper::Textual::Repeat(" ", len_file_path)
-          + "\t\t" + segment;
+      last_line_wrapped +=
+          "\n"
+          + helper::Textual::Repeat(" ", len_longest_filename_ + 6)
+          + segment;
 
       current_line_length = segment_len;
     } else {

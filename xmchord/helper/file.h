@@ -47,6 +47,8 @@ extern bool FileExists(const std::string &name);
 
 std::string GetLastPathSegment(std::string path);
 
+uint8_t GeLongestFilenameLength(DIR *dir_stream);
+
 bool OverwriteFile(const std::string &filename, const std::string &content);
 
 std::string GetFileContents(std::ifstream &file);

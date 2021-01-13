@@ -2,7 +2,7 @@
 
 #: ◣ + V -
 #: Paste (Fire CTRL+V).
-#: When Gnome Screenshot active: export copied image to file, than open in
+#: When Gnome Screenshot active: Export copied image to file, than open in
 #: feh image viewer, set feh always-on-top and always-on-visible workspace
 
 focusApplication=\
