@@ -46,6 +46,7 @@ class ActionReader {
   static std::string CollectActionFilenames(const std::string &path_actions);
 
   void PrintActionsWithComments();
+
  private:
   std::string path_actions_;
   DIR *dir_actions_;
