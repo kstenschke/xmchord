@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + Any of the top buttons together - Switch to next workspace
+#: ◢ + Top any - Switch to next workspace
 
 me=$SUDO_USER
 

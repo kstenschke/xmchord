@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #: ◢ + $ - Convert selected text to all upper-/lower-case
-# Mouse+Key must be "hit": released immediately
+#: Mouse+Key must be "hit": released immediately
 
 sleep 0.6
 xdotool key Ctrl+z  # [$] keypress did unset selection: restore it

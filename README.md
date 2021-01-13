@@ -156,8 +156,8 @@ all included actions to work:
 
 | **Shortcut**               | **Description**                                                                |
 |----------------------------|--------------------------------------------------------------------------------|
-| ◤ + ←                      | Move active window to screen left of current                                   |
-| ◤ + →                      | Move active window to screen right of current                                  |
+| ◤ + ←                      | Go to workspace left of current (Hit SUPER+SHIFT+Left)                         |
+| ◤ + →                      | Go to workspace left of current (Hit SUPER+SHIFT+Right)                        |
 | ◤ + ◢                      | Jump to next workspace                                                         |
 | Right Shift + ◤ + ◢        | Jump to previous workspace                                                     |
 | ◣ + ◢                      | Touch bottom-right hot-corner (E.g. expose windows)                            |
@@ -195,6 +195,7 @@ all included actions to work:
 | &nbsp; &nbsp; ◢ + Numpad 5 | Maximize active window                                                         |
 | &nbsp; &nbsp; ◢ + '        | Output name of application of focused window (to terminal)                     |
 | &nbsp; &nbsp; ◢ + $        | Convert selected text to all upper/lower case                                  |
+| &nbsp; &nbsp; ◢ + ENTER    | Click left mouse button three times (select line)                              |
 | ◣ + A                      | Select all (same as CTRL+A)                                                    |
 | ◣ + C                      | Copy (same as CTRL+C)                                                          |
 | ◣ + F                      | Find (same as CTRL+F)                                                          |

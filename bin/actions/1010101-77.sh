@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◣ + Numpad 6 - Move active window to screen right of current
+#: ◣ + Numpad 6 - Go to workspace right of current
 
 xdotool sleep 0.1
 xdotool key Super+Shift+Right
