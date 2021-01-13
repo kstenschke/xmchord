@@ -127,8 +127,8 @@ and displays it's version number.
 See files under `bin/actions`
 
 The included shortcut actions are scripted for use with a 
-[**Kensington Expert Mouse**](https://www.kensington.com/p/products/control/trackballs/expert-mouse-wired-trackball) 
-trackball, tested on Linux Mint Cinnamon, but should be compatible or easily
+[**Kensington Expert Mouse trackball**](https://www.kensington.com/p/products/control/trackballs/expert-mouse-wired-trackball), 
+tested on Linux Mint Cinnamon, but should be compatible or easily
 adjustable for other devices and Linux distributions and desktop environments.
 
 
@@ -377,7 +377,7 @@ See [CHANGELOG.md](CHANGELOG.md)
 
 ## Third Party References
 
-[Expert Mouse(R) Trackball](https://www.kensington.com/p/products/electronic-control-solutions/trackball-products/expert-mouse-wireless-trackball/) 
+[Expert Mouse® Trackball](https://www.kensington.com/p/products/electronic-control-solutions/trackball-products/expert-mouse-wireless-trackball/) 
 is a registered trademark of Kensington Computer Products Group, a division of 
 ACCO Brands
 
