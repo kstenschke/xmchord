@@ -7,6 +7,7 @@ V0.4.1 - Not released yet
 * Add shellcheck continuous inspection of action shell scripts to travis config   
 * Add "Build tools and Continuous Integration" section into README.md
 * Add action: ◢ + ENTER = Click left mouse button three times (select line)
+* Improve actions listing: Homogenize padding beteween filename, chording identifier and descriptions
 
 V0.4.0 - 2021/01/12
 -------------------
