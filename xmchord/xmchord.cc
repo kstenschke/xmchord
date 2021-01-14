@@ -137,13 +137,9 @@ int InitArgs(int argc,
     return 0;
   }
 
-  if (helper::Textual::StartsWith(argv[1], "-k=")) {
-    *kbd_device_path = std::string(argv[1]).substr(3);
-    return 0;
-  }
-
-  if (helper::Textual::StartsWith(argv[1], "--keyboard=")) {
-    *kbd_device_path = std::string(argv[1]).substr(11);
+  if (helper::Textual::StartsWith(argv[1], "-k=")
+      || helper::Textual::StartsWith(argv[1], "--keyboard=")) {
+    *kbd_device_path = std::string(argv[1]).substr(strlen(argv[1]));
     return 0;
   }
 

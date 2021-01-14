@@ -92,7 +92,7 @@ void ActionReader::RenderActionsInfo() {
 
     output_ += " = ";
 
-    auto comment = ExtractComments(action_content);;
+    auto comment = ExtractComments(action_content);
     output_ += comment;
 
     auto offset_last_line = output_.find_last_of('\n');
