@@ -8,6 +8,7 @@ V0.4.1 - Not released yet
 * Add "Build tools and Continuous Integration" section into README.md
 * Add action: ◢ + ENTER = Click left mouse button three times (select line)
 * Actions listing: improve padding between filename, chording identifier and descriptions
+* Change Claws Mail action: ◢ + H = Toggle "Hide read messages" (was: "hide read threads")
 
 V0.4.0 - 2021/01/12
 -------------------

@@ -1,7 +1,6 @@
 #!/bin/bash
 
-#: ◣ + right -
-#: Within Gnome Terminal: Go Tab to right.
+#: ◣ + Right - Within Gnome Terminal: Go Tab to right.
 #: Within Chromium or Firefox: Go URL forward.
 
 focusApplication=\

@@ -1,7 +1,8 @@
 #!/bin/bash
 
-#: Top-any - If terminal window has focus - close current tab.
-#: ◢ + H in browser - Toggle "view-source:" prefix of current URL
+#: ◢ + H in browser - Toggle "view-source:" prefix of current URL.
+#: In Claws-Mail - Toggle "hide read messages"
+# (precondition: "thread view" option must be deactivated)
 
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
@@ -12,7 +13,7 @@ if [[ "$focusApplication" =~ "claws-mail" ]]; then
 
   xdotool key Alt+v  # Expand "View" menu
 
-  seq 8 | xargs -I -- xdotool key Down # Select "hide read threads" option
+  seq 6 | xargs -I -- xdotool key Down # Select "hide read messages" option
 
   xdotool key space  # Toggle selected option
   xdotool sleep 0.1

@@ -239,10 +239,10 @@ be focussed when the shortcut is fired.
 
 #### Claws Mail
 
-| **Shortcut**        | **Description**            |
-|---------------------|----------------------------|
-| &nbsp; &nbsp; ◢ + F | Open "Search Folder" popup |
-| &nbsp; &nbsp; ◢ + H | Toggle "Hide read threads" |
+| **Shortcut**        | **Description**                                                              |
+|---------------------|------------------------------------------------------------------------------|
+| &nbsp; &nbsp; ◢ + F | Open "Search Folder" popup                                                   |
+| &nbsp; &nbsp; ◢ + H | Toggle "Hide read messages", precondition: "thread view" must be deactivated |
 
 
 #### Gnome Terminal
