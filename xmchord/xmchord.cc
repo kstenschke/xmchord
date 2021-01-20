@@ -36,7 +36,7 @@ typedef struct thread_arguments_kbd {
   std::string device_path = "";
 } thargs_t;
 
-void storeModifierKeyState(const input_event &kbd_event, bool pressed);
+void storeModifierKeyState(const __u16 &key_code, bool pressed);
 
 /**
  * Main application:
@@ -232,12 +232,12 @@ void *KbdWatcher(void *thread_args) {
 
     switch (kbd_event.value) {
       case 0:  // Key released
-        storeModifierKeyState(kbd_event, false);
+        storeModifierKeyState(kbd_event.code, false);
 
         if (kbd_event.code != 0) kbd_code = 0;
         break;
       case 1:  // Key newly pressed
-        storeModifierKeyState(kbd_event, true);
+        storeModifierKeyState(kbd_event.code, true);
 
         if (kbd_event.code != 0) {
           kbd_code = kbd_event.code;
@@ -258,8 +258,8 @@ void *KbdWatcher(void *thread_args) {
   }
 }
 
-void storeModifierKeyState(const input_event &kbd_event, bool pressed) {
-  switch (kbd_event.code) {
+void storeModifierKeyState(const __u16 &key_code, bool pressed) {
+  switch (key_code) {
     case 29:
       ctrl_left_down = pressed;
       break;
@@ -276,6 +276,7 @@ void storeModifierKeyState(const input_event &kbd_event, bool pressed) {
     case 100:
       alt_right_down = pressed;
       break;
+    default:break;
   }
 }
 
