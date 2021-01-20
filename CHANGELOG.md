@@ -1,6 +1,10 @@
 xmchord Changelog
 =================
 
+V0.4.2 - Not released yet
+-------------------------
+* Improve actions that make use of Ctrl+C: Retain previous clipboard content 
+
 V0.4.1 - 2021/01/20
 -------------------
 * Fix action shell scripts style issues (google convention)

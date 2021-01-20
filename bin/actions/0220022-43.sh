@@ -9,15 +9,20 @@ sleep 0.1
 xdotool key Ctrl+c
 sleep 0.1
 
-clipboard=$(xsel -ob)
-upper=${clipboard^^}
+clipboard=$( xsel -ob )
 
-if [[ "$clipboard" == "$upper" ]]; then
-  echo "${clipboard,,}" | xclip -in -selection clipboard # Copy all lower
+copied_text=$(xsel -ob)
+upper=${copied_text^^}
+
+if [[ "$copied_text" == "$upper" ]]; then
+  echo "${copied_text,,}" | xclip -in -selection copied_text # Copy all lower
 else
-  echo "$upper" | xclip -in -selection clipboard # Copy all upper
+  echo "$upper" | xclip -in -selection copied_text # Copy all upper
 fi
 
 xdotool key Ctrl+v
 
+echo "$clipboard" | xclip -in -selection clipboard
+unset clipboard
+unset copied_text
 unset upper
