@@ -70,9 +70,9 @@ class ActionReader {
   void AppendSegmentPreWrapped(const std::string &line,
                                size_t len_chording_identifier,
                                const std::string &segment,
-                               unsigned long segment_len,
-                               std::string &line_wrapped,
-                               uint16_t &current_line_length);
+                               uint16_t segment_len,
+                               std::string *line_wrapped,
+                               uint16_t *current_line_length);
 };
 
 }  // namespace model
