@@ -51,6 +51,13 @@ std::string buttons_code;  // NOLINT [build/c++11]
 
 int kbd_code = 0;
 
+bool alt_left_down = false;
+bool alt_right_down = false;
+bool ctrl_left_down = false;
+bool ctrl_right_down = false;
+bool shift_left_down = false;
+bool shift_right_down = false;
+
 model::ActionRunner *action_runner = nullptr;
 
 int InitArgs(int argc,

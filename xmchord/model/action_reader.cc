@@ -212,24 +212,35 @@ std::string ActionReader::WrapOutputLine(const std::string &line) {
     auto segment_len = segment.length();
 
     if (current_line_length + segment_len > 80) {
-      if (len_chording_identifier == 0) {
-        len_chording_identifier = line.find(" -");
-
-        if (len_chording_identifier == std::string::npos)
-          len_chording_identifier = len_longest_filename_ + 3;
-      }
-
-      last_line_wrapped +=
-          "\n"
-          + helper::Textual::Repeat(" ", len_chording_identifier)
-          + segment;
-
-      current_line_length = segment_len;
+      AppendSegmentPreWrapped(line,
+                              len_chording_identifier,
+                              segment,
+                              segment_len,
+                              last_line_wrapped,
+                              current_line_length);
     } else {
       last_line_wrapped += " " + segment;
       current_line_length += segment_len + 1;
     }
   }
   return last_line_wrapped;
+}
+
+void ActionReader::AppendSegmentPreWrapped(
+    const std::string &line, size_t len_chording_identifier,
+    const std::string &segment, unsigned long segment_len,
+    std::string &line_wrapped, uint16_t &current_line_length) {
+  if (len_chording_identifier == 0) {
+    len_chording_identifier = line.find(" -");
+
+    if (len_chording_identifier == std::string::npos)
+      len_chording_identifier = len_longest_filename_ + 3;
+  }
+
+  line_wrapped +=
+      "\n" + helper::Textual::Repeat(" ", len_chording_identifier)
+      + segment;
+
+  current_line_length = segment_len;
 }
 }  // namespace model

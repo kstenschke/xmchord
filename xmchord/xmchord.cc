@@ -36,6 +36,8 @@ typedef struct thread_arguments_kbd {
   std::string device_path = "";
 } thargs_t;
 
+void storeModifierKeyState(const input_event &kbd_event, bool pressed);
+
 /**
  * Main application:
  * init: cache available action shell script files
@@ -101,7 +103,12 @@ int main(int argc, char **argv) {
 
       // Find and invoke associated action shell script
       if (std::strcmp(buttons_code.c_str(), helper::Mouse::CODE_NOOP) != 0)
-        action_runner->EvokeAction(false, buttons_code, kbd_code);
+        action_runner->EvokeAction(
+            false, buttons_code,
+            alt_left_down, alt_right_down,
+            ctrl_left_down, ctrl_right_down,
+            shift_left_down, shift_right_down,
+            kbd_code);
     }
   }
 }
@@ -225,15 +232,22 @@ void *KbdWatcher(void *thread_args) {
 
     switch (kbd_event.value) {
       case 0:  // Key released
-        if (kbd_event.code != 0) kbd_code = 0;
+        storeModifierKeyState(kbd_event, false);
 
+        if (kbd_event.code != 0) kbd_code = 0;
         break;
       case 1:  // Key newly pressed
+        storeModifierKeyState(kbd_event, true);
+
         if (kbd_event.code != 0) {
           kbd_code = kbd_event.code;
 
           if (std::strcmp(buttons_code.c_str(), helper::Mouse::CODE_NOOP) != 0)
-            action_runner->EvokeAction(true, buttons_code, kbd_code);
+            action_runner->EvokeAction(true, buttons_code,
+                                       alt_left_down, alt_right_down,
+                                       ctrl_left_down, ctrl_right_down,
+                                       shift_left_down, shift_right_down,
+                                       kbd_code);
         }
 
         break;
@@ -241,6 +255,27 @@ void *KbdWatcher(void *thread_args) {
         break;
       default: break;
     }
+  }
+}
+
+void storeModifierKeyState(const input_event &kbd_event, bool pressed) {
+  switch (kbd_event.code) {
+    case 29:
+      ctrl_left_down = pressed;
+      break;
+    case 42:
+      shift_left_down = pressed;
+      break;
+    case 46:
+      shift_right_down = pressed;
+    case 56:
+      alt_left_down = pressed;
+    case 97:
+      ctrl_right_down = pressed;
+      break;
+    case 100:
+      alt_right_down = pressed;
+      break;
   }
 }
 

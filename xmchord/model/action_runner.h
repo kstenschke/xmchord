@@ -44,12 +44,20 @@ class ActionRunner {
   ActionRunner(bool debug, std::string path_actions, std::string action_files);
 
   void EvokeAction(bool clickWasFirst, const std::string &buttons_code,
+                   bool alt_left_down, bool alt_right_down,
+                   bool ctrl_left_down, bool ctrl_right_down,
+                   bool shift_left_down, bool shift_right_down,
                    int kbd_code);
 
  private:
   bool debug;
   std::string path_actions;
   std::string action_files;   // Newline separated list of existing action files
+
+  static std::string generateModifiersCode(
+      bool alt_left_down, bool alt_right_down,
+      bool ctrl_left_down, bool ctrl_right_down,
+      bool shift_left_down, bool shift_right_down);
 };
 
 }  // namespace model

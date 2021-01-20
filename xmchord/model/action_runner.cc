@@ -46,6 +46,9 @@ ActionRunner::ActionRunner(
 void ActionRunner::EvokeAction(
     bool clickWasFirst,
     const std::string &buttons_code,
+    bool alt_left_down, bool alt_right_down,
+    bool ctrl_left_down, bool ctrl_right_down,
+    bool shift_left_down, bool shift_right_down,
     int kbd_code) {
   std::string filename_action;
 
@@ -53,10 +56,17 @@ void ActionRunner::EvokeAction(
       clickWasFirst
         // Filename built like: <mouse_code>-<kbd_code>.sh
         ? filename_action.append(buttons_code).append("-").append(
-            std::to_string(kbd_code)).append(".sh")
+            std::to_string(kbd_code))
         // Filename built like: <kbd_code>-<mouse_code>.sh
         : filename_action.append(std::to_string(kbd_code)).append(
-            "-").append(buttons_code).append(".sh");
+            "-").append(buttons_code);
+
+  auto modifiers_code = generateModifiersCode(
+      alt_left_down, alt_right_down,
+      ctrl_left_down, ctrl_right_down,
+      shift_left_down, shift_right_down);
+
+  filename_action += modifiers_code + ".sh";
 
   if (debug)
     std::cout << "Event code: "
@@ -66,13 +76,13 @@ void ActionRunner::EvokeAction(
   std::string path_action_file = path_actions;
 
   if (clickWasFirst) {
-    // Filename built like: <mouse_code>-<kbd_code>.sh
+    // Filename built like: <mouse_code>-<kbd_code>[<-modifier...>].sh
     path_action_file.append(buttons_code).append("-").append(
-        std::to_string(kbd_code)).append(".sh");
+        std::to_string(kbd_code)).append(modifiers_code).append(".sh");
   } else {
-    // Filename built like: <kbd_code>-<mouse_code>.sh
+    // Filename built like: <kbd_code>-<mouse_code>[<-modifier...>].sh
     path_action_file.append(std::to_string(kbd_code)).append("-").append(
-        buttons_code).append(".sh");
+        buttons_code).append(modifiers_code).append(".sh");
   }
 
   if (debug) {
@@ -86,6 +96,22 @@ void ActionRunner::EvokeAction(
     // when adding actions xmchord must be restarted
     helper::System::RunShellCommand(path_action_file.c_str());
   }
+}
+
+std::string ActionRunner::generateModifiersCode(
+    bool alt_left_down, bool alt_right_down,
+    bool ctrl_left_down, bool ctrl_right_down,
+    bool shift_left_down, bool shift_right_down) {
+  std::string modifiers_code;
+
+  if (alt_left_down) modifiers_code += "-al";
+  if (alt_right_down) modifiers_code += "-ar";
+  if (ctrl_left_down) modifiers_code += "-cl";
+  if (ctrl_right_down) modifiers_code += "-cr";
+  if (shift_left_down) modifiers_code += "-sl";
+  if (shift_right_down) modifiers_code += "-sr";
+
+  return modifiers_code;
 }
 
 }  // namespace model
