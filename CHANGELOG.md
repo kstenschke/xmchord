@@ -1,8 +1,8 @@
 xmchord Changelog
 =================
 
-V0.4.1 - Not released yet
--------------------------
+V0.4.1 - 2021/01/20
+-------------------
 * Fix action shell scripts style issues (google convention)
 * Add shellcheck continuous inspection of action shell scripts to travis config   
 * Add "Build tools and Continuous Integration" section into README.md
