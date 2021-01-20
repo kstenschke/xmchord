@@ -226,6 +226,8 @@ be focussed when the shortcut is fired.
 | ◤ + L &nbsp; or &nbsp; ◤ + U | Focus URL field                              |
 | &nbsp; &nbsp; ◢ + ←          | Focus previous tab (browser and DevTools)    |
 | &nbsp; &nbsp; ◢ + →          | Focus next tab (browser and DevTools)        |
+| Right-CTRL + ◢ + ←           | Focus previous tab, than reload it           |
+| Right-CTRL + ◢ + →           | Focus next tab, than reload it               |
 | &nbsp; &nbsp; ◢ + ,          | Decrement numeric ending of current URL by 1 |
 | &nbsp; &nbsp; ◢ + .          | Increment numeric ending of current URL by 1 |
 | &nbsp; &nbsp; ◢ + Backspace  | Remove trailing segment from current URL     |

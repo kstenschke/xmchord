@@ -3,7 +3,9 @@ xmchord Changelog
 
 V0.4.2 - Not released yet
 -------------------------
-* Improve actions that make use of Ctrl+C: Retain previous clipboard content 
+* Improve actions that make use of Ctrl+C: Retain previous clipboard content
+* Add browser action: Right-CTRL + ◢ + Left - Chromium/Firefox: Focus previous tab, than reload it 
+* Add browser action: Right-CTRL + ◢ + Right - Chromium/Firefox: Focus next tab, than reload it 
 
 V0.4.1 - 2021/01/20
 -------------------
