@@ -6,11 +6,12 @@ focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
 
 if [[ "$focusApplication" =~ soffice.bin ]] \
-  || [[ "$focusApplication" =~ "java" ]]; then
+  || [[ "$focusApplication" =~ "java" ]] \
+  || [[ "$focusApplication" =~ "gnome-terminal" ]]; then
     xdotool key 0xff08  # Backspace
 fi
 
-public_ip=$(curl ident.me)
+public_ip=$(curl -s ident.me)
 private_ip=$(hostname -I | awk '{print $1}')
 
 echo "$public_ip" | xclip -in -selection clipboard
