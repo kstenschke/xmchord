@@ -279,7 +279,7 @@ For them to work, the mouse must be hovering Gnome Screenshot's
 
 ### 1. User-specific actions 
 
-**Problem:** xmchord runs as root, but most actions need to be run for a
+**Problem:** xmchord runs as root, but some actions need to be run for a
 specific logged-in user.
 
 E.g. Cinnamon's D-Bus methods require being launched by a specific user. 
