@@ -166,7 +166,7 @@ all included actions to work:
 | &nbsp; &nbsp; ◢ + C        | Launch or bring Chromium to front                                              |
 | &nbsp; &nbsp; ◢ + D        | Launch or bring DataGrip to front                                              |
 | &nbsp; &nbsp; ◢ + F        | Launch or bring Firefox to front                                               |
-| &nbsp; &nbsp; ◢ + I        | Display public and private IP address, copy public IP address                  |
+| &nbsp; &nbsp; ◢ + I        | Display public and private IP and wifi MAC address, copy public IP address     |
 | &nbsp; &nbsp; ◢ + K        | Launch or bring Kitematic to front                                             |
 | &nbsp; &nbsp; ◢ + L        | Toggle keyboard backlight                                                      |
 | &nbsp; &nbsp; ◢ + M        | Launch or bring Claws Mail to front                                            |
@@ -266,7 +266,7 @@ be focussed when the shortcut is fired.
 These actions automate the steps for transferring screenshots made with 
 Gnome Screenshot into other applications.  
 For them to work, the mouse must be hovering Gnome Screenshot's 
-[copy to clipboard] button when fired. 
+`copy to clipboard` button when fired. 
 
 | **Shortcut**            | **Description**                                                                                                                                                                             |
 |-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
