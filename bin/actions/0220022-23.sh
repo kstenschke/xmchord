@@ -1,6 +1,7 @@
 #!/bin/bash
 
-#: ◢ + I - Display public and private IP Adress, copy public IP address
+#: ◢ + I - Display public and private IP and Wifi MAC adress,
+#: copy public IP address
 
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
