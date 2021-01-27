@@ -7,6 +7,7 @@ V0.4.2 - Not released yet
 * Add browser action: Right-CTRL + ◢ + Left - Focus previous tab, than reload it 
 * Add browser action: Right-CTRL + ◢ + Right - Focus next tab, than reload it 
 * Add action: ◢ + I - Display public and private IP address, copy public IP address 
+* Remove unwanted printing character of chording combo in more actions/applications 
 
 V0.4.1 - 2021/01/20
 -------------------

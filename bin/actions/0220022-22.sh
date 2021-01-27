@@ -3,7 +3,9 @@
 #: ◢ + U - Type current UNIX timestamp
 
 sleep 0.1
-xdotool key 0xff08
+xdotool key 0xff08  # Backspace
 
-now=$(date +'%s')
-xdotool type "$now"
+timestapm_now=$(date +'%s')
+xdotool type "$timestapm_now"
+
+unset timestapm_now

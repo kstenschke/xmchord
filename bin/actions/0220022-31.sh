@@ -3,6 +3,13 @@
 #: ◢ + S -
 #: Toggle clicked window's (custom) "roll-sideways" state
 
+focusApplication=\
+$(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
+
+path_self="$( cd "$(dirname "$0")" >/dev/null 2>&1 || exit ; pwd -P )"
+
+"$path_self"/utils/remove_unwanted_output.sh "$focusApplication"
+
 activeWindowId=$(xdotool getactivewindow)
 
 # Get active window's width and height (excludes window decoration)
@@ -44,5 +51,8 @@ else
   rm ./tmp/window-width_"$activeWindowId".txt
 fi
 
+unset focusApplication
+unset path_self
 unset w
 unset h
+
