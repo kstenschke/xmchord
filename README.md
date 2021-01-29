@@ -34,11 +34,6 @@ common user activities on the Linux desktop.
     * [Claws Mail](#claws-mail)
     * [Gnome Terminal](#gnome-terminal)
     * [Gnome Screenshot](#gnome-screenshot)
-* [Action shell scripting tricks](#action-shell-scripting-tricks)
-  * [1. User-specific actions](#1-user-specific-actions)
-  * [2. Launching applications and switching windows](#2-launching-applications-and-switching-windows)
-  * [3. Triggering window actions](#3-triggering-window-actions)
-  * [4. Application specific shortcut actions](4-application-specific-shortcut-actions)
 * [Building xmchord from source](#building-xmchord-from-source)
 * [Code Convention](#code-convention)
 * [Contributing](#contributing)
@@ -47,8 +42,12 @@ common user activities on the Linux desktop.
 * [Third Party References](#third-party-references)
   * [Build tools and Continuous Integration](#build-tools-and-continuous-integration)
 * [Author and License](#author-and-license)
-* [Addendum: Linux trackball configuration snippets](#addendum-linux-trackball-configuration-snippets)
-
+* [Addendum I: Linux trackball configuration snippets](#addendum-i-linux-trackball-configuration-snippets)
+* [Addendum II: Action shell scripting tricks](#addendum-ii-action-shell-scripting-tricks)
+  * [1. User-specific actions](#1-user-specific-actions)
+  * [2. Launching applications and switching windows](#2-launching-applications-and-switching-windows)
+  * [3. Triggering window actions](#3-triggering-window-actions)
+  * [4. Application specific shortcut actions](#4-application-specific-shortcut-actions)
 
 ## What does it do?
 
@@ -291,79 +290,6 @@ For them to work, the mouse must be hovering Gnome Screenshot's
 | ◣ + V                   | **View as "sticky note:"** Click, hit [Esc], store clipboard to temporary image file and open image file in feh Image Viewer, Set feh window always-on-top and always-on-visible-workspace. |
 
 
-## Action shell scripting tricks
-
-### 1. User-specific actions 
-
-**Problem:** xmchord runs as root, but some actions need to be run for a
-specific logged-in user.
-
-E.g. Cinnamon's D-Bus methods require being launched by a specific user. 
-The following script switches from root to original user, before triggering the
-desired method:
-
-```bash
-#!/bin/bash
-me=$SUDO_USER
-sudo -u $me dbus-send --dest=org.Cinnamon --print-reply /org/Cinnamon org.Cinnamon.switchWorkspaceRight
-```
-
-
-### 2. Launching applications and switching windows
-
-Shell scripts can detect whether an application is running already and using
-e.g. [wmctrl](http://tripie.sweb.cz/utils/wmctrl/), bring a respective window
-onto the active workspace, or launch the application (similar to the behavior
-on Mac OS).
-
-```bash
-#!/bin/bash
-if pidof -s evolution > /dev/null; then
-  wmctrl -a Evolution
-else
-  me=$SUDO_USER
-  sudo -u $me nohup evolution > /dev/null &
-fi
-```
-
-
-### 3. Triggering window actions
-
-Using e.g. [wmctrl](http://tripie.sweb.cz/utils/wmctrl/), shell scripts can
-switch the active window's roll-up and always-on-top state:
-
-```bash
-#!/bin/bash
-wmctrl -b toggle,shaded -r :ACTIVE:
-```
-
-
-```bash
-#!/bin/bash
-wmctrl -r :ACTIVE: -b toggle,above
-```
-
-
-### 4. Application specific shortcut actions
-
-Using e.g. [xdotool](https://www.semicomplete.com/projects/xdotool/), shell
-scripts can detect the currently focused window's application, and vary 
-the triggered function accordingly. Xdotool also allows to trigger
-key-combinations for various shortcuts:
-
-```bash
-#!/bin/bash
-focusApplication=\
-`cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm`
-
-if [[ "$focusApplication" =~ "gnome-terminal-" ]]; then
-  xdotool key Control_L+Page_Up
-else
-  xdotool key shift+ctrl+Tab
-fi
-```
-
-
 ## Building xmchord from source
 
 ```bash
@@ -412,16 +338,16 @@ by Steve Simpson.
 The following third party tools are used for building xmchord with automatic
 control over code quality and standards: 
 
-| Tool or Service                                                 | Description                                                                          | License                                                                                                   |
-| --------------------------------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
-| [Clang](https://clang.llvm.org)                                 | A C language family frontend for LLVM                                                | [Apache License](https://www.apache.org/licenses/)                                                        |      
-| [Cmake](https://cmake.org)                                      | Family of tools designed to build, test and package software                         | [New BSD License](https://en.wikipedia.org/wiki/New_BSD_License)                                          |      
-| [Cppcheck](http://cppcheck.sourceforge.net/)                    | Static analysis tool for C/C++ code                                                  | [GNU General Public License version 3](https://www.gnu.org/licenses/gpl-3.0.html)                         |      
-| [cpplint](https://github.com/cpplint/cpplint)                   | Static code checker for C++                                                          | [BSD-3 Clause](https://opensource.org/licenses/BSD-3-Clause)                                              |      
-| [GCC](https://gcc.gnu.org)                                      | GCC, the GNU Compiler Collection                                                     | [GNU General Public License version 3](https://gcc.gnu.org/onlinedocs/libstdc++/manual/appendix_gpl.html) |      
-| [lgtm automated code review](https://lgtm.com/)                 | Code analysis platform for finding zero-days and preventing critical vulnerabilities | [lgtm Terms of Service](https://lgtm.com/tos)                                                             |      
-| [ShellCheck](https://github.com/koalaman/shellcheck)            | ShellCheck, a static analysis tool for shell scripts                                 | [GNU General Public License version 3](https://gcc.gnu.org/onlinedocs/libstdc++/manual/appendix_gpl.html) |      
-| [Tavis CI](https://travis-ci.org/)                              | Test and Deploy Your Code with Confidence                                            | [Travis CI Contact & Legal Inquiries](https://www.ideracorp.com/legal/TravisCI)                           |      
+| Tool or Service                                       | Description                                                                          | License                                                                                                   |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
+| [Clang](https://clang.llvm.org)                       | A C language family frontend for LLVM                                                | [Apache License](https://www.apache.org/licenses/)                                                        |      
+| [Cmake](https://cmake.org)                            | Family of tools designed to build, test and package software                         | [New BSD License](https://en.wikipedia.org/wiki/New_BSD_License)                                          |      
+| [Cppcheck](http://cppcheck.sourceforge.net/)          | Static analysis tool for C/C++ code                                                  | [GNU General Public License version 3](https://www.gnu.org/licenses/gpl-3.0.html)                         |      
+| [cpplint](https://github.com/cpplint/cpplint)         | Static code checker for C++                                                          | [BSD-3 Clause](https://opensource.org/licenses/BSD-3-Clause)                                              |      
+| [GCC](https://gcc.gnu.org)                            | GCC, the GNU Compiler Collection                                                     | [GNU General Public License version 3](https://gcc.gnu.org/onlinedocs/libstdc++/manual/appendix_gpl.html) |      
+| [lgtm automated code review](https://lgtm.com/)       | Code analysis platform for finding zero-days and preventing critical vulnerabilities | [lgtm Terms of Service](https://lgtm.com/tos)                                                             |      
+| [ShellCheck](https://github.com/koalaman/shellcheck)  | ShellCheck, a static analysis tool for shell scripts                                 | [GNU General Public License version 3](https://gcc.gnu.org/onlinedocs/libstdc++/manual/appendix_gpl.html) |      
+| [Tavis CI](https://travis-ci.org/)                    | Test and Deploy Your Code with Confidence                                            | [Travis CI Contact & Legal Inquiries](https://www.ideracorp.com/legal/TravisCI)                           |      
 
 Thanks a lot!
 
@@ -461,7 +387,7 @@ xmchord is licensed under the [New BSD License](http://opensource.org/licenses/B
 > SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-## Addendum: Linux trackball configuration snippets
+## Addendum I: Linux trackball configuration snippets
 
 **Output list of devices:** ``xinput --list``  
 **Output mouse buttons mapping:** ``xinput get-button-map <device-ID>``  
@@ -496,4 +422,77 @@ for id in `xinput --list|grep 'Kensington Expert Wireless TB Mouse'|perl -ne 'wh
   # map bottom-left button held to scroll
   xinput set-prop $id "Evdev Wheel Emulation Timeout" 300
 done 
+```
+
+
+## Addendum II: Action shell scripting tricks
+
+### 1. User-specific actions
+
+**Problem:** xmchord runs as root, but some actions need to be run for a
+specific logged-in user.
+
+E.g. Cinnamon's D-Bus methods require being launched by a specific user.
+The following script switches from root to original user, before triggering the
+desired method:
+
+```bash
+#!/bin/bash
+me=$SUDO_USER
+sudo -u $me dbus-send --dest=org.Cinnamon --print-reply /org/Cinnamon org.Cinnamon.switchWorkspaceRight
+```
+
+
+### 2. Launching applications and switching windows
+
+Shell scripts can detect whether an application is running already and using
+e.g. [wmctrl](http://tripie.sweb.cz/utils/wmctrl/), bring a respective window
+onto the active workspace, or launch the application (similar to the behavior
+on Mac OS).
+
+```bash
+#!/bin/bash
+if pidof -s evolution > /dev/null; then
+  wmctrl -a Evolution
+else
+  me=$SUDO_USER
+  sudo -u $me nohup evolution > /dev/null &
+fi
+```
+
+
+### 3. Triggering window actions
+
+Using e.g. [wmctrl](http://tripie.sweb.cz/utils/wmctrl/), shell scripts can
+switch the active window's roll-up and always-on-top state:
+
+```bash
+#!/bin/bash
+wmctrl -b toggle,shaded -r :ACTIVE:
+```
+
+
+```bash
+#!/bin/bash
+wmctrl -r :ACTIVE: -b toggle,above
+```
+
+
+### 4. Application specific shortcut actions
+
+Using e.g. [xdotool](https://www.semicomplete.com/projects/xdotool/), shell
+scripts can detect the currently focused window's application, and vary
+the triggered function accordingly. Xdotool also allows to trigger
+key-combinations for various shortcuts:
+
+```bash
+#!/bin/bash
+focusApplication=\
+`cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm`
+
+if [[ "$focusApplication" =~ "gnome-terminal-" ]]; then
+  xdotool key Control_L+Page_Up
+else
+  xdotool key shift+ctrl+Tab
+fi
 ```
