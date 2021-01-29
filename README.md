@@ -462,7 +462,7 @@ xmchord is licensed under the [New BSD License](http://opensource.org/licenses/B
 **Output mouse buttons mapping:** ``xinput get-button-map <device-ID>``  
 **Trace mouse button IDs:** ``xev``  
 
-**Set speed+acceleration, buttons mapping and wheel emulation:**
+**Set speed and acceleration, buttons mapping and wheel emulation:**
 
 ````
 for id in `xinput --list|grep 'Kensington Expert Wireless TB Mouse'|perl -ne 'while (m/id=(\d+)/g){print "$1\n";}'`; do
