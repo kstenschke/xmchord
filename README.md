@@ -473,7 +473,7 @@ for id in `xinput --list|grep 'Kensington Expert Wireless TB Mouse'|perl -ne 'wh
   xinput set-button-map $id 3 2 1 4 5 6 7 8 9 10 11 12  # left-handed: bottom-right is left-click
 
   # emulate mouse wheel on bottom/left (right-click) button + move
-	xinput set-prop "pointer:Kensington Expert Wireless TB Mouse" "libinput Scroll Method Enabled" 0, 0, 1
+  xinput set-prop "pointer:Kensington Expert Wireless TB Mouse" "libinput Scroll Method Enabled" 0, 0, 1
 	
   # on Kensington Expert Mouse, buttons are: 
   #   0 = no button needed
