@@ -33,18 +33,12 @@
 #pragma clang diagnostic ignored "-Wmissing-noreturn"
 
 typedef struct thread_arguments_kbd {
-  std::string device_path = "";
+  std::string device_path_;
 } thargs_t;
 
 void storeModifierKeyState(const __u16 &key_code, bool pressed);
 
 /**
- * Main application:
- * init: cache available action shell script files
- * optional: trace actions (if argument given)
- * launch key watcher thread
- * endlessly run mouse watcher
- *
  * @param argc Amount of arguments received
  * @param argv Array: arguments received, argv[0] is name and path of executable
  */
@@ -58,11 +52,12 @@ int main(int argc, char **argv) {
   if (!run) return exit_code;
 
   std::string path_binary = helper::System::GetBinaryPath(
-      argv, std::strlen(XMCHORD_EXECUTABLE_NAME));
+    argv, std::strlen(XMCHORD_EXECUTABLE_NAME));
 
   std::string path_actions = path_binary + "/actions/";
+
   std::string action_files =
-      model::ActionReader::CollectActionFilenames(path_actions);
+    model::ActionReader::CollectActionFilenames(path_actions);
 
   if (action_files.length() == 0) {
     std::cerr << "No action files found in: " << path_actions << "\n";
@@ -83,8 +78,8 @@ int main(int argc, char **argv) {
 
   // Launch keyboard watcher thread
   pthread_t thread_kbd_watcher;
-  thargs_t thread_args;
-  thread_args.device_path = kbd_device_path;
+  thread_arguments_kbd thread_args;
+  thread_args.device_path_ = kbd_device_path;
 
   if (pthread_create(&thread_kbd_watcher, nullptr, KbdWatcher, &thread_args)) {
     std::cerr << "Failed to initialize keyboard watcher.\n";
@@ -144,9 +139,14 @@ int InitArgs(int argc,
     return 0;
   }
 
-  if (helper::Textual::StartsWith(argv[1], "-k=")
+  bool is_arg_kbd_short =
+      helper::Textual::StartsWith(argv[1], "-k=");
+
+  if (is_arg_kbd_short
       || helper::Textual::StartsWith(argv[1], "--keyboard=")) {
-    *kbd_device_path = std::string(argv[1]).substr(strlen(argv[1]));
+    *kbd_device_path = std::string(argv[1]).substr(
+        is_arg_kbd_short ? 3 : 11,  // remove prefix "-k=" or "--keyboard=="
+        strlen(argv[1]));
     return 0;
   }
 
@@ -218,7 +218,7 @@ void PrintHelp() {
 // Keyboard watcher (running within thread)
 void *KbdWatcher(void *thread_args) {
   std::string device_path =
-      reinterpret_cast<thargs_t*>(thread_args)->device_path;
+      reinterpret_cast<thargs_t*>(thread_args)->device_path_;
 
   int device_handle_keyboard =
       model::KeyboardDeviceFinder::GetDeviceHandle(device_path);

@@ -100,9 +100,12 @@ a specific keyboard device to be used.
 xmchord stores this device preference, so once it is set, xmchord continues
 using that device when restarted later.  
  
-Running `xmchord --keyboard=/path/to/my/keyboard` 
-or `xmchord -k=/path/to/my/keyboard` selects the device at the given path as
-the keyboard watcher's target.
+Running `xmchord -k=/path/to/my/keyboard` or 
+`xmchord --keyboard=/path/to/my/keyboard` selects the device at the given path
+as the keyboard watcher's target.   
+**Tip:** xmchord's device detection is looking for a matching substring, 
+therefore the device-identifier can also be given w/o a path, e.g:
+`xmchord -k=Logitech`.
 
 
 ### Command: `listDevices`

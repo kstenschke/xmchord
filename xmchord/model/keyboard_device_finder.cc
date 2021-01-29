@@ -129,8 +129,9 @@ void KeyboardDeviceFinder::SetAmountDevicesByPath(int amount) {
   amount_devices_by_path_ = amount;
 }
 
-// If preference or -k argument given: Use matching device
-// If no preference and no -k argument given: Use internal keyboard
+// If preference or -k (or --keyboard) argument given: Use matching device
+// If no preference and no -k (and no --keyboard) argument given:
+// Use internal keyboard
 // If no device matches or list_devices == true: list available devices and exit
 //
 // Device argument can be given as any substring of the device identifier
@@ -138,7 +139,20 @@ void KeyboardDeviceFinder::SetAmountDevicesByPath(int amount) {
 bool KeyboardDeviceFinder::SelectKeyboardFromAvailableDevices(
     bool list_devices) {
   std::string devices_list;
-  bool has_preselection = list_devices || !device_name_selected_.empty();
+
+  bool hasKeyboardPreference = !device_name_selected_.empty();
+
+  if (hasKeyboardPreference) {
+    std::cout << "Keyboard preference (/var/tmp/xmchord.pref) found: " << device_name_selected_ << "\n";
+  } else {
+    if (list_devices)
+      std::cout << "No keyboard preference (/var/tmp/xmchord.pref) given.\n";
+    else
+      std::cout << "No keyboard preference (/var/tmp/xmchord.pref) given: "
+                   "Use default device and store as preference.\n";
+  }
+
+  bool has_preselection = list_devices || hasKeyboardPreference;
   bool has_rendered_selected = false;  // stop upon 1st matching device
 
   int index = 0;
