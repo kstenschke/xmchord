@@ -26,8 +26,9 @@ else
     xdotool sleep 0.1
     xdotool key Control_L+d
   else
-    if [[ "$focusApplication" =~ "chromium-browse" ]] ||
-      [[ "$focusApplication" =~ "firefox" ]]; then
+    if [[ "$focusApplication" =~ "chromium-browse" ]] \
+    || [[ "$focusApplication" =~ "chromium" ]] \
+    || [[ "$focusApplication" =~ "firefox" ]]; then
       clipboard=$( xsel -ob )
 
       xdotool sleep 0.1

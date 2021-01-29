@@ -12,6 +12,7 @@ path_self="$( cd "$(dirname "$0")" >/dev/null 2>&1 || exit ; pwd -P )"
 "$path_self"/utils/remove_unwanted_output.sh "$focusApplication"
 
 if [[ "$focusApplication" =~ "chromium-browse" ]] \
+|| [[ "$focusApplication" =~ "chromium" ]] \
 || [[ "$focusApplication" =~ "firefox" ]]; then
   clipboard=$( xsel -ob )
 

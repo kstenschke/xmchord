@@ -12,6 +12,7 @@ if [[ "$focusApplication" =~ "gnome-terminal-" ]]; then
   exit 0
 else
   if [[ "$focusApplication" =~ "chromium-browse" ]] \
+  || [[ "$focusApplication" =~ "chromium" ]] \
   || [[ "$focusApplication" =~ "firefox" ]]; then
     # Chromium or Firefox: Go URL forward
     xdotool sleep 0.1

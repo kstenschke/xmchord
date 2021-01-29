@@ -149,6 +149,7 @@ all included actions to work:
 | [wmctrl](http://tripie.sweb.cz/utils/wmctrl/)                   | Command line tool to interact with an EWMH/NetWM compatible X Window Manager      |
 | [xdotool](https://www.semicomplete.com/projects/xdotool/)       | Fake keyboard/mouse input, window management, and more                            |
 | [xsel](https://linux.die.net/man/1/xsel)                        | Manipulate the X selection (Clipboard)                                            |
+| [xclip](https://github.com/astrand/xclip)                       | Interface to X selections ("the clipboard") from the command line.                |
 
 
 **Install dependencies that are not included in Linux Mint distribution by default:**  
@@ -158,6 +159,7 @@ sudo apt install aosd-cat
 sudo apt install feh
 sudo apt install xdotool
 sudo apt install xsel
+sudo apt install xclip
 ````
 
 

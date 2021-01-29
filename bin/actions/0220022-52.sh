@@ -5,8 +5,9 @@
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
 
-if [[ "$focusApplication" =~ "chromium-browse" ]] ||
-  [[ "$focusApplication" =~ "firefox" ]]; then
+if [[ "$focusApplication" =~ "chromium-browse" ]] \
+|| [[ "$focusApplication" =~ "chromium" ]] \
+|| [[ "$focusApplication" =~ "firefox" ]]; then
   # focus URL, select and copy its ending
   # declare variable from clipboard, increment variable, copy variable to clipboard
   # paste clipboard over URL ending, press Enter: reload

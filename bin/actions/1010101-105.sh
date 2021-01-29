@@ -12,6 +12,7 @@ if [[ "$focusApplication" =~ "gnome-terminal-" ]]; then
   exit 0
 else
   if [[ "$focusApplication" =~ "chromium-browse" ]] \
+  || [[ "$focusApplication" =~ "chromium" ]] \
   || [[ "$focusApplication" =~ "firefox" ]]; then
     xdotool sleep 0.1
     xdotool keydown alt key Left

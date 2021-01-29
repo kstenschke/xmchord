@@ -11,6 +11,7 @@ path_self="$( cd "$(dirname "$0")" >/dev/null 2>&1 || exit ; pwd -P )"
 "$path_self"/utils/remove_unwanted_output.sh "$focusApplication"
 
 if [[ "$focusApplication" =~ "chromium-browse" ]] \
+|| [[ "$focusApplication" =~ "chromium" ]] \
 || [[ "$focusApplication" =~ "firefox" ]]; then
   #  Chromium or Firefox is focussed: Copy last segment of URL
   clipboard=$( xsel -ob )
@@ -30,11 +31,16 @@ if [[ "$focusApplication" =~ "chromium-browse" ]] \
   unset copied_url
 else
   if pidof -s chromium-browse >/dev/null; then
-    wmctrl -a Chromium  # Activate Chromium window
+    wmctrl -a Chromium
   else
-    me=$SUDO_USER
-    sudo -u "$me" nohup chromium-browser >/dev/null &  # Launch Chromium
-    unset me
+    if pidof -s chromium >/dev/null; then
+      wmctrl -a Chromium
+    else
+      me=$SUDO_USER
+  #    sudo -u "$me" nohup chromium-browser >/dev/null &
+      sudo -u "$me" nohup chromium >/dev/null &
+      unset me
+    fi
   fi
 fi
 
