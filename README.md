@@ -465,6 +465,8 @@ xmchord is licensed under the [New BSD License](http://opensource.org/licenses/B
 **Set speed and acceleration, buttons mapping and wheel emulation:**
 
 ````
+#!/bin/bash
+
 for id in `xinput --list|grep 'Kensington Expert Wireless TB Mouse'|perl -ne 'while (m/id=(\d+)/g){print "$1\n";}'`; do
   # set speed + accelleration
   xinput set-ptr-feedback $id 0 34 12
