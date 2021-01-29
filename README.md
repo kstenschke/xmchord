@@ -39,6 +39,7 @@ common user activities on the Linux desktop.
   * [2. Launching applications and switching windows](#2-launching-applications-and-switching-windows)
   * [3. Triggering window actions](#3-triggering-window-actions)
   * [4. Application specific shortcut actions](4-application-specific-shortcut-actions)
+* [Snippets: Linux trackball configuration](#snippets-linux-trackball-configuration)
 * [Building from source](#building-from-source)
 * [Code Convention](#code-convention)
 * [Contributing](#contributing)
@@ -356,6 +357,42 @@ else
   xdotool key shift+ctrl+Tab
 fi
 ```
+
+
+## Snippets: Linux trackball configuration
+
+**Output list of devices:** ``xinput --list``  
+**Output mouse buttons mapping:** ``xinput get-button-map <device-ID>``  
+**Trace mouse button IDs:** ``xev``  
+
+**Set speed+acceleration, buttons' mapping and wheel emulation:**
+
+````
+for id in `xinput --list|grep 'Kensington Expert Wireless TB Mouse'|perl -ne 'while (m/id=(\d+)/g){print "$1\n";}'`; do
+  # set speed + accelleration
+  xinput set-ptr-feedback $id 0 34 12
+
+  # set top/left button to be middle-click
+  xinput set-button-map $id 3 2 1 4 5 6 7 8 9 10 11 12  # left-handed: bottom-right is left-click
+
+  # emulate mouse wheel on bottom/left (right-click) button + move
+	xinput set-prop "pointer:Kensington Expert Wireless TB Mouse" "libinput Scroll Method Enabled" 0, 0, 1
+	
+  # on Kensington Expert Mouse, buttons are: 
+  #   0 = no button needed
+  #   2 = top/left
+  #   8 = top/right
+  #   1 = bottom/left
+  #   8 1 = bottom buttons together
+  #   8 2 = bottom right + top/left together
+
+  # set bottom button to fire scroll-mode
+  xinput set-prop "pointer:Kensington Expert Wireless TB Mouse" "libinput Button Scrolling Button" 1
+    
+  # map bottom-left button held to scroll
+  xinput set-prop $id "Evdev Wheel Emulation Timeout" 300
+done 
+````
 
 
 ## Building from source
