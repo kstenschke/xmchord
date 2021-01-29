@@ -7,7 +7,7 @@ V0.4.2 - 2021/01/29
 * Add browser action: Right-CTRL + ◢ + Left - Focus previous tab, than reload it 
 * Add browser action: Right-CTRL + ◢ + Right - Focus next tab, than reload it 
 * Add action: ◢ + I - Display public and private IP and Wifi MAC address, copy public IP address 
-* Remove unwanted printing character of chording combo in more actions/applications 
+* Remove unwanted printing charactekeyboard_device_finder.cr of chording combo in more actions/applications 
 * Add addendum to README: Linux trackball configuration snippets
 * Improve keyboard preference handling (more feedback, allow detect by sub-string)
 

@@ -143,7 +143,8 @@ bool KeyboardDeviceFinder::SelectKeyboardFromAvailableDevices(
   bool hasKeyboardPreference = !device_name_selected_.empty();
 
   if (hasKeyboardPreference) {
-    std::cout << "Keyboard preference (/var/tmp/xmchord.pref) found: " << device_name_selected_ << "\n";
+    std::cout << "Keyboard preference (/var/tmp/xmchord.pref) found: "
+              << device_name_selected_ << "\n";
   } else {
     if (list_devices)
       std::cout << "No keyboard preference (/var/tmp/xmchord.pref) given.\n";
