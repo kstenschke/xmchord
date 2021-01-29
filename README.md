@@ -147,6 +147,16 @@ all included actions to work:
 | [xsel](https://linux.die.net/man/1/xsel)                        | Manipulate the X selection (Clipboard)                                            |
 
 
+**Install dependencies that are not included in Linux Mint distribution by default:**  
+
+````
+sudo apt install aosd-cat
+apt install feh
+apt install xdotool
+apt install xsel
+````
+
+
 ### Global actions (not application specific)
 
 **Symbols are:**
