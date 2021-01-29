@@ -152,9 +152,9 @@ all included actions to work:
 
 ````
 sudo apt install aosd-cat
-apt install feh
-apt install xdotool
-apt install xsel
+sudo apt install feh
+sudo apt install xdotool
+sudo apt install xsel
 ````
 
 
@@ -464,7 +464,7 @@ xmchord is licensed under the [New BSD License](http://opensource.org/licenses/B
 
 **Set speed and acceleration, buttons mapping and wheel emulation:**
 
-````
+```bash
 #!/bin/bash
 
 for id in `xinput --list|grep 'Kensington Expert Wireless TB Mouse'|perl -ne 'while (m/id=(\d+)/g){print "$1\n";}'`; do
@@ -491,4 +491,4 @@ for id in `xinput --list|grep 'Kensington Expert Wireless TB Mouse'|perl -ne 'wh
   # map bottom-left button held to scroll
   xinput set-prop $id "Evdev Wheel Emulation Timeout" 300
 done 
-````
+```
