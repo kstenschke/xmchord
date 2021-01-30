@@ -6,6 +6,7 @@
 
 if [[ "$1" =~ soffice.bin ]] \
   || [[ "$1" =~ "java" ]] \
-  || [[ "$1" =~ "gnome-terminal" ]]; then
+  || [[ "$1" =~ "gnome-terminal" ]] \
+  || [[ "$1" =~ "xpad" ]]; then
     xdotool key 0xff08  # Backspace
 fi

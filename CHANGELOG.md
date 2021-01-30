@@ -4,6 +4,7 @@ xmchord Changelog
 V0.4.3 - Not tagged yet
 -----------------------
 * Improve actions' compatibility: Handle variations of Chromium's application identifier
+* Add xpad to applications removing undesired output of characters from chording combo
 
 V0.4.2 - 2021/01/29
 -------------------
