@@ -39,9 +39,8 @@ set (XMCHORD_VERSION_MAJOR 0)
 set (XMCHORD_VERSION_MINOR 4)
 set (XMCHORD_VERSION_PATCH 3)
 
-# configure config.h to be generated from config.h.in, with injected version number
-configure_file (
-        "xmchord/config.h.in"
+configure_file (                # configure config.h to be generated
+        "xmchord/config.h.in"   # from config.h.in, w/ above version number
         "xmchord/config.h")
 
 find_package(Threads)
