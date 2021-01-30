@@ -115,8 +115,8 @@ This is helpful when wanting to use a different than the default keyboard.
 
 ### Command: `reset`
 
-Running `xmchord reset` or `xmchord r` removes the xmchord keyboard device 
-preference, if it exists.
+Running `xmchord reset` or `xmchord r` unsets xmchord's keyboard device 
+preference.
 
 
 ### Command: `version`
