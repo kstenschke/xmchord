@@ -193,6 +193,7 @@ sudo apt install xclip
 | &nbsp; &nbsp; ◢ + U        | Type current UNIX timestamp                                                    |
 | &nbsp; &nbsp; ◢ + V        | Toggle active window always-on-visible-workspace state                         |
 | &nbsp; &nbsp; ◢ + W        | Hit CTRL+W (close window)                                                      |
+| &nbsp; &nbsp; ◢ + Y        | Bring Yana to front, launch if not yet running                                 |
 | &nbsp; &nbsp; ◢ + Ä        | Type large A-umlaut (helpful e.g. on swiss keyboards)                          |
 | &nbsp; &nbsp; ◢ + Ö        | Type large O-umlaut (helpful e.g. on swiss keyboards)                          |
 | &nbsp; &nbsp; ◢ + Ü        | Type large U-umlaut (helpful e.g. on swiss keyboards)                          |
