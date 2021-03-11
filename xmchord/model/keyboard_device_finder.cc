@@ -42,10 +42,15 @@ KeyboardDeviceFinder::KeyboardDeviceFinder(const std::string& device_path) {
 }
 
 bool KeyboardDeviceFinder::SetDeviceNameSelectedFromPreference() {
-  if (!helper::File::FileExists(kPathPreferences)) return false;
+  auto *kPPreferences = new Preferences();
 
-  device_name_selected_ = helper::File::GetFileContents(kPathPreferences);
+  if (!kPPreferences->AreGiven()) {
+    delete kPPreferences;
+    return false;
+  }
 
+  device_name_selected_ = kPPreferences->GetContent();
+  delete kPPreferences;
   return true;
 }
 
@@ -203,20 +208,14 @@ bool KeyboardDeviceFinder::SelectKeyboardFromAvailableDevices(
 
 // Store selected keyboard device to /var/tmp/xmchord.pref, kept for 30 days
 bool KeyboardDeviceFinder::SaveDevicePreference() {
-  ResetDevicePreference();
+  auto *kPPreferences = new Preferences();
+  kPPreferences->Reset();
 
   std::string device_identifier =
       helper::File::GetLastPathSegment(devices_[device_index_selected_]);
 
-  return helper::File::OverwriteFile(kPathPreferences, device_identifier);
-}
-
-void KeyboardDeviceFinder::ResetDevicePreference(bool notify) {
-  helper::File::OverwriteFile(kPathPreferences, "");
-
-  if (notify)
-    std::cout
-      << "Reset keyboard device preference: "
-      << kPathPreferences << "\n\n";
+  auto rc = kPPreferences->Save(device_identifier);
+  delete kPPreferences;
+  return rc;
 }
 }  // namespace model

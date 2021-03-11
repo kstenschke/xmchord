@@ -27,49 +27,35 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef XMCHORD_MODEL_KEYBOARD_DEVICE_FINDER_H_
-#define XMCHORD_MODEL_KEYBOARD_DEVICE_FINDER_H_
+#ifndef XMCHORD_MODEL_PREFERENCES_H_
+#define XMCHORD_MODEL_PREFERENCES_H_
 
-#include <xmchord/helper/system.h>
-#include <xmchord/helper/textual.h>
 #include <xmchord/helper/file.h>
-#include <xmchord/model/preferences.h>
-#include <fcntl.h>
+#include <xmchord/helper/textual.h>
+#include <dirent.h>
+#include <cstdio>
 #include <iostream>
 #include <string>
-#include <thread>  // NOLINT
-#include <vector>
 
 namespace model {
-class KeyboardDeviceFinder {
+
+class Preferences {
  public:
-  int device_index_selected_ = -1;
+  Preferences();
 
-  explicit KeyboardDeviceFinder(const std::string& device_path);
+  bool AreGiven() const;
 
-  static int GetDeviceHandle(const std::string& device_path,
-                             bool list_devices = false);
+  std::string GetContent();
 
-  void SetAmountDevicesByPath(int amount);
+  bool Save(const std::string& content);
+  void Reset(bool notify = false);
+
+  void Print();
 
  private:
   const char* kPathPreferences = "/var/tmp/xmchord.pref";
+};
 
-  std::string device_name_selected_;
-  std::vector<std::string> devices_;
-  int amount_devices_by_path_ = 0;
-
-  bool SetDeviceNameSelectedFromPreference();
-
-  void GetDevicesByPath(const std::string &device_path,
-                        bool set_amount_devices_in_path = false);
-
-  bool SelectKeyboardFromAvailableDevices(bool list_devices = false);
-
-  bool SaveDevicePreference();
-
-  std::string GetDevicePathBySelectedIndex();
-};  // class Keyboard
 }  // namespace model
 
-#endif  // XMCHORD_MODEL_KEYBOARD_DEVICE_FINDER_H_
+#endif  // XMCHORD_MODEL_PREFERENCES_H_

@@ -32,7 +32,8 @@ project(xmchord C CXX)
 include_directories(${CMAKE_SOURCE_DIR})
 
 set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin/)
+#set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
 
 set (XMCHORD_EXECUTABLE_NAME "xmchord")
 set (XMCHORD_VERSION_MAJOR 0)
@@ -58,6 +59,8 @@ add_executable(xmchord
         xmchord/model/keyboard_device_finder.h
         xmchord/model/action_runner.cc
         xmchord/model/action_runner.h
+        xmchord/model/preferences.cc
+        xmchord/model/preferences.h
         xmchord/xmchord.cc)
 
 target_link_libraries(xmchord ${CMAKE_THREAD_LIBS_INIT})

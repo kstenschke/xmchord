@@ -3,19 +3,25 @@ xmchord Changelog
 
 V0.4.3 - Not tagged yet
 -----------------------
-* Improve actions' compatibility: Handle variations of Chromium's application identifier
-* Add xpad to applications removing undesired output of characters from chording combo
+* Improve actions' compatibility: Handle variations of Chromium's application 
+  identifier
+* Add xpad to applications removing undesired output of characters from chording 
+  combo 
 * Add action: ◢ + Y - Bring Yana to front, launch if not yet running
+* Add `printPreferences`/`p` command: Output preferences if given
 
 V0.4.2 - 2021/01/29
 -------------------
 * Improve actions that make use of Ctrl+C: Retain previous clipboard content
 * Add browser action: Right-CTRL + ◢ + Left - Focus previous tab, than reload it 
 * Add browser action: Right-CTRL + ◢ + Right - Focus next tab, than reload it 
-* Add action: ◢ + I - Display public and private IP and Wifi MAC address, copy public IP address 
-* Remove unwanted printing character of chording combo in more actions/applications 
+* Add action: ◢ + I - Display public and private IP and Wifi MAC address, copy 
+  public IP address 
+* Remove unwanted printing character of chording combo in more 
+  actions/applications 
 * Add addendum to README: Linux trackball configuration snippets
-* Improve keyboard preference handling (more feedback, allow detect by sub-string)
+* Improve keyboard preference handling (more feedback, allow detect by 
+  sub-string)
 
 V0.4.1 - 2021/01/20
 -------------------
@@ -23,8 +29,10 @@ V0.4.1 - 2021/01/20
 * Add shellcheck continuous inspection of action shell scripts to travis config   
 * Add "Build tools and Continuous Integration" section into README.md
 * Add action: ◢ + ENTER = Click left mouse button three times (select line)
-* Actions listing: improve padding between filename, chording identifier and descriptions
-* Change Claws Mail action: ◢ + H = Toggle "Hide read messages" (was: "hide read threads")
+* Actions listing: improve padding between filename, chording identifier and 
+  descriptions
+* Change Claws Mail action: ◢ + H = Toggle "Hide read messages" 
+  (was: "hide read threads")
 * Add recognition of held modifier keys (left/right alt, ctrl, shift) 
 
 V0.4.0 - 2021/01/12
@@ -32,7 +40,8 @@ V0.4.0 - 2021/01/12
 * Add Claws Mail action: ◢ + F = Open "Search Folder" popup
 * Add action: ◢ + W = Hit CTRL + W (close window)
 * Add action: ◢ + ' = Output name of application of focused window
-* Add Gnome Terminal action: ◢ + Numpad / = Insert 40 empty lines (helpful to separate sections of output)
+* Add Gnome Terminal action: ◢ + Numpad / = Insert 40 empty lines 
+  (helpful to separate sections of output)
 * Add browser action: ◢ + H = Toggle HTML "view-source" of current URL
 * Improve `action` command: Output also amount of actions found  
 * Improve `action` command: Extract multiple consecutive comment-lines
@@ -42,7 +51,8 @@ V0.4.0 - 2021/01/12
 * Improve ◢ + Up action: add jump to top in gnome-terminal
 * Add action: ◢ + $ = Convert selected text to all upper/lower case
 * Improve ◢ + Up/Down actions: Fire Ctrl+Home/End in Java-based Applications
-* Use special (triangle) characters to symbolize specific buttons within actions' inline comments
+* Use special (triangle) characters to symbolize specific buttons within 
+  actions' inline comments
 
 V0.3.0 - 2020/12/20
 -------------------
@@ -64,8 +74,10 @@ V0.2.0 - 2020/12/12
 * Add keyboard device selection to startup
 * Add Chromium/Firefox action: ◢ + D = Duplicate tab
 * Add Gnome Screenshot action: ◢ + G = Paste clipboard image into Gimp
-* Add Gnome Screenshot action: ◣ + V = Export clipboard image to temporary file and view in feh Image Viewer
-* Improve event-code cache: Click w/o chording wasn't mapped correctly / invoked possibly unnecessary file read attempt
+* Add Gnome Screenshot action: ◣ + V = Export clipboard image to temporary file 
+  and view in feh Image Viewer
+* Improve event-code cache: Click w/o chording wasn't mapped correctly / invoked 
+  possibly unnecessary file read attempt
 
 V0.1.8 - 2020/12/07
 -------------------
@@ -93,11 +105,13 @@ V0.1.3 - 2020/03/20
 
 V0.1.2 - 2020/03/19
 -------------------
-* Improve device compatibility: Add fallback to internal keyboard when no external keyboard present
+* Improve device compatibility: Add fallback to internal keyboard when no 
+  external keyboard present
 
 V0.1.1 - 2019/12/06
 -------------------
-* Change dependency: Default actions now use "notify-send" instead of osd-cat for notifications
+* Change dependency: Default actions now use "notify-send" instead of osd-cat 
+  for notifications
 * Add Travis CI build config: Compile using clang and gcc, run cppcheck
 * Improve: Performance (use initialization lists, narrow-down variable scopes)
 * Add zlib/zconf.h header to source
@@ -108,7 +122,8 @@ V0.1.0 - 2019/07/16
 * Add actions to type uppercase umlauts (helpful on swiss keyboards)  
 * Add browser actions to increment/decrement numeric ending of current url  
 * Add emulations of most system-wide ctrl-key combinations  
-* Add OSD info to example actions: toggle active window above / sticky, audio volume up / down  
+* Add OSD info to example actions: toggle active window above / sticky, 
+  audio volume up / down  
 * Improve window arrangement action to work w/ up to three monitors 
 
 V0.0.1 - 2019/04/24

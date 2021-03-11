@@ -24,6 +24,7 @@ common user activities on the Linux desktop.
   * [Command: `actions`](#command-actions)
   * [Argument: `--keyboard`](#argument---keyboard)
   * [Command: `listDevices`](#command-listdevices)
+  * [Command: `printPreferences`](#command-printpreferences)
   * [Command: `reset`](#command-reset)
   * [Command: `version`](#command-version)
 * [Included shortcut actions](#included-shortcut-actions)
@@ -111,6 +112,12 @@ therefore the device-identifier can also be given w/o a path, e.g:
 
 Running `xmchord listDevices` or `xmchord l` lists paths of available devices.
 This is helpful when wanting to use a different than the default keyboard.
+
+
+### Command: `printPreferences`
+
+Running `xmchord printPreferences` or `xmchord p` outputs xmchord's preferences
+if given, or a respective info if not.
 
 
 ### Command: `reset`

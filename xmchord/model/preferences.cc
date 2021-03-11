@@ -27,49 +27,39 @@
   POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef XMCHORD_MODEL_KEYBOARD_DEVICE_FINDER_H_
-#define XMCHORD_MODEL_KEYBOARD_DEVICE_FINDER_H_
-
-#include <xmchord/helper/system.h>
-#include <xmchord/helper/textual.h>
-#include <xmchord/helper/file.h>
 #include <xmchord/model/preferences.h>
-#include <fcntl.h>
-#include <iostream>
-#include <string>
-#include <thread>  // NOLINT
-#include <vector>
 
 namespace model {
-class KeyboardDeviceFinder {
- public:
-  int device_index_selected_ = -1;
+Preferences::Preferences() = default;
 
-  explicit KeyboardDeviceFinder(const std::string& device_path);
+bool Preferences::AreGiven() const {
+  return helper::File::FileExists(kPathPreferences);
+}
 
-  static int GetDeviceHandle(const std::string& device_path,
-                             bool list_devices = false);
+std::string Preferences::GetContent() {
+  return helper::File::GetFileContents(kPathPreferences);
+}
 
-  void SetAmountDevicesByPath(int amount);
+void Preferences::Reset(bool notify) {
+  Save("");
 
- private:
-  const char* kPathPreferences = "/var/tmp/xmchord.pref";
+  if (notify)
+    std::cout << "Reset keyboard device preference: "
+              << kPathPreferences << "\n\n";
+}
 
-  std::string device_name_selected_;
-  std::vector<std::string> devices_;
-  int amount_devices_by_path_ = 0;
+bool Preferences::Save(const std::string& content) {
+  return helper::File::OverwriteFile(kPathPreferences, content);
+}
 
-  bool SetDeviceNameSelectedFromPreference();
+void Preferences::Print() {
+  if (!AreGiven()) {
+    std::cout << kPathPreferences << " does not exist.\n\n";
 
-  void GetDevicesByPath(const std::string &device_path,
-                        bool set_amount_devices_in_path = false);
+    return;
+  }
 
-  bool SelectKeyboardFromAvailableDevices(bool list_devices = false);
-
-  bool SaveDevicePreference();
-
-  std::string GetDevicePathBySelectedIndex();
-};  // class Keyboard
+  std::cout << "Contents of " << kPathPreferences << ":\n\n"
+            << GetContent() << "\n\n";
+}
 }  // namespace model
-
-#endif  // XMCHORD_MODEL_KEYBOARD_DEVICE_FINDER_H_

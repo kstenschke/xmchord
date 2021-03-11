@@ -157,12 +157,22 @@ int InitArgs(int argc,
     return 0;
   }
 
+  if (strcmp(argv[1], "p") == 0 || strcmp(argv[1], "printPreferences") == 0) {
+    *run = false;
+
+    auto *p = new model::Preferences();
+    p->Print();
+    delete p;
+
+    return 0;
+  }
+
   if (strcmp(argv[1], "r") == 0 || strcmp(argv[1], "reset") == 0) {
     *run = false;
-    auto *kbd_device_finder = new model::KeyboardDeviceFinder("");
-    kbd_device_finder->ResetDevicePreference(true);
+    auto *kPPreferences = new model::Preferences();
+    kPPreferences->Reset(true);
 
-    delete kbd_device_finder;
+    delete kPPreferences;
     return 0;
   }
 
@@ -208,11 +218,14 @@ void PrintHelp() {
     "up -k option).\n"
     "  l\t\t\tShorthand for \"listDevices\" command.\n\n"
 
+    "  printPreferences\tOutput preferences if given, or resp. info if not.\n"
+    "  p\t\t\tShorthand for \"printPreferences\" command.\n\n"
+
     "  reset\t\t\tReset preferences.\n"
-    "  r=\t\t\tShorthand for \"reset\" command,\n\n"
+    "  r\t\t\tShorthand for \"reset\" command.\n\n"
 
     "  version\t\tOutput version number.\n"
-    "  h\t\t\tShorthand for \"version\" command,\n\n";
+    "  h\t\t\tShorthand for \"version\" command.\n\n";
 }
 
 // Keyboard watcher (running within thread)

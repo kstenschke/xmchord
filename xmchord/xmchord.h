@@ -35,6 +35,7 @@
 #include <xmchord/helper/system.h>
 #include <xmchord/helper/mouse.h>
 #include <xmchord/model/keyboard_device_finder.h>
+#include <xmchord/model/preferences.h>
 #include <xmchord/helper/file.h>
 #include <xmchord/config.h>
 #include <linux/input.h>
