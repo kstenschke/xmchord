@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◣ + ◤ -
+#: ◤ + ◢ +  -
 #: If Chromium has focus: close current tab
 
 focusApplication=\

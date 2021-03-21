@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + Y - Bring Yana to front, launch if not yet running
+#: ◣ + Y - Bring Yana to front, launch if not yet running
 
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)

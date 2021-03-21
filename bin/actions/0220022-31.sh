@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + S -
+#: ◣ + S -
 #: Toggle clicked window's (custom) "roll-sideways" state
 
 focusApplication=\

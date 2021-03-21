@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + M - Launch or bring Claws Mail to front
+#: ◣ + M - Launch or bring Claws Mail to front
 
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)

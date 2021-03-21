@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + Left - Switch to previous tab (global, Chromium DevTools)
+#: ◣ + Left - Switch to previous tab (global, Chromium DevTools)
 
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)

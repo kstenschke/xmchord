@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: AltGr + ◢ -
+#: AltGr + ◣ -
 #: Hovering [copy to clipboard] of Gnome Screenshot:
 #: Fire left click, than close current window
 

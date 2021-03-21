@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + K - Bring Kitematic window to front
+#: ◣ + K - Bring Kitematic window to front
 
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)

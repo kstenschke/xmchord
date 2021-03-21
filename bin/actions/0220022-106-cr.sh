@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: Right-CTRL + ◢ + Right - Chromium/Firefox: Focus next tab, than reload it
+#: Right-CTRL + ◣ + Right - Chromium/Firefox: Focus next tab, than reload it
 
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)

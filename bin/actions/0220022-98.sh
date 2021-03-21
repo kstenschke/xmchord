@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + Numpad [/] -
+#: ◣ + Numpad [/] -
 #: In Gnome Terminal: Insert 40 empty lines (helpful to separate sections of
 #: output)
 

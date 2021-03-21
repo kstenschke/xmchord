@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + C - Launch or Bring Chromium window to front.
+#: ◣ + C - Launch or Bring Chromium window to front.
 #: If Chromium or Firefox is focussed: Copy last segment of URL
 
 focusApplication=\

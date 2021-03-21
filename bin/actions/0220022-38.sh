@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + L - Toggle keyboard backlight
+#: ◣ + L - Toggle keyboard backlight
 
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)

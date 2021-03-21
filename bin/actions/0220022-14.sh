@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#: ◢ + Backspace -
+#: ◣ + Backspace -
 #: If Chromium or Firefox window has focus: Remove trailing segment from
 #: current URL
 

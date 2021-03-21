@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◣ + F - Global / if terminal has focus: Open search popup
+#: ◢ + F - Global / if terminal has focus: Open search popup
 
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)

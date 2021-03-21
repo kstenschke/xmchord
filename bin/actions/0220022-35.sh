@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + H in browser - Toggle "view-source:" prefix of current URL.
+#: ◣ + H in browser - Toggle "view-source:" prefix of current URL.
 #: In Claws-Mail - Toggle "hide read messages"
 # (precondition: "thread view" option must be deactivated)
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + T - Toggle active window "always on top"
+#: ◣ + T - Toggle active window "always on top"
 
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)

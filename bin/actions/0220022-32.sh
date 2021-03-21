@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + D -
+#: ◣ + D -
 #: If Chromium or Firefox active: Duplicate tab.
 #: Else: Bring DataGrip window to front
 

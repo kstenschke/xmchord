@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + R - Toggle active window roll-up state
+#: ◣ + R - Toggle active window roll-up state
 
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)

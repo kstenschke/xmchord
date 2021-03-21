@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◣ + X - Cut (Fire CTRL+X)
+#: ◢ + X - Cut (Fire CTRL+X)
 
 xdotool sleep 0.1
 xdotool key ctrl+x

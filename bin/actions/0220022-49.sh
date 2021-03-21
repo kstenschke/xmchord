@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + N - Bring Nemo to front, launch if not yet running
+#: ◣ + N - Bring Nemo to front, launch if not yet running
 
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)

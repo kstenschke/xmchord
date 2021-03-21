@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + F -
+#: ◣ + F -
 #  Bring Firefox window to front
 #: Within Claws Mail: Open "Search Folder" popup
 #: Within Gnome Terminal: Open "find" popup

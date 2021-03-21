@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◣ + Left - Within Gnome Terminal: Go Tab to left.
+#: ◢ + Left - Within Gnome Terminal: Go Tab to left.
 #: Within Chromium or Firefox: Go URL back.
 
 focusApplication=\

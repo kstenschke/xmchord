@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◣ + Down - Decrease audio volume
+#: ◢ + Down - Decrease audio volume
 
 amixer -D pulse sset Master 5%- &> /dev/null
 

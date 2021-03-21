@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + Up -
+#: ◣ + Up -
 #: Jump-scroll to top- the invoked required key combo differs among programs,
 #: some need "Home" others "Ctrl+Shift+Home" (gnome-terminal) or "Ctrl+Home"
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + V - Toggle active window "always on visible workspace" property
+#: ◣ + V - Toggle active window "always on visible workspace" property
 
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)

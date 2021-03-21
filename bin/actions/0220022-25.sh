@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + P -
+#: ◣ + P -
 #: Launch Pidgin if not yet running, or bring Pidgin window to front.
 #: Open new message popup
 

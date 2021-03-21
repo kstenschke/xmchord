@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + I - Display public and private IP and Wifi MAC adress,
+#: ◣ + I - Display public and private IP and Wifi MAC adress,
 #: copy public IP address
 
 focusApplication=\

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◢ + Esc - Bring System Monitor to front, launch if not yet running
+#: ◣ + Esc - Bring System Monitor to front, launch if not yet running
 
 if pidof -s gnome-system-monitor > /dev/null; then
     systemMonitorPid=$(pidof gnome-system-monitor)
