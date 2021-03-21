@@ -174,7 +174,7 @@ sudo apt install xclip
 **Symbols are:**
 
 ◤ ◥ = Top buttons left / right  
-◢ ◣ = Bottom buttons left / right
+◣ ◢  = Bottom buttons left / right
 
 | **Shortcut**               | **Description**                                                                |
 |----------------------------|--------------------------------------------------------------------------------|
