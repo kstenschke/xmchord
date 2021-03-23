@@ -2,6 +2,7 @@
 
 #: ◣ + D -
 #: If Chromium or Firefox active: Duplicate tab.
+#: If terminal active: Type scp command to recursively download remote directory
 #: Else: Bring DataGrip window to front
 
 focusApplication=\
@@ -23,16 +24,33 @@ if [[ "$focusApplication" =~ "chromium-browse" ]] \
   xdotool key Return
 
   echo "$clipboard" | xclip -in -selection clipboard
+
   unset clipboard
+  unset focusApplication
+  unset path_self
+  exit 0
+fi
+
+# Type scp command to recursively download remote directory
+if [[ "$focusApplication" =~ "gnome-terminal-" ]]; then
+  xdotool sleep 0.1
+  xdotool type "scp -r "
+  xdotool type $XMCHORD_SCP_REMOTE
+  xdotool type " "
+  xdotool type $XMCHORD_SCP_LOCAL
+
+  unset focusApplication
+  unset path_self
+  exit 0
+fi
+
+# Bring DataGrip window to front
+if pidof -s datagrip.sh >/dev/null; then
+  wmctrl -a datagrip
 else
-  # Bring DataGrip window to front
-  if pidof -s datagrip.sh >/dev/null; then
-    wmctrl -a datagrip
-  else
-    me=$SUDO_USER
-    sudo -u "$me" nohup datagrip >/dev/null &
-    unset me
-  fi
+  me=$SUDO_USER
+  sudo -u "$me" nohup datagrip >/dev/null &
+  unset me
 fi
 
 unset focusApplication

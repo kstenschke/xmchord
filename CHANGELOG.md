@@ -10,6 +10,8 @@ V0.4.3 - Not tagged yet
   chording combo 
 * Add action: ◣ + Y - Bring Yana to front, launch if not yet running
 * Add terminal action: ◣ + SPACE - Type "yes" and hit ENTER
+* Add terminal actions to automate typing of `scp` commands: ◣ + D = download, 
+  ◣ + U = upload
 * Add `printPreferences`/`p` command: Output preferences if given
 
 V0.4.2 - 2021/01/29
@@ -112,7 +114,7 @@ V0.1.2 - 2020/03/19
 
 V0.1.1 - 2019/12/06
 -------------------
-* Change dependency: Default actions now use "notify-send" instead of osd-cat 
+* Change dependency: Default actions now use "notify-send" instead of osd-cat 
   for notifications
 * Add Travis CI build config: Compile using clang and gcc, run cppcheck
 * Improve: Performance (use initialization lists, narrow-down variable scopes)

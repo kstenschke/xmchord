@@ -284,6 +284,27 @@ be focussed when the shortcut is fired.
 | &nbsp; &nbsp; ◣ + ↓        | Scroll to bottom                                               |
 | &nbsp; &nbsp; ◣ + SPACE    | Type "yes" and hit ENTER                                       |
 
+
+#### `scp` snippets within Gnome Terminal
+
+| **Shortcut**               | **Description**                                                    |
+|----------------------------|--------------------------------------------------------------------|
+| &nbsp; &nbsp; ◣ + D        | Type `scp` command to recursively download remote directory        |
+| &nbsp; &nbsp; ◣ + U        | Type `scp` command to recursively upload local directory to remote |
+
+For these shortcut snippets to work, the following environment variables must be 
+exported from your `/etc/environment` (as xmchord runs as root):
+
+`sudo nano /etc/environment`
+
+````sh
+PATH="/usr/local/sbin:..."
+
+XMCHORD_SCP_REMOTE=johndoe@yourhost:/var/www
+XMCHORD_SCP_LOCAL=/home/john/yourhost_var_www
+````
+
+
 #### Gnome Screenshot
 
 These actions automate the steps for transferring screenshots made with 
