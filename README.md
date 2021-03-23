@@ -282,7 +282,7 @@ be focussed when the shortcut is fired.
 | &nbsp; &nbsp; ◣ + →        | Focus next tab                                                 |
 | &nbsp; &nbsp; ◣ + ↑        | Scroll to top                                                  |
 | &nbsp; &nbsp; ◣ + ↓        | Scroll to bottom                                               |
-
+| &nbsp; &nbsp; ◣ + SPACE    | Type "yes" and hit ENTER                                       |
 
 #### Gnome Screenshot
 

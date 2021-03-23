@@ -46,7 +46,7 @@ configure_file (                # configure config.h to be generated
 
 find_package(Threads)
 
-include_directories("${CMAKE_SOURCE_DIR}/src")
+#include_directories("${CMAKE_SOURCE_DIR}/xmchord")
 
 add_executable(xmchord
         xmchord/helper/textual.cc

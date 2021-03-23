@@ -6,9 +6,10 @@ V0.4.3 - Not tagged yet
 * Change documentation and annotations to be written for right-handed people  
 * Improve actions' compatibility: Handle variations of Chromium's application 
   identifier
-* Add xpad to applications removing undesired output of characters from chording 
-  combo 
+* Add `xpad` to applications removing undesired output of characters from 
+  chording combo 
 * Add action: ◣ + Y - Bring Yana to front, launch if not yet running
+* Add terminal action: ◣ + SPACE - Type "yes" and hit ENTER
 * Add `printPreferences`/`p` command: Output preferences if given
 
 V0.4.2 - 2021/01/29
