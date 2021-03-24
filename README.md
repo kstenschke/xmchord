@@ -310,7 +310,8 @@ XMCHORD_SSH_REMOTE_NEEDS_CONFIRMATION=1
 XMCHORD_SSH_REMOTE_PATH_INITIAL=/var/www
 ````
 
-Restart xmchord after editing the above, for changes to take effect.   
+For changes to take effect, restart xmchord after editing your 
+`/etc/environment`.
 
 
 #### Gnome Screenshot

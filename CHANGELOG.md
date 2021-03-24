@@ -1,13 +1,15 @@
 xmchord Changelog
 =================
 
-V0.4.3 - Not tagged yet
+V0.4.4 - Not tagged yet
 -----------------------
+* Nothing yet
+
+V0.4.3 - 2021/03/24
+-------------------
 * Change documentation and annotations to be written for right-handed people  
 * Improve actions' compatibility: Handle variations of Chromium's application 
   identifier
-* Add `xpad` to applications removing undesired output of characters from 
-  chording combo 
 * Add action: ◣ + Y - Bring Yana to front, launch if not yet running
 * Add terminal action: ◣ + SPACE - Type "yes" and hit ENTER
 * Add terminal actions to automate typing of `scp` commands: ◣ + D = download, 
@@ -15,7 +17,7 @@ V0.4.3 - Not tagged yet
 * Add terminal action: ◣ + S - Type and execute command to connect to SSH host
 * Add terminal action: ◣ + X - Type `exit` and hit ENTER
 * Add `printPreferences`/`p` command: Output preferences if given
-* Add `geany`, `mattermost-desk`, `yana`  to applications auto-removing 
+* Add `geany`, `mattermost-desk`, `xpad`, `yana`  to applications auto-removing 
   characters being hit as part of recognized chording commands
 * Improve terminal action ◣ + F: Set opened `find` window always-on-top   
 
