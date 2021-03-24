@@ -34,10 +34,7 @@ fi
 # Type scp command to recursively download remote directory
 if [[ "$focusApplication" =~ "gnome-terminal-" ]]; then
   xdotool sleep 0.1
-  xdotool type "scp -r "
-  xdotool type $XMCHORD_SCP_REMOTE
-  xdotool type " "
-  xdotool type $XMCHORD_SCP_LOCAL
+  xdotool type "scp -r $XMCHORD_SCP_REMOTE $XMCHORD_SCP_LOCAL"
 
   unset focusApplication
   unset path_self
