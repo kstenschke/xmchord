@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #: ◣ + S -
-#: Toggle clicked window's (custom) "roll-sideways" state
+#: In terminal: Type and execute command to connect to preferred SSH host
+#: Else: Toggle clicked window's (custom) "roll-sideways" state
 
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
@@ -9,6 +10,28 @@ $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
 path_self="$( cd "$(dirname "$0")" >/dev/null 2>&1 || exit ; pwd -P )"
 "$path_self"/utils/remove_unwanted_output.sh "$focusApplication"
 
+# Type and execute command to connect to preferred SSH host
+if [[ "$focusApplication" =~ "gnome-terminal-" ]]; then
+  xdotool sleep 0.1
+  xdotool type "ssh $XMCHORD_SSH_REMOTE"
+  xdotool key Return
+
+  if [[ $XMCHORD_SSH_REMOTE_NEEDS_CONFIRMATION = "1" ]]; then
+    sleep 0.3
+    xdotool type "yes"
+    xdotool key Return
+  fi
+
+  sleep 0.3
+  xdotool type "cd $XMCHORD_SSH_REMOTE_PATH_INITIAL"
+  xdotool key Return
+
+  unset focusApplication
+  unset path_self
+  exit 0
+fi
+
+# Toggle clicked window's (custom) "roll-sideways" state
 activeWindowId=$(xdotool getactivewindow)
 
 # Get active window's width and height (excludes window decoration)

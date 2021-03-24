@@ -12,7 +12,11 @@ V0.4.3 - Not tagged yet
 * Add terminal action: ◣ + SPACE - Type "yes" and hit ENTER
 * Add terminal actions to automate typing of `scp` commands: ◣ + D = download, 
   ◣ + U = upload
+* Add terminal action: ◣ + S - Type and execute command to connect to SSH host
+* Add terminal action: ◣ + X - Type `exit` and hit ENTER
 * Add `printPreferences`/`p` command: Output preferences if given
+* Add `geany`, `mattermost-desk`, `yana`  to applications auto-removing 
+  characters being hit as part of recognized chording commands
 
 V0.4.2 - 2021/01/29
 -------------------

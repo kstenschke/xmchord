@@ -34,6 +34,7 @@ common user activities on the Linux desktop.
     * [Chromium and Firefox Web-Browser](#chromium-and-firefox-web-browser)
     * [Claws Mail](#claws-mail)
     * [Gnome Terminal](#gnome-terminal)
+      + [Terminal command snippets](#terminal-command-snippets)
     * [Gnome Screenshot](#gnome-screenshot)
 * [Building xmchord from source](#building-xmchord-from-source)
 * [Code Convention](#code-convention)
@@ -282,18 +283,19 @@ be focussed when the shortcut is fired.
 | &nbsp; &nbsp; ◣ + →        | Focus next tab                                                 |
 | &nbsp; &nbsp; ◣ + ↑        | Scroll to top                                                  |
 | &nbsp; &nbsp; ◣ + ↓        | Scroll to bottom                                               |
-| &nbsp; &nbsp; ◣ + SPACE    | Type "yes" and hit ENTER                                       |
 
+#### Terminal command snippets
 
-#### `scp` snippets within Gnome Terminal
+| **Shortcut**               | **Description**                                                                        |
+|----------------------------|----------------------------------------------------------------------------------------|
+| &nbsp; &nbsp; ◣ + D        | Type `scp` command to recursively download remote directory                            |
+| &nbsp; &nbsp; ◣ + S        | Type and execute command to connect to preferred SSH host and `cd` into preferred path |
+| &nbsp; &nbsp; ◣ + SPACE    | Type `yes` and hit ENTER                                                               |
+| &nbsp; &nbsp; ◣ + U        | Type `scp` command to recursively upload local directory to remote                     |
+| &nbsp; &nbsp; ◣ + X        | Type `exit` and hit ENTER                                                              |
 
-| **Shortcut**               | **Description**                                                    |
-|----------------------------|--------------------------------------------------------------------|
-| &nbsp; &nbsp; ◣ + D        | Type `scp` command to recursively download remote directory        |
-| &nbsp; &nbsp; ◣ + U        | Type `scp` command to recursively upload local directory to remote |
-
-For these shortcut snippets to work, the following environment variables must be 
-exported from your `/etc/environment` (as xmchord runs as root):
+For the `scp` and `ssh` shortcut snippets, the following environment variables 
+must be set in your `/etc/environment`:
 
 `sudo nano /etc/environment`
 
@@ -302,7 +304,13 @@ PATH="/usr/local/sbin:..."
 
 XMCHORD_SCP_REMOTE=johndoe@yourhost:/var/www
 XMCHORD_SCP_LOCAL=/home/john/yourhost_var_www
+
+XMCHORD_SSH_REMOTE=johndoe@yourhost
+XMCHORD_SSH_REMOTE_NEEDS_CONFIRMATION=1
+XMCHORD_SSH_REMOTE_PATH_INITIAL=/var/www
 ````
+
+Restart xmchord after editing the above, for changes to take effect.   
 
 
 #### Gnome Screenshot
