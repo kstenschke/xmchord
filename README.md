@@ -177,63 +177,63 @@ sudo apt install xclip
 ◤ ◥ = Top buttons left / right  
 ◣ ◢  = Bottom buttons left / right
 
-| **Shortcut**               | **Description**                                                                |
-|----------------------------|--------------------------------------------------------------------------------|
-| ◤ + ←                      | Go to workspace left of current (Hit SUPER+SHIFT+Left)                         |
-| ◤ + →                      | Go to workspace left of current (Hit SUPER+SHIFT+Right)                        |
-| ◤ + ◣                      | Jump to next workspace                                                         |
-| Right Shift + ◤ + ◣        | Jump to previous workspace                                                     |
-| ◣ + ◢                      | Touch bottom-right hot-corner (E.g. expose windows)                            |
-| &nbsp; &nbsp; ◣ + Esc      | Launch or bring System Monitor to front                                        |
-| &nbsp; &nbsp; ◣ + B        | Launch new terminal (bash)                                                     |
-| &nbsp; &nbsp; ◣ + C        | Launch or bring Chromium to front                                              |
-| &nbsp; &nbsp; ◣ + D        | Launch or bring DataGrip to front                                              |
-| &nbsp; &nbsp; ◣ + F        | Launch or bring Firefox to front                                               |
-| &nbsp; &nbsp; ◣ + I        | Display public and private IP and wifi MAC address, copy public IP address     |
-| &nbsp; &nbsp; ◣ + K        | Launch or bring Kitematic to front                                             |
-| &nbsp; &nbsp; ◣ + L        | Toggle keyboard backlight                                                      |
-| &nbsp; &nbsp; ◣ + M        | Launch or bring Claws Mail to front                                            |
-| &nbsp; &nbsp; ◣ + N        | Launch or bring Nemo file explorer to front                                    |
-| &nbsp; &nbsp; ◣ + P        | Launch or bring Pidgin to front                                                |
-| &nbsp; &nbsp; ◣ + R        | Toggle active window roll-up state                                             |
-| &nbsp; &nbsp; ◣ + S        | Toggle active window "roll-sideways" state                                     |
-| &nbsp; &nbsp; ◣ + T        | Toggle active window always-on-top state                                       |
-| &nbsp; &nbsp; ◣ + U        | Type current UNIX timestamp                                                    |
-| &nbsp; &nbsp; ◣ + V        | Toggle active window always-on-visible-workspace state                         |
-| &nbsp; &nbsp; ◣ + W        | Hit CTRL+W (close window)                                                      |
-| &nbsp; &nbsp; ◣ + Y        | Bring Yana to front, launch if not yet running                                 |
-| &nbsp; &nbsp; ◣ + Ä        | Type large A-umlaut (helpful e.g. on swiss keyboards)                          |
-| &nbsp; &nbsp; ◣ + Ö        | Type large O-umlaut (helpful e.g. on swiss keyboards)                          |
-| &nbsp; &nbsp; ◣ + Ü        | Type large U-umlaut (helpful e.g. on swiss keyboards)                          |
-| &nbsp; &nbsp; ◣ + ←        | Focus previous tab                                                             |
-| &nbsp; &nbsp; ◣ + →        | Focus next tab                                                                 |
-| &nbsp; &nbsp; ◣ + ↑        | Scroll to top (same as home key)                                               |
-| &nbsp; &nbsp; ◣ + ↓        | Scroll to bottom (same as end key)                                             |
-| &nbsp; &nbsp; ◣ + Numpad 7 | Tile active window to top-left 50% of screen                                   |
-| &nbsp; &nbsp; ◣ + Numpad 8 | Tile active window to top 50% of screen                                        |
-| &nbsp; &nbsp; ◣ + Numpad 9 | Tile active window to top-right 50% of screen                                  |
-| &nbsp; &nbsp; ◣ + Numpad 6 | Tile active window to right 50% of screen                                      |
-| &nbsp; &nbsp; ◣ + Numpad 3 | Tile active window to bottom-right 50% of screen                               |
-| &nbsp; &nbsp; ◣ + Numpad 2 | Tile active window to bottom 50% of screen                                     |
-| &nbsp; &nbsp; ◣ + Numpad 1 | Tile active window to bottom-left 50% of screen                                |
-| &nbsp; &nbsp; ◣ + Numpad 4 | Tile active window to left 50% of screen                                       |
-| &nbsp; &nbsp; ◣ + Numpad 5 | Maximize active window                                                         |
-| &nbsp; &nbsp; ◣ + '        | Output name of application of focused window (to terminal)                     |
-| &nbsp; &nbsp; ◣ + $        | Convert selected text to all upper/lower case                                  |
-| &nbsp; &nbsp; ◣ + ENTER    | Click left mouse button three times (select line)                              |
-| ◢ + A                      | Select all (same as CTRL+A)                                                    |
-| ◢ + C                      | Copy (same as CTRL+C)                                                          |
-| ◢ + F                      | Find (same as CTRL+F)                                                          |
-| ◢ + V                      | Paste (same as CTRL+V)                                                         |
-| ◢ + X                      | Cut (same as CTRL+X)                                                           |
-| ◢ + Y                      | Redo (same as CTRL+Y)                                                          |
-| ◢ + Z                      | Undo (same as CTRL+Z)                                                          |
-| ◢ + Numpad 4               | Move active window to screen left of current                                   |
-| ◢ + Numpad 6               | Move active window to screen right of current                                  |
-| ◢ + Numpad Plus            | Zoom in (same as CTRL+Plus)                                                    |
-| ◢ + Numpad Minus           | Zoom out (same as CTRL+Minus)                                                  |
-| ◢ + ↑                      | Increase audio volume                                                          |
-| ◢ + ↓                      | Decrease audio volume                                                          |
+| **Shortcut**                   | **Description**                                                                |
+|--------------------------------|--------------------------------------------------------------------------------|
+| ◤ + ←                          | Go to workspace left of current (Hit SUPER+SHIFT+Left)                         |
+| ◤ + →                          | Go to workspace left of current (Hit SUPER+SHIFT+Right)                        |
+| ◤ + ◣                          | Jump to next workspace                                                         |
+| Right Shift + ◤ + ◣            | Jump to previous workspace                                                     |
+| ◣ + ◢                          | Touch bottom-right hot-corner (E.g. expose windows)                            |
+| ◣ + Esc                        | Launch or bring System Monitor to front                                        |
+| ◣ + B                          | Launch new terminal (bash)                                                     |
+| ◣ + C                          | Launch or bring Chromium to front                                              |
+| ◣ + D                          | Launch or bring DataGrip to front                                              |
+| ◣ + F                          | Launch or bring Firefox to front                                               |
+| ◣ + I                          | Display public and private IP and wifi MAC address, copy public IP address     |
+| ◣ + K                          | Launch or bring Kitematic to front                                             |
+| ◣ + L                          | Toggle keyboard backlight                                                      |
+| ◣ + M                          | Launch or bring Claws Mail to front                                            |
+| ◣ + N                          | Launch or bring Nemo file explorer to front                                    |
+| ◣ + P                          | Launch or bring Pidgin to front                                                |
+| ◣ + R                          | Toggle active window roll-up state                                             |
+| ◣ + S                          | Toggle active window "roll-sideways" state                                     |
+| ◣ + T                          | Toggle active window always-on-top state                                       |
+| ◣ + U                          | Type current UNIX timestamp                                                    |
+| ◣ + V                          | Toggle active window always-on-visible-workspace state                         |
+| ◣ + W                          | Hit CTRL+W (close window)                                                      |
+| ◣ + Y                          | Bring Yana to front, launch if not yet running                                 |
+| ◣ + Ä                          | Type large A-umlaut (helpful e.g. on swiss keyboards)                          |
+| ◣ + Ö                          | Type large O-umlaut (helpful e.g. on swiss keyboards)                          |
+| ◣ + Ü                          | Type large U-umlaut (helpful e.g. on swiss keyboards)                          |
+| ◣ + ←                          | Focus previous tab                                                             |
+| ◣ + →                          | Focus next tab                                                                 |
+| ◣ + ↑                          | Scroll to top (same as home key)                                               |
+| ◣ + ↓                          | Scroll to bottom (same as end key)                                             |
+| ◣ + Numpad 7                   | Tile active window to top-left 50% of screen                                   |
+| ◣ + Numpad 8                   | Tile active window to top 50% of screen                                        |
+| ◣ + Numpad 9                   | Tile active window to top-right 50% of screen                                  |
+| ◣ + Numpad 6                   | Tile active window to right 50% of screen                                      |
+| ◣ + Numpad 3                   | Tile active window to bottom-right 50% of screen                               |
+| ◣ + Numpad 2                   | Tile active window to bottom 50% of screen                                     |
+| ◣ + Numpad 1                   | Tile active window to bottom-left 50% of screen                                |
+| ◣ + Numpad 4                   | Tile active window to left 50% of screen                                       |
+| ◣ + Numpad 5                   | Maximize active window                                                         |
+| ◣ + '                          | Output name of application of focused window (to terminal)                     |
+| ◣ + $                          | Convert selected text to all upper/lower case                                  |
+| ◣ + ENTER                      | Click left mouse button three times (select line)                              |
+| &nbsp; &nbsp; ◢ + A            | Select all (same as CTRL+A)                                                    |
+| &nbsp; &nbsp; ◢ + C            | Copy (same as CTRL+C)                                                          |
+| &nbsp; &nbsp; ◢ + F            | Find (same as CTRL+F)                                                          |
+| &nbsp; &nbsp; ◢ + V            | Paste (same as CTRL+V)                                                         |
+| &nbsp; &nbsp; ◢ + X            | Cut (same as CTRL+X)                                                           |
+| &nbsp; &nbsp; ◢ + Y            | Redo (same as CTRL+Y)                                                          |
+| &nbsp; &nbsp; ◢ + Z            | Undo (same as CTRL+Z)                                                          |
+| &nbsp; &nbsp; ◢ + Numpad 4     | Move active window to screen left of current                                   |
+| &nbsp; &nbsp; ◢ + Numpad 6     | Move active window to screen right of current                                  |
+| &nbsp; &nbsp; ◢ + Numpad Plus  | Zoom in (same as CTRL+Plus)                                                    |
+| &nbsp; &nbsp; ◢ + Numpad Minus | Zoom out (same as CTRL+Minus)                                                  |
+| &nbsp; &nbsp; ◢ + ↑            | Increase audio volume                                                          |
+| &nbsp; &nbsp; ◢ + ↓            | Decrease audio volume                                                          |
 
 
 ### Application specific actions
@@ -249,27 +249,27 @@ be focussed when the shortcut is fired.
 | ◤ + D                        | Show downloads                               |
 | ◤ + R                        | Reload                                       |
 | ◤ + L &nbsp; or &nbsp; ◤ + U | Focus URL field                              |
-| &nbsp; &nbsp; ◣ + ←          | Focus previous tab (browser and DevTools)    |
-| &nbsp; &nbsp; ◣ + →          | Focus next tab (browser and DevTools)        |
+| ◣ + ←                        | Focus previous tab (browser and DevTools)    |
+| ◣ + →                        | Focus next tab (browser and DevTools)        |
 | Right-CTRL + ◣ + ←           | Focus previous tab, than reload it           |
 | Right-CTRL + ◣ + →           | Focus next tab, than reload it               |
-| &nbsp; &nbsp; ◣ + ,          | Decrement numeric ending of current URL by 1 |
-| &nbsp; &nbsp; ◣ + .          | Increment numeric ending of current URL by 1 |
-| &nbsp; &nbsp; ◣ + Backspace  | Remove trailing segment from current URL     |
-| &nbsp; &nbsp; ◣ + C          | Copy trailing segment of current URL         |
-| &nbsp; &nbsp; ◣ + D          | Duplicate active tab                         |
-| &nbsp; &nbsp; ◣ + H          | Toggle HTML "view-source" of current URL     |
-| ◢ + ←                        | Go URL backwards                             |
-| ◢ + →                        | Go URL forward                               |
-| ◢ + F4                       | Close active tab                             |
+| ◣ + ,                        | Decrement numeric ending of current URL by 1 |
+| ◣ + .                        | Increment numeric ending of current URL by 1 |
+| ◣ + Backspace                | Remove trailing segment from current URL     |
+| ◣ + C                        | Copy trailing segment of current URL         |
+| ◣ + D                        | Duplicate active tab                         |
+| ◣ + H                        | Toggle HTML "view-source" of current URL     |
+| &nbsp; &nbsp; ◢ + ←          | Go URL backwards                             |
+| &nbsp; &nbsp; ◢ + →          | Go URL forward                               |
+| &nbsp; &nbsp; ◢ + F4         | Close active tab                             |
 
 
 #### Claws Mail
 
 | **Shortcut**        | **Description**                                                              |
 |---------------------|------------------------------------------------------------------------------|
-| &nbsp; &nbsp; ◣ + F | Open "Search Folder" popup                                                   |
-| &nbsp; &nbsp; ◣ + H | Toggle "Hide read messages", precondition: "thread view" must be deactivated |
+| ◣ + F | Open "Search Folder" popup                                                   |
+| ◣ + H | Toggle "Hide read messages", precondition: "thread view" must be deactivated |
 
 
 #### Gnome Terminal
@@ -277,22 +277,22 @@ be focussed when the shortcut is fired.
 | **Shortcut**               | **Description**                                                |
 |----------------------------|----------------------------------------------------------------|
 | ◤                          | Close active tab                                               |
-| &nbsp; &nbsp; ◣ + F        | Open "Find" popup                                              |
-| &nbsp; &nbsp; ◣ + Numpad / | Insert 40 empty lines (helpful to separate sections of output) |
-| &nbsp; &nbsp; ◣ + ←        | Focus previous tab                                             |
-| &nbsp; &nbsp; ◣ + →        | Focus next tab                                                 |
-| &nbsp; &nbsp; ◣ + ↑        | Scroll to top                                                  |
-| &nbsp; &nbsp; ◣ + ↓        | Scroll to bottom                                               |
+| ◣ + F        | Open "Find" popup                                              |
+| ◣ + Numpad / | Insert 40 empty lines (helpful to separate sections of output) |
+| ◣ + ←        | Focus previous tab                                             |
+| ◣ + →        | Focus next tab                                                 |
+| ◣ + ↑        | Scroll to top                                                  |
+| ◣ + ↓        | Scroll to bottom                                               |
 
 #### Terminal command snippets
 
 | **Shortcut**               | **Description**                                                                        |
 |----------------------------|----------------------------------------------------------------------------------------|
-| &nbsp; &nbsp; ◣ + D        | Type `scp` command to recursively download remote directory                            |
-| &nbsp; &nbsp; ◣ + S        | Type and execute command to connect to preferred SSH host and `cd` into preferred path |
-| &nbsp; &nbsp; ◣ + SPACE    | Type `yes` and hit ENTER                                                               |
-| &nbsp; &nbsp; ◣ + U        | Type `scp` command to recursively upload local directory to remote                     |
-| &nbsp; &nbsp; ◣ + X        | Type `exit` and hit ENTER                                                              |
+| ◣ + D        | Type `scp` command to recursively download remote directory                            |
+| ◣ + S        | Type and execute command to connect to preferred SSH host and `cd` into preferred path |
+| ◣ + SPACE    | Type `yes` and hit ENTER                                                               |
+| ◣ + U        | Type `scp` command to recursively upload local directory to remote                     |
+| ◣ + X        | Type `exit` and hit ENTER                                                              |
 
 For the `scp` and `ssh` shortcut snippets, the following environment variables 
 must be set in your `/etc/environment`:
@@ -323,9 +323,9 @@ For them to work, the mouse must be hovering Gnome Screenshot's
 
 | **Shortcut**            | **Description**                                                                                                                                                                             |
 |-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| &nbsp; &nbsp; ◣ + AltGr | Click and hit [Esc] = Copy to clipboard and close Gnome Screenhot popup at once                                                                                                             |
-| &nbsp; &nbsp; ◣ + G     | Click, hit [Esc], focus Gimp (if running) and paste image from clipboard as new image                                                                                                       |
-| ◢ + V                   | **View as "sticky note:"** Click, hit [Esc], store clipboard to temporary image file and open image file in feh Image Viewer, Set feh window always-on-top and always-on-visible-workspace. |
+| ◣ + AltGr | Click and hit [Esc] = Copy to clipboard and close Gnome Screenhot popup at once                                                                                                             |
+| ◣ + G     | Click, hit [Esc], focus Gimp (if running) and paste image from clipboard as new image                                                                                                       |
+| &nbsp; &nbsp; ◢ + V                   | **View as "sticky note:"** Click, hit [Esc], store clipboard to temporary image file and open image file in feh Image Viewer, Set feh window always-on-top and always-on-visible-workspace. |
 
 
 ## Building xmchord from source
