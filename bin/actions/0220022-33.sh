@@ -17,6 +17,8 @@ if [[ "$focusApplication" =~ "claws-mail" ]]; then
 else
   if [[ "$focusApplication" =~ "gnome-terminal" ]]; then
     xdotool key Ctrl+Shift+f
+    sleep 0.1
+    wmctrl -r :ACTIVE: -b toggle,above
   else
     if pidof -s firefox >/dev/null; then
       wmctrl -a Firefox
@@ -29,4 +31,4 @@ else
 fi
 
 unset focusApplication
-unser path_self
+unset path_self

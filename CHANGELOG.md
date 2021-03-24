@@ -17,6 +17,7 @@ V0.4.3 - Not tagged yet
 * Add `printPreferences`/`p` command: Output preferences if given
 * Add `geany`, `mattermost-desk`, `yana`  to applications auto-removing 
   characters being hit as part of recognized chording commands
+* Improve terminal action ◣ + F: Set opened `find` window always-on-top   
 
 V0.4.2 - 2021/01/29
 -------------------
