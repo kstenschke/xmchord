@@ -1,9 +1,14 @@
 #!/bin/bash
 
-#: ◣ + . - Chromium or Firefox: Increment numeric ending of current URL by one
+#: ◣ + . -
+#: Chromium or Firefox: Increment numeric ending of current URL by one
+#: Mattermost desktop client: Next unread channel
 
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
+
+path_self="$( cd "$(dirname "$0")" >/dev/null 2>&1 || exit ; pwd -P )"
+"$path_self"/utils/remove_unwanted_output.sh "$focusApplication"
 
 if [[ "$focusApplication" =~ "chromium-browse" ]] \
 || [[ "$focusApplication" =~ "chromium" ]] \
@@ -27,4 +32,16 @@ if [[ "$focusApplication" =~ "chromium-browse" ]] \
 
   echo "$clipboard" | xclip -in -selection clipboard
   unset clipboard
+  unset path_self
+  unset focusApplication
+  exit 0
+fi
+
+if [[ "$focusApplication" =~ "mattermost-desk" ]]; then
+  xdotool sleep 0.1
+  xdotool key Alt+Shift+Down
+
+  unset path_self
+  unset focusApplication
+  exit 0
 fi

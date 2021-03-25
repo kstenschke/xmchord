@@ -36,6 +36,8 @@ common user activities on the Linux desktop.
     * [Gnome Terminal](#gnome-terminal)
       + [Terminal command snippets](#terminal-command-snippets)
     * [Gnome Screenshot](#gnome-screenshot)
+    * [Mattermost Desktop Client](#mattermost-desktop-client)
+    * [Thunderbird](#thunderbird)
 * [Building xmchord from source](#building-xmchord-from-source)
 * [Code Convention](#code-convention)
 * [Contributing](#contributing)
@@ -266,8 +268,8 @@ be focussed when the shortcut is fired.
 
 #### Claws Mail
 
-| **Shortcut**        | **Description**                                                              |
-|---------------------|------------------------------------------------------------------------------|
+| **Shortcut**        | **Description**                                                |
+|---------------------|----------------------------------------------------------------|
 | ◣ + F | Open "Search Folder" popup                                                   |
 | ◣ + H | Toggle "Hide read messages", precondition: "thread view" must be deactivated |
 
@@ -326,6 +328,23 @@ For them to work, the mouse must be hovering Gnome Screenshot's
 | ◣ + AltGr | Click and hit [Esc] = Copy to clipboard and close Gnome Screenhot popup at once                                                                                                             |
 | ◣ + G     | Click, hit [Esc], focus Gimp (if running) and paste image from clipboard as new image                                                                                                       |
 | &nbsp; &nbsp; ◢ + V                   | **View as "sticky note:"** Click, hit [Esc], store clipboard to temporary image file and open image file in feh Image Viewer, Set feh window always-on-top and always-on-visible-workspace. |
+
+
+#### Mattermost Desktop Client
+
+| **Shortcut** | **Description**               |
+|--------------|-------------------------------|
+| ◣ + M        | Open "direct messages" popup  |
+| ◣ + U        | Upload files                  |
+| ◣ + .        | Next unread channel           |
+
+
+#### Thunderbird
+
+| **Shortcut** | **Description**               |
+|--------------|-------------------------------|
+| ◣ + F        | Open "Search Messages" popup  |
+| ◣ + B        | Open address book             |
 
 
 ## Building xmchord from source

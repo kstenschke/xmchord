@@ -77,4 +77,3 @@ unset focusApplication
 unset path_self
 unset w
 unset h
-

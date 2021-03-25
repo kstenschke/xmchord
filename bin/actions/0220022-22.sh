@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #: ◣ + U -
-#: If terminal active: Type scp command to recursively upload directory
+#: Within Mattermost desktop client: Upload files
+#: Within Terminal: Type scp command to recursively upload directory
 #: Else: Type current UNIX timestamp
 
 focusApplication=\
@@ -9,6 +10,16 @@ $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
 
 path_self="$( cd "$(dirname "$0")" >/dev/null 2>&1 || exit ; pwd -P )"
 "$path_self"/utils/remove_unwanted_output.sh "$focusApplication"
+
+# Mattermost: Upload files
+if [[ "$focusApplication" =~ "mattermost-desk" ]]; then
+  xdotool sleep 0.1
+  xdotool key Ctrl+u
+
+  unset path_self
+  unset focusApplication
+  exit 0
+fi
 
 # Type scp command to recursively download remote directory
 if [[ "$focusApplication" =~ "gnome-terminal-" ]]; then

@@ -3,7 +3,8 @@ xmchord Changelog
 
 V0.4.4 - Not tagged yet
 -----------------------
-* Nothing yet
+* Add Thunderbird actions
+* Add Mattermost desktop client actions
 
 V0.4.3 - 2021/03/24
 -------------------
