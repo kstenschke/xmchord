@@ -53,8 +53,6 @@ class KeyboardDeviceFinder {
   void SetAmountDevicesByPath(int amount);
 
  private:
-  const char* kPathPreferences = "/var/tmp/xmchord.pref";
-
   std::string device_name_selected_;
   std::vector<std::string> devices_;
   int amount_devices_by_path_ = 0;
