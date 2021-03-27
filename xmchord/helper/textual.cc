@@ -39,7 +39,7 @@ int Textual::StrPos(char *hay, char *needle, int offset) {
 
   char *p = strstr(haystack, needle);
 
-  return p ? (int)(p - haystack + offset) : -1;
+  return p ? static_cast<int>(p - haystack + offset) : -1;
 }
 
 bool Textual::Contains(const std::string &haystack, const char *needle) {
