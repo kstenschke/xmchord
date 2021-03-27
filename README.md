@@ -114,7 +114,6 @@ therefore the device-identifier can also be given w/o a path, e.g:
 ### Command: `listDevices`
 
 Running `xmchord listDevices` or `xmchord l` lists paths of available devices.
-This is helpful when wanting to use a different than the default keyboard.
 
 
 ### Command: `printPreferences`
