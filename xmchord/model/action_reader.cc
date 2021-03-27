@@ -153,7 +153,7 @@ char *ActionReader::GetActionContent(const char *path_file) {
 }
 
 std::string ActionReader::ExtractComments(const char *script) {
-  uint16_t script_len = strlen(script);
+  uint64_t script_len = strlen(script);
   uint16_t offset_start = 0;
   std::string comment;
 

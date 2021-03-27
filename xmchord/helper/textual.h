@@ -59,7 +59,7 @@ bool EndsWith(std::string const &str, std::string const &ending);
 
 int SubstrCount(const std::string& haystack, const std::string& needle);
 
-std::string Repeat(const std::string& str, u_int16_t amount);
+std::string Repeat(const std::string& str, u_int64_t amount);
 
 }  // namespace Textual
 }  // namespace helper

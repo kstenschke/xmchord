@@ -96,10 +96,10 @@ int Textual::SubstrCount(const std::string &haystack,
   return count;
 }
 
-std::string Textual::Repeat(const std::string& str, u_int16_t amount) {
+std::string Textual::Repeat(const std::string& str, u_int64_t amount) {
   std::string out;
 
-  for (u_int16_t i = 0; i < amount; i++) out+= str;
+  for (u_int64_t i = 0; i < amount; i++) out+= str;
 
   return out;
 }
