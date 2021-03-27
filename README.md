@@ -162,12 +162,8 @@ all included actions to work:
 
 **Install dependencies that are not included in Linux Mint distribution by default:**  
 
-````
-sudo apt install aosd-cat
-sudo apt install feh
-sudo apt install xdotool
-sudo apt install xsel
-sudo apt install xclip
+````bash
+sudo apt install aosd-cat feh xclip xdotool xsel -y
 ````
 
 
