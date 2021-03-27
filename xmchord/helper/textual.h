@@ -57,8 +57,6 @@ std::vector<std::string> Explode(std::string const &str, char delimiter);
 bool StartsWith(const char *str, const char *prefix);
 bool EndsWith(std::string const &str, std::string const &ending);
 
-int SubstrCount(const std::string& haystack, const std::string& needle);
-
 std::string Repeat(const std::string& str, u_int64_t amount);
 
 }  // namespace Textual
