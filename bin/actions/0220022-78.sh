@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-#: ◣ + numeric [+] - Open xdeskmenu
+#: ◣ + numeric [+] - Open xshmenu
 
-xdeskmenu -pp -o=nw
+xshmenu -pp -o=nw
