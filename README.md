@@ -215,6 +215,7 @@ sudo apt install aosd-cat feh xclip xdotool xsel -y
 | ◣ + Numpad 1                   | Tile active window to bottom-left 50% of screen                                |
 | ◣ + Numpad 4                   | Tile active window to left 50% of screen                                       |
 | ◣ + Numpad 5                   | Maximize active window                                                         |
+| ◣ + Numpad +                   | Launch [xdeskmenu](https://github.com/kstenschke/xdeskmenu)                    |
 | ◣ + '                          | Output name of application of focused window (to terminal)                     |
 | ◣ + $                          | Convert selected text to all upper/lower case                                  |
 | ◣ + ENTER                      | Click left mouse button three times (select line)                              |

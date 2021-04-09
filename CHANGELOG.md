@@ -5,6 +5,7 @@ V0.4.4 - Not tagged yet
 -----------------------
 * Add Thunderbird actions
 * Add Mattermost desktop client actions
+* Add action: ◣ + numpad + - Launch xdeskmenu
 
 V0.4.3 - 2021/03/24
 -------------------
