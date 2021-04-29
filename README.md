@@ -198,7 +198,7 @@ sudo apt install aosd-cat feh xclip xdotool xsel -y
 | ◣ + U                          | Type current UNIX timestamp                                                    |
 | ◣ + V                          | Toggle active window always-on-visible-workspace state                         |
 | ◣ + W                          | Hit CTRL+W (close window)                                                      |
-| ◣ + Y                          | Bring Yana to front, launch if not yet running                                 |
+| ◣ + Y                          | Bring CherryTree to front, launch if not yet running                           |
 | ◣ + Ä                          | Type large A-umlaut (helpful e.g. on swiss keyboards)                          |
 | ◣ + Ö                          | Type large O-umlaut (helpful e.g. on swiss keyboards)                          |
 | ◣ + Ü                          | Type large U-umlaut (helpful e.g. on swiss keyboards)                          |

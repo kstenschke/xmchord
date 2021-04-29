@@ -6,6 +6,8 @@ V0.4.4 - Not tagged yet
 * Add Thunderbird actions
 * Add Mattermost desktop client actions
 * Add action: ◣ + numpad + - Launch xshmenu
+* Change action: ◣ + Y - Bring CherryTree to front, launch if not yet running
+* Add CherryTree to list of applications to remove xmchord chording key inputs
 
 V0.4.3 - 2021/03/24
 -------------------

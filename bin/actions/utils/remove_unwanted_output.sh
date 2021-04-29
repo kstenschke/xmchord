@@ -13,4 +13,10 @@ if [[ "$1" =~ "geany" ]] \
   || [[ "$1" =~ "yana" ]] \
   ; then
     xdotool key 0xff08  # Backspace
+else
+  activeWindowName=$(xdotool getactivewindow getwindowname)
+  if [[ "$activeWindowName" =~ "CherryTree" ]]; then
+    xdotool key 0xff08  # Backspace
+  fi
+  unset activeWindowName
 fi
