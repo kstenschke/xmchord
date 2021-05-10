@@ -3,6 +3,7 @@
 #: ◣ + U -
 #: Within Mattermost desktop client: Upload files
 #: Within Terminal: Type scp command to recursively upload directory
+#: Within Thunderbird: Mark selected message unread
 #: Else: Type current UNIX timestamp
 
 focusApplication=\
@@ -28,6 +29,21 @@ if [[ "$focusApplication" =~ "gnome-terminal-" ]]; then
 
   unset focusApplication
   unset path_self
+  exit 0
+fi
+
+if [[ "$focusApplication" =~ "thunderbird" ]]; then
+  xdotool sleep 0.1
+  xdotool key Alt+m
+  xdotool sleep 0.1
+  xdotool key k
+  xdotool sleep 0.1
+  xdotool key u
+  xdotool sleep 0.3
+  xdotool key Escape
+  xdotool key Escape
+
+  unset focusApplication
   exit 0
 fi
 

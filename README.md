@@ -339,8 +339,10 @@ For them to work, the mouse must be hovering Gnome Screenshot's
 
 | **Shortcut** | **Description**               |
 |--------------|-------------------------------|
-| ◣ + F        | Open "Search Messages" popup  |
 | ◣ + B        | Open address book             |
+| ◣ + F        | Open "Search Messages" popup  |
+| ◣ + R        | Mark selected message read    |
+| ◣ + U        | Mark selected message unread  |
 
 
 ## Building xmchord from source
