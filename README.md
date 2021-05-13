@@ -1,6 +1,10 @@
 xmchord
 =======
 
+[![Platform](https://img.shields.io/badge/platform-osx%2Flinux-green)](#)
+[![Written in C++](https://img.shields.io/badge/written%20in-C++-lightblue)](#)
+[![License](https://img.shields.io/badge/License-new%20BSD-yellowgreen)](https://github.com/kstenschke/xmchord/blob/master/LICENSE.md)  
+
 [![Build Status](https://travis-ci.com/kstenschke/xmchord.svg?branch=master)](https://travis-ci.com/kstenschke/xmchord)
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/kstenschke/xmchord.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/kstenschke/xmchord/context:cpp)
 [![CodeFactor](https://www.codefactor.io/repository/github/kstenschke/xmchord/badge)](https://www.codefactor.io/repository/github/kstenschke/xmchord)
