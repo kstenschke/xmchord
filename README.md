@@ -2,7 +2,7 @@ xmchord
 =======
 
 [![Platform](https://img.shields.io/badge/platform-linux-blue)](#)
-[![License](https://img.shields.io/badge/License-new%20BSD-blue)](https://github.com/kstenschke/xmchord/blob/master/LICENSE.md)
+[![License](https://img.shields.io/badge/License-new%20BSD-blue)](https://github.com/kstenschke/xmchord/blob/master/LICENSE)
 [![Written in C++](https://img.shields.io/badge/written%20in-C++-blue)](#)  
 
 [![Build Status](https://travis-ci.com/kstenschke/xmchord.svg?branch=master)](https://travis-ci.com/kstenschke/xmchord)
