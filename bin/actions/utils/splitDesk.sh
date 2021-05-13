@@ -46,8 +46,8 @@ LEFT_MARGIN=0
 RIGHT_MARGIN=$ICON
 
 # Max Resolution X and Y
-MAX_X=`xrandr --q1 | grep "*" | awk '{print $2}'`
-MAX_Y=`xrandr --q1 | grep "*" | awk '{print $4}'`
+MAX_X=$(xrandr --q1 | grep "*" | awk '{print $2}')
+MAX_Y=$(xrandr --q1 | grep "*" | awk '{print $4}')
 
 # Working area
 WX=$((($MAX_X)-$ICON))

@@ -274,10 +274,10 @@ be focussed when the shortcut is fired.
 
 #### Gnome Terminal
 
-| **Shortcut**               | **Description**                                                |
-|----------------------------|----------------------------------------------------------------|
-| ◤                          | Close active tab                                               |
-| ◣ + F        | Open "Find" popup                                              |
+| **Shortcut** | **Description**                                                |
+|--------------|----------------------------------------------------------------|
+| ◤            | Close active tab                                               |
+| ◣ + F        | Open `Find` popup                                              |
 | ◣ + Numpad / | Insert 40 empty lines (helpful to separate sections of output) |
 | ◣ + ←        | Focus previous tab                                             |
 | ◣ + →        | Focus next tab                                                 |
