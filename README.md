@@ -3,6 +3,8 @@ xmchord
 
 [![Build Status](https://travis-ci.com/kstenschke/xmchord.svg?branch=master)](https://travis-ci.com/kstenschke/xmchord)
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/kstenschke/xmchord.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/kstenschke/xmchord/context:cpp)
+[![CodeFactor](https://www.codefactor.io/repository/github/kstenschke/xmchord/badge)](https://www.codefactor.io/repository/github/kstenschke/xmchord)
+
 
 xmchord is a productivity tool for Linux desktops, that binds custom
 actions to `chording*` events of mouse buttons and key presses: this way, 
