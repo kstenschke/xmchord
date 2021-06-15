@@ -12,7 +12,7 @@ if [[ "$focusApplication" =~ "gnome-screensho" ]]; then  # gnome screenshot
   xdotool sleep 0.2
   xdotool click 1  # click, supposedly on [copy to clipboard] button under the mouse
   xdotool sleep 0.1
-  xdotool key Escape  # close gnome screnshot window
+  xdotool key Escape  # close gnome screenshot window
   xdotool sleep 0.1
   xclip -selection clipboard -t image/png -o > /tmp/clipboard.png  # store image file
   me=$SUDO_USER

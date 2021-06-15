@@ -1,8 +1,9 @@
 xmchord Changelog
 =================
 
-V0.4.4 - Not tagged yet
------------------------
+V0.4.4 - 2021/06/15
+-------------------
+* Change action: ◣ + O - Open generic URL from selected text in browser
 * Add Thunderbird actions
 * Add Mattermost desktop client actions
 * Add action: ◣ + numpad + - Launch xshmenu
