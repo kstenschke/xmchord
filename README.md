@@ -1,8 +1,14 @@
 xmchord
 =======
 
+[![Platform](https://img.shields.io/badge/platform-linux-blue)](#)
+[![License](https://img.shields.io/badge/License-new%20BSD-blue)](https://github.com/kstenschke/xmchord/blob/master/LICENSE)
+[![Written in C++](https://img.shields.io/badge/written%20in-C++-blue)](#)  
+
 [![Build Status](https://travis-ci.com/kstenschke/xmchord.svg?branch=master)](https://travis-ci.com/kstenschke/xmchord)
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/kstenschke/xmchord.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/kstenschke/xmchord/context:cpp)
+[![CodeFactor](https://www.codefactor.io/repository/github/kstenschke/xmchord/badge)](https://www.codefactor.io/repository/github/kstenschke/xmchord)
+
 
 xmchord is a productivity tool for Linux desktops, that binds custom
 actions to `chording*` events of mouse buttons and key presses: this way, 
@@ -11,8 +17,8 @@ mouse buttons become additional modifier keys.
 **`*Chording:`** Chording generally means pushing several keys or buttons
 simultaneously to achieve a result.
 
-xmchord comes with a comprehensive set of shortcut actions to speed-up 
-common user activities on the Linux desktop.
+xmchord comes with a comprehensive set of shortcut **actions to automate and speed-up
+ user activities** that are common on the Linux desktop.
 
 
 ## Table of contents
@@ -301,10 +307,10 @@ be focussed when the shortcut is fired.
 
 #### Gnome Terminal
 
-| **Shortcut**               | **Description**                                                |
-|----------------------------|----------------------------------------------------------------|
-| ◤                          | Close active tab                                               |
-| ◣ + F        | Open "Find" popup                                              |
+| **Shortcut** | **Description**                                                |
+|--------------|----------------------------------------------------------------|
+| ◤            | Close active tab                                               |
+| ◣ + F        | Open `Find` popup                                              |
 | ◣ + Numpad / | Insert 40 empty lines (helpful to separate sections of output) |
 | ◣ + ←        | Focus previous tab                                             |
 | ◣ + →        | Focus next tab                                                 |
