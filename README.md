@@ -17,8 +17,8 @@ mouse buttons become additional modifier keys.
 **`*Chording:`** Chording generally means pushing several keys or buttons
 simultaneously to achieve a result.
 
-xmchord comes with a comprehensive set of shortcut actions to speed-up 
-common user activities on the Linux desktop.
+xmchord comes with a comprehensive set of shortcut **actions to automate and speed-up
+ user activities** that are common on the Linux desktop.
 
 
 ## Table of contents
