@@ -44,7 +44,7 @@ xmchord comes with a comprehensive set of shortcut **actions to automate and spe
     * [Gnome Screenshot](#gnome-screenshot)
     * [Mattermost Desktop Client](#mattermost-desktop-client)
     * [Thunderbird](#thunderbird)
-  + [Advanced actions: Open generic URL](#advanced-global-action-open-generic-url)  
+  + [Advanced global-actions](#advanced-global-actions)  
     * [Open generic URL](#open-generic-url)
 * [Building xmchord from source](#building-xmchord-from-source)
 * [Code Convention](#code-convention)
@@ -353,10 +353,11 @@ For them to work, the mouse must be hovering Gnome Screenshot's
 | ◣ + U        | Mark selected message unread  |
 
 
-## Advanced actions
+## Advanced global actions
 
-These actions differ from the basic global actions in that they require 
-specific manual configuration, as described here.
+These actions differ from the basic global actions, in that they require some manual configuration,
+as described here.
+
 
 ### Open generic URL
 
