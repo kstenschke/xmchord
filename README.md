@@ -364,9 +364,9 @@ as described here.
 This action adds text from a currently given text-selection to a preset URL, 
 and loads the resulting URL in the web browser (chromium by default).
 
-| **Shortcut**                   | **Description**             |
-|--------------------------------|-----------------------------|
-| ◣ + O                          | Open generic URL in browser |
+| **Shortcut**                   | **Description**                                                      |
+|--------------------------------|----------------------------------------------------------------------|
+| ◣ + O                          | Open generic URL in browser. Precondition: a text selection is given |
 
 The following environment variable must be set in your `/etc/environment`:
 
