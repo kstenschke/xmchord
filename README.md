@@ -36,7 +36,6 @@ xmchord comes with a comprehensive set of shortcut **actions to automate and spe
 * [Included shortcut actions](#included-shortcut-actions)
   * [Third party dependencies](#third-party-dependencies)
   * [Global actions](#global-actions-not-application-specific)
-    + [Advanced global action: Open generic URL](#advanced-global-action-open-generic-url)
   * [Application specific actions](#application-specific-actions)
     * [Chromium and Firefox Web-Browser](#chromium-and-firefox-web-browser)
     * [Claws Mail](#claws-mail)
@@ -45,6 +44,8 @@ xmchord comes with a comprehensive set of shortcut **actions to automate and spe
     * [Gnome Screenshot](#gnome-screenshot)
     * [Mattermost Desktop Client](#mattermost-desktop-client)
     * [Thunderbird](#thunderbird)
+  + [Advanced actions: Open generic URL](#advanced-global-action-open-generic-url)  
+    * [Open generic URL](#open-generic-url)
 * [Building xmchord from source](#building-xmchord-from-source)
 * [Code Convention](#code-convention)
 * [Contributing](#contributing)
@@ -241,34 +242,6 @@ sudo apt install aosd-cat feh xclip xdotool xsel -y
 | &nbsp; &nbsp; ◢ + ↓            | Decrease audio volume                                                          |
 
 
-#### Advanced global action: Open generic URL
-
-This action adds text from a currently given text-selection to a preset URL, 
-and loads the resulting URL in the web browser (chromium by default).
-
-| **Shortcut**                   | **Description**             |
-|--------------------------------|-----------------------------|
-| ◣ + O                          | Open generic URL in browser |
-
-The following environment variable must be set in your `/etc/environment`:
-
-`sudo nano /etc/environment`
-
-````sh
-PATH="/usr/local/sbin:..."
-
-XMCHORD_GENERIC_URL='https://www.your-domain.com/?id=SELECTED_TEXT'
-````
-
-When running this action, ``SELECTED_TEXT`` will be replaced by your text 
-selection.
-
-For changes to take effect after editing `/etc/environment` reload it and
-restart xmchord.
-
-To use a different browser, edit script: ``0220022-24.sh``
-
-
 ### Application specific actions
 
 For these actions to be triggered, a window of the respective application must
@@ -378,6 +351,39 @@ For them to work, the mouse must be hovering Gnome Screenshot's
 | ◣ + F        | Open "Search Messages" popup  |
 | ◣ + R        | Mark selected message read    |
 | ◣ + U        | Mark selected message unread  |
+
+
+## Advanced actions
+
+These actions differ from the basic global actions in that they require 
+specific manual configuration, as described here.
+
+### Open generic URL
+
+This action adds text from a currently given text-selection to a preset URL, 
+and loads the resulting URL in the web browser (chromium by default).
+
+| **Shortcut**                   | **Description**             |
+|--------------------------------|-----------------------------|
+| ◣ + O                          | Open generic URL in browser |
+
+The following environment variable must be set in your `/etc/environment`:
+
+`sudo nano /etc/environment`
+
+````sh
+PATH="/usr/local/sbin:..."
+
+XMCHORD_GENERIC_URL='https://www.your-domain.com/?id=SELECTED_TEXT'
+````
+
+When running this action, ``SELECTED_TEXT`` will be replaced by your text 
+selection.
+
+For changes to take effect after editing `/etc/environment` reload it and
+restart xmchord.
+
+To use a different browser, edit script: ``0220022-24.sh``
 
 
 ## Building xmchord from source
