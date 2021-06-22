@@ -1,8 +1,8 @@
 xmchord Changelog
 =================
 
-v0.4.5 - not tagged yet
------------------------
+v0.4.5 - 2021/06/22
+-------------------
 * Add advanced browser action: Toggle URL sub string
 
 V0.4.4 - 2021/06/15
