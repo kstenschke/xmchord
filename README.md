@@ -39,6 +39,7 @@ xmchord comes with a comprehensive set of shortcut **actions to automate and spe
     + [Advanced global action: Open generic URL](#advanced-global-action-open-generic-url)
   * [Application specific actions](#application-specific-actions)
     * [Chromium and Firefox Web-Browser](#chromium-and-firefox-web-browser)
+      + [Advanced browser action: Toggle URL sub string](#advanced-browser-action-toggle-url-sub-string)
     * [Claws Mail](#claws-mail)
     * [Gnome Terminal](#gnome-terminal)
       + [Terminal command snippets](#terminal-command-snippets)
@@ -297,6 +298,30 @@ be focussed when the shortcut is fired.
 | &nbsp; &nbsp; ◢ + F4         | Close active tab                             |
 
 
+##### Advanced browser action: Toggle URL sub string
+
+| **Shortcut**                   | **Description**             |
+|--------------------------------|-----------------------------|
+| ◣ + \[-\]                      | Toggle URL sub string       |
+
+When running this action while the current browser URL contains one of two
+sub strings, it is been replaced by the other and the browser reloaded.
+
+The following environment variables must be set in your `/etc/environment`:
+
+`sudo nano /etc/environment`
+
+````sh
+PATH="/usr/local/sbin:..."
+
+XMCHORD_URL_SUBSTR_1='http://localhost'
+XMCHORD_URL_SUBSTR_2='https://yoururl.com'
+````
+
+For changes to take effect after editing `/etc/environment` reload it and
+restart xmchord.
+
+
 #### Claws Mail
 
 | **Shortcut**        | **Description**                                                |
@@ -319,8 +344,8 @@ be focussed when the shortcut is fired.
 
 #### Terminal command snippets
 
-| **Shortcut**               | **Description**                                                                        |
-|----------------------------|----------------------------------------------------------------------------------------|
+| **Shortcut**               | **Description**                                                          |
+|----------------------------|--------------------------------------------------------------------------|
 | ◣ + D        | Type `scp` command to recursively download remote directory                            |
 | ◣ + S        | Type and execute command to connect to preferred SSH host and `cd` into preferred path |
 | ◣ + SPACE    | Type `yes` and hit ENTER                                                               |
