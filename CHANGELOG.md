@@ -1,6 +1,10 @@
 xmchord Changelog
 =================
 
+v0.4.5 - not tagged yet
+-----------------------
+* Add advanced browser action: Toggle URL sub string
+
 V0.4.4 - 2021/06/15
 -------------------
 * Change action: ◣ + O - Open generic URL from selected text in browser

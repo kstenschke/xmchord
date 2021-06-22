@@ -17,9 +17,12 @@ sleep 0.1
 
 xdotool key Control_L+c  # copy selected text
 sleep 0.1
+
 SELECTED_TEXT=$(xclip -o)  # put into variable
+
 # replace "SELECTED_TEXT" within URL preset from ENV var
 GENERIC_URL="${XMCHORD_GENERIC_URL/SELECTED_TEXT/$SELECTED_TEXT}"
+
 echo "$GENERIC_URL" | xclip -in -selection clipboard  # put URL into clipboard
 
 # focus or launch chromium
