@@ -1,6 +1,10 @@
 xmchord Changelog
 =================
 
+v0.4.6 - Not tagged yet
+-----------------------
+* Remove / archive as inactive: Pidgin launcher action
+
 v0.4.5 - 2021/06/22
 -------------------
 * Add advanced browser action: Toggle URL sub string

@@ -47,6 +47,7 @@ xmchord comes with a comprehensive set of shortcut **actions to automate and spe
     * [Thunderbird](#thunderbird)
   + [Advanced global-actions](#advanced-global-actions)  
     * [Open generic URL](#open-generic-url)
+  * [Archived/inactive actions](#archivedinactive-actions)
 * [Building xmchord from source](#building-xmchord-from-source)
 * [Code Convention](#code-convention)
 * [Contributing](#contributing)
@@ -200,7 +201,6 @@ sudo apt install aosd-cat feh xclip xdotool xsel -y
 | ◣ + L                          | Toggle keyboard backlight                                                      |
 | ◣ + M                          | Launch or bring Claws Mail to front                                            |
 | ◣ + N                          | Launch or bring Nemo file explorer to front                                    |
-| ◣ + P                          | Launch or bring Pidgin to front                                                |
 | ◣ + R                          | Toggle active window roll-up state                                             |
 | ◣ + S                          | Toggle active window "roll-sideways" state                                     |
 | ◣ + T                          | Toggle active window always-on-top state                                       |
@@ -410,6 +410,12 @@ For changes to take effect after editing `/etc/environment` reload it and
 restart xmchord.
 
 To use a different browser, edit script: ``0220022-24.sh``
+
+
+### Archived/inactive actions
+
+Some additional actions that aren't active by default can be found within
+the ``actions/inactive`` directory.
 
 
 ## Building xmchord from source
