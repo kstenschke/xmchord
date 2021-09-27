@@ -1,6 +1,8 @@
 #!/bin/bash
 
-#: ◣ + C - Launch or Bring Chromium window to front.
+#: ◣ + C
+#: In terminal: Type and execute command to cd into favorite path
+# Otherwise: Launch or Bring Chromium window to front.
 #: If Chromium or Firefox is focussed: Copy last segment of URL
 
 focusApplication=\
@@ -8,6 +10,17 @@ $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
 
 path_self="$( cd "$(dirname "$0")" >/dev/null 2>&1 || exit ; pwd -P )"
 "$path_self"/utils/remove_unwanted_output.sh "$focusApplication"
+
+# Terminal has focus: Type and execute command to cd into favorite path
+if [[ "$focusApplication" =~ "gnome-terminal-" ]]; then
+  xdotool sleep 0.1
+  xdotool type "cd $XMCHORD_CD_FAVORITE"
+  xdotool key Return
+
+  unset focusApplication
+  unset path_self
+  exit 0
+fi
 
 if [[ "$focusApplication" =~ "chromium-browse" ]] \
 || [[ "$focusApplication" =~ "chromium" ]] \

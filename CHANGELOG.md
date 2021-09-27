@@ -3,6 +3,8 @@ xmchord Changelog
 
 v0.4.6 - Not tagged yet
 -----------------------
+* Add terminal action: ◣ + C - Type and execute command to cd into a favorite 
+  path
 * Remove / archive as inactive: Pidgin launcher action
 
 v0.4.5 - 2021/06/22
