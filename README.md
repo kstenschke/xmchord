@@ -317,15 +317,15 @@ restart xmchord.
 
 #### Terminal command snippets
 
-| **Shortcut**               | **Description**                                                                                                  |
-|----------------------------|------------------------------------------------------------------------------------------------------------------|
-| ◣ + C        | Type and execute command to `cd` into a favorite local path                                                                    |
-| ◣ + D        | Type `scp` command to recursively download remote directory                                                                    |
-| ◣ + L        | Type and execute command to clean a preferred path by executing `rm -rf` upon it, helpful a shortcut to wipe a cache directory |
-| ◣ + S        | Type and execute command to connect to preferred SSH host and `cd` into preferred path                                         |
-| ◣ + SPACE    | Type `yes` and hit ENTER                                                                                                       |
-| ◣ + U        | Type `scp` command to recursively upload local directory to remote                                                             |
-| ◣ + X        | Type `exit` and hit ENTER                                                                                                      |
+| **Shortcut**               | **Description**                                                                                         |
+|----------------------------|---------------------------------------------------------------------------------------------------------|
+| ◣ + C        | Type and execute command to `cd` into a favorite local path                                                           |
+| ◣ + D        | Type `scp` command to recursively download remote directory                                                           |
+| ◣ + L        | Shortcut to wipe a cache directory: Type and execute command to clean a preferred path by executing `rm -rf` upon it. |
+| ◣ + S        | Type and execute command to connect to preferred SSH host and `cd` into preferred path                                |
+| ◣ + SPACE    | Type `yes` and hit ENTER                                                                                              |
+| ◣ + U        | Type `scp` command to recursively upload local directory to remote                                                    |
+| ◣ + X        | Type `exit` and hit ENTER                                                                                             |
 
 For the `cd`, `rm -rf`, `scp` and `ssh` shortcut snippets, the following environment variables 
 must be set in your `/etc/environment`:
