@@ -3,7 +3,9 @@ xmchord Changelog
 
 v0.4.6 - Not tagged yet
 -----------------------
-* Add terminal action: ◣ + C - Type and execute command to cd into a favorite 
+* Add terminal action: ◣ + L - Type and execute command to clean (=`rm rf`) a 
+  favorite path, e.g. a cache directory
+* Add terminal action: ◣ + C - Type and execute command to `cd` into a favorite 
   path
 * Remove / archive as inactive: Pidgin launcher action
 
