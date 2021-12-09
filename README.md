@@ -266,6 +266,7 @@ be focussed when the shortcut is fired.
 | ◣ + C                        | Copy trailing segment of current URL         |
 | ◣ + D                        | Duplicate active tab                         |
 | ◣ + H                        | Toggle HTML "view-source" of current URL     |
+| ◣ + N                        | Move active tab to new window                |
 | &nbsp; &nbsp; ◢ + ←          | Go URL backwards                             |
 | &nbsp; &nbsp; ◢ + →          | Go URL forward                               |
 | &nbsp; &nbsp; ◢ + F4         | Close active tab                             |
