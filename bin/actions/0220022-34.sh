@@ -15,8 +15,9 @@ if [[ "$focusApplication" =~ "gnome-screensho" ]]; then
   xdotool key Escape
   xdotool sleep 0.1
 
-  if pidof -s gimp-2.8 > /dev/null; then  # bring gimp to front
-    gimpPid=$(pidof gimp-2.8)
+  if pidof -s gimp-2.10 > /dev/null; then
+    # bring gimp (version is always <MAJOR>.<MINOR>) to front
+    gimpPid=$(pidof gimp-2.10)
     windowTitle=$(wmctrl -l -p | grep "$gimpPid" | cut -d " " -f 8-)
     wmctrl -a "$windowTitle"
     xdotool sleep 0.2

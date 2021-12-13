@@ -3,6 +3,7 @@ xmchord Changelog
 
 v0.4.6 - Not tagged yet
 -----------------------
+* Update gimp identifier in related gnome screenshot action to "gimp-2.10"
 * Add browser action: ◣ + RETURN - Browse for selected text in new tab 
 * Change raise/lower volume actions to simply emulate resp. keyboard events
 * Add browser action: ◣ + N - Move active tab into new window
