@@ -267,6 +267,7 @@ be focussed when the shortcut is fired.
 | ◣ + D                        | Duplicate active tab                         |
 | ◣ + H                        | Toggle HTML "view-source" of current URL     |
 | ◣ + N                        | Move active tab to new window                |
+| ◣ + RETURN                   | Browse for selected text in new tab          |
 | &nbsp; &nbsp; ◢ + ←          | Go URL backwards                             |
 | &nbsp; &nbsp; ◢ + →          | Go URL forward                               |
 | &nbsp; &nbsp; ◢ + F4         | Close active tab                             |
