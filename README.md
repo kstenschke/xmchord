@@ -37,7 +37,7 @@ xmchord comes with a comprehensive set of shortcut **actions to automate and spe
   * [Third party dependencies](#third-party-dependencies)
   * [Global actions](#global-actions-not-application-specific)
   * [Application specific actions](#application-specific-actions)
-    * [Chromium and Firefox Web-Browser](#chromium-and-firefox-web-browser)
+    * [Chrome, Chromium and Firefox Web-Browser](#chrome-chromium-and-firefox-web-browser)
       + [Advanced browser action: Toggle URL sub string](#advanced-browser-action-toggle-url-sub-string)
     * [Claws Mail](#claws-mail)
     * [Gnome Terminal](#gnome-terminal)
@@ -249,7 +249,7 @@ For these actions to be triggered, a window of the respective application must
 be focussed when the shortcut is fired.
 
 
-#### Chromium and Firefox Web-Browser
+#### Chrome, Chromium and Firefox Web-Browser
 
 | **Shortcut**                 | **Description**                              |
 |------------------------------|----------------------------------------------|
