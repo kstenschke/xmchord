@@ -2,15 +2,10 @@
 
 #: ◢ + Down - Decrease audio volume
 
-amixer -D pulse sset Master 5%- &> /dev/null
+path_self="$( cd "$(dirname "$0")" >/dev/null 2>&1 || exit ; pwd -P )"
+me=$SUDO_USER
 
-currentVolume=$(amixer -D pulse sget Master | \
-grep "Front Left: Playback" | \
-grep -oE "[0-9]{1,3}%")
-
-echo "Volume-- ($currentVolume)" | \
-aosd_cat -R white -u 300 --y-offset=40 -B black -b 240 \
---padding=24 -x 5 -n "Ubuntu 20" -p 1
+xdotool key XF86AudioLowerVolume
 
 xdotool key Up
 

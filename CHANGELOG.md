@@ -3,6 +3,7 @@ xmchord Changelog
 
 v0.4.6 - Not tagged yet
 -----------------------
+* Change raise/lower volume actions to simply emulate resp. keyboard events
 * Add browser action: ◣ + N - Move active tab into new window
 * Add terminal action: ◣ + L - Type and execute command to clean (=`rm rf`) a 
   favorite path, e.g. a cache directory
