@@ -36,6 +36,8 @@ xmchord comes with a comprehensive set of shortcut **actions to automate and spe
 * [Included shortcut actions](#included-shortcut-actions)
   * [Third party dependencies](#third-party-dependencies)
   * [Global actions](#global-actions-not-application-specific)
+      + [Launch or bring application to front](#launch-or-bring-application-to-front)
+      + [Various global actions](#various-global-actions)
   * [Application specific actions](#application-specific-actions)
     * [Chrome, Chromium and Firefox Web-Browser](#chrome-chromium-and-firefox-web-browser)
       + [Advanced browser action: Toggle URL sub string](#advanced-browser-action-toggle-url-sub-string)
@@ -184,31 +186,39 @@ sudo apt install aosd-cat feh xclip xdotool xsel -y
 ◤ ◥ = Top buttons left / right  
 ◣ ◢  = Bottom buttons left / right
 
+
+#### Launch or bring application to front
+
 | **Shortcut**                   | **Description**                                                                |
 |--------------------------------|--------------------------------------------------------------------------------|
-| ◤ + O                          | Bring Orange player to front, launch if not yet running                        |
+| ◤ + O                          | Bring Orange-player to front, launch if not yet running                        |
+| ◣ + C                          | Launch or bring Chromium to front                                              |
+| ◣ + D                          | Launch or bring DataGrip to front                                              |
+| ◣ + F                          | Launch or bring Firefox to front                                               |
+| ◣ + K                          | Launch or bring Kitematic to front                                             |
+| ◣ + M                          | Launch or bring Claws Mail to front                                            |
+| ◣ + N                          | Launch or bring Nemo file explorer to front                                    |
+| ◣ + Y                          | Bring CherryTree to front, launch if not yet running                           |
+| ◣ + Esc                        | Launch or bring System Monitor to front                                        |
+| ◣ + Numpad +                   | Launch [xshmenu](https://github.com/kstenschke/xshmenu)                        |
+
+#### Various global actions
+
+| **Shortcut**                   | **Description**                                                                |
+|--------------------------------|--------------------------------------------------------------------------------|
 | ◤ + ←                          | Go to workspace left of current (Hit SUPER+SHIFT+Left)                         |
 | ◤ + →                          | Go to workspace left of current (Hit SUPER+SHIFT+Right)                        |
 | ◤ + ◣                          | Jump to next workspace                                                         |
 | Right Shift + ◤ + ◣            | Jump to previous workspace                                                     |
 | ◣ + ◢                          | Touch bottom-right hot-corner (E.g. expose windows)                            |
-| ◣ + Esc                        | Launch or bring System Monitor to front                                        |
-| ◣ + B                          | Launch new terminal (bash)                                                     |
-| ◣ + C                          | Launch or bring Chromium to front                                              |
-| ◣ + D                          | Launch or bring DataGrip to front                                              |
-| ◣ + F                          | Launch or bring Firefox to front                                               |
 | ◣ + I                          | Display public and private IP and wifi MAC address, copy public IP address     |
-| ◣ + K                          | Launch or bring Kitematic to front                                             |
 | ◣ + L                          | Toggle keyboard backlight                                                      |
-| ◣ + M                          | Launch or bring Claws Mail to front                                            |
-| ◣ + N                          | Launch or bring Nemo file explorer to front                                    |
 | ◣ + R                          | Toggle active window roll-up state                                             |
 | ◣ + S                          | Toggle active window "roll-sideways" state                                     |
 | ◣ + T                          | Toggle active window always-on-top state                                       |
 | ◣ + U                          | Type current UNIX timestamp                                                    |
 | ◣ + V                          | Toggle active window always-on-visible-workspace state                         |
 | ◣ + W                          | Hit CTRL+W (close window)                                                      |
-| ◣ + Y                          | Bring CherryTree to front, launch if not yet running                           |
 | ◣ + Ä                          | Type large A-umlaut (helpful e.g. on swiss keyboards)                          |
 | ◣ + Ö                          | Type large O-umlaut (helpful e.g. on swiss keyboards)                          |
 | ◣ + Ü                          | Type large U-umlaut (helpful e.g. on swiss keyboards)                          |
@@ -225,7 +235,6 @@ sudo apt install aosd-cat feh xclip xdotool xsel -y
 | ◣ + Numpad 1                   | Tile active window to bottom-left 50% of screen                                |
 | ◣ + Numpad 4                   | Tile active window to left 50% of screen                                       |
 | ◣ + Numpad 5                   | Maximize active window                                                         |
-| ◣ + Numpad +                   | Launch [xshmenu](https://github.com/kstenschke/xshmenu)                        |
 | ◣ + '                          | Output name of application of focused window (to terminal)                     |
 | ◣ + $                          | Convert selected text to all upper/lower case                                  |
 | ◣ + ENTER                      | Click left mouse button three times (select line)                              |

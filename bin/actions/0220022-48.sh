@@ -2,7 +2,6 @@
 
 #: ◣ + B
 #: Within Thunderbird: Open address book
-#: Else: Open new bash (terminal)
 
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
@@ -20,7 +19,3 @@ if [[ "$focusApplication" =~ "thunderbird" ]]; then
   unset path_self
   exit 0
 fi
-
-# Else: open terminal
-me=$SUDO_USER
-sudo -u "$me" nohup gnome-terminal &> /dev/null
