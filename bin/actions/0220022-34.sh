@@ -1,8 +1,6 @@
 #!/bin/bash
 
-#: ◣ + G -
-#: If Gnome Screenshot popup has focus: Fire left click, close popup,
-#: focus gimp, paste as new image
+#: ◣ + G - In Gnome Screenshot: Left click, close popup, focus gimp, paste as new image
 
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)

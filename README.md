@@ -186,6 +186,7 @@ sudo apt install aosd-cat feh xclip xdotool xsel -y
 
 | **Shortcut**                   | **Description**                                                                |
 |--------------------------------|--------------------------------------------------------------------------------|
+| ◤ + O                          | Bring Orange player to front, launch if not yet running                        |
 | ◤ + ←                          | Go to workspace left of current (Hit SUPER+SHIFT+Left)                         |
 | ◤ + →                          | Go to workspace left of current (Hit SUPER+SHIFT+Right)                        |
 | ◤ + ◣                          | Jump to next workspace                                                         |
@@ -369,11 +370,11 @@ For them to work, the mouse must be hovering Gnome Screenshot's
 
 #### Mattermost Desktop Client
 
-| **Shortcut** | **Description**               |
-|--------------|-------------------------------|
-| ◣ + M        | Open "direct messages" popup  |
-| ◣ + U        | Upload files                  |
-| ◣ + .        | Next unread channel           |
+| **Shortcut** | **Description**                                    |
+|--------------|----------------------------------------------------|
+| ◣ + M        | Open "direct messages" popup                       |
+| ◣ + U        | Upload files                                       |
+| ◣ + .        | Next unread channel                                |
 
 
 #### Thunderbird

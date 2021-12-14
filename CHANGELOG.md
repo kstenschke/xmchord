@@ -3,6 +3,7 @@ xmchord Changelog
 
 v0.4.6 - Not tagged yet
 -----------------------
+* Add global action: ◤ + O - Bring Orange player to front, launch if not running
 * Update gimp identifier in related gnome screenshot action to "gimp-2.10"
 * Add browser action: ◣ + RETURN - Browse for selected text in new tab 
 * Change raise/lower volume actions to simply emulate resp. keyboard events
