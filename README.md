@@ -36,7 +36,7 @@ xmchord comes with a comprehensive set of shortcut **actions to automate and spe
 * [Included shortcut actions](#included-shortcut-actions)
   * [Third party dependencies](#third-party-dependencies)
   * [Global actions](#global-actions-not-application-specific)
-      + [Launch or bring application to front](#launch-or-bring-application-to-front)
+      + [Application launchers](#application-launchers)
       + [Various global actions](#various-global-actions)
   * [Application specific actions](#application-specific-actions)
     * [Chrome, Chromium and Firefox Web-Browser](#chrome-chromium-and-firefox-web-browser)
@@ -187,21 +187,24 @@ sudo apt install aosd-cat feh xclip xdotool xsel -y
 ◣ ◢  = Bottom buttons left / right
 
 
-#### Launch or bring application to front
+#### Application launchers
 
-| **Shortcut**                   | **Description**                                         |
-|--------------------------------|---------------------------------------------------------|
-| ◤ + G                          | Summon default email client (like mail key on keyboard) |
-| ◤ + O                          | Bring Orange-player to front, launch if not yet running |
-| ◣ + C                          | Launch or bring Chromium to front                       |
-| ◣ + D                          | Launch or bring DataGrip to front                       |
-| ◣ + F                          | Launch or bring Firefox to front                        |
-| ◣ + K                          | Launch or bring Kitematic to front                      |
-| ◣ + M                          | Launch or bring Claws Mail to front                     |
-| ◣ + N                          | Launch or bring Nemo file explorer to front             |
-| ◣ + Y                          | Bring CherryTree to front, launch if not yet running    |
-| ◣ + Esc                        | Launch or bring System Monitor to front                 |
-| ◣ + Numpad +                   | Launch [xshmenu](https://github.com/kstenschke/xshmenu) |
+These actions launch applications, or bring re-focus their window, if already
+running (like the behavior on Mac OS).  
+
+| **Shortcut**                   | **Description**                                                     |
+|--------------------------------|---------------------------------------------------------------------|
+| ◤ + G                          | Summon default email client (like mail key on keyboard)             |
+| ◤ + M                          | Bring Mattermost desktop client to front, launch if not yet running |
+| ◤ + O                          | Bring Orange-player to front, launch if not yet running             |
+| ◣ + C                          | Launch or bring Chromium to front                                   |
+| ◣ + D                          | Launch or bring DataGrip to front                                   |
+| ◣ + F                          | Launch or bring Firefox to front                                    |
+| ◣ + K                          | Launch or bring Kitematic to front                                  |
+| ◣ + M                          | Launch or bring Claws Mail to front                                 |
+| ◣ + Y                          | Bring CherryTree to front, launch if not yet running                |
+| ◣ + Esc                        | Launch or bring System Monitor to front                             |
+| ◣ + Numpad +                   | Launch [xshmenu](https://github.com/kstenschke/xshmenu)             |
 
 #### Various global actions
 
