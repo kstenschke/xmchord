@@ -197,6 +197,7 @@ running (like the behavior on Mac OS).
 | ◤ + G                          | Summon default email client (like mail key on keyboard)             |
 | ◤ + M                          | Bring Mattermost desktop client to front, launch if not yet running |
 | ◤ + O                          | Bring Orange-player to front, launch if not yet running             |
+| ◤ + W                          | Summon default web browser (like browser key on keyboard)           |
 | ◣ + C                          | Launch or bring Chromium to front                                   |
 | ◣ + D                          | Launch or bring DataGrip to front                                   |
 | ◣ + F                          | Launch or bring Firefox to front                                    |

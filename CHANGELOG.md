@@ -4,7 +4,8 @@ xmchord Changelog
 v0.4.6 - Not tagged yet
 -----------------------
 * Group actions that launch or focus applications within README.md
-* Add global action: ◤ + G - Summon default email client (like mail key on keyboard)
+* Add global action: ◤ + W - Summon default web browser (like browser key)
+* Add global action: ◤ + G - Summon default email client (like mail key)
 * Add global action: ◤ + M - Focus Mattermost desktop client
 * Add global action: ◤ + O - Bring Orange player to front, launch if not running
 * Update gimp identifier in related gnome screenshot action to "gimp-2.10"
