@@ -227,6 +227,7 @@ running (like the behavior on Mac OS).
 | ◣ + Ä                          | Type large A-umlaut (helpful e.g. on swiss keyboards)                          |
 | ◣ + Ö                          | Type large O-umlaut (helpful e.g. on swiss keyboards)                          |
 | ◣ + Ü                          | Type large U-umlaut (helpful e.g. on swiss keyboards)                          |
+| ◣ + 8                          | Move caret eight times to the right (helpful e.g. to crop git hashes quickly)  |
 | ◣ + ←                          | Focus previous tab                                                             |
 | ◣ + →                          | Focus next tab                                                                 |
 | ◣ + ↑                          | Scroll to top (same as home key)                                               |

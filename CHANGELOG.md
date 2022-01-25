@@ -4,6 +4,8 @@ xmchord Changelog
 v0.4.6 - Not tagged yet
 -----------------------
 * Group actions that launch or focus applications within README.md
+* Add global action: ◣ + 8: Move caret eight times to the right 
+  (helpful e.g. to crop git hashes quickly)
 * Add global action: ◤ + W - Summon default web browser (like browser key)
 * Add global action: ◤ + G - Summon default email client (like mail key)
 * Add global action: ◤ + M - Focus Mattermost desktop client
