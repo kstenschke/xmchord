@@ -211,8 +211,10 @@ running (like the behavior on Mac OS).
 
 | **Shortcut**                   | **Description**                                                                |
 |--------------------------------|--------------------------------------------------------------------------------|
-| ◤ + ←                          | Go to workspace left of current (Hit SUPER+SHIFT+Left)                         |
+| ◤ + ↑                          | Increase audio volume                                                          |
 | ◤ + →                          | Go to workspace left of current (Hit SUPER+SHIFT+Right)                        |
+| ◤ + ↓                          | Decrease audio volume                                                          |
+| ◤ + ←                          | Go to workspace left of current (Hit SUPER+SHIFT+Left)                         |
 | ◤ + ◣                          | Jump to next workspace                                                         |
 | Right Shift + ◤ + ◣            | Jump to previous workspace                                                     |
 | ◣ + ◢                          | Touch bottom-right hot-corner (E.g. expose windows)                            |
@@ -255,8 +257,6 @@ running (like the behavior on Mac OS).
 | &nbsp; &nbsp; ◢ + Numpad 6     | Move active window to screen right of current                                  |
 | &nbsp; &nbsp; ◢ + Numpad Plus  | Zoom in (same as CTRL+Plus)                                                    |
 | &nbsp; &nbsp; ◢ + Numpad Minus | Zoom out (same as CTRL+Minus)                                                  |
-| &nbsp; &nbsp; ◢ + ↑            | Increase audio volume                                                          |
-| &nbsp; &nbsp; ◢ + ↓            | Decrease audio volume                                                          |
 
 
 ### Application specific actions
