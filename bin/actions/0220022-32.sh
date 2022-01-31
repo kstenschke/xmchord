@@ -16,11 +16,20 @@ if [[ "$focusApplication" =~ "chromium-browse" ]] \
 || [[ "$focusApplication" =~ "firefox" ]]; then
   clipboard=$( xsel -ob )
 
-  xdotool sleep 0.1
+  xdotool sleep 0.5
+
   xdotool key Ctrl+l
+  xdotool sleep 0.1
+
   xdotool key Ctrl+c
+  xdotool sleep 0.1
+
   xdotool key Ctrl+t
+  xdotool sleep 0.3
+
   xdotool key Ctrl+v
+  xdotool sleep 0.1
+
   xdotool key Return
 
   echo "$clipboard" | xclip -in -selection clipboard

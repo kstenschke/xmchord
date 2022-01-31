@@ -1,8 +1,13 @@
 xmchord Changelog
 =================
 
-v0.4.6 - Not tagged yet
+v0.4.7 - Not tagged yet
 -----------------------
+* Nothing yet
+
+v0.4.6 - 2022/01/31
+-------------------
+* Make "duplicate browser tab" action more performance tolerant
 * Group actions that launch or focus applications within README.md
 * Add global action: ◣ + 8: Move caret eight times to the right 
   (helpful e.g. to crop git hashes quickly)

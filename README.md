@@ -50,7 +50,7 @@ xmchord comes with a comprehensive set of shortcut **actions to automate and spe
   + [Advanced global-actions](#advanced-global-actions)  
     * [Open generic URL](#open-generic-url)
   * [Archived/inactive actions](#archivedinactive-actions)
-* [Building xmchord from source](#building-xmchord-from-source)
+* [Build from source](#build-from-source)
 * [Code Convention](#code-convention)
 * [Contributing](#contributing)
 * [Bug Reporting and Feature Requests](#bug-reporting-and-feature-requests)
@@ -440,11 +440,9 @@ Some additional actions that aren't active by default can be found within
 the ``actions/inactive`` directory.
 
 
-## Building xmchord from source
+## Build from source
 
-```bash
-cmake CMakeLists.txt; make
-```
+``cmake CMakeLists.txt; make``
 
 
 ## Code Convention
