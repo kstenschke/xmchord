@@ -3,7 +3,8 @@ xmchord Changelog
 
 v0.4.7 - Not tagged yet
 -----------------------
-* Nothing yet
+* Add Mattermost action: ◣ + W - Type ":wave:"
+* Add Mattermost action: ◣ + 1 - Type ":+1:" (= thumbs-up icon)
 
 v0.4.6 - 2022/01/31
 -------------------

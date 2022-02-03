@@ -378,18 +378,20 @@ For them to work, the mouse must be hovering Gnome Screenshot's
 
 | **Shortcut**            | **Description**                                                                                                                                                                             |
 |-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ◣ + AltGr | Click and hit [Esc] = Copy to clipboard and close Gnome Screenhot popup at once                                                                                                             |
-| ◣ + G     | Click, hit [Esc], focus Gimp (if running) and paste image from clipboard as new image                                                                                                       |
-| &nbsp; &nbsp; ◢ + V                   | **View as "sticky note:"** Click, hit [Esc], store clipboard to temporary image file and open image file in feh Image Viewer, Set feh window always-on-top and always-on-visible-workspace. |
+| ◣ + AltGr               | Click and hit [Esc] = Copy to clipboard and close Gnome Screenhot popup at once                                                                                                             |
+| ◣ + G                   | Click, hit [Esc], focus Gimp (if running) and paste image from clipboard as new image                                                                                                       |
+| &nbsp; &nbsp; ◢ + V     | **View as "sticky note:"** Click, hit [Esc], store clipboard to temporary image file and open image file in feh Image Viewer, Set feh window always-on-top and always-on-visible-workspace. |
 
 
 #### Mattermost Desktop Client
 
-| **Shortcut** | **Description**                                    |
-|--------------|----------------------------------------------------|
-| ◣ + M        | Open "direct messages" popup                       |
-| ◣ + U        | Upload files                                       |
-| ◣ + .        | Next unread channel                                |
+| **Shortcut** | **Description**                |
+|--------------|--------------------------------|
+| ◣ + M        | Open "direct messages" popup   |
+| ◣ + U        | Upload files                   |
+| ◣ + W        | Type ":wave:"                  |
+| ◣ + .        | Next unread channel            |
+| ◣ + 1        | Type ":+1:" (= thumbs-up icon) |
 
 
 #### Thunderbird
@@ -411,9 +413,9 @@ as described here.
 This action adds text from a currently given text-selection to a preset URL, 
 and loads the resulting URL in the web browser (chromium by default).
 
-| **Shortcut**                   | **Description**                                                      |
-|--------------------------------|----------------------------------------------------------------------|
-| ◣ + O                          | Open generic URL in browser. Precondition: a text selection is given |
+| **Shortcut** | **Description**                                                      |
+|--------------|----------------------------------------------------------------------|
+| ◣ + O        | Open generic URL in browser. Precondition: a text selection is given |
 
 The following environment variable must be set in your `/etc/environment`:
 

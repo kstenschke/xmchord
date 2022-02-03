@@ -1,8 +1,6 @@
 #!/bin/bash
 
-#: ◣ + M -
-# Mattermost desktop client: Open "direct messages" popup
-# Else: Launch or bring Claws Mail to front
+#: ◣ + 1 - In Mattermost: Type ":+1:"
 
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
@@ -12,22 +10,9 @@ path_self="$( cd "$(dirname "$0")" >/dev/null 2>&1 || exit ; pwd -P )"
 
 if [[ "$focusApplication" =~ "mattermost-desk" ]]; then
   xdotool sleep 0.1
-  xdotool key Ctrl+Shift+k
+  xdotool type ":+1:"
 
   unset path_self
   unset focusApplication
   exit 0
 fi
-
-if pidof -s claws-mail > /dev/null; then
-	wmctrl -a "Claws Mail"
-else
-    me=$SUDO_USER
-    sudo -u "$me" nohup claws-mail > /dev/null &
-    unset me
-fi
-
-xdotool key Escape
-
-unset focusApplication
-unset path_self
