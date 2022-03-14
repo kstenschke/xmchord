@@ -10,6 +10,7 @@ if [[ "$1" =~ "geany" ]] \
   || [[ "$1" =~ "mattermost-desk" ]] \
   || [[ "$1" =~ soffice.bin ]] \
   || [[ "$1" =~ "xpad" ]] \
+  || [[ "$1" =~ "xed" ]] \
   || [[ "$1" =~ "yana" ]] \
   ; then
     xdotool key 0xff08  # Backspace
