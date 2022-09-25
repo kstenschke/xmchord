@@ -227,6 +227,11 @@ running (like the behavior on Mac OS).
 | ◣ + Ä                          | Type large A-umlaut (helpful e.g. on swiss keyboards)                          |
 | ◣ + Ö                          | Type large O-umlaut (helpful e.g. on swiss keyboards)                          |
 | ◣ + Ü                          | Type large U-umlaut (helpful e.g. on swiss keyboards)                          |
+| ◣ + 0                          | Move active window to workspace 0                                              |
+| ◣ + 1                          | Move active window to workspace 1                                              |
+| ◣ + 2                          | Move active window to workspace 2                                              |
+| ◣ + 3                          | Move active window to workspace 3                                              |
+| ◣ + 4                          | Move active window to workspace 4                                              |
 | ◣ + 8                          | Move caret eight times to the right (helpful e.g. to crop git hashes quickly)  |
 | ◣ + ←                          | Focus previous tab                                                             |
 | ◣ + →                          | Focus next tab                                                                 |

@@ -3,6 +3,8 @@ xmchord Changelog
 
 v0.4.7 - Not tagged yet
 -----------------------
+* Add workspace actions: ◣ + 0 / ◣ + 1, ◣ + 2, ◣ + 3, ◣ + 4 - Move active window 
+  to resp. worksapce
 * Add Mattermost action: ◣ + W - Type ":wave:"
 * Add Mattermost action: ◣ + 1 - Type ":+1:" (= thumbs-up icon)
 

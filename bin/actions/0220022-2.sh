@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#: ◣ + 1 - In Mattermost: Type ":+1:"
+#: ◣ + 1 - In Mattermost: Type ":+1:", other applications: move window to workspace 1
 
 focusApplication=\
 $(cat /proc/"$(xdotool getwindowpid "$(xdotool getwindowfocus)")"/comm)
@@ -16,3 +16,7 @@ if [[ "$focusApplication" =~ "mattermost-desk" ]]; then
   unset focusApplication
   exit 0
 fi
+
+# all applications other than Mattermost: move window to workspace 1
+wmctrl -r :ACTIVE: -t 1
+

@@ -10,14 +10,19 @@ if [[ "$focusApplication" =~ "gnome-terminal-" ]]; then
   xdotool sleep 0.1
   xdotool key Control_L+Page_Up
   exit 0
-else
-  if [[ "$focusApplication" =~ "chromium-browse" ]] \
-  || [[ "$focusApplication" =~ "chromium" ]] \
-  || [[ "$focusApplication" =~ "firefox" ]]; then
-    xdotool sleep 0.1
-    xdotool keydown alt key Left
-    xdotool sleep 0.5
-    xdotool keyup alt
-    exit 0
-  fi
+fi
+
+if [[ "$focusApplication" =~ "chromium-browse" ]] \
+|| [[ "$focusApplication" =~ "chromium" ]] \
+|| [[ "$focusApplication" =~ "firefox" ]]; then
+  xdotool sleep 0.1
+  xdotool keydown alt key Left
+  xdotool sleep 0.5
+  xdotool keyup alt
+  exit 0
+fi
+
+if [[ "$focusApplication" =~ "xed" ]]; then
+  xdotool key Alt_R+Control_L+Page_Down
+  exit 0
 fi
