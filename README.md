@@ -205,7 +205,8 @@ running (like the behavior on Mac OS).
 | ◣ + M                          | Launch or bring Claws Mail to front                                 |
 | ◣ + Y                          | Bring CherryTree to front, launch if not yet running                |
 | ◣ + Esc                        | Launch or bring System Monitor to front                             |
-| ◣ + Numpad +                   | Launch [xshmenu](https://github.com/kstenschke/xshmenu)             |
+| ◣ + Numpad "+"                 | Launch [xshmenu](https://github.com/kstenschke/xshmenu)             |
+| ◣ + Numpad "-"                 | Toggle play/pause audio                                             |
 
 #### Various global actions
 
