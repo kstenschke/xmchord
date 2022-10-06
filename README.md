@@ -206,7 +206,6 @@ running (like the behavior on Mac OS).
 | ◣ + Y                          | Bring CherryTree to front, launch if not yet running                |
 | ◣ + Esc                        | Launch or bring System Monitor to front                             |
 | ◣ + Numpad "+"                 | Launch [xshmenu](https://github.com/kstenschke/xshmenu)             |
-| ◣ + Numpad "-"                 | Toggle play/pause audio                                             |
 
 #### Various global actions
 
@@ -238,6 +237,7 @@ running (like the behavior on Mac OS).
 | ◣ + →                          | Focus next tab                                                                 |
 | ◣ + ↑                          | Scroll to top (same as home key)                                               |
 | ◣ + ↓                          | Scroll to bottom (same as end key)                                             |
+| ◣ + Numpad "-"                 | Toggle play/pause audio                                                        |
 | ◣ + Numpad 7                   | Tile active window to top-left 50% of screen                                   |
 | ◣ + Numpad 8                   | Tile active window to top 50% of screen                                        |
 | ◣ + Numpad 9                   | Tile active window to top-right 50% of screen                                  |
