@@ -168,7 +168,7 @@ all included actions to work:
 | [sed](https://manpages.debian.org/buster/sed/sed.1.en.html)     | Stream editor for filtering and transforming text                                 |
 | [wmctrl](http://tripie.sweb.cz/utils/wmctrl/)                   | Command line tool to interact with an EWMH/NetWM compatible X Window Manager      |
 | [xdotool](https://www.semicomplete.com/projects/xdotool/)       | Fake keyboard/mouse input, window management, and more                            |
-| [xsel](https://linux.die.net/man/1/xsel)                        | Manipulate the X selection (Clipboard)                                            |
+| [xsrel](https://linux.die.net/man/1/xsel)                        | Manipulate the X selection (Clipboard)                                            |
 | [xclip](https://github.com/astrand/xclip)                       | Interface to X selections ("the clipboard") from the command line.                |
 
 
@@ -205,7 +205,7 @@ running (like the behavior on Mac OS).
 | ◣ + M                          | Launch or bring Claws Mail to front                                 |
 | ◣ + Y                          | Bring CherryTree to front, launch if not yet running                |
 | ◣ + Esc                        | Launch or bring System Monitor to front                             |
-| ◣ + Numpad "+"                 | Launch [xshmenu](https://github.com/kstenschke/xshmenu)             |
+
 
 #### Various global actions
 
